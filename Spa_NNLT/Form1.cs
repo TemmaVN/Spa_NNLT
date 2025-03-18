@@ -16,5 +16,40 @@ namespace Spa_NNLT
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelMatKhau_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxUsename_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
