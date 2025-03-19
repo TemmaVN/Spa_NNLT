@@ -1,6 +1,6 @@
 ﻿namespace Spa_NNLT.Nguyên
 {
-    partial class Form1
+    partial class Admin
     {
         /// <summary>
         /// Required designer variable.
