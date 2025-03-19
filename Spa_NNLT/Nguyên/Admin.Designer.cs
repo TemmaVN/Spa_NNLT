@@ -39,7 +39,11 @@
             this.báoCáoVàThốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.Adminmn.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Adminmn
@@ -57,7 +61,7 @@
             this.càiĐặtToolStripMenuItem});
             this.Adminmn.Location = new System.Drawing.Point(0, 0);
             this.Adminmn.Name = "Adminmn";
-            this.Adminmn.Size = new System.Drawing.Size(1264, 27);
+            this.Adminmn.Size = new System.Drawing.Size(1084, 27);
             this.Adminmn.TabIndex = 0;
             this.Adminmn.Text = "menuStrip1";
             // 
@@ -126,17 +130,43 @@
             this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(85, 23);
             this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1084, 553);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(759, 547);
+            this.panel2.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(768, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(313, 547);
+            this.panel3.TabIndex = 0;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1084, 581);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Adminmn);
             this.MainMenuStrip = this.Adminmn;
             this.Name = "Admin";
             this.Text = "Admin";
             this.Adminmn.ResumeLayout(false);
             this.Adminmn.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +184,8 @@
         private System.Windows.Forms.ToolStripMenuItem báoCáoVàThốngKêToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem càiĐặtToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
