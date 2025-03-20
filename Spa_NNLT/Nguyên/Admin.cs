@@ -41,5 +41,15 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void KhachhangAdbt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
