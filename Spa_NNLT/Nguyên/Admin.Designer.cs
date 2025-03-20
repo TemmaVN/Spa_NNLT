@@ -39,31 +39,31 @@
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.KhachhangAdbt = new System.Windows.Forms.Button();
-            this.LichHenADbt = new System.Windows.Forms.Button();
-            this.DichvuADbt = new System.Windows.Forms.Button();
-            this.NhanVienADbt = new System.Windows.Forms.Button();
-            this.TaiChinhADbt = new System.Windows.Forms.Button();
-            this.BaoCaoADbt = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Hotenlb = new System.Windows.Forms.Label();
-            this.SDTlb = new System.Windows.Forms.Label();
-            this.NgaySinhlb = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ThemNVbt = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ThemNVbt = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NgaySinhlb = new System.Windows.Forms.Label();
+            this.SDTlb = new System.Windows.Forms.Label();
+            this.Hotenlb = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BaoCaoADbt = new System.Windows.Forms.Button();
+            this.TaiChinhADbt = new System.Windows.Forms.Button();
+            this.NhanVienADbt = new System.Windows.Forms.Button();
+            this.DichvuADbt = new System.Windows.Forms.Button();
+            this.LichHenADbt = new System.Windows.Forms.Button();
+            this.KhachhangAdbt = new System.Windows.Forms.Button();
             this.Adminmn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Adminmn
@@ -157,85 +157,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1084, 553);
             this.panel1.TabIndex = 1;
-            // 
-            // KhachhangAdbt
-            // 
-            this.KhachhangAdbt.BackColor = System.Drawing.Color.Salmon;
-            this.KhachhangAdbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KhachhangAdbt.Image = ((System.Drawing.Image)(resources.GetObject("KhachhangAdbt.Image")));
-            this.KhachhangAdbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.KhachhangAdbt.Location = new System.Drawing.Point(41, 50);
-            this.KhachhangAdbt.Name = "KhachhangAdbt";
-            this.KhachhangAdbt.Size = new System.Drawing.Size(279, 137);
-            this.KhachhangAdbt.TabIndex = 0;
-            this.KhachhangAdbt.Text = "Khách hàng";
-            this.KhachhangAdbt.UseVisualStyleBackColor = false;
-            this.KhachhangAdbt.Click += new System.EventHandler(this.KhachhangAdbt_Click);
-            // 
-            // LichHenADbt
-            // 
-            this.LichHenADbt.BackColor = System.Drawing.Color.Moccasin;
-            this.LichHenADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LichHenADbt.Image = ((System.Drawing.Image)(resources.GetObject("LichHenADbt.Image")));
-            this.LichHenADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.LichHenADbt.Location = new System.Drawing.Point(380, 50);
-            this.LichHenADbt.Name = "LichHenADbt";
-            this.LichHenADbt.Size = new System.Drawing.Size(279, 137);
-            this.LichHenADbt.TabIndex = 1;
-            this.LichHenADbt.Text = "Lịch hẹn";
-            this.LichHenADbt.UseVisualStyleBackColor = false;
-            // 
-            // DichvuADbt
-            // 
-            this.DichvuADbt.BackColor = System.Drawing.Color.PaleGreen;
-            this.DichvuADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DichvuADbt.Image = ((System.Drawing.Image)(resources.GetObject("DichvuADbt.Image")));
-            this.DichvuADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.DichvuADbt.Location = new System.Drawing.Point(41, 218);
-            this.DichvuADbt.Name = "DichvuADbt";
-            this.DichvuADbt.Size = new System.Drawing.Size(279, 137);
-            this.DichvuADbt.TabIndex = 2;
-            this.DichvuADbt.Text = "Dịch vụ";
-            this.DichvuADbt.UseVisualStyleBackColor = false;
-            // 
-            // NhanVienADbt
-            // 
-            this.NhanVienADbt.BackColor = System.Drawing.Color.Lime;
-            this.NhanVienADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NhanVienADbt.Image = ((System.Drawing.Image)(resources.GetObject("NhanVienADbt.Image")));
-            this.NhanVienADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NhanVienADbt.Location = new System.Drawing.Point(380, 218);
-            this.NhanVienADbt.Name = "NhanVienADbt";
-            this.NhanVienADbt.Size = new System.Drawing.Size(279, 137);
-            this.NhanVienADbt.TabIndex = 3;
-            this.NhanVienADbt.Text = "Nhân viên";
-            this.NhanVienADbt.UseVisualStyleBackColor = false;
-            // 
-            // TaiChinhADbt
-            // 
-            this.TaiChinhADbt.BackColor = System.Drawing.Color.DodgerBlue;
-            this.TaiChinhADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TaiChinhADbt.Image = ((System.Drawing.Image)(resources.GetObject("TaiChinhADbt.Image")));
-            this.TaiChinhADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.TaiChinhADbt.Location = new System.Drawing.Point(41, 385);
-            this.TaiChinhADbt.Name = "TaiChinhADbt";
-            this.TaiChinhADbt.Size = new System.Drawing.Size(279, 137);
-            this.TaiChinhADbt.TabIndex = 4;
-            this.TaiChinhADbt.Text = "Tài chính";
-            this.TaiChinhADbt.UseVisualStyleBackColor = false;
-            // 
-            // BaoCaoADbt
-            // 
-            this.BaoCaoADbt.BackColor = System.Drawing.Color.Aquamarine;
-            this.BaoCaoADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaoCaoADbt.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoADbt.Image")));
-            this.BaoCaoADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.BaoCaoADbt.Location = new System.Drawing.Point(380, 385);
-            this.BaoCaoADbt.Name = "BaoCaoADbt";
-            this.BaoCaoADbt.Size = new System.Drawing.Size(279, 137);
-            this.BaoCaoADbt.TabIndex = 5;
-            this.BaoCaoADbt.Text = "Báo cáo và thống kê";
-            this.BaoCaoADbt.UseVisualStyleBackColor = false;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // panel2
             // 
@@ -246,28 +168,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(372, 547);
             this.panel2.TabIndex = 6;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(87, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(191, 127);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(56, 172);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(259, 32);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Chào mừng quản lí!";
             // 
             // panel3
             // 
@@ -287,64 +187,36 @@
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số lượng nhân viên: ";
+            this.button1.BackColor = System.Drawing.Color.SpringGreen;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(220, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 25);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Thay đổi";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // label8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 199);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Số lượng tiếp tân: ";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(24, 283);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(147, 21);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Thay đổi thông tin";
             // 
-            // Hotenlb
+            // label7
             // 
-            this.Hotenlb.AutoSize = true;
-            this.Hotenlb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hotenlb.Location = new System.Drawing.Point(24, 20);
-            this.Hotenlb.Name = "Hotenlb";
-            this.Hotenlb.Size = new System.Drawing.Size(69, 21);
-            this.Hotenlb.TabIndex = 2;
-            this.Hotenlb.Text = "Họ tên: ";
-            // 
-            // SDTlb
-            // 
-            this.SDTlb.AutoSize = true;
-            this.SDTlb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SDTlb.Location = new System.Drawing.Point(24, 62);
-            this.SDTlb.Name = "SDTlb";
-            this.SDTlb.Size = new System.Drawing.Size(108, 21);
-            this.SDTlb.TabIndex = 3;
-            this.SDTlb.Text = "Số điện thoại";
-            // 
-            // NgaySinhlb
-            // 
-            this.NgaySinhlb.AutoSize = true;
-            this.NgaySinhlb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgaySinhlb.Location = new System.Drawing.Point(24, 107);
-            this.NgaySinhlb.Name = "NgaySinhlb";
-            this.NgaySinhlb.Size = new System.Drawing.Size(84, 21);
-            this.NgaySinhlb.TabIndex = 4;
-            this.NgaySinhlb.Text = "Ngày sinh";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 154);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 21);
-            this.label6.TabIndex = 5;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(24, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(200, 21);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Thêm tài khoản nhân viên";
             // 
             // ThemNVbt
             // 
@@ -357,36 +229,167 @@
             this.ThemNVbt.Text = "Thêm nhân viên";
             this.ThemNVbt.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // label6
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(24, 241);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 21);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Thêm tài khoản nhân viên";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(24, 154);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 21);
+            this.label6.TabIndex = 5;
             // 
-            // label8
+            // NgaySinhlb
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 283);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 21);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Thay đổi thông tin";
+            this.NgaySinhlb.AutoSize = true;
+            this.NgaySinhlb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgaySinhlb.Location = new System.Drawing.Point(24, 107);
+            this.NgaySinhlb.Name = "NgaySinhlb";
+            this.NgaySinhlb.Size = new System.Drawing.Size(84, 21);
+            this.NgaySinhlb.TabIndex = 4;
+            this.NgaySinhlb.Text = "Ngày sinh";
             // 
-            // button1
+            // SDTlb
             // 
-            this.button1.BackColor = System.Drawing.Color.SpringGreen;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(220, 279);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 25);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Thay đổi";
-            this.button1.UseVisualStyleBackColor = false;
+            this.SDTlb.AutoSize = true;
+            this.SDTlb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SDTlb.Location = new System.Drawing.Point(24, 62);
+            this.SDTlb.Name = "SDTlb";
+            this.SDTlb.Size = new System.Drawing.Size(108, 21);
+            this.SDTlb.TabIndex = 3;
+            this.SDTlb.Text = "Số điện thoại";
+            // 
+            // Hotenlb
+            // 
+            this.Hotenlb.AutoSize = true;
+            this.Hotenlb.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hotenlb.Location = new System.Drawing.Point(24, 20);
+            this.Hotenlb.Name = "Hotenlb";
+            this.Hotenlb.Size = new System.Drawing.Size(69, 21);
+            this.Hotenlb.TabIndex = 2;
+            this.Hotenlb.Text = "Họ tên: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Số lượng tiếp tân: ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số lượng nhân viên: ";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
+            this.linkLabel1.Location = new System.Drawing.Point(56, 172);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(259, 32);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Chào mừng quản lí!";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(87, 29);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(191, 127);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // BaoCaoADbt
+            // 
+            this.BaoCaoADbt.BackColor = System.Drawing.Color.Aquamarine;
+            this.BaoCaoADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaoCaoADbt.Image = ((System.Drawing.Image)(resources.GetObject("BaoCaoADbt.Image")));
+            this.BaoCaoADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.BaoCaoADbt.Location = new System.Drawing.Point(380, 385);
+            this.BaoCaoADbt.Name = "BaoCaoADbt";
+            this.BaoCaoADbt.Size = new System.Drawing.Size(279, 137);
+            this.BaoCaoADbt.TabIndex = 5;
+            this.BaoCaoADbt.Text = "Báo cáo và thống kê";
+            this.BaoCaoADbt.UseVisualStyleBackColor = false;
+            // 
+            // TaiChinhADbt
+            // 
+            this.TaiChinhADbt.BackColor = System.Drawing.Color.DodgerBlue;
+            this.TaiChinhADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TaiChinhADbt.Image = ((System.Drawing.Image)(resources.GetObject("TaiChinhADbt.Image")));
+            this.TaiChinhADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.TaiChinhADbt.Location = new System.Drawing.Point(41, 385);
+            this.TaiChinhADbt.Name = "TaiChinhADbt";
+            this.TaiChinhADbt.Size = new System.Drawing.Size(279, 137);
+            this.TaiChinhADbt.TabIndex = 4;
+            this.TaiChinhADbt.Text = "Tài chính";
+            this.TaiChinhADbt.UseVisualStyleBackColor = false;
+            // 
+            // NhanVienADbt
+            // 
+            this.NhanVienADbt.BackColor = System.Drawing.Color.Lime;
+            this.NhanVienADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NhanVienADbt.Image = ((System.Drawing.Image)(resources.GetObject("NhanVienADbt.Image")));
+            this.NhanVienADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.NhanVienADbt.Location = new System.Drawing.Point(380, 218);
+            this.NhanVienADbt.Name = "NhanVienADbt";
+            this.NhanVienADbt.Size = new System.Drawing.Size(279, 137);
+            this.NhanVienADbt.TabIndex = 3;
+            this.NhanVienADbt.Text = "Nhân viên";
+            this.NhanVienADbt.UseVisualStyleBackColor = false;
+            // 
+            // DichvuADbt
+            // 
+            this.DichvuADbt.BackColor = System.Drawing.Color.PaleGreen;
+            this.DichvuADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DichvuADbt.Image = ((System.Drawing.Image)(resources.GetObject("DichvuADbt.Image")));
+            this.DichvuADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.DichvuADbt.Location = new System.Drawing.Point(41, 218);
+            this.DichvuADbt.Name = "DichvuADbt";
+            this.DichvuADbt.Size = new System.Drawing.Size(279, 137);
+            this.DichvuADbt.TabIndex = 2;
+            this.DichvuADbt.Text = "Dịch vụ";
+            this.DichvuADbt.UseVisualStyleBackColor = false;
+            // 
+            // LichHenADbt
+            // 
+            this.LichHenADbt.BackColor = System.Drawing.Color.Moccasin;
+            this.LichHenADbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LichHenADbt.Image = ((System.Drawing.Image)(resources.GetObject("LichHenADbt.Image")));
+            this.LichHenADbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LichHenADbt.Location = new System.Drawing.Point(380, 50);
+            this.LichHenADbt.Name = "LichHenADbt";
+            this.LichHenADbt.Size = new System.Drawing.Size(279, 137);
+            this.LichHenADbt.TabIndex = 1;
+            this.LichHenADbt.Text = "Lịch hẹn";
+            this.LichHenADbt.UseVisualStyleBackColor = false;
+            // 
+            // KhachhangAdbt
+            // 
+            this.KhachhangAdbt.BackColor = System.Drawing.Color.Salmon;
+            this.KhachhangAdbt.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KhachhangAdbt.Image = ((System.Drawing.Image)(resources.GetObject("KhachhangAdbt.Image")));
+            this.KhachhangAdbt.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.KhachhangAdbt.Location = new System.Drawing.Point(41, 50);
+            this.KhachhangAdbt.Name = "KhachhangAdbt";
+            this.KhachhangAdbt.Size = new System.Drawing.Size(279, 137);
+            this.KhachhangAdbt.TabIndex = 0;
+            this.KhachhangAdbt.Text = "Khách hàng";
+            this.KhachhangAdbt.UseVisualStyleBackColor = false;
+            this.KhachhangAdbt.Click += new System.EventHandler(this.KhachhangAdbt_Click);
             // 
             // Admin
             // 
@@ -403,9 +406,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

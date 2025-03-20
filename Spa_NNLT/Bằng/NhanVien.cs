@@ -25,9 +25,7 @@ namespace Spa_NNLT.Bằng
         private void button1_Click(object sender, EventArgs e)
         {
             KhachHangNhanVien f = new KhachHangNhanVien();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            f.Show();
         }
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,7 +40,27 @@ namespace Spa_NNLT.Bằng
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();   
+               
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

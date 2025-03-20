@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Spa_NNLT.Bằng
 {
-    public partial class KhachHangNhanVien : Form
+    public partial class KhachHangNhanVien : UserControl
     {
         public KhachHangNhanVien()
         {

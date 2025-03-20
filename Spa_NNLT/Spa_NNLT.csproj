@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bằng\KhachHangNhanVien.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Bằng\KhachHangNhanVien.Designer.cs">
       <DependentUpon>KhachHangNhanVien.cs</DependentUpon>
