@@ -40,8 +40,8 @@
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.càiĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Adminmn.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +106,7 @@
             this.tàiChínhToolStripMenuItem.Name = "tàiChínhToolStripMenuItem";
             this.tàiChínhToolStripMenuItem.Size = new System.Drawing.Size(98, 23);
             this.tàiChínhToolStripMenuItem.Text = "Tài chính";
+            this.tàiChínhToolStripMenuItem.Click += new System.EventHandler(this.tàiChínhToolStripMenuItem_Click);
             // 
             // báoCáoVàThốngKêToolStripMenuItem
             // 
@@ -129,6 +130,7 @@
             this.càiĐặtToolStripMenuItem.Name = "càiĐặtToolStripMenuItem";
             this.càiĐặtToolStripMenuItem.Size = new System.Drawing.Size(85, 23);
             this.càiĐặtToolStripMenuItem.Text = "Cài đặt";
+            this.càiĐặtToolStripMenuItem.Click += new System.EventHandler(this.càiĐặtToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -139,13 +141,6 @@
             this.panel1.Size = new System.Drawing.Size(1084, 553);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(759, 547);
-            this.panel2.TabIndex = 0;
-            // 
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(768, 3);
@@ -153,6 +148,14 @@
             this.panel3.Size = new System.Drawing.Size(313, 547);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(759, 547);
+            this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Admin
             // 

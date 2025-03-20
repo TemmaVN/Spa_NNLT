@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spa_NNLT.Bằng;
+using Spa_NNLT.Nguyên;
 
 namespace Spa_NNLT
 {
@@ -54,7 +56,10 @@ namespace Spa_NNLT
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-
+            FormNhanVien f = new FormNhanVien();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
