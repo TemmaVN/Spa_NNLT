@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace Spa_NNLT.Nguyên
 {
-    public partial class Form1 : Form
+    public partial class Admin : Form
     {
-        public Form1()
+        public Admin()
         {
             InitializeComponent();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
