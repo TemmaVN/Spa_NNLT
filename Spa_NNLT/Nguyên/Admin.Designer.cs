@@ -107,6 +107,10 @@
             this.NStb = new System.Windows.Forms.TextBox();
             this.Khachhangtb = new System.Windows.Forms.TabPage();
             this.Taichinhtb = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.TaiKhoantb.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -129,6 +133,7 @@
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel9.SuspendLayout();
+            this.Khachhangtb.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -918,6 +923,10 @@
             // 
             // Khachhangtb
             // 
+            this.Khachhangtb.Controls.Add(this.panel14);
+            this.Khachhangtb.Controls.Add(this.panel13);
+            this.Khachhangtb.Controls.Add(this.panel12);
+            this.Khachhangtb.Controls.Add(this.panel8);
             this.Khachhangtb.Location = new System.Drawing.Point(4, 29);
             this.Khachhangtb.Name = "Khachhangtb";
             this.Khachhangtb.Size = new System.Drawing.Size(1408, 766);
@@ -933,6 +942,34 @@
             this.Taichinhtb.TabIndex = 3;
             this.Taichinhtb.Text = "Tài chính";
             this.Taichinhtb.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.Location = new System.Drawing.Point(3, 3);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(744, 109);
+            this.panel8.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.Location = new System.Drawing.Point(3, 118);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(744, 645);
+            this.panel12.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Location = new System.Drawing.Point(753, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(652, 109);
+            this.panel13.TabIndex = 1;
+            // 
+            // panel14
+            // 
+            this.panel14.Location = new System.Drawing.Point(753, 118);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(652, 645);
+            this.panel14.TabIndex = 2;
             // 
             // Admin
             // 
@@ -977,6 +1014,7 @@
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel9.ResumeLayout(false);
+            this.Khachhangtb.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1061,5 +1099,9 @@
         private System.Windows.Forms.TextBox NStb;
         private System.Windows.Forms.TabPage Khachhangtb;
         private System.Windows.Forms.TabPage Taichinhtb;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel8;
     }
 }
