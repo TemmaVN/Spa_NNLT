@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bằng\KhachHangNhanVien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Bằng\KhachHangNhanVien.Designer.cs">
-      <DependentUpon>KhachHangNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Bằng\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,9 +66,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bằng\KhachHangNhanVien.resx">
-      <DependentUpon>KhachHangNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Bằng\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
