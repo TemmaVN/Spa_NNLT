@@ -70,12 +70,6 @@
     <Compile Include="Nguyên\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Control\KhachHangAD.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Nguyên\Control\KhachHangAD.Designer.cs">
-      <DependentUpon>KhachHangAD.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bằng\KhachHangNhanVien.resx">
@@ -89,9 +83,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\Control\KhachHangAD.resx">
-      <DependentUpon>KhachHangAD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
