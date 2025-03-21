@@ -96,6 +96,55 @@ namespace Spa_NNLT.Nguyên
         {
             TimTheotenTb.Text = "Tìm theo tên ...";
             TimTheotenTb.ForeColor = Color.Gray;
+            TimtheoMatb.Text = "Tìm theo mã...";
+            TimtheoMatb.ForeColor = Color.Gray;
+
+        }
+
+        private void TimTheotenTb_Enter(object sender, EventArgs e)
+        {
+           if (TimTheotenTb.Text == "Tìm theo tên ...")
+           {
+                TimTheotenTb.Text = "";
+                TimTheotenTb.ForeColor = Color.Black;
+           }
+        }
+
+        private void TimTheotenTb_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(TimTheotenTb.Text))
+            {
+                TimTheotenTb.Text = "Tìm theo tên ...";
+                TimTheotenTb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TimtheoMatb_Enter(object sender, EventArgs e)
+        {
+            if(TimtheoMatb.Text == "Tìm theo mã...")
+            {
+                TimtheoMatb.Text = "";
+                TimtheoMatb.ForeColor= Color.Black;
+            }
+        }
+
+        private void TimtheoMatb_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty (TimtheoMatb.Text))
+            {
+                TimtheoMatb.Text = "Tìm theo mã...";
+                TimtheoMatb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void panel3_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
