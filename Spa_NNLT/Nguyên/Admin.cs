@@ -91,5 +91,11 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void Admin_Load(object sender, EventArgs e)
+        {
+            TimTheotenTb.Text = "Tìm theo tên ...";
+            TimTheotenTb.ForeColor = Color.Gray;
+        }
     }
 }
