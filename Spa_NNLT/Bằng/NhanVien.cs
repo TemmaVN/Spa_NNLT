@@ -96,5 +96,10 @@ namespace Spa_NNLT.Bằng
         {
 
         }
+
+        private void labelTenDangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
