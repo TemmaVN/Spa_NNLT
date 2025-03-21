@@ -51,7 +51,7 @@ namespace Spa_NNLT
 
         private void textBoxUsename_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
@@ -59,7 +59,10 @@ namespace Spa_NNLT
             FormNhanVien f = new FormNhanVien();
             this.Hide();
             f.ShowDialog();
+            Admin N = new Admin();
+            N.ShowDialog();
             this.Show();
+            
         }
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
