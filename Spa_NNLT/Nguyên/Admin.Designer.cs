@@ -68,8 +68,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.DSNVlb = new System.Windows.Forms.Label();
@@ -81,8 +79,20 @@
             this.Congvieccl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Timkiemnvlb = new System.Windows.Forms.Label();
             this.TimTheotenTb = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TimtheoMatb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.ThemNVbt = new System.Windows.Forms.Button();
+            this.XoaNVbt = new System.Windows.Forms.Button();
+            this.CapNhatADbt = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.TaiKhoantb.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -101,8 +111,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -113,7 +124,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1612, 870);
+            this.tabControl1.Size = new System.Drawing.Size(1503, 797);
             this.tabControl1.TabIndex = 2;
             // 
             // TaiKhoantb
@@ -126,7 +137,7 @@
             this.TaiKhoantb.Location = new System.Drawing.Point(4, 29);
             this.TaiKhoantb.Name = "TaiKhoantb";
             this.TaiKhoantb.Padding = new System.Windows.Forms.Padding(3);
-            this.TaiKhoantb.Size = new System.Drawing.Size(1604, 837);
+            this.TaiKhoantb.Size = new System.Drawing.Size(1495, 764);
             this.TaiKhoantb.TabIndex = 0;
             this.TaiKhoantb.Text = "Tài khoản";
             this.TaiKhoantb.UseVisualStyleBackColor = true;
@@ -144,13 +155,13 @@
             this.panel1.Controls.Add(this.CapNhatBT);
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1066, 823);
+            this.panel1.Size = new System.Drawing.Size(835, 823);
             this.panel1.TabIndex = 11;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(664, 16);
+            this.pictureBox2.Location = new System.Drawing.Point(550, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(54, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -162,9 +173,9 @@
             this.panel7.Controls.Add(this.pictureBox3);
             this.panel7.Controls.Add(this.MQLmoitb);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(47, 114);
+            this.panel7.Location = new System.Drawing.Point(47, 87);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(782, 115);
+            this.panel7.Size = new System.Drawing.Size(729, 115);
             this.panel7.TabIndex = 14;
             // 
             // pictureBox3
@@ -200,9 +211,9 @@
             this.panel6.Controls.Add(this.pictureBox7);
             this.panel6.Controls.Add(this.NgaysinhADmoi);
             this.panel6.Controls.Add(this.label10);
-            this.panel6.Location = new System.Drawing.Point(47, 600);
+            this.panel6.Location = new System.Drawing.Point(47, 579);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(782, 115);
+            this.panel6.Size = new System.Drawing.Size(729, 115);
             this.panel6.TabIndex = 13;
             // 
             // pictureBox7
@@ -238,9 +249,9 @@
             this.panel5.Controls.Add(this.pictureBox6);
             this.panel5.Controls.Add(this.SDTmoitb);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(47, 479);
+            this.panel5.Location = new System.Drawing.Point(47, 454);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(782, 115);
+            this.panel5.Size = new System.Drawing.Size(729, 115);
             this.panel5.TabIndex = 13;
             // 
             // pictureBox6
@@ -276,9 +287,9 @@
             this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Controls.Add(this.Gioitinhtb);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Location = new System.Drawing.Point(47, 356);
+            this.panel4.Location = new System.Drawing.Point(47, 329);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(782, 115);
+            this.panel4.Size = new System.Drawing.Size(729, 115);
             this.panel4.TabIndex = 13;
             // 
             // pictureBox5
@@ -314,9 +325,9 @@
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.HoTenmoitb);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(47, 235);
+            this.panel2.Location = new System.Drawing.Point(47, 208);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(782, 115);
+            this.panel2.Size = new System.Drawing.Size(729, 115);
             this.panel2.TabIndex = 12;
             // 
             // pictureBox4
@@ -353,7 +364,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(336, 16);
+            this.label5.Location = new System.Drawing.Point(218, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(337, 43);
             this.label5.TabIndex = 11;
@@ -363,16 +374,24 @@
             // 
             this.CapNhatBT.BackColor = System.Drawing.Color.SpringGreen;
             this.CapNhatBT.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CapNhatBT.Location = new System.Drawing.Point(456, 732);
+            this.CapNhatBT.Location = new System.Drawing.Point(324, 702);
             this.CapNhatBT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CapNhatBT.Name = "CapNhatBT";
-            this.CapNhatBT.Size = new System.Drawing.Size(144, 75);
+            this.CapNhatBT.Size = new System.Drawing.Size(144, 48);
             this.CapNhatBT.TabIndex = 10;
             this.CapNhatBT.Text = "Cập nhật";
             this.CapNhatBT.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.textBox7);
+            this.panel3.Controls.Add(this.textBox5);
+            this.panel3.Controls.Add(this.textBox6);
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox4);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.MaQuanlilb);
             this.panel3.Controls.Add(this.Gioitinhlb);
             this.panel3.Controls.Add(this.label6);
@@ -382,17 +401,18 @@
             this.panel3.Controls.Add(this.SoLgTTlb);
             this.panel3.Controls.Add(this.SoLGnvlb);
             this.panel3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.Location = new System.Drawing.Point(1079, 315);
+            this.panel3.Location = new System.Drawing.Point(848, 274);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(518, 514);
+            this.panel3.Size = new System.Drawing.Size(640, 485);
             this.panel3.TabIndex = 5;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
             // MaQuanlilb
             // 
             this.MaQuanlilb.AutoSize = true;
             this.MaQuanlilb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaQuanlilb.Location = new System.Drawing.Point(36, 47);
+            this.MaQuanlilb.Location = new System.Drawing.Point(8, 10);
             this.MaQuanlilb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MaQuanlilb.Name = "MaQuanlilb";
             this.MaQuanlilb.Size = new System.Drawing.Size(140, 35);
@@ -403,7 +423,7 @@
             // 
             this.Gioitinhlb.AutoSize = true;
             this.Gioitinhlb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Gioitinhlb.Location = new System.Drawing.Point(36, 176);
+            this.Gioitinhlb.Location = new System.Drawing.Point(8, 139);
             this.Gioitinhlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Gioitinhlb.Name = "Gioitinhlb";
             this.Gioitinhlb.Size = new System.Drawing.Size(116, 35);
@@ -424,7 +444,7 @@
             // 
             this.NgaySinhlb.AutoSize = true;
             this.NgaySinhlb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgaySinhlb.Location = new System.Drawing.Point(36, 301);
+            this.NgaySinhlb.Location = new System.Drawing.Point(8, 264);
             this.NgaySinhlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NgaySinhlb.Name = "NgaySinhlb";
             this.NgaySinhlb.Size = new System.Drawing.Size(132, 35);
@@ -435,7 +455,7 @@
             // 
             this.SDTlb.AutoSize = true;
             this.SDTlb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SDTlb.Location = new System.Drawing.Point(36, 238);
+            this.SDTlb.Location = new System.Drawing.Point(8, 201);
             this.SDTlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SDTlb.Name = "SDTlb";
             this.SDTlb.Size = new System.Drawing.Size(173, 35);
@@ -446,7 +466,7 @@
             // 
             this.Hotenlb.AutoSize = true;
             this.Hotenlb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hotenlb.Location = new System.Drawing.Point(36, 111);
+            this.Hotenlb.Location = new System.Drawing.Point(8, 74);
             this.Hotenlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Hotenlb.Name = "Hotenlb";
             this.Hotenlb.Size = new System.Drawing.Size(105, 35);
@@ -457,7 +477,7 @@
             // 
             this.SoLgTTlb.AutoSize = true;
             this.SoLgTTlb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoLgTTlb.Location = new System.Drawing.Point(36, 442);
+            this.SoLgTTlb.Location = new System.Drawing.Point(8, 405);
             this.SoLgTTlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SoLgTTlb.Name = "SoLgTTlb";
             this.SoLgTTlb.Size = new System.Drawing.Size(224, 35);
@@ -468,7 +488,7 @@
             // 
             this.SoLGnvlb.AutoSize = true;
             this.SoLGnvlb.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SoLGnvlb.Location = new System.Drawing.Point(36, 373);
+            this.SoLGnvlb.Location = new System.Drawing.Point(8, 336);
             this.SoLGnvlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SoLGnvlb.Name = "SoLGnvlb";
             this.SoLGnvlb.Size = new System.Drawing.Size(248, 35);
@@ -480,7 +500,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.DarkBlue;
-            this.linkLabel1.Location = new System.Drawing.Point(1213, 263);
+            this.linkLabel1.Location = new System.Drawing.Point(1039, 205);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(225, 32);
@@ -493,10 +513,10 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1237, 42);
+            this.pictureBox1.Location = new System.Drawing.Point(1060, 22);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(203, 186);
+            this.pictureBox1.Size = new System.Drawing.Size(179, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -504,14 +524,17 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel9);
+            this.tabPage2.Controls.Add(this.panel11);
+            this.tabPage2.Controls.Add(this.pictureBox8);
+            this.tabPage2.Controls.Add(this.panel10);
             this.tabPage2.Controls.Add(this.DSNVlb);
             this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.panel8);
             this.tabPage2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1604, 837);
+            this.tabPage2.Size = new System.Drawing.Size(1495, 764);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -532,42 +555,25 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(927, 755);
+            this.dataGridView1.Size = new System.Drawing.Size(815, 672);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.panel11);
-            this.panel8.Controls.Add(this.panel10);
-            this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(939, 6);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(662, 828);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel9
-            // 
-            this.panel9.Location = new System.Drawing.Point(3, 722);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(656, 100);
-            this.panel9.TabIndex = 0;
             // 
             // panel10
             // 
             this.panel10.Controls.Add(this.button1);
-            this.panel10.Controls.Add(this.textBox2);
+            this.panel10.Controls.Add(this.TimtheoMatb);
             this.panel10.Controls.Add(this.TimTheotenTb);
             this.panel10.Controls.Add(this.Timkiemnvlb);
-            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Location = new System.Drawing.Point(827, 76);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(656, 100);
             this.panel10.TabIndex = 1;
             // 
             // panel11
             // 
-            this.panel11.Location = new System.Drawing.Point(3, 109);
+            this.panel11.Location = new System.Drawing.Point(827, 199);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(656, 607);
+            this.panel11.Size = new System.Drawing.Size(656, 443);
             this.panel11.TabIndex = 2;
             // 
             // DSNVlb
@@ -625,9 +631,10 @@
             // Timkiemnvlb
             // 
             this.Timkiemnvlb.AutoSize = true;
+            this.Timkiemnvlb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Timkiemnvlb.Location = new System.Drawing.Point(13, 9);
             this.Timkiemnvlb.Name = "Timkiemnvlb";
-            this.Timkiemnvlb.Size = new System.Drawing.Size(237, 29);
+            this.Timkiemnvlb.Size = new System.Drawing.Size(221, 27);
             this.Timkiemnvlb.TabIndex = 0;
             this.Timkiemnvlb.Text = "Tìm kiếm nhân viên";
             // 
@@ -638,14 +645,18 @@
             this.TimTheotenTb.Name = "TimTheotenTb";
             this.TimTheotenTb.Size = new System.Drawing.Size(253, 35);
             this.TimTheotenTb.TabIndex = 1;
+            this.TimTheotenTb.Enter += new System.EventHandler(this.TimTheotenTb_Enter);
+            this.TimTheotenTb.Leave += new System.EventHandler(this.TimTheotenTb_Leave);
             // 
-            // textBox2
+            // TimtheoMatb
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(277, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 35);
-            this.textBox2.TabIndex = 2;
+            this.TimtheoMatb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimtheoMatb.Location = new System.Drawing.Point(277, 51);
+            this.TimtheoMatb.Name = "TimtheoMatb";
+            this.TimtheoMatb.Size = new System.Drawing.Size(280, 35);
+            this.TimtheoMatb.TabIndex = 2;
+            this.TimtheoMatb.Enter += new System.EventHandler(this.TimtheoMatb_Enter);
+            this.TimtheoMatb.Leave += new System.EventHandler(this.TimtheoMatb_Leave);
             // 
             // button1
             // 
@@ -656,11 +667,118 @@
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(673, 9);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(57, 58);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(254, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(348, 40);
+            this.textBox1.TabIndex = 8;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(254, 69);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(348, 40);
+            this.textBox2.TabIndex = 9;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(254, 196);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(348, 40);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(254, 132);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(348, 40);
+            this.textBox4.TabIndex = 10;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(254, 329);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(348, 40);
+            this.textBox5.TabIndex = 13;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(254, 265);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(348, 40);
+            this.textBox6.TabIndex = 12;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(254, 400);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(348, 40);
+            this.textBox7.TabIndex = 14;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.CapNhatADbt);
+            this.panel9.Controls.Add(this.XoaNVbt);
+            this.panel9.Controls.Add(this.ThemNVbt);
+            this.panel9.Location = new System.Drawing.Point(827, 648);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(656, 100);
+            this.panel9.TabIndex = 0;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
+            // 
+            // ThemNVbt
+            // 
+            this.ThemNVbt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemNVbt.Location = new System.Drawing.Point(18, 27);
+            this.ThemNVbt.Name = "ThemNVbt";
+            this.ThemNVbt.Size = new System.Drawing.Size(198, 50);
+            this.ThemNVbt.TabIndex = 0;
+            this.ThemNVbt.Text = "Thêm";
+            this.ThemNVbt.UseVisualStyleBackColor = true;
+            // 
+            // XoaNVbt
+            // 
+            this.XoaNVbt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XoaNVbt.Location = new System.Drawing.Point(237, 27);
+            this.XoaNVbt.Name = "XoaNVbt";
+            this.XoaNVbt.Size = new System.Drawing.Size(198, 50);
+            this.XoaNVbt.TabIndex = 1;
+            this.XoaNVbt.Text = "Xóa ";
+            this.XoaNVbt.UseVisualStyleBackColor = true;
+            // 
+            // CapNhatADbt
+            // 
+            this.CapNhatADbt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CapNhatADbt.Location = new System.Drawing.Point(455, 27);
+            this.CapNhatADbt.Name = "CapNhatADbt";
+            this.CapNhatADbt.Size = new System.Drawing.Size(198, 50);
+            this.CapNhatADbt.TabIndex = 2;
+            this.CapNhatADbt.Text = "Cập nhật";
+            this.CapNhatADbt.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1626, 894);
+            this.ClientSize = new System.Drawing.Size(1526, 813);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Admin";
@@ -693,9 +811,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel8.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -741,10 +860,8 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label DSNVlb;
         private System.Windows.Forms.DataGridViewTextBoxColumn Manvcl;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTencl;
@@ -753,8 +870,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDTcl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Congvieccl;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TimtheoMatb;
         private System.Windows.Forms.TextBox TimTheotenTb;
         private System.Windows.Forms.Label Timkiemnvlb;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button CapNhatADbt;
+        private System.Windows.Forms.Button XoaNVbt;
+        private System.Windows.Forms.Button ThemNVbt;
     }
 }
