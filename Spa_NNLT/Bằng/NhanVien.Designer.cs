@@ -98,6 +98,11 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -126,6 +131,9 @@
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -328,6 +336,8 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.panel21);
+            this.tabPage4.Controls.Add(this.panel20);
             this.tabPage4.Controls.Add(this.panel19);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -813,6 +823,48 @@
             this.button11.Text = "Thêm ";
             this.button11.UseVisualStyleBackColor = true;
             // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.dataGridView3);
+            this.panel20.Location = new System.Drawing.Point(11, 72);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(457, 350);
+            this.panel20.TabIndex = 3;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(451, 341);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.textBox10);
+            this.panel21.Controls.Add(this.button12);
+            this.panel21.Location = new System.Drawing.Point(498, 16);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(339, 40);
+            this.panel21.TabIndex = 4;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(3, 10);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(232, 20);
+            this.textBox10.TabIndex = 5;
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button12.Location = new System.Drawing.Point(241, 4);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(95, 33);
+            this.button12.TabIndex = 4;
+            this.button12.Text = "Tìm kiếm";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -867,6 +919,10 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel19.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -943,5 +999,10 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button button12;
     }
 }
