@@ -25,6 +25,7 @@ namespace Spa_NNLT.Bằng
         private void button1_Click(object sender, EventArgs e)
         {
             KhachHangNhanVien f = new KhachHangNhanVien();
+            f.Hide();
             f.Show();
         }
 
