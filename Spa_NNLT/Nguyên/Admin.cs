@@ -146,5 +146,10 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
