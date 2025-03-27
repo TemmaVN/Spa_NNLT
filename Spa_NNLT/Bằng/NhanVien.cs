@@ -177,5 +177,10 @@ namespace Spa_NNLT.Bằng
             XoaLichHen x = new XoaLichHen();
             x.ShowDialog();
         }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
