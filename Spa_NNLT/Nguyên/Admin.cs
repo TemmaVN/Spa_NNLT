@@ -307,5 +307,10 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void panel30_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
