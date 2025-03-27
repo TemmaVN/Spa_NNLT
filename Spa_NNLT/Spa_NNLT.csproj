@@ -64,6 +64,12 @@
     <Compile Include="Nguyên\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\NhanVienAD\ThemNVad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\NhanVienAD\ThemNVad.Designer.cs">
+      <DependentUpon>ThemNVad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bằng\NhanVien.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\NhanVienAD\ThemNVad.resx">
+      <DependentUpon>ThemNVad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
