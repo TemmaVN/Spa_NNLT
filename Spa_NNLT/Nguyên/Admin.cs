@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spa_NNLT.Nguyên.DichVuAD;
+using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.NhanVienAD;
+using Spa_NNLT.Nguyên.SanPhamAD;
 
 namespace Spa_NNLT.Nguyên
 {
@@ -229,7 +232,8 @@ namespace Spa_NNLT.Nguyên
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            ThemKHad themKHad = new ThemKHad();
+            themKHad.ShowDialog();
         }
 
         private void PhongADtp_Click(object sender, EventArgs e)
@@ -257,6 +261,36 @@ namespace Spa_NNLT.Nguyên
         {
             SuaNVad suaNVad = new SuaNVad();
             suaNVad.ShowDialog();
+        }
+
+        private void ThemDVadTB_Click(object sender, EventArgs e)
+        {
+            ThemDVad themDVad = new ThemDVad();
+            themDVad.ShowDialog();
+        }
+
+        private void CapNhatDVadBT_Click(object sender, EventArgs e)
+        {
+            SuaDVad suaDVad = new SuaDVad();
+            suaDVad.ShowDialog();
+        }
+
+        private void ThemSPadbt_Click(object sender, EventArgs e)
+        {
+            ThemSPad themSPad = new ThemSPad();
+            themSPad.ShowDialog();
+        }
+
+        private void CapNhatspADbt_Click(object sender, EventArgs e)
+        {
+            SuaSPad suaSPad = new SuaSPad();
+            suaSPad.ShowDialog();  
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ThemKHad themKHad = new ThemKHad();
+            themKHad.ShowDialog();
         }
     }
 }
