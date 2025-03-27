@@ -100,6 +100,12 @@
     <Compile Include="Nguyên\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\NhanVienAD\SuaNVad.Designer.cs">
+      <DependentUpon>SuaNVad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nguyên\NhanVienAD\ThemNVad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <EmbeddedResource Include="Nguyên\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\NhanVienAD\SuaNVad.resx">
+      <DependentUpon>SuaNVad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\NhanVienAD\ThemNVad.resx">
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +169,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Nguyên\DichVuAD\" />
+    <Folder Include="Nguyên\KhachHangAD\" />
+    <Folder Include="Nguyên\PhongAD\" />
+    <Folder Include="Nguyên\SanPhamAD\" />
+    <Folder Include="Nguyên\TaiChinhAD\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

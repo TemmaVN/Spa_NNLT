@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spa_NNLT.Nguyên.NhanVienAD;
 
 namespace Spa_NNLT.Nguyên
 {
@@ -234,6 +235,28 @@ namespace Spa_NNLT.Nguyên
         private void PhongADtp_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThemNVbt_Click(object sender, EventArgs e)
+        {
+            ThemNVad themNVad = new ThemNVad();
+            themNVad.ShowDialog();
+        }
+
+        private void XoaNVbt_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void CapNhatADbt_Click(object sender, EventArgs e)
+        {
+            SuaNVad suaNVad = new SuaNVad();
+            suaNVad.ShowDialog();
         }
     }
 }

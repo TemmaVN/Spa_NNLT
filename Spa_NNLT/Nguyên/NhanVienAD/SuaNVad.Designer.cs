@@ -1,6 +1,6 @@
 ﻿namespace Spa_NNLT.Nguyên.NhanVienAD
 {
-    partial class ThemNVad
+    partial class SuaNVad
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.TNVcvADtb = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.TNVnsADtb = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TNVidADtb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.TNVtimADtb = new System.Windows.Forms.TextBox();
+            this.TNVtimADbt = new System.Windows.Forms.Button();
             this.TNVadBT = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.TNVsdtADtb = new System.Windows.Forms.TextBox();
@@ -39,31 +51,22 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.TNVhotenADtb = new System.Windows.Forms.TextBox();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TNVidADtb = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.TNVnsADtb = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.TNVcvADtb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel1);
+            this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.TNVadBT);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.panel8);
@@ -71,7 +74,111 @@
             this.panel6.Location = new System.Drawing.Point(58, 46);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(339, 408);
-            this.panel6.TabIndex = 6;
+            this.panel6.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.TNVcvADtb);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(0, 321);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(333, 33);
+            this.panel3.TabIndex = 6;
+            // 
+            // TNVcvADtb
+            // 
+            this.TNVcvADtb.Location = new System.Drawing.Point(126, 9);
+            this.TNVcvADtb.Name = "TNVcvADtb";
+            this.TNVcvADtb.Size = new System.Drawing.Size(204, 20);
+            this.TNVcvADtb.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Công việc :";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.TNVnsADtb);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(3, 265);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(333, 33);
+            this.panel2.TabIndex = 2;
+            // 
+            // TNVnsADtb
+            // 
+            this.TNVnsADtb.Location = new System.Drawing.Point(126, 9);
+            this.TNVnsADtb.Name = "TNVnsADtb";
+            this.TNVnsADtb.Size = new System.Drawing.Size(204, 20);
+            this.TNVnsADtb.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(3, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 16);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Ngày sinh:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.TNVidADtb);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(0, 58);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(333, 33);
+            this.panel1.TabIndex = 2;
+            // 
+            // TNVidADtb
+            // 
+            this.TNVidADtb.Location = new System.Drawing.Point(126, 9);
+            this.TNVidADtb.Name = "TNVidADtb";
+            this.TNVidADtb.Size = new System.Drawing.Size(204, 20);
+            this.TNVidADtb.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID Nhân viên  :";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.TNVtimADtb);
+            this.panel5.Controls.Add(this.TNVtimADbt);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(333, 40);
+            this.panel5.TabIndex = 5;
+            // 
+            // TNVtimADtb
+            // 
+            this.TNVtimADtb.Location = new System.Drawing.Point(3, 10);
+            this.TNVtimADtb.Name = "TNVtimADtb";
+            this.TNVtimADtb.Size = new System.Drawing.Size(219, 20);
+            this.TNVtimADtb.TabIndex = 5;
+            // 
+            // TNVtimADbt
+            // 
+            this.TNVtimADbt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TNVtimADbt.Location = new System.Drawing.Point(228, 4);
+            this.TNVtimADbt.Name = "TNVtimADbt";
+            this.TNVtimADbt.Size = new System.Drawing.Size(95, 33);
+            this.TNVtimADbt.TabIndex = 4;
+            this.TNVtimADbt.Text = "Tìm kiếm";
+            this.TNVtimADbt.UseVisualStyleBackColor = true;
             // 
             // TNVadBT
             // 
@@ -80,7 +187,7 @@
             this.TNVadBT.Name = "TNVadBT";
             this.TNVadBT.Size = new System.Drawing.Size(163, 33);
             this.TNVadBT.TabIndex = 4;
-            this.TNVadBT.Text = "Thêm";
+            this.TNVadBT.Text = "Cập nhật";
             this.TNVadBT.UseVisualStyleBackColor = true;
             // 
             // panel10
@@ -161,118 +268,30 @@
             this.labelTenDangNhap.TabIndex = 0;
             this.labelTenDangNhap.Text = "Họ tên  :";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.TNVidADtb);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(0, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 33);
-            this.panel1.TabIndex = 2;
-            // 
-            // TNVidADtb
-            // 
-            this.TNVidADtb.Location = new System.Drawing.Point(126, 9);
-            this.TNVidADtb.Name = "TNVidADtb";
-            this.TNVidADtb.Size = new System.Drawing.Size(204, 20);
-            this.TNVidADtb.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID Nhân viên  :";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.TNVnsADtb);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(3, 265);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 33);
-            this.panel2.TabIndex = 2;
-            // 
-            // TNVnsADtb
-            // 
-            this.TNVnsADtb.Location = new System.Drawing.Point(126, 9);
-            this.TNVnsADtb.Name = "TNVnsADtb";
-            this.TNVnsADtb.Size = new System.Drawing.Size(204, 20);
-            this.TNVnsADtb.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(3, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Ngày sinh:";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.TNVcvADtb);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(0, 321);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(333, 33);
-            this.panel3.TabIndex = 6;
-            // 
-            // TNVcvADtb
-            // 
-            this.TNVcvADtb.Location = new System.Drawing.Point(126, 9);
-            this.TNVcvADtb.Name = "TNVcvADtb";
-            this.TNVcvADtb.Size = new System.Drawing.Size(204, 20);
-            this.TNVcvADtb.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(3, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Công việc :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(219, 19);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Nhớ kiểm tra trước khi thêm!!!";
-            // 
-            // ThemNVad
+            // SuaNVad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 501);
             this.Controls.Add(this.panel6);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "ThemNVad";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm nhân viên";
+            this.Name = "SuaNVad";
+            this.Text = "SuaNVad";
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -280,6 +299,18 @@
         #endregion
 
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox TNVcvADtb;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox TNVnsADtb;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox TNVidADtb;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox TNVtimADtb;
+        private System.Windows.Forms.Button TNVtimADbt;
         private System.Windows.Forms.Button TNVadBT;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox TNVsdtADtb;
@@ -290,15 +321,5 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox TNVhotenADtb;
         private System.Windows.Forms.Label labelTenDangNhap;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox TNVcvADtb;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox TNVnsADtb;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox TNVidADtb;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
     }
 }
