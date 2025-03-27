@@ -292,5 +292,15 @@ namespace Spa_NNLT.Nguyên
             ThemKHad themKHad = new ThemKHad();
             themKHad.ShowDialog();
         }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LichHenADtp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

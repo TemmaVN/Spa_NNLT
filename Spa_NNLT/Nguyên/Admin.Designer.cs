@@ -247,6 +247,8 @@
             this.TenDVadCL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaDVadCL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianADcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LichHenADtp = new System.Windows.Forms.TabPage();
+            this.HoadonADtp = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.TaiKhoantb.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -317,6 +319,8 @@
             this.tabControl1.Controls.Add(this.PhongADtp);
             this.tabControl1.Controls.Add(this.SanPhamADtp);
             this.tabControl1.Controls.Add(this.DichVuADcl);
+            this.tabControl1.Controls.Add(this.LichHenADtp);
+            this.tabControl1.Controls.Add(this.HoadonADtp);
             this.tabControl1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(8, 8);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -325,6 +329,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(944, 519);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // TaiKhoantb
             // 
@@ -2641,6 +2646,26 @@
             this.ThoiGianADcl.HeaderText = "Thời gian ( h )";
             this.ThoiGianADcl.Name = "ThoiGianADcl";
             // 
+            // LichHenADtp
+            // 
+            this.LichHenADtp.Location = new System.Drawing.Point(4, 25);
+            this.LichHenADtp.Name = "LichHenADtp";
+            this.LichHenADtp.Padding = new System.Windows.Forms.Padding(3);
+            this.LichHenADtp.Size = new System.Drawing.Size(936, 490);
+            this.LichHenADtp.TabIndex = 7;
+            this.LichHenADtp.Text = "Lịch hẹn";
+            this.LichHenADtp.UseVisualStyleBackColor = true;
+            this.LichHenADtp.Click += new System.EventHandler(this.LichHenADtp_Click);
+            // 
+            // HoadonADtp
+            // 
+            this.HoadonADtp.Location = new System.Drawing.Point(4, 25);
+            this.HoadonADtp.Name = "HoadonADtp";
+            this.HoadonADtp.Size = new System.Drawing.Size(936, 490);
+            this.HoadonADtp.TabIndex = 8;
+            this.HoadonADtp.Text = "Hóa đơn";
+            this.HoadonADtp.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2961,5 +2986,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.TabPage LichHenADtp;
+        private System.Windows.Forms.TabPage HoadonADtp;
     }
 }
