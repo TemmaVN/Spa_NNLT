@@ -52,6 +52,42 @@
     <Compile Include="Bằng\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bằng\SuaKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bằng\SuaKhachHang.Designer.cs">
+      <DependentUpon>SuaKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bằng\SuaLichHen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bằng\SuaLichHen.Designer.cs">
+      <DependentUpon>SuaLichHen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bằng\ThemKhachHangcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bằng\ThemKhachHangcs.Designer.cs">
+      <DependentUpon>ThemKhachHangcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bằng\ThemLichHen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bằng\ThemLichHen.Designer.cs">
+      <DependentUpon>ThemLichHen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bằng\XoaKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bằng\XoaKhachHang.Designer.cs">
+      <DependentUpon>XoaKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bằng\XoaLichHen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bằng\XoaLichHen.Designer.cs">
+      <DependentUpon>XoaLichHen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +104,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bằng\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bằng\SuaKhachHang.resx">
+      <DependentUpon>SuaKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bằng\SuaLichHen.resx">
+      <DependentUpon>SuaLichHen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bằng\ThemKhachHangcs.resx">
+      <DependentUpon>ThemKhachHangcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bằng\ThemLichHen.resx">
+      <DependentUpon>ThemLichHen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bằng\XoaKhachHang.resx">
+      <DependentUpon>XoaKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bằng\XoaLichHen.resx">
+      <DependentUpon>XoaLichHen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

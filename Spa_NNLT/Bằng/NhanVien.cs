@@ -109,7 +109,8 @@ namespace Spa_NNLT.Bằng
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            ThemKhachHang i = new ThemKhachHang();
+            i.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -125,6 +126,56 @@ namespace Spa_NNLT.Bằng
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel57_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SuaKhachHang s = new SuaKhachHang();
+            s.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            XoaKhachHang x = new XoaKhachHang();
+            x.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ThemLichHen t = new ThemLichHen();
+            t.ShowDialog();
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            SuaLichHen s = new SuaLichHen();
+            s.ShowDialog();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            XoaLichHen x = new XoaLichHen();
+            x.ShowDialog();
         }
     }
 }
