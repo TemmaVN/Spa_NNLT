@@ -156,8 +156,7 @@ namespace Spa_NNLT.Bằng
 
         private void button3_Click(object sender, EventArgs e)
         {
-            XoaKhachHang x = new XoaKhachHang();
-            x.ShowDialog();
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -174,13 +173,35 @@ namespace Spa_NNLT.Bằng
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            XoaLichHen x = new XoaLichHen();
-            x.ShowDialog();
+            
         }
 
         private void tabPage7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            CapNhatPhong c = new CapNhatPhong();
+            c.ShowDialog();
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            TaoHoaDon a = new TaoHoaDon();
+            a.ShowDialog();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            SuaHoaDon s = new SuaHoaDon();
+            s.ShowDialog();
         }
     }
 }

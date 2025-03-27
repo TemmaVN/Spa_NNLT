@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Spa_NNLT.Bằng
 {
-    public partial class XoaKhachHang : Form
+    public partial class SuaHoaDon : Form
     {
-        public XoaKhachHang()
+        public SuaHoaDon()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button23_Click(object sender, EventArgs e)
         {
             this.Close();
         }
