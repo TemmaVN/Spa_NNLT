@@ -220,5 +220,10 @@ namespace Spa_NNLT.Nguyên
                 TimTheoMaKHtb.ForeColor = Color.Gray;
             }
         }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

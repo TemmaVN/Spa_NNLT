@@ -1078,16 +1078,16 @@
             this.panel14.Controls.Add(this.label19);
             this.panel14.Controls.Add(this.label20);
             this.panel14.Controls.Add(this.label21);
-            this.panel14.Location = new System.Drawing.Point(502, 77);
+            this.panel14.Location = new System.Drawing.Point(502, 132);
             this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(435, 344);
+            this.panel14.Size = new System.Drawing.Size(435, 289);
             this.panel14.TabIndex = 2;
             // 
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(278, 21);
+            this.pictureBox10.Location = new System.Drawing.Point(261, 3);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(42, 39);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1099,7 +1099,7 @@
             // 
             this.KhachHangAD.AutoSize = true;
             this.KhachHangAD.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KhachHangAD.Location = new System.Drawing.Point(138, 33);
+            this.KhachHangAD.Location = new System.Drawing.Point(121, 11);
             this.KhachHangAD.Name = "KhachHangAD";
             this.KhachHangAD.Size = new System.Drawing.Size(143, 27);
             this.KhachHangAD.TabIndex = 41;
@@ -1107,7 +1107,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(174, 258);
+            this.textBox11.Location = new System.Drawing.Point(174, 222);
             this.textBox11.Margin = new System.Windows.Forms.Padding(2);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(233, 20);
@@ -1115,7 +1115,7 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(174, 217);
+            this.textBox12.Location = new System.Drawing.Point(174, 181);
             this.textBox12.Margin = new System.Windows.Forms.Padding(2);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(233, 20);
@@ -1123,7 +1123,7 @@
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(174, 177);
+            this.textBox13.Location = new System.Drawing.Point(174, 141);
             this.textBox13.Margin = new System.Windows.Forms.Padding(2);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(233, 20);
@@ -1131,7 +1131,7 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(174, 134);
+            this.textBox14.Location = new System.Drawing.Point(174, 98);
             this.textBox14.Margin = new System.Windows.Forms.Padding(2);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(233, 20);
@@ -1139,7 +1139,7 @@
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(174, 93);
+            this.textBox15.Location = new System.Drawing.Point(174, 57);
             this.textBox15.Margin = new System.Windows.Forms.Padding(2);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(233, 20);
@@ -1149,7 +1149,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(33, 93);
+            this.label17.Location = new System.Drawing.Point(33, 57);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(115, 24);
             this.label17.TabIndex = 33;
@@ -1159,7 +1159,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(33, 177);
+            this.label18.Location = new System.Drawing.Point(33, 141);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(76, 24);
             this.label18.TabIndex = 32;
@@ -1169,7 +1169,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(33, 258);
+            this.label19.Location = new System.Drawing.Point(33, 222);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(88, 24);
             this.label19.TabIndex = 31;
@@ -1179,7 +1179,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(33, 217);
+            this.label20.Location = new System.Drawing.Point(33, 181);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(108, 24);
             this.label20.TabIndex = 30;
@@ -1189,11 +1189,12 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(33, 134);
+            this.label21.Location = new System.Drawing.Point(33, 98);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(69, 24);
             this.label21.TabIndex = 29;
             this.label21.Text = "Họ tên: ";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // panel13
             // 
@@ -1201,16 +1202,16 @@
             this.panel13.Controls.Add(this.label15);
             this.panel13.Controls.Add(this.TimTheoMaKHtb);
             this.panel13.Controls.Add(this.TimTheoTenKHtb);
-            this.panel13.Location = new System.Drawing.Point(502, 2);
+            this.panel13.Location = new System.Drawing.Point(505, 65);
             this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(435, 71);
+            this.panel13.Size = new System.Drawing.Size(435, 63);
             this.panel13.TabIndex = 1;
             // 
             // TimKHadbt
             // 
             this.TimKHadbt.Image = ((System.Drawing.Image)(resources.GetObject("TimKHadbt.Image")));
-            this.TimKHadbt.Location = new System.Drawing.Point(388, 31);
+            this.TimKHadbt.Location = new System.Drawing.Point(385, 21);
             this.TimKHadbt.Margin = new System.Windows.Forms.Padding(2);
             this.TimKHadbt.Name = "TimKHadbt";
             this.TimKHadbt.Size = new System.Drawing.Size(39, 34);
@@ -1222,7 +1223,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(13, 12);
+            this.label15.Location = new System.Drawing.Point(10, 2);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(154, 18);
@@ -1233,7 +1234,7 @@
             // TimTheoMaKHtb
             // 
             this.TimTheoMaKHtb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimTheoMaKHtb.Location = new System.Drawing.Point(189, 38);
+            this.TimTheoMaKHtb.Location = new System.Drawing.Point(186, 28);
             this.TimTheoMaKHtb.Margin = new System.Windows.Forms.Padding(2);
             this.TimTheoMaKHtb.Name = "TimTheoMaKHtb";
             this.TimTheoMaKHtb.Size = new System.Drawing.Size(188, 26);
@@ -1244,7 +1245,7 @@
             // TimTheoTenKHtb
             // 
             this.TimTheoTenKHtb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimTheoTenKHtb.Location = new System.Drawing.Point(16, 38);
+            this.TimTheoTenKHtb.Location = new System.Drawing.Point(13, 28);
             this.TimTheoTenKHtb.Margin = new System.Windows.Forms.Padding(2);
             this.TimTheoTenKHtb.Name = "TimTheoTenKHtb";
             this.TimTheoTenKHtb.Size = new System.Drawing.Size(170, 26);
@@ -1255,10 +1256,10 @@
             // panel12
             // 
             this.panel12.Controls.Add(this.dataGridView2);
-            this.panel12.Location = new System.Drawing.Point(2, 77);
+            this.panel12.Location = new System.Drawing.Point(2, 65);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(496, 419);
+            this.panel12.Size = new System.Drawing.Size(496, 431);
             this.panel12.TabIndex = 1;
             // 
             // dataGridView2
@@ -1271,13 +1272,13 @@
             this.NgaySinhad,
             this.GioiTinhAD,
             this.SoDTAD});
-            this.dataGridView2.Location = new System.Drawing.Point(2, 0);
+            this.dataGridView2.Location = new System.Drawing.Point(2, 2);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(494, 419);
+            this.dataGridView2.Size = new System.Drawing.Size(494, 417);
             this.dataGridView2.TabIndex = 0;
             // 
             // MaKHAD
@@ -1319,16 +1320,16 @@
             // 
             this.panel8.Controls.Add(this.pictureBox9);
             this.panel8.Controls.Add(this.label14);
-            this.panel8.Location = new System.Drawing.Point(2, 2);
+            this.panel8.Location = new System.Drawing.Point(2, 14);
             this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(496, 71);
+            this.panel8.Size = new System.Drawing.Size(496, 47);
             this.panel8.TabIndex = 0;
             // 
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(407, 25);
+            this.pictureBox9.Location = new System.Drawing.Point(404, 11);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(33, 28);
@@ -1340,7 +1341,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(77, 25);
+            this.label14.Location = new System.Drawing.Point(74, 11);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(324, 29);
