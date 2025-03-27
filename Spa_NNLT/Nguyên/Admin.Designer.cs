@@ -1178,6 +1178,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Cập nhật";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -1296,9 +1297,9 @@
             this.label17.Font = new System.Drawing.Font("Arial Narrow", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(33, 57);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(115, 24);
+            this.label17.Size = new System.Drawing.Size(128, 24);
             this.label17.TabIndex = 33;
-            this.label17.Text = "Mã nhân viên:";
+            this.label17.Text = "Mã khách hàng:";
             // 
             // label18
             // 
@@ -2089,6 +2090,7 @@
             this.CapNhatspADbt.TabIndex = 2;
             this.CapNhatspADbt.Text = "Cập nhật";
             this.CapNhatspADbt.UseVisualStyleBackColor = false;
+            this.CapNhatspADbt.Click += new System.EventHandler(this.CapNhatspADbt_Click);
             // 
             // XoaSPadBT
             // 
@@ -2113,6 +2115,7 @@
             this.ThemSPadbt.TabIndex = 0;
             this.ThemSPadbt.Text = "Thêm";
             this.ThemSPadbt.UseVisualStyleBackColor = false;
+            this.ThemSPadbt.Click += new System.EventHandler(this.ThemSPadbt_Click);
             // 
             // panel23
             // 
@@ -2383,6 +2386,7 @@
             this.CapNhatDVadBT.TabIndex = 2;
             this.CapNhatDVadBT.Text = "Cập nhật";
             this.CapNhatDVadBT.UseVisualStyleBackColor = false;
+            this.CapNhatDVadBT.Click += new System.EventHandler(this.CapNhatDVadBT_Click);
             // 
             // XoaDVadBT
             // 
@@ -2407,6 +2411,7 @@
             this.ThemDVadTB.TabIndex = 0;
             this.ThemDVadTB.Text = "Thêm";
             this.ThemDVadTB.UseVisualStyleBackColor = false;
+            this.ThemDVadTB.Click += new System.EventHandler(this.ThemDVadTB_Click);
             // 
             // panel26
             // 
