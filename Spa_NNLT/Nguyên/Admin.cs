@@ -151,5 +151,20 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void TimTheotenTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
