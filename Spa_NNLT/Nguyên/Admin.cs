@@ -98,7 +98,10 @@ namespace Spa_NNLT.Nguyên
             TimTheotenTb.ForeColor = Color.Gray;
             TimtheoMatb.Text = "Tìm theo mã...";
             TimtheoMatb.ForeColor = Color.Gray;
-
+            TimTheoTenKHtb.Text = "Tìm theo tên ...";
+            TimTheoTenKHtb.ForeColor = Color.Gray;
+            TimTheoMaKHtb.Text = "Tìm theo mã ...";
+            TimTheoMaKHtb.ForeColor= Color.Gray;
         }
 
         private void TimTheotenTb_Enter(object sender, EventArgs e)
@@ -165,6 +168,57 @@ namespace Spa_NNLT.Nguyên
         private void panel16_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Admin_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimKHadbt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimTheoTenKHtb_Enter(object sender, EventArgs e)
+        {
+            if (TimTheoTenKHtb.Text == "Tìm theo tên ...")
+            {
+                TimTheoTenKHtb.Text = "";
+                TimTheoTenKHtb.ForeColor = Color.Black;
+            }
+        }
+
+        private void TimTheoTenKHtb_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TimTheoTenKHtb.Text))
+            {
+                TimTheoTenKHtb.Text = "Tìm theo tên ...";
+                TimTheoTenKHtb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TimTheoMaKHtb_Enter(object sender, EventArgs e)
+        {
+            if (TimTheoMaKHtb.Text == "Tìm theo mã ...")
+            {
+                TimTheoMaKHtb.Text = "";
+                TimTheoMaKHtb.ForeColor = Color.Black;
+            }
+        }
+
+        private void TimTheoMaKHtb_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TimTheoMaKHtb.Text))
+            {
+                TimTheoMaKHtb.Text = "Tìm theo mã ...";
+                TimTheoMaKHtb.ForeColor = Color.Gray;
+            }
         }
     }
 }
