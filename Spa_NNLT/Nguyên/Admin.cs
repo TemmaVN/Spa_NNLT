@@ -302,5 +302,10 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void DichVuADcl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
