@@ -225,5 +225,15 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhongADtp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
