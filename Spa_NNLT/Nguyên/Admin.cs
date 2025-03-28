@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Spa_NNLT.Nguyên.DichVuAD;
 using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.NhanVienAD;
-using Spa_NNLT.Nguyên.SanPhamAD;
+
 
 namespace Spa_NNLT.Nguyên
 {
@@ -275,17 +275,7 @@ namespace Spa_NNLT.Nguyên
             suaDVad.ShowDialog();
         }
 
-        private void ThemSPadbt_Click(object sender, EventArgs e)
-        {
-            ThemSPad themSPad = new ThemSPad();
-            themSPad.ShowDialog();
-        }
-
-        private void CapNhatspADbt_Click(object sender, EventArgs e)
-        {
-            SuaSPad suaSPad = new SuaSPad();
-            suaSPad.ShowDialog();  
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
