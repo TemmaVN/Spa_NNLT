@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Spa_NNLT.Nguyên.DichVuAD
+namespace Spa_NNLT.Nguyên.Lịch_hẹn
 {
-    public partial class SuaDVad : Form
+    public partial class SuaLDad : Form
     {
-        public SuaDVad()
+        public SuaLDad()
         {
             InitializeComponent();
-        }
-
-        private void SuaDVad_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

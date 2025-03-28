@@ -130,6 +130,12 @@
     <Compile Include="Nguyên\KhachHangAD\ThemKHad.Designer.cs">
       <DependentUpon>ThemKHad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\Lịch hẹn\SuaLDad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\Lịch hẹn\SuaLDad.Designer.cs">
+      <DependentUpon>SuaLDad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="Nguyên\KhachHangAD\ThemKHad.resx">
       <DependentUpon>ThemKHad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\Lịch hẹn\SuaLDad.resx">
+      <DependentUpon>SuaLDad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\NhanVienAD\SuaNVad.resx">
       <DependentUpon>SuaNVad.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +242,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Nguyên\Hóa đơn\" />
     <Folder Include="Nguyên\PhongAD\" />
     <Folder Include="Nguyên\TaiChinhAD\" />
   </ItemGroup>
