@@ -1,6 +1,6 @@
 ﻿namespace Spa_NNLT.Nguyên.Lịch_hẹn
 {
-    partial class SuaLDad
+    partial class ThemLHad
     {
         /// <summary>
         /// Required designer variable.
@@ -51,9 +51,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.TNVhotenADtb = new System.Windows.Forms.TextBox();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
-            this.TNVtimADbt = new System.Windows.Forms.Button();
-            this.TNVtimADtb = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,16 +60,15 @@
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel1);
-            this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.TNVadBT);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.panel8);
@@ -79,7 +76,7 @@
             this.panel6.Location = new System.Drawing.Point(58, 46);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(339, 408);
-            this.panel6.TabIndex = 8;
+            this.panel6.TabIndex = 9;
             // 
             // panel4
             // 
@@ -273,42 +270,27 @@
             this.labelTenDangNhap.TabIndex = 0;
             this.labelTenDangNhap.Text = "Họ tên  :";
             // 
-            // TNVtimADbt
+            // label5
             // 
-            this.TNVtimADbt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TNVtimADbt.Location = new System.Drawing.Point(228, 4);
-            this.TNVtimADbt.Name = "TNVtimADbt";
-            this.TNVtimADbt.Size = new System.Drawing.Size(95, 33);
-            this.TNVtimADbt.TabIndex = 4;
-            this.TNVtimADbt.Text = "Tìm kiếm";
-            this.TNVtimADbt.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(219, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Nhớ kiểm tra trước khi thêm!!!";
             // 
-            // TNVtimADtb
-            // 
-            this.TNVtimADtb.Location = new System.Drawing.Point(3, 10);
-            this.TNVtimADtb.Name = "TNVtimADtb";
-            this.TNVtimADtb.Size = new System.Drawing.Size(219, 20);
-            this.TNVtimADtb.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.TNVtimADtb);
-            this.panel5.Controls.Add(this.TNVtimADbt);
-            this.panel5.Location = new System.Drawing.Point(3, 15);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(333, 40);
-            this.panel5.TabIndex = 5;
-            // 
-            // SuaLDad
+            // ThemLHad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 501);
             this.Controls.Add(this.panel6);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "SuaLDad";
-            this.Text = "SuaLDad";
+            this.Name = "ThemLHad";
+            this.Text = "ThemLHad";
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -323,8 +305,6 @@
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,6 +312,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox TNVcvADtb;
         private System.Windows.Forms.Label label3;
@@ -351,11 +334,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox TNVhotenADtb;
         private System.Windows.Forms.Label labelTenDangNhap;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox TNVtimADtb;
-        private System.Windows.Forms.Button TNVtimADbt;
+        private System.Windows.Forms.Label label5;
     }
 }

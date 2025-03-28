@@ -118,6 +118,12 @@
     <Compile Include="Nguyên\DichVuAD\ThemDVad.Designer.cs">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\Hóa đơn\ThemHDad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\Hóa đơn\ThemHDad.Designer.cs">
+      <DependentUpon>ThemHDad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nguyên\KhachHangAD\SuaKHad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     </Compile>
     <Compile Include="Nguyên\Lịch hẹn\SuaLDad.Designer.cs">
       <DependentUpon>SuaLDad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nguyên\Lịch hẹn\ThemLHad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\Lịch hẹn\ThemLHad.Designer.cs">
+      <DependentUpon>ThemLHad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">
       <SubType>Form</SubType>
@@ -198,6 +210,9 @@
     <EmbeddedResource Include="Nguyên\DichVuAD\ThemDVad.resx">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\Hóa đơn\ThemHDad.resx">
+      <DependentUpon>ThemHDad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\KhachHangAD\SuaKHad.resx">
       <DependentUpon>SuaKHad.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\Lịch hẹn\SuaLDad.resx">
       <DependentUpon>SuaLDad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\Lịch hẹn\ThemLHad.resx">
+      <DependentUpon>ThemLHad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\NhanVienAD\SuaNVad.resx">
       <DependentUpon>SuaNVad.cs</DependentUpon>
@@ -242,7 +260,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Nguyên\Hóa đơn\" />
     <Folder Include="Nguyên\PhongAD\" />
     <Folder Include="Nguyên\TaiChinhAD\" />
   </ItemGroup>

@@ -1,6 +1,6 @@
-﻿namespace Spa_NNLT.Nguyên.Lịch_hẹn
+﻿namespace Spa_NNLT.Nguyên.Hóa_đơn
 {
-    partial class SuaLDad
+    partial class ThemHDad
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,9 +52,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.TNVhotenADtb = new System.Windows.Forms.TextBox();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
-            this.TNVtimADbt = new System.Windows.Forms.Button();
-            this.TNVtimADtb = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,16 +60,15 @@
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.panel4);
             this.panel6.Controls.Add(this.panel3);
             this.panel6.Controls.Add(this.panel2);
             this.panel6.Controls.Add(this.panel1);
-            this.panel6.Controls.Add(this.panel5);
             this.panel6.Controls.Add(this.TNVadBT);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.panel8);
@@ -79,7 +76,17 @@
             this.panel6.Location = new System.Drawing.Point(58, 46);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(339, 408);
-            this.panel6.TabIndex = 8;
+            this.panel6.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(35, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(219, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Nhớ kiểm tra trước khi thêm!!!";
             // 
             // panel4
             // 
@@ -103,9 +110,9 @@
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.Size = new System.Drawing.Size(83, 16);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Công việc :";
+            this.label4.Text = "Thành tiền: ";
             // 
             // panel3
             // 
@@ -129,9 +136,9 @@
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Công việc :";
+            this.label3.Text = "ID dịch vụ:";
             // 
             // panel2
             // 
@@ -155,9 +162,9 @@
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.Size = new System.Drawing.Size(70, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Ngày sinh:";
+            this.label2.Text = "Số lượng:";
             // 
             // panel1
             // 
@@ -181,9 +188,9 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 16);
+            this.label1.Size = new System.Drawing.Size(81, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ID Nhân viên  :";
+            this.label1.Text = "ID hóa đơn:";
             // 
             // TNVadBT
             // 
@@ -217,9 +224,9 @@
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.Location = new System.Drawing.Point(3, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 16);
+            this.label10.Size = new System.Drawing.Size(101, 16);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Số điện thoại :";
+            this.label10.Text = "Tên sản phẩm:";
             // 
             // panel8
             // 
@@ -243,9 +250,9 @@
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.Location = new System.Drawing.Point(3, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 16);
+            this.label8.Size = new System.Drawing.Size(113, 16);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Giới tính :";
+            this.label8.Text = "Tên khách hàng:";
             // 
             // panel7
             // 
@@ -269,46 +276,21 @@
             this.labelTenDangNhap.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.labelTenDangNhap.Location = new System.Drawing.Point(3, 9);
             this.labelTenDangNhap.Name = "labelTenDangNhap";
-            this.labelTenDangNhap.Size = new System.Drawing.Size(60, 16);
+            this.labelTenDangNhap.Size = new System.Drawing.Size(104, 16);
             this.labelTenDangNhap.TabIndex = 0;
-            this.labelTenDangNhap.Text = "Họ tên  :";
+            this.labelTenDangNhap.Text = "ID Khách hàng:";
             // 
-            // TNVtimADbt
-            // 
-            this.TNVtimADbt.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.TNVtimADbt.Location = new System.Drawing.Point(228, 4);
-            this.TNVtimADbt.Name = "TNVtimADbt";
-            this.TNVtimADbt.Size = new System.Drawing.Size(95, 33);
-            this.TNVtimADbt.TabIndex = 4;
-            this.TNVtimADbt.Text = "Tìm kiếm";
-            this.TNVtimADbt.UseVisualStyleBackColor = true;
-            // 
-            // TNVtimADtb
-            // 
-            this.TNVtimADtb.Location = new System.Drawing.Point(3, 10);
-            this.TNVtimADtb.Name = "TNVtimADtb";
-            this.TNVtimADtb.Size = new System.Drawing.Size(219, 20);
-            this.TNVtimADtb.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.TNVtimADtb);
-            this.panel5.Controls.Add(this.TNVtimADbt);
-            this.panel5.Location = new System.Drawing.Point(3, 15);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(333, 40);
-            this.panel5.TabIndex = 5;
-            // 
-            // SuaLDad
+            // ThemHDad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(454, 501);
             this.Controls.Add(this.panel6);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "SuaLDad";
-            this.Text = "SuaLDad";
+            this.Name = "ThemHDad";
+            this.Text = "ThemHDad";
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -323,8 +305,6 @@
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -332,6 +312,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox TNVcvADtb;
         private System.Windows.Forms.Label label3;
@@ -351,11 +335,5 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox TNVhotenADtb;
         private System.Windows.Forms.Label labelTenDangNhap;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox TNVtimADtb;
-        private System.Windows.Forms.Button TNVtimADbt;
     }
 }
