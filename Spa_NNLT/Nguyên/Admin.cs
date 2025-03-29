@@ -302,5 +302,10 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
