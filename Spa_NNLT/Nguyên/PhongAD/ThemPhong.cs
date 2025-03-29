@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Spa_NNLT.Nguyên.SanPhamAD
+namespace Spa_NNLT.Nguyên.PhongAD
 {
-    public partial class SuaSPad : Form
+    public partial class ThemPhong : Form
     {
-        public SuaSPad()
+        public ThemPhong()
         {
             InitializeComponent();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

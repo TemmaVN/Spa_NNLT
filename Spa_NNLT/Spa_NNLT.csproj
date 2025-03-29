@@ -106,6 +106,7 @@
     <Compile Include="Nguyên\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\DichVuAD\DIchVu.cs" />
     <Compile Include="Nguyên\DichVuAD\SuaDVad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,12 +119,20 @@
     <Compile Include="Nguyên\DichVuAD\ThemDVad.Designer.cs">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\Hóa đơn\HoaDon.cs" />
+    <Compile Include="Nguyên\Hóa đơn\SuaHDad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\Hóa đơn\SuaHDad.Designer.cs">
+      <DependentUpon>SuaHDad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nguyên\Hóa đơn\ThemHDad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nguyên\Hóa đơn\ThemHDad.Designer.cs">
       <DependentUpon>ThemHDad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\KhachHangAD\Khachhang.cs" />
     <Compile Include="Nguyên\KhachHangAD\SuaKHad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +145,7 @@
     <Compile Include="Nguyên\KhachHangAD\ThemKHad.Designer.cs">
       <DependentUpon>ThemKHad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\Lịch hẹn\LichHen.cs" />
     <Compile Include="Nguyên\Lịch hẹn\SuaLDad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +158,7 @@
     <Compile Include="Nguyên\Lịch hẹn\ThemLHad.Designer.cs">
       <DependentUpon>ThemLHad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\NhanVienAD\NhanVien.cs" />
     <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,17 +171,18 @@
     <Compile Include="Nguyên\NhanVienAD\ThemNVad.Designer.cs">
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\SanPhamAD\SuaSPad.cs">
+    <Compile Include="Nguyên\PhongAD\Phong.cs" />
+    <Compile Include="Nguyên\PhongAD\SuaPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\SanPhamAD\SuaSPad.Designer.cs">
-      <DependentUpon>SuaSPad.cs</DependentUpon>
+    <Compile Include="Nguyên\PhongAD\SuaPhong.Designer.cs">
+      <DependentUpon>SuaPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\SanPhamAD\ThemSPad.cs">
+    <Compile Include="Nguyên\PhongAD\ThemPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\SanPhamAD\ThemSPad.Designer.cs">
-      <DependentUpon>ThemSPad.cs</DependentUpon>
+    <Compile Include="Nguyên\PhongAD\ThemPhong.Designer.cs">
+      <DependentUpon>ThemPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +222,9 @@
     <EmbeddedResource Include="Nguyên\DichVuAD\ThemDVad.resx">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\Hóa đơn\SuaHDad.resx">
+      <DependentUpon>SuaHDad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\Hóa đơn\ThemHDad.resx">
       <DependentUpon>ThemHDad.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,11 +246,11 @@
     <EmbeddedResource Include="Nguyên\NhanVienAD\ThemNVad.resx">
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\SanPhamAD\SuaSPad.resx">
-      <DependentUpon>SuaSPad.cs</DependentUpon>
+    <EmbeddedResource Include="Nguyên\PhongAD\SuaPhong.resx">
+      <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\SanPhamAD\ThemSPad.resx">
-      <DependentUpon>ThemSPad.cs</DependentUpon>
+    <EmbeddedResource Include="Nguyên\PhongAD\ThemPhong.resx">
+      <DependentUpon>ThemPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -260,7 +275,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Nguyên\PhongAD\" />
     <Folder Include="Nguyên\TaiChinhAD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
