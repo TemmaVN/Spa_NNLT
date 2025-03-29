@@ -172,6 +172,12 @@
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\PhongAD\Phong.cs" />
+    <Compile Include="Nguyên\PhongAD\SuaPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nguyên\PhongAD\SuaPhong.Designer.cs">
+      <DependentUpon>SuaPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nguyên\PhongAD\ThemPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\NhanVienAD\ThemNVad.resx">
       <DependentUpon>ThemNVad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nguyên\PhongAD\SuaPhong.resx">
+      <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\PhongAD\ThemPhong.resx">
       <DependentUpon>ThemPhong.cs</DependentUpon>

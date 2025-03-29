@@ -136,7 +136,6 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.button11 = new System.Windows.Forms.Button();
-            this.TKPhongADtb = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.PhongADdata = new System.Windows.Forms.DataGridView();
@@ -288,6 +287,7 @@
             this.TGlichhenADcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TTlichhenADcl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.HoadonADtp.SuspendLayout();
             this.panel33.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -1498,8 +1498,8 @@
             // 
             // panel21
             // 
+            this.panel21.Controls.Add(this.comboBox1);
             this.panel21.Controls.Add(this.button11);
-            this.panel21.Controls.Add(this.TKPhongADtb);
             this.panel21.Controls.Add(this.label35);
             this.panel21.Location = new System.Drawing.Point(507, 48);
             this.panel21.Margin = new System.Windows.Forms.Padding(2);
@@ -1510,22 +1510,12 @@
             // button11
             // 
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.Location = new System.Drawing.Point(384, 26);
+            this.button11.Location = new System.Drawing.Point(138, 26);
             this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(39, 34);
             this.button11.TabIndex = 3;
             this.button11.UseVisualStyleBackColor = true;
-            // 
-            // TKPhongADtb
-            // 
-            this.TKPhongADtb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TKPhongADtb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TKPhongADtb.Location = new System.Drawing.Point(12, 33);
-            this.TKPhongADtb.Margin = new System.Windows.Forms.Padding(2);
-            this.TKPhongADtb.Name = "TKPhongADtb";
-            this.TKPhongADtb.Size = new System.Drawing.Size(368, 19);
-            this.TKPhongADtb.TabIndex = 1;
             // 
             // label35
             // 
@@ -3114,6 +3104,14 @@
             this.dateTimePicker1.TabIndex = 4;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 32);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 4;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3333,7 +3331,6 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.TextBox TKPhongADtb;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.DataGridView PhongADdata;
@@ -3485,5 +3482,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TGlichhenADcl;
         private System.Windows.Forms.DataGridViewTextBoxColumn TTlichhenADcl;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
