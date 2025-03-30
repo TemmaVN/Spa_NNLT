@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Spa_NNLT.Nguyên.PhongAD
 {
-    class Phong
+    public class Phong
     {
         private int SoPhong;
         private string LoaiPhong;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Spa_NNLT.Nguyên.Lịch_hẹn
 {
-    class LichHen
+    public class LichHen
     {
         
     }

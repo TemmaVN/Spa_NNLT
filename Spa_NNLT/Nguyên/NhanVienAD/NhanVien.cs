@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Spa_NNLT.Nguyên.NhanVienAD
 {
-    class NhanVien
+    public class NhanVien
     {
         private int ID;
         private string Ten;

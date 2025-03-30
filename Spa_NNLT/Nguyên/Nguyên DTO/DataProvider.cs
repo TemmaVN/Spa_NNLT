@@ -17,19 +17,11 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
             DataTable data = new DataTable();
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             { 
-
-
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
-
-                
-
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-
                 adapter.Fill(data);
-
                 connection.Close();
-
             }
             return data;
 

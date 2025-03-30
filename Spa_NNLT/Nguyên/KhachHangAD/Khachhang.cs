@@ -7,7 +7,7 @@ using Microsoft.SqlServer.Server;
 
 namespace Spa_NNLT.Nguyên.KhachHangAD
 {
-    class Khachhang
+    public class Khachhang
     {
         private int IDKH;
         private string TenKH;

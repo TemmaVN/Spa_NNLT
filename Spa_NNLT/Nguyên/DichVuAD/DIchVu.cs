@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Spa_NNLT.Nguyên.DichVuAD
 {
-    class DIchVu
+    public class DIchVu
     {
         private int MaDV;
         private string TenDV;

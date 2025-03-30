@@ -29,9 +29,9 @@ namespace Spa_NNLT.Nguyên
 
         void LoadAccountList()
         {
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string query = "SELECT * FROM dbo.tblKhachHang";
             DataProvider provider = new DataProvider();
-            PhongADdata.DataSource = provider.Excuted(connectionSTR);
+            PhongADdata.DataSource = provider.Excuted(query);
 
         }
 
