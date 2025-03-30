@@ -1718,6 +1718,7 @@
             this.Khachhangtb.TabIndex = 2;
             this.Khachhangtb.Text = "Khách hàng";
             this.Khachhangtb.UseVisualStyleBackColor = true;
+            this.Khachhangtb.Click += new System.EventHandler(this.Khachhangtb_Click);
             // 
             // panel15
             // 
@@ -2034,6 +2035,7 @@
             this.NhanVientb.TabIndex = 1;
             this.NhanVientb.Text = "Nhân viên";
             this.NhanVientb.UseVisualStyleBackColor = true;
+            this.NhanVientb.Click += new System.EventHandler(this.NhanVientb_Click);
             // 
             // panel9
             // 

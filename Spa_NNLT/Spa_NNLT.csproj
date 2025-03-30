@@ -106,7 +106,7 @@
     <Compile Include="Nguyên\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\DichVuAD\DIchVu.cs" />
+    <Compile Include="Nguyên\Nguyên DTO\DIchVu.cs" />
     <Compile Include="Nguyên\DichVuAD\SuaDVad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,7 +119,7 @@
     <Compile Include="Nguyên\DichVuAD\ThemDVad.Designer.cs">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Hóa đơn\HoaDon.cs" />
+    <Compile Include="Nguyên\Nguyên DTO\HoaDon.cs" />
     <Compile Include="Nguyên\Hóa đơn\SuaHDad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,7 +132,7 @@
     <Compile Include="Nguyên\Hóa đơn\ThemHDad.Designer.cs">
       <DependentUpon>ThemHDad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\KhachHangAD\Khachhang.cs" />
+    <Compile Include="Nguyên\Nguyên DTO\Khachhang.cs" />
     <Compile Include="Nguyên\KhachHangAD\SuaKHad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,7 +145,7 @@
     <Compile Include="Nguyên\KhachHangAD\ThemKHad.Designer.cs">
       <DependentUpon>ThemKHad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Lịch hẹn\LichHen.cs" />
+    <Compile Include="Nguyên\Nguyên DTO\LichHen.cs" />
     <Compile Include="Nguyên\Lịch hẹn\SuaLDad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,7 +160,7 @@
     </Compile>
     <Compile Include="Nguyên\NguyenDAO\AccountDAO.cs" />
     <Compile Include="Nguyên\Nguyên DTO\DataProvider.cs" />
-    <Compile Include="Nguyên\NhanVienAD\NhanVien.cs" />
+    <Compile Include="Nguyên\Nguyên DTO\NhanVien.cs" />
     <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,7 +173,7 @@
     <Compile Include="Nguyên\NhanVienAD\ThemNVad.Designer.cs">
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\PhongAD\Phong.cs" />
+    <Compile Include="Nguyên\Nguyên DTO\Phong.cs" />
     <Compile Include="Nguyên\PhongAD\SuaPhong.cs">
       <SubType>Form</SubType>
     </Compile>
