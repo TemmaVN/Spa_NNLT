@@ -56,11 +56,22 @@ namespace Spa_NNLT
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-            FormNhanVien f = new FormNhanVien();
-            this.Hide();
-            f.ShowDialog();
-            Admin N = new Admin();
-            N.ShowDialog();
+            if(textBoxUsename.Text == "1")
+            {
+                FormNhanVien f = new FormNhanVien();
+                this.Hide();
+                f.ShowDialog();
+            }
+            else if (textBoxUsename.Text == "2")
+            {
+                Admin admin = new Admin();
+                this.Hide();
+                admin.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Sai kia fen");
+            }
             this.Show();
             
         }

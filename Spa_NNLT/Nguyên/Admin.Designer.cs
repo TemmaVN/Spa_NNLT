@@ -58,7 +58,7 @@
             this.textBox29 = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.HoaDonADdata = new System.Windows.Forms.DataGridView();
             this.LichHenADtp = new System.Windows.Forms.TabPage();
             this.panel29 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
@@ -88,7 +88,7 @@
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.LichHenADdata = new System.Windows.Forms.DataGridView();
             this.DichVuADcl = new System.Windows.Forms.TabPage();
             this.panel25 = new System.Windows.Forms.Panel();
             this.CapNhatDVadBT = new System.Windows.Forms.Button();
@@ -179,7 +179,7 @@
             this.TimTheoMaKHtb = new System.Windows.Forms.TextBox();
             this.TimTheoTenKHtb = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.KhachHangADdata = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -259,14 +259,14 @@
             this.panel32.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.panel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonADdata)).BeginInit();
             this.LichHenADtp.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.panel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LichHenADdata)).BeginInit();
             this.DichVuADcl.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
@@ -294,7 +294,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KhachHangADdata)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.NhanVientb.SuspendLayout();
@@ -328,7 +328,7 @@
             this.HoadonADtp.Controls.Add(this.pictureBox22);
             this.HoadonADtp.Controls.Add(this.panel34);
             this.HoadonADtp.Controls.Add(this.label60);
-            this.HoadonADtp.Controls.Add(this.dataGridView5);
+            this.HoadonADtp.Controls.Add(this.HoaDonADdata);
             this.HoadonADtp.Location = new System.Drawing.Point(4, 25);
             this.HoadonADtp.Name = "HoadonADtp";
             this.HoadonADtp.Size = new System.Drawing.Size(936, 490);
@@ -633,18 +633,18 @@
             this.label60.TabIndex = 32;
             this.label60.Text = "DANH SÁCH HÓA ĐƠN";
             // 
-            // dataGridView5
+            // HoaDonADdata
             // 
-            this.dataGridView5.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 48);
-            this.dataGridView5.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersVisible = false;
-            this.dataGridView5.RowHeadersWidth = 62;
-            this.dataGridView5.Size = new System.Drawing.Size(490, 437);
-            this.dataGridView5.TabIndex = 29;
+            this.HoaDonADdata.BackgroundColor = System.Drawing.Color.White;
+            this.HoaDonADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HoaDonADdata.GridColor = System.Drawing.SystemColors.Control;
+            this.HoaDonADdata.Location = new System.Drawing.Point(3, 48);
+            this.HoaDonADdata.Margin = new System.Windows.Forms.Padding(2);
+            this.HoaDonADdata.Name = "HoaDonADdata";
+            this.HoaDonADdata.RowHeadersVisible = false;
+            this.HoaDonADdata.RowHeadersWidth = 62;
+            this.HoaDonADdata.Size = new System.Drawing.Size(490, 437);
+            this.HoaDonADdata.TabIndex = 29;
             // 
             // LichHenADtp
             // 
@@ -653,7 +653,7 @@
             this.LichHenADtp.Controls.Add(this.pictureBox20);
             this.LichHenADtp.Controls.Add(this.panel31);
             this.LichHenADtp.Controls.Add(this.label53);
-            this.LichHenADtp.Controls.Add(this.dataGridView4);
+            this.LichHenADtp.Controls.Add(this.LichHenADdata);
             this.LichHenADtp.Location = new System.Drawing.Point(4, 25);
             this.LichHenADtp.Name = "LichHenADtp";
             this.LichHenADtp.Padding = new System.Windows.Forms.Padding(3);
@@ -961,18 +961,18 @@
             this.label53.TabIndex = 26;
             this.label53.Text = "DANH SÁCH LỊCH HẸN";
             // 
-            // dataGridView4
+            // LichHenADdata
             // 
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 48);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.RowHeadersWidth = 62;
-            this.dataGridView4.Size = new System.Drawing.Size(490, 437);
-            this.dataGridView4.TabIndex = 23;
+            this.LichHenADdata.BackgroundColor = System.Drawing.Color.White;
+            this.LichHenADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LichHenADdata.GridColor = System.Drawing.SystemColors.Control;
+            this.LichHenADdata.Location = new System.Drawing.Point(3, 48);
+            this.LichHenADdata.Margin = new System.Windows.Forms.Padding(2);
+            this.LichHenADdata.Name = "LichHenADdata";
+            this.LichHenADdata.RowHeadersVisible = false;
+            this.LichHenADdata.RowHeadersWidth = 62;
+            this.LichHenADdata.Size = new System.Drawing.Size(490, 437);
+            this.LichHenADdata.TabIndex = 23;
             // 
             // DichVuADcl
             // 
@@ -1964,25 +1964,25 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.dataGridView2);
+            this.panel12.Controls.Add(this.KhachHangADdata);
             this.panel12.Location = new System.Drawing.Point(2, 53);
             this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(496, 443);
             this.panel12.TabIndex = 1;
             // 
-            // dataGridView2
+            // KhachHangADdata
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 2);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(494, 417);
-            this.dataGridView2.TabIndex = 0;
+            this.KhachHangADdata.BackgroundColor = System.Drawing.Color.White;
+            this.KhachHangADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.KhachHangADdata.Location = new System.Drawing.Point(2, 2);
+            this.KhachHangADdata.Margin = new System.Windows.Forms.Padding(2);
+            this.KhachHangADdata.Name = "KhachHangADdata";
+            this.KhachHangADdata.RowHeadersVisible = false;
+            this.KhachHangADdata.RowHeadersWidth = 62;
+            this.KhachHangADdata.RowTemplate.Height = 28;
+            this.KhachHangADdata.Size = new System.Drawing.Size(494, 417);
+            this.KhachHangADdata.TabIndex = 0;
             // 
             // panel8
             // 
@@ -2822,7 +2822,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.panel34.ResumeLayout(false);
             this.panel34.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonADdata)).EndInit();
             this.LichHenADtp.ResumeLayout(false);
             this.LichHenADtp.PerformLayout();
             this.panel29.ResumeLayout(false);
@@ -2832,7 +2832,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LichHenADdata)).EndInit();
             this.DichVuADcl.ResumeLayout(false);
             this.DichVuADcl.PerformLayout();
             this.panel25.ResumeLayout(false);
@@ -2871,7 +2871,7 @@
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KhachHangADdata)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -2943,7 +2943,7 @@
         private System.Windows.Forms.TextBox textBox29;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView HoaDonADdata;
         private System.Windows.Forms.TabPage LichHenADtp;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Button button8;
@@ -2971,7 +2971,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView LichHenADdata;
         private System.Windows.Forms.TabPage DichVuADcl;
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.Button CapNhatDVadBT;
@@ -3060,7 +3060,7 @@
         private System.Windows.Forms.TextBox TimTheoMaKHtb;
         private System.Windows.Forms.TextBox TimTheoTenKHtb;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView KhachHangADdata;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Label label14;

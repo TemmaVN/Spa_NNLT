@@ -30,5 +30,11 @@ namespace Spa_NNLT.Nguyên.DichVuAD
             { get { return GiaDV; } set { GiaDV = value; } }
         public TimeSpan thoiGianDV
         { get { return ThoiGianDV; } set { ThoiGianDV = value; } }
+
+        private string query = "SELECT * FROM dbo.tblKhachHang";
+        
+
     }
+
+    
 }

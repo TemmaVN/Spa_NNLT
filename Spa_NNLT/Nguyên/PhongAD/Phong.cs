@@ -28,5 +28,7 @@ namespace Spa_NNLT.Nguyên.PhongAD
         } public bool tinhTrang { get { return TinhTrang; } set {
                 TinhTrang = value; } }
 
-    }
+
+
+    } 
 }

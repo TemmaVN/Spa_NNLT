@@ -30,8 +30,11 @@ namespace Spa_NNLT.Nguyên
         void LoadAccountList()
         {
             string query = "SELECT * FROM dbo.tblKhachHang";
-            DataProvider provider = new DataProvider();
-            PhongADdata.DataSource = provider.Excuted(query);
+            KhachHangADdata.DataSource = DataProvider.Instance.Excuted(query); 
+
+            
+
+
 
         }
 
