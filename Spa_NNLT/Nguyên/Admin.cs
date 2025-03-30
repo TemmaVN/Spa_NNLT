@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using Spa_NNLT.Nguyên.DichVuAD;
 using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.NhanVienAD;
+using Spa_NNLT.Nguyên.Nguyên_DTO;
 
 
 namespace Spa_NNLT.Nguyên
@@ -19,6 +21,18 @@ namespace Spa_NNLT.Nguyên
         public Admin()
         {
             InitializeComponent();
+
+            LoadAccountList();
+
+
+        }
+
+        void LoadAccountList()
+        {
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            DataProvider provider = new DataProvider();
+            PhongADdata.DataSource = provider.Excuted(connectionSTR);
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
