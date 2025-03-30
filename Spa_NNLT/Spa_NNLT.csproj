@@ -158,6 +158,7 @@
     <Compile Include="Nguyên\Lịch hẹn\ThemLHad.Designer.cs">
       <DependentUpon>ThemLHad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nguyên\NguyenDAO\AccountDAO.cs" />
     <Compile Include="Nguyên\Nguyên DTO\DataProvider.cs" />
     <Compile Include="Nguyên\NhanVienAD\NhanVien.cs" />
     <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">

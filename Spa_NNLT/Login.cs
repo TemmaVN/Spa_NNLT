@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spa_NNLT.Bằng;
 using Spa_NNLT.Nguyên;
+using Spa_NNLT.Nguyên.NguyenDAO;
 
 namespace Spa_NNLT
 {
@@ -74,6 +75,12 @@ namespace Spa_NNLT
             }
             this.Show();
             
+        }
+
+        bool Login(string UserName,string Password)
+        {
+        
+            return AccountDAO.Instance.Login(UserName, Password);
         }
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)

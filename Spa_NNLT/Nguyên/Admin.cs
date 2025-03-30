@@ -22,19 +22,20 @@ namespace Spa_NNLT.Nguyên
         {
             InitializeComponent();
 
-            LoadAccountList();
-
+            //LoadAccountList();
+            //LoadHoaDonList();
 
         }
 
+        void LoadHoaDonList()
+        {
+            string query = "SELECT * from dbo.tblHoaDon";
+            HoaDonADdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
         void LoadAccountList()
         {
             string query = "SELECT * FROM dbo.tblKhachHang";
             KhachHangADdata.DataSource = DataProvider.Instance.Excuted(query); 
-
-            
-
-
 
         }
 
