@@ -27,6 +27,17 @@ namespace Spa_NNLT.Nguyên
 
         }
 
+        #region method
+
+        void LoadNhanVien()
+        {
+
+        }
+
+        #endregion
+
+        #region Events
+
         void LoadHoaDonList()
         {
             string query = "SELECT * from dbo.tblHoaDon";
@@ -322,6 +333,17 @@ namespace Spa_NNLT.Nguyên
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        private void Khachhangtb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NhanVientb_Click(object sender, EventArgs e)
         {
 
         }
