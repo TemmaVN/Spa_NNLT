@@ -203,5 +203,10 @@ namespace Spa_NNLT.Bằng
             SuaHoaDon s = new SuaHoaDon();
             s.ShowDialog();
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

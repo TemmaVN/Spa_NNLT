@@ -46,52 +46,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bằng\CapNhatPhong.cs">
+    <Compile Include="Bằng\BangForm\CapNhatPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\CapNhatPhong.Designer.cs">
+    <Compile Include="Bằng\BangForm\CapNhatPhong.Designer.cs">
       <DependentUpon>CapNhatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\NhanVien.cs">
+    <Compile Include="Bằng\BangForm\NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\NhanVien.Designer.cs">
+    <Compile Include="Bằng\BangForm\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\SuaHoaDon.cs">
+    <Compile Include="Bằng\BangForm\SuaHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\SuaHoaDon.Designer.cs">
+    <Compile Include="Bằng\BangForm\SuaHoaDon.Designer.cs">
       <DependentUpon>SuaHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\SuaKhachHang.cs">
+    <Compile Include="Bằng\BangForm\SuaKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\SuaKhachHang.Designer.cs">
+    <Compile Include="Bằng\BangForm\SuaKhachHang.Designer.cs">
       <DependentUpon>SuaKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\SuaLichHen.cs">
+    <Compile Include="Bằng\BangForm\SuaLichHen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\SuaLichHen.Designer.cs">
+    <Compile Include="Bằng\BangForm\SuaLichHen.Designer.cs">
       <DependentUpon>SuaLichHen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\TaoHoaDon.cs">
+    <Compile Include="Bằng\BangForm\TaoHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\TaoHoaDon.Designer.cs">
+    <Compile Include="Bằng\BangForm\TaoHoaDon.Designer.cs">
       <DependentUpon>TaoHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\ThemKhachHangcs.cs">
+    <Compile Include="Bằng\BangForm\ThemKhachHangcs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\ThemKhachHangcs.Designer.cs">
+    <Compile Include="Bằng\BangForm\ThemKhachHangcs.Designer.cs">
       <DependentUpon>ThemKhachHangcs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bằng\ThemLichHen.cs">
+    <Compile Include="Bằng\BangForm\ThemLichHen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\ThemLichHen.Designer.cs">
+    <Compile Include="Bằng\BangForm\ThemLichHen.Designer.cs">
       <DependentUpon>ThemLichHen.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -188,28 +188,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bằng\CapNhatPhong.resx">
+    <EmbeddedResource Include="Bằng\BangForm\CapNhatPhong.resx">
       <DependentUpon>CapNhatPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\NhanVien.resx">
+    <EmbeddedResource Include="Bằng\BangForm\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\SuaHoaDon.resx">
+    <EmbeddedResource Include="Bằng\BangForm\SuaHoaDon.resx">
       <DependentUpon>SuaHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\SuaKhachHang.resx">
+    <EmbeddedResource Include="Bằng\BangForm\SuaKhachHang.resx">
       <DependentUpon>SuaKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\SuaLichHen.resx">
+    <EmbeddedResource Include="Bằng\BangForm\SuaLichHen.resx">
       <DependentUpon>SuaLichHen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\TaoHoaDon.resx">
+    <EmbeddedResource Include="Bằng\BangForm\TaoHoaDon.resx">
       <DependentUpon>TaoHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\ThemKhachHangcs.resx">
+    <EmbeddedResource Include="Bằng\BangForm\ThemKhachHangcs.resx">
       <DependentUpon>ThemKhachHangcs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bằng\ThemLichHen.resx">
+    <EmbeddedResource Include="Bằng\BangForm\ThemLichHen.resx">
       <DependentUpon>ThemLichHen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
@@ -277,6 +277,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Bằng\BangClass1\" />
+    <Folder Include="Bằng\BangClass2\" />
     <Folder Include="Nguyên\TaiChinhAD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
