@@ -76,7 +76,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.KHNVdata = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -85,7 +85,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.DVNVdata = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -121,6 +121,7 @@
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -132,14 +133,13 @@
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.LHNVdata = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel59 = new System.Windows.Forms.Panel();
             this.label39 = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
             this.panel45 = new System.Windows.Forms.Panel();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.panel39 = new System.Windows.Forms.Panel();
             this.panel41 = new System.Windows.Forms.Panel();
             this.textBox30 = new System.Windows.Forms.TextBox();
@@ -173,6 +173,7 @@
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.panel49 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.panel50 = new System.Windows.Forms.Panel();
             this.textBox35 = new System.Windows.Forms.TextBox();
@@ -181,9 +182,7 @@
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.panel46 = new System.Windows.Forms.Panel();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.HoaDonNVdata = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -200,12 +199,12 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KHNVdata)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVNVdata)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -224,12 +223,10 @@
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LHNVdata)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.panel59.SuspendLayout();
             this.panel37.SuspendLayout();
-            this.panel45.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.panel39.SuspendLayout();
             this.panel41.SuspendLayout();
             this.panel42.SuspendLayout();
@@ -246,7 +243,7 @@
             this.panel50.SuspendLayout();
             this.panel52.SuspendLayout();
             this.panel46.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonNVdata)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -269,20 +266,20 @@
             this.thôngTinToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.nhanVienToolStripMenuItem.Name = "nhanVienToolStripMenuItem";
-            this.nhanVienToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.nhanVienToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.nhanVienToolStripMenuItem.Text = "Thông tin tài khoản ";
             this.nhanVienToolStripMenuItem.Click += new System.EventHandler(this.nhanVienToolStripMenuItem_Click);
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.thôngTinToolStripMenuItem.Text = "Thông tin ";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất ";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click_1);
             // 
@@ -710,21 +707,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.KHNVdata);
             this.panel1.Location = new System.Drawing.Point(6, 74);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(460, 342);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // KHNVdata
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.Size = new System.Drawing.Size(455, 336);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.KHNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.KHNVdata.Location = new System.Drawing.Point(2, 3);
+            this.KHNVdata.Name = "KHNVdata";
+            this.KHNVdata.RowHeadersWidth = 82;
+            this.KHNVdata.Size = new System.Drawing.Size(455, 336);
+            this.KHNVdata.TabIndex = 0;
+            this.KHNVdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage3
             // 
@@ -794,20 +791,20 @@
             // 
             // panel18
             // 
-            this.panel18.Controls.Add(this.dataGridView2);
+            this.panel18.Controls.Add(this.DVNVdata);
             this.panel18.Location = new System.Drawing.Point(5, 69);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(460, 335);
             this.panel18.TabIndex = 5;
             // 
-            // dataGridView2
+            // DVNVdata
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.Size = new System.Drawing.Size(454, 329);
-            this.dataGridView2.TabIndex = 0;
+            this.DVNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DVNVdata.Location = new System.Drawing.Point(3, 3);
+            this.DVNVdata.Name = "DVNVdata";
+            this.DVNVdata.RowHeadersWidth = 82;
+            this.DVNVdata.Size = new System.Drawing.Size(454, 329);
+            this.DVNVdata.TabIndex = 0;
             // 
             // panel13
             // 
@@ -1142,6 +1139,14 @@
             this.panel23.Size = new System.Drawing.Size(333, 33);
             this.panel23.TabIndex = 3;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(126, 3);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(204, 24);
+            this.comboBox2.TabIndex = 2;
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -1235,20 +1240,20 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.dataGridView3);
+            this.panel20.Controls.Add(this.LHNVdata);
             this.panel20.Location = new System.Drawing.Point(11, 72);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(457, 350);
             this.panel20.TabIndex = 3;
             // 
-            // dataGridView3
+            // LHNVdata
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 82;
-            this.dataGridView3.Size = new System.Drawing.Size(451, 341);
-            this.dataGridView3.TabIndex = 0;
+            this.LHNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LHNVdata.Location = new System.Drawing.Point(3, 3);
+            this.LHNVdata.Name = "LHNVdata";
+            this.LHNVdata.RowHeadersWidth = 82;
+            this.LHNVdata.Size = new System.Drawing.Size(451, 341);
+            this.LHNVdata.TabIndex = 0;
             // 
             // tabPage6
             // 
@@ -1304,20 +1309,10 @@
             // 
             // panel45
             // 
-            this.panel45.Controls.Add(this.dataGridView5);
             this.panel45.Location = new System.Drawing.Point(8, 74);
             this.panel45.Name = "panel45";
             this.panel45.Size = new System.Drawing.Size(460, 342);
             this.panel45.TabIndex = 11;
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersWidth = 82;
-            this.dataGridView5.Size = new System.Drawing.Size(454, 339);
-            this.dataGridView5.TabIndex = 0;
             // 
             // panel39
             // 
@@ -1633,6 +1628,15 @@
             this.panel49.Size = new System.Drawing.Size(333, 33);
             this.panel49.TabIndex = 3;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(126, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(204, 24);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -1699,37 +1703,20 @@
             // 
             // panel46
             // 
-            this.panel46.Controls.Add(this.dataGridView6);
+            this.panel46.Controls.Add(this.HoaDonNVdata);
             this.panel46.Location = new System.Drawing.Point(8, 65);
             this.panel46.Name = "panel46";
             this.panel46.Size = new System.Drawing.Size(460, 351);
             this.panel46.TabIndex = 11;
             // 
-            // dataGridView6
+            // HoaDonNVdata
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowHeadersWidth = 82;
-            this.dataGridView6.Size = new System.Drawing.Size(454, 345);
-            this.dataGridView6.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(126, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(204, 24);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(126, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(204, 24);
-            this.comboBox2.TabIndex = 2;
+            this.HoaDonNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.HoaDonNVdata.Location = new System.Drawing.Point(3, 3);
+            this.HoaDonNVdata.Name = "HoaDonNVdata";
+            this.HoaDonNVdata.RowHeadersWidth = 82;
+            this.HoaDonNVdata.Size = new System.Drawing.Size(454, 345);
+            this.HoaDonNVdata.TabIndex = 0;
             // 
             // FormNhanVien
             // 
@@ -1769,14 +1756,14 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.KHNVdata)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DVNVdata)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
@@ -1808,13 +1795,11 @@
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LHNVdata)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.panel59.ResumeLayout(false);
             this.panel59.PerformLayout();
             this.panel37.ResumeLayout(false);
-            this.panel45.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.panel39.ResumeLayout(false);
             this.panel41.ResumeLayout(false);
             this.panel41.PerformLayout();
@@ -1842,7 +1827,7 @@
             this.panel52.ResumeLayout(false);
             this.panel52.PerformLayout();
             this.panel46.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonNVdata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1879,7 +1864,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView KHNVdata;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBoxUsename;
         private System.Windows.Forms.Label labelTenDangNhap;
@@ -1893,7 +1878,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DVNVdata;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.TextBox textBox6;
@@ -1909,7 +1894,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView LHNVdata;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label15;
@@ -1938,7 +1923,6 @@
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel45;
-        private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Panel panel39;
         private System.Windows.Forms.Panel panel41;
         private System.Windows.Forms.TextBox textBox30;
@@ -1953,7 +1937,7 @@
         private System.Windows.Forms.TextBox textBox28;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Panel panel46;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView HoaDonNVdata;
         private System.Windows.Forms.Panel panel48;
         private System.Windows.Forms.Panel panel49;
         private System.Windows.Forms.Label label25;

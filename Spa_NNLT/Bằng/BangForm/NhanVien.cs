@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Spa_NNLT.Nguyên.KhachHangAD;
+using Spa_NNLT.Nguyên.Nguyên_DTO;
 
 namespace Spa_NNLT.Bằng
 {
@@ -17,6 +20,37 @@ namespace Spa_NNLT.Bằng
             InitializeComponent();
         }
 
+        #region method
+
+
+
+        #endregion
+
+        #region event
+
+        void LoadHoaDonList()
+        {
+            string query = "SELECT * from dbo.tblHoaDon";
+            HoaDonNVdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadKhachHangList()
+        {
+            string query = "SELECT * FROM dbo.tblKhachHang";
+            KHNVdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadLichHenList()
+        {
+            string query = "SELECT * from dbo.tblHoaDon";
+            LHNVdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadDichVuList()
+        {
+            string query = "SELECT * from dbo.tblDichVu";
+            DVNVdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
 
@@ -208,5 +242,6 @@ namespace Spa_NNLT.Bằng
         {
 
         }
+        #endregion
     }
 }
