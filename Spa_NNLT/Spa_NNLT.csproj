@@ -100,90 +100,90 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Admin.cs">
+    <Compile Include="Nguyên\NguyênForm\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\Admin.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\Nguyên DTO\DIchVu.cs" />
-    <Compile Include="Nguyên\DichVuAD\SuaDVad.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaDVad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\DichVuAD\SuaDVad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaDVad.Designer.cs">
       <DependentUpon>SuaDVad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\DichVuAD\ThemDVad.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemDVad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\DichVuAD\ThemDVad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemDVad.Designer.cs">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\Nguyên DTO\HoaDon.cs" />
-    <Compile Include="Nguyên\Hóa đơn\SuaHDad.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaHDad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\Hóa đơn\SuaHDad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaHDad.Designer.cs">
       <DependentUpon>SuaHDad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Hóa đơn\ThemHDad.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemHDad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\Hóa đơn\ThemHDad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemHDad.Designer.cs">
       <DependentUpon>ThemHDad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\Nguyên DTO\Khachhang.cs" />
-    <Compile Include="Nguyên\KhachHangAD\SuaKHad.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaKHad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\KhachHangAD\SuaKHad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaKHad.Designer.cs">
       <DependentUpon>SuaKHad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\KhachHangAD\ThemKHad.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemKHad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\KhachHangAD\ThemKHad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemKHad.Designer.cs">
       <DependentUpon>ThemKHad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\Nguyên DTO\LichHen.cs" />
-    <Compile Include="Nguyên\Lịch hẹn\SuaLDad.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaLDad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\Lịch hẹn\SuaLDad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaLDad.Designer.cs">
       <DependentUpon>SuaLDad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Lịch hẹn\ThemLHad.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemLHad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\Lịch hẹn\ThemLHad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemLHad.Designer.cs">
       <DependentUpon>ThemLHad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\NguyenDAO\AccountDAO.cs" />
     <Compile Include="Nguyên\Nguyên DTO\DataProvider.cs" />
     <Compile Include="Nguyên\Nguyên DTO\NhanVien.cs" />
-    <Compile Include="Nguyên\NhanVienAD\SuaNVad.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaNVad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\NhanVienAD\SuaNVad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaNVad.Designer.cs">
       <DependentUpon>SuaNVad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\NhanVienAD\ThemNVad.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemNVad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\NhanVienAD\ThemNVad.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemNVad.Designer.cs">
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\Nguyên DTO\Phong.cs" />
-    <Compile Include="Nguyên\PhongAD\SuaPhong.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\PhongAD\SuaPhong.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\SuaPhong.Designer.cs">
       <DependentUpon>SuaPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\PhongAD\ThemPhong.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\PhongAD\ThemPhong.Designer.cs">
+    <Compile Include="Nguyên\NguyênForm\ThemPhong.Designer.cs">
       <DependentUpon>ThemPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -215,43 +215,43 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\Admin.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\DichVuAD\SuaDVad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\SuaDVad.resx">
       <DependentUpon>SuaDVad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\DichVuAD\ThemDVad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\ThemDVad.resx">
       <DependentUpon>ThemDVad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\Hóa đơn\SuaHDad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\SuaHDad.resx">
       <DependentUpon>SuaHDad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\Hóa đơn\ThemHDad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\ThemHDad.resx">
       <DependentUpon>ThemHDad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\KhachHangAD\SuaKHad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\SuaKHad.resx">
       <DependentUpon>SuaKHad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\KhachHangAD\ThemKHad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\ThemKHad.resx">
       <DependentUpon>ThemKHad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\Lịch hẹn\SuaLDad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\SuaLDad.resx">
       <DependentUpon>SuaLDad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\Lịch hẹn\ThemLHad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\ThemLHad.resx">
       <DependentUpon>ThemLHad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NhanVienAD\SuaNVad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\SuaNVad.resx">
       <DependentUpon>SuaNVad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NhanVienAD\ThemNVad.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\ThemNVad.resx">
       <DependentUpon>ThemNVad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\PhongAD\SuaPhong.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\SuaPhong.resx">
       <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\PhongAD\ThemPhong.resx">
+    <EmbeddedResource Include="Nguyên\NguyênForm\ThemPhong.resx">
       <DependentUpon>ThemPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -276,8 +276,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Nguyên\TaiChinhAD\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
