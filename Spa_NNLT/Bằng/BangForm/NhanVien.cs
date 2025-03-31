@@ -18,6 +18,10 @@ namespace Spa_NNLT.Bằng
         public FormNhanVien()
         {
             InitializeComponent();
+            LoadDichVuList();
+            LoadHoaDonList();
+            LoadKhachHangList();
+            LoadLichHenList();
         }
 
         #region method

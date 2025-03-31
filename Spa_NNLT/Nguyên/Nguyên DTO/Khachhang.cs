@@ -13,15 +13,13 @@ namespace Spa_NNLT.Nguyên.KhachHangAD
         private string TenKH;
         private string GioiTinhKH;
         private string SDTKH;
-        private DateTime NgaySinhKH;
 
-        public Khachhang(int iDKH, string tenKH, string gioiTinhKH,string sDTKH,DateTime ngaySinhKH)
+        public Khachhang(int iDKH, string tenKH, string gioiTinhKH,string sDTKH)
         {
             IDKH = iDKH;
             TenKH = tenKH;
             GioiTinhKH = gioiTinhKH;
             SDTKH = sDTKH;
-            NgaySinhKH = ngaySinhKH;
         }
         public int idKH
             { get { return IDKH; } set { IDKH = value; } }
@@ -31,14 +29,7 @@ namespace Spa_NNLT.Nguyên.KhachHangAD
         { get {return GioiTinhKH;} set {GioiTinhKH= value; } }
         public string sDTKH
         { get { return SDTKH; } set{ SDTKH= value; } }
-        public DateTime ngaySinhKH
-        {
-            get { return NgaySinhKH; }
-            set
-            {
-                NgaySinhKH = value;
-            }
-        }
+        
 
         
     }

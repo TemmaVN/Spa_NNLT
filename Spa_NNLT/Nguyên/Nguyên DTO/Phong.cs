@@ -26,7 +26,12 @@ namespace Spa_NNLT.Nguyên.PhongAD
         public string loaiPhong
             { get { return LoaiPhong; } set { LoaiPhong = value; }
         } public bool tinhTrang { get { return TinhTrang; } set {
-                TinhTrang = value; } }
+                TinhTrang = value; } 
+        
+        
+        
+        
+        }
 
 
 
