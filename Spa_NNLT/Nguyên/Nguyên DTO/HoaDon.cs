@@ -12,7 +12,6 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
     {
         private string ID;
         private string MaKhachHang;
-
         private string MaDichVu;
         private int ThanhTien;
 

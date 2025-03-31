@@ -28,9 +28,13 @@ namespace Spa_NNLT.Nguyên
             LoadHoaDonList();
             LoadLichHenList();
             LoadNhanVienlist();
-            LoadPhongList();
+            
             LoadThongTin();    
             
+            // Load thông tin từ sql
+            // Tìm thông tin qua text box
+            // Thêm, xóa, sửa các thông tin 
+            // Các bài toán thêm
 
         }
 
@@ -95,8 +99,7 @@ namespace Spa_NNLT.Nguyên
 
         void LoadPhongList()
         {
-            string query = "SELECT * from dbo.tblPhong";
-            PhongADdata.DataSource = DataProvider.Instance.Excuted(query);
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
