@@ -12,18 +12,18 @@ namespace Spa_NNLT.Nguyên.DichVuAD
 {
     public class DIchVu
     {
-        private int MaDV;
+        private string MaDV;
         private string TenDV;
         private int GiaDV;
         private TimeSpan ThoiGianDV;
 
         public DIchVu(DataRow row) {
-            this.MaDV = (int)row["madichvu"];
+            this.MaDV = row["madichvu"].ToString();
             this.TenDV = row["ten"].ToString();
             this.GiaDV = (int)row["giadichvu"];
         }
 
-        public DIchVu(int maDV, string tenDV, int giaDV, TimeSpan thoiGianDV)
+        public DIchVu(string maDV, string tenDV, int giaDV, TimeSpan thoiGianDV)
         {
             MaDV = maDV;
             TenDV = tenDV;
@@ -31,7 +31,7 @@ namespace Spa_NNLT.Nguyên.DichVuAD
             ThoiGianDV = thoiGianDV;
         }
 
-        public int maDV
+        public string maDV
             { get { return MaDV; } set { MaDV = value; } }
         public string tenDV
             { get { return TenDV; } set { TenDV = value; } }
@@ -40,7 +40,6 @@ namespace Spa_NNLT.Nguyên.DichVuAD
         public TimeSpan thoiGianDV
         { get { return ThoiGianDV; } set { ThoiGianDV = value; } }
 
-        private string query = "SELECT * FROM dbo.tblKhachHang";
           
     }
     public class DichVuDAO

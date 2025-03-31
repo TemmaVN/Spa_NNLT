@@ -133,7 +133,6 @@
             this.button11 = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.PhongADdata = new System.Windows.Forms.DataGridView();
             this.Taichinhtb = new System.Windows.Forms.TabPage();
             this.panel16 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -280,7 +279,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PhongADdata)).BeginInit();
             this.Taichinhtb.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -1248,7 +1246,6 @@
             this.PhongADtp.Controls.Add(this.pictureBox12);
             this.PhongADtp.Controls.Add(this.panel21);
             this.PhongADtp.Controls.Add(this.label36);
-            this.PhongADtp.Controls.Add(this.PhongADdata);
             this.PhongADtp.Location = new System.Drawing.Point(4, 25);
             this.PhongADtp.Name = "PhongADtp";
             this.PhongADtp.Padding = new System.Windows.Forms.Padding(3);
@@ -1459,19 +1456,6 @@
             this.label36.Size = new System.Drawing.Size(231, 26);
             this.label36.TabIndex = 8;
             this.label36.Text = "DANH SÁCH PHÒNG";
-            // 
-            // PhongADdata
-            // 
-            this.PhongADdata.BackgroundColor = System.Drawing.Color.White;
-            this.PhongADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.PhongADdata.GridColor = System.Drawing.SystemColors.Control;
-            this.PhongADdata.Location = new System.Drawing.Point(3, 48);
-            this.PhongADdata.Margin = new System.Windows.Forms.Padding(2);
-            this.PhongADdata.Name = "PhongADdata";
-            this.PhongADdata.RowHeadersVisible = false;
-            this.PhongADdata.RowHeadersWidth = 62;
-            this.PhongADdata.Size = new System.Drawing.Size(490, 437);
-            this.PhongADdata.TabIndex = 5;
             // 
             // Taichinhtb
             // 
@@ -2255,6 +2239,7 @@
             this.button1.Size = new System.Drawing.Size(39, 34);
             this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TimtheoMatb
             // 
@@ -2854,7 +2839,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PhongADdata)).EndInit();
             this.Taichinhtb.ResumeLayout(false);
             this.Taichinhtb.PerformLayout();
             this.panel16.ResumeLayout(false);
@@ -3017,7 +3001,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.DataGridView PhongADdata;
         private System.Windows.Forms.TabPage Taichinhtb;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Button button4;
