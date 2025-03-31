@@ -40,7 +40,6 @@ namespace Spa_NNLT.Nguyên.DichVuAD
         public TimeSpan thoiGianDV
         { get { return ThoiGianDV; } set { ThoiGianDV = value; } }
 
-        private string query = "SELECT * FROM dbo.tblKhachHang";
           
     }
     public class DichVuDAO

@@ -16,5 +16,10 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
         {
             InitializeComponent();
         }
+
+        private void SuaNVad_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

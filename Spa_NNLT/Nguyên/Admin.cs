@@ -22,16 +22,36 @@ namespace Spa_NNLT.Nguyên
         {
             InitializeComponent();
 
-            //LoadAccountList();
-            //LoadHoaDonList();
+            LoadAccountList();
+            LoadHoaDonList();
+            LoadDichVuList();
+            LoadHoaDonList();
+            LoadLichHenList();
+            LoadNhanVienlist();
+            LoadPhongList();
+            LoadThongTin();    
+            
 
         }
 
         #region method
 
-        void LoadNhanVien()
+        void LoadThongTin()
         {
+            List<NhanVien> nhanViens = NhanVienDAO.Instance.LoadNhanVienAD();
 
+            foreach (NhanVien nhan in nhanViens)
+            {
+                if (TimTheotenTb.Text == nhan.ten || TimtheoMatb.Text == nhan.id.ToString())
+                {
+                    MaNVtb.Text = nhan.id;
+                    HTtb.Text = nhan.ten;
+                    GTtb.Text = nhan.gioiTinh;
+                    SDTlb.Text = nhan.sDT;
+                    CVtb.Text = nhan.congViec;
+                }
+                
+            }
         }
 
         #endregion
@@ -47,7 +67,36 @@ namespace Spa_NNLT.Nguyên
         {
             string query = "SELECT * FROM dbo.tblKhachHang";
             KhachHangADdata.DataSource = DataProvider.Instance.Excuted(query); 
+        }
 
+        void LoadNhanVienlist()
+        {
+            string query = "SELECT * from dbo.tblNhanVien";
+            NhanVienADdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadDichVuList()
+        {
+            string query = "SELECT * from dbo.tblDichVu";
+            DichVuADdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadLichHenList()
+        {
+            string query = "SELECT * from dbo.tblHoaDon";
+            LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadNhanVienList()
+        {
+            string query = "SELECT * from dbo.tblNhanVien";
+            NhanVienADdata.DataSource = DataProvider.Instance.Excuted(query);
+        }
+
+        void LoadPhongList()
+        {
+            string query = "SELECT * from dbo.tblPhong";
+            PhongADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -346,6 +395,11 @@ namespace Spa_NNLT.Nguyên
         private void NhanVientb_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadThongTin();
         }
     }
 }
