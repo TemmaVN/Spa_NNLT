@@ -277,8 +277,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Bằng\BangClass1\" />
-    <Folder Include="Bằng\BangClass2\" />
     <Folder Include="Nguyên\TaiChinhAD\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
