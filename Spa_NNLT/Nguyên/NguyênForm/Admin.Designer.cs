@@ -127,7 +127,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.PhongADcb = new System.Windows.Forms.ComboBox();
             this.button11 = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -1383,7 +1383,7 @@
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.comboBox1);
+            this.panel21.Controls.Add(this.PhongADcb);
             this.panel21.Controls.Add(this.button11);
             this.panel21.Controls.Add(this.label35);
             this.panel21.Location = new System.Drawing.Point(507, 48);
@@ -1392,13 +1392,13 @@
             this.panel21.Size = new System.Drawing.Size(427, 65);
             this.panel21.TabIndex = 6;
             // 
-            // comboBox1
+            // PhongADcb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 4;
+            this.PhongADcb.FormattingEnabled = true;
+            this.PhongADcb.Location = new System.Drawing.Point(12, 32);
+            this.PhongADcb.Name = "PhongADcb";
+            this.PhongADcb.Size = new System.Drawing.Size(121, 24);
+            this.PhongADcb.TabIndex = 4;
             // 
             // button11
             // 
@@ -3072,6 +3072,6 @@
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox PhongADcb;
     }
 }

@@ -78,6 +78,11 @@ namespace Spa_NNLT.Nguyên
 
         #region Events
 
+        void ThemPhong()
+        {
+
+        }
+
         void LoadHoaDonList()
         {
             string query = "SELECT * from dbo.tblHoaDon";
