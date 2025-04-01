@@ -11,28 +11,33 @@ namespace Spa_NNLT.Nguyên.Lịch_hẹn
     public class LichHen
     {
         private string ID;
-        private string TenKhach;
-        private string TenNV;
-        private string TenDV;
+        private string Madichvu;
+        private string MaNhanVien;
+        private string MaKhachHang;
         private string SoPhong;
         private DateTime ThoiGian;
-        private int tinhTrang;
+        private int TrangThai;
 
-        public LichHen(DataRow row)
-        {
-            this.ID = row["malichhen"].ToString();
-            
-        }
-
-        public LichHen(string iD, string tenKhach, string tenNV, string tenDV, string soPhong, DateTime thoiGian, int tinhTrang)
+        public LichHen(string iD, string madichvu, string maNhanVien, string maKhachHang, string soPhong, DateTime thoiGian, int trangThai)
         {
             ID = iD;
-            TenKhach = tenKhach;
-            TenNV = tenNV;
-            TenDV = tenDV;
+            Madichvu = madichvu;
+            MaNhanVien = maNhanVien;
+            MaKhachHang = maKhachHang;
             SoPhong = soPhong;
             ThoiGian = thoiGian;
-            this.tinhTrang = tinhTrang;
+            TrangThai = trangThai;
+        }
+
+        public LichHen(DataRow dr) { 
+            this.ID = dr["malichhen"].ToString();
+            this.Madichvu = dr["madichvu"].ToString();
+            this.MaNhanVien = dr["makhachhang"].ToString();
+            this.MaKhachHang = dr["makhachhang"].ToString();
+            this.SoPhong = dr["maphong"].ToString() ;
+            this.ThoiGian = (DateTime)dr["thoigian"];
+            this.TrangThai = int.Parse(dr["trangthai"].ToString());
+  
         }
     }
 

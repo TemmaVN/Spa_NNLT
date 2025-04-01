@@ -13,22 +13,22 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
     {
         private string ID;
         private string MaKhachHang;
-        private string MaDichVu;
+        private string LichHen;
         private int ThanhTien;
 
         public HoaDon(DataRow data)
         {
             this.ID = data["mahoadon"].ToString();
             this.MaKhachHang = data["makhachhang"].ToString();
-            this.MaDichVu = data["madichvu"].ToString() ;
+            this.LichHen = data["malichhen"].ToString() ;
             this.ThanhTien = int.Parse(data["thanhtien"].ToString());  
         }
 
-        public HoaDon(string iD, string maKhachHang, string maDichVu, int thanhTien)
+        public HoaDon(string iD, string maKhachHang, string lichHen, int thanhTien)
         {
             ID = iD;
             MaKhachHang = maKhachHang;
-            MaDichVu = maDichVu;
+            LichHen = lichHen;
             ThanhTien = thanhTien;
         }
 
@@ -42,11 +42,13 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
             get { return MaKhachHang; }
             set { MaKhachHang = value; }
         }
-        public string maDichVu
+        
+        public string lichHen
         {
-            get { return MaDichVu; }
-            set { MaDichVu = value; }
+            get { return LichHen; }
+            set { LichHen = value; }
         }
+
         public int thanhTien
         {
             get { return ThanhTien; }

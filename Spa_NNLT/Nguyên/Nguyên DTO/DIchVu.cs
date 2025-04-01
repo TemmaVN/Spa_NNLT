@@ -15,7 +15,7 @@ namespace Spa_NNLT.Nguyên.DichVuAD
         private string MaDV;
         private string TenDV;
         private int GiaDV;
-        private TimeSpan ThoiGianDV;
+        private int ThoiGianDV;
 
         public DIchVu(DataRow row) {
             this.MaDV = row["madichvu"].ToString();
@@ -23,7 +23,7 @@ namespace Spa_NNLT.Nguyên.DichVuAD
             this.GiaDV = (int)row["giadichvu"];
         }
 
-        public DIchVu(string maDV, string tenDV, int giaDV, TimeSpan thoiGianDV)
+        public DIchVu(string maDV, string tenDV, int giaDV, int thoiGianDV)
         {
             MaDV = maDV;
             TenDV = tenDV;
@@ -37,7 +37,7 @@ namespace Spa_NNLT.Nguyên.DichVuAD
             { get { return TenDV; } set { TenDV = value; } }
         public int giaDV
             { get { return GiaDV; } set { GiaDV = value; } }
-        public TimeSpan thoiGianDV
+        public int thoiGianDV
         { get { return ThoiGianDV; } set { ThoiGianDV = value; } }
 
           

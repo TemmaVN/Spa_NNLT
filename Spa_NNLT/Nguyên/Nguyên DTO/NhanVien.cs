@@ -17,7 +17,7 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
         private string GioiTinh;
         private string SDT;
         private DateTime NgaySinh;
-        private string CongViec;
+        
 
         public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec)
         {
@@ -26,7 +26,7 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
             GioiTinh = gioiTinh;
             SDT = sDT;
             NgaySinh = ngaySinh;
-            CongViec = congViec;
+         
         }
 
         public NhanVien(DataRow row) {
@@ -44,7 +44,7 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
             this.GioiTinh += "ahah";
             
             this.SDT = row["sdt"].ToString();
-            this.CongViec = row["job"].ToString();
+  
 
         }
 
@@ -62,8 +62,7 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
             { get { return SDT; } set { SDT = value; } }
         public DateTime ngaySinh
             { get { return NgaySinh; } set { NgaySinh = value; } }
-        public string congViec
-            { get { return CongViec; } set { CongViec = value; } }
+        
 
     }
 

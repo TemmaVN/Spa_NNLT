@@ -19,7 +19,7 @@ namespace Spa_NNLT.Nguyên.KhachHangAD
         public Khachhang(DataRow row)
         {
              this.IDKH = row["makhachhang"].ToString();
-            this.TenKH = row["ten"].ToString();
+            this.TenKH = row["tenkhachhang"].ToString();
             int tg = int.Parse(row["gioitinh"].ToString());
             this.GioiTinhKH = (tg == 1) ? "Nam" : "Nữ";
             this.SDTKH = row["sdt"].ToString();

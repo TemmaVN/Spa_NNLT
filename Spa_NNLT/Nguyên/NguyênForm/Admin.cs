@@ -12,6 +12,7 @@ using Spa_NNLT.Nguyên.DichVuAD;
 using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.NhanVienAD;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
+using Spa_NNLT.Nguyên.PhongAD;
 
 
 namespace Spa_NNLT.Nguyên
@@ -29,7 +30,8 @@ namespace Spa_NNLT.Nguyên
             LoadLichHenList();
             LoadNhanVienlist();
             
-            LoadThongTin();    
+            LoadThongTin();
+            LoadThemPhong();
             
             // Load thông tin từ sql
             // Tìm thông tin qua text box
@@ -52,7 +54,7 @@ namespace Spa_NNLT.Nguyên
                     HTtb.Text = nhan.ten;
                     GTtb.Text = nhan.gioiTinh;
                     SDTlb.Text = nhan.sDT;
-                    CVtb.Text = nhan.congViec;
+                    
                 }
                 
             }
@@ -78,9 +80,9 @@ namespace Spa_NNLT.Nguyên
 
         #region Events
 
-        void ThemPhong()
+        void LoadThemPhong()
         {
-
+            
         }
 
         void LoadHoaDonList()
@@ -200,14 +202,30 @@ namespace Spa_NNLT.Nguyên
 
         private void Admin_Load(object sender, EventArgs e)
         {
+            HienThi();
+        }
+
+        private void HienThi()
+        {
             TimTheotenTb.Text = "Tìm theo tên ...";
             TimTheotenTb.ForeColor = Color.Gray;
             TimtheoMatb.Text = "Tìm theo mã...";
             TimtheoMatb.ForeColor = Color.Gray;
             TimTheoTenKHtb.Text = "Tìm theo tên ...";
             TimTheoTenKHtb.ForeColor = Color.Gray;
-            TimTheoMaKHtb.Text = "Tìm theo mã ...";
-            TimTheoMaKHtb.ForeColor= Color.Gray;
+            TimTheoMaKHtb.Text = "Tìm theo số điện thoại ..";
+            TimTheoMaKHtb.ForeColor = Color.Gray;
+            TimTheoTenDVtb.Text = "Tìm theo tên...";
+            TimTheoTenDVtb.ForeColor = Color.Gray;
+            TimTheoMaDVtb.Text = "Tìm theo mã...";
+            TimTheoMaDVtb.ForeColor = Color.Gray;   
+            TimTheoMaLHadTB.Text = "Tìm theo mã...";
+            TimTheoMaLHadTB.ForeColor = Color.Gray;
+            TTMaHDadTB.Text = "Tìm theo mã...";
+            TTMaHDadTB.ForeColor= Color.Gray;
+            TTTenKHLHadTB.Text = "Tên khách hàng...";
+            TTTenKHLHadTB.ForeColor = Color.Gray;
+
         }
 
         private void TimTheotenTb_Enter(object sender, EventArgs e)
@@ -322,7 +340,7 @@ namespace Spa_NNLT.Nguyên
         {
             if (string.IsNullOrEmpty(TimTheoMaKHtb.Text))
             {
-                TimTheoMaKHtb.Text = "Tìm theo mã ...";
+                TimTheoMaKHtb.Text = "Tìm theo số điện thoại ...";
                 TimTheoMaKHtb.ForeColor = Color.Gray;
             }
         }
@@ -424,6 +442,83 @@ namespace Spa_NNLT.Nguyên
         private void button1_Click(object sender, EventArgs e)
         {
             LoadThongTin();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TimTheoTenDVtb_Enter(object sender, EventArgs e)
+        {
+            if (TimTheoTenDVtb.Text == "Tìm theo tên...")
+            {
+                TimTheoTenDVtb.Text = "";
+                TimTheoTenDVtb.ForeColor = Color.Black;
+            }
+        }
+
+        private void TimTheoTenDVtb_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(TimTheoTenDVtb.Text))
+            {
+                TimTheoTenDVtb.Text = "Tìm theo tên...";
+                TimTheoTenDVtb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TimTheoMaLHadTB_Enter(object sender, EventArgs e)
+        {
+            if (TimTheoMaLHadTB.Text == "Tìm theo mã...")
+            {
+                TimTheoMaLHadTB.Text = "";
+                TimTheoMaLHadTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TimTheoMaLHadTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TimTheoMaLHadTB.Text))
+            {
+                TimTheoMaLHadTB.Text = "Tìm theo mã...";
+                TimTheoMaLHadTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TimTheoMaDVtb_Enter(object sender, EventArgs e)
+        {
+            if (TimTheoMaDVtb.Text == "Tìm theo mã...")
+            {
+                TimTheoMaDVtb.Text = "";
+                TimTheoMaDVtb.ForeColor= Color.Black;
+            }
+        }
+
+        private void TimTheoMaDVtb_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty (TimTheoMaDVtb.Text))
+            {
+                TimTheoMaDVtb.Text = "Tìm theo mã...";
+                TimTheoMaDVtb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTTenKHLHadTB_Enter(object sender, EventArgs e)
+        {
+            if (TTTenKHLHadTB.Text == "Tên khách hàng...")
+            {
+                TTTenKHLHadTB.Text = "";
+                TTTenKHLHadTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTTenKHLHadTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTTenKHLHadTB.Text))
+            {
+                TTTenKHLHadTB.Text = "Tên khách hàng...";
+                TTTenKHLHadTB.ForeColor = Color.Gray;
+            }
         }
     }
 }
