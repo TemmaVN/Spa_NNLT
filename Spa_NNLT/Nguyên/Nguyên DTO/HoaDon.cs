@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Spa_NNLT.Nguyên.Nguyên_DTO;
 
 namespace Spa_NNLT.Nguyên.Hóa_đơn
 {
@@ -54,6 +55,7 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
 
 
     }
+
     public class HoaDonDAO
     {
         private static HoaDonDAO instance;
@@ -75,7 +77,7 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
         public List<HoaDon> GetHoaDonList() 
         {
             List<HoaDon> list = new List<HoaDon>();
-            DataTable dt = new DataTable();
+            DataTable dt = DataProvider.Instance.Excuted("USP_GetHoaDonList");
             foreach (DataRow dr in dt.Rows)
             {
                 HoaDon hoaDon = new HoaDon(dr);
