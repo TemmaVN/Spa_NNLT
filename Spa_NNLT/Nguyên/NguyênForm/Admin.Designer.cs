@@ -41,11 +41,9 @@
             this.label57 = new System.Windows.Forms.Label();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.label58 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
             this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.button13 = new System.Windows.Forms.Button();
@@ -162,14 +160,12 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.KhachHangAD = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.SDTKHadTB = new System.Windows.Forms.TextBox();
+            this.GTKhadTB = new System.Windows.Forms.TextBox();
+            this.HTKHadTB = new System.Windows.Forms.TextBox();
+            this.MaKHadTB = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -346,11 +342,9 @@
             this.panel33.Controls.Add(this.label57);
             this.panel33.Controls.Add(this.pictureBox21);
             this.panel33.Controls.Add(this.label58);
-            this.panel33.Controls.Add(this.textBox33);
             this.panel33.Controls.Add(this.textBox34);
             this.panel33.Controls.Add(this.textBox35);
             this.panel33.Controls.Add(this.label64);
-            this.panel33.Controls.Add(this.label65);
             this.panel33.Controls.Add(this.label66);
             this.panel33.Location = new System.Drawing.Point(507, 117);
             this.panel33.Margin = new System.Windows.Forms.Padding(2);
@@ -360,7 +354,7 @@
             // 
             // textBox24
             // 
-            this.textBox24.Location = new System.Drawing.Point(167, 264);
+            this.textBox24.Location = new System.Drawing.Point(167, 246);
             this.textBox24.Margin = new System.Windows.Forms.Padding(2);
             this.textBox24.Name = "textBox24";
             this.textBox24.ReadOnly = true;
@@ -371,7 +365,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(26, 264);
+            this.label54.Location = new System.Drawing.Point(26, 246);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(79, 16);
             this.label54.TabIndex = 51;
@@ -379,7 +373,7 @@
             // 
             // textBox25
             // 
-            this.textBox25.Location = new System.Drawing.Point(167, 229);
+            this.textBox25.Location = new System.Drawing.Point(167, 211);
             this.textBox25.Margin = new System.Windows.Forms.Padding(2);
             this.textBox25.Name = "textBox25";
             this.textBox25.ReadOnly = true;
@@ -390,7 +384,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(26, 229);
+            this.label55.Location = new System.Drawing.Point(26, 211);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(74, 16);
             this.label55.TabIndex = 49;
@@ -398,7 +392,7 @@
             // 
             // textBox26
             // 
-            this.textBox26.Location = new System.Drawing.Point(167, 39);
+            this.textBox26.Location = new System.Drawing.Point(167, 58);
             this.textBox26.Margin = new System.Windows.Forms.Padding(2);
             this.textBox26.Name = "textBox26";
             this.textBox26.ReadOnly = true;
@@ -409,7 +403,7 @@
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(26, 39);
+            this.label56.Location = new System.Drawing.Point(26, 58);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(77, 16);
             this.label56.TabIndex = 47;
@@ -417,7 +411,7 @@
             // 
             // textBox27
             // 
-            this.textBox27.Location = new System.Drawing.Point(167, 192);
+            this.textBox27.Location = new System.Drawing.Point(167, 174);
             this.textBox27.Margin = new System.Windows.Forms.Padding(2);
             this.textBox27.Name = "textBox27";
             this.textBox27.ReadOnly = true;
@@ -428,7 +422,7 @@
             // 
             this.label57.AutoSize = true;
             this.label57.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(26, 192);
+            this.label57.Location = new System.Drawing.Point(26, 174);
             this.label57.Name = "label57";
             this.label57.Size = new System.Drawing.Size(70, 16);
             this.label57.TabIndex = 45;
@@ -437,7 +431,7 @@
             // pictureBox21
             // 
             this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(299, 0);
+            this.pictureBox21.Location = new System.Drawing.Point(312, 19);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(33, 27);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -448,24 +442,15 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(95, 0);
+            this.label58.Location = new System.Drawing.Point(95, 19);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(211, 27);
             this.label58.TabIndex = 43;
             this.label58.Text = "Thông tin hóa đơn";
             // 
-            // textBox33
-            // 
-            this.textBox33.Location = new System.Drawing.Point(167, 151);
-            this.textBox33.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(233, 22);
-            this.textBox33.TabIndex = 25;
-            // 
             // textBox34
             // 
-            this.textBox34.Location = new System.Drawing.Point(167, 114);
+            this.textBox34.Location = new System.Drawing.Point(167, 133);
             this.textBox34.Margin = new System.Windows.Forms.Padding(2);
             this.textBox34.Name = "textBox34";
             this.textBox34.ReadOnly = true;
@@ -474,7 +459,7 @@
             // 
             // textBox35
             // 
-            this.textBox35.Location = new System.Drawing.Point(167, 75);
+            this.textBox35.Location = new System.Drawing.Point(167, 94);
             this.textBox35.Margin = new System.Windows.Forms.Padding(2);
             this.textBox35.Name = "textBox35";
             this.textBox35.ReadOnly = true;
@@ -485,27 +470,17 @@
             // 
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(26, 75);
+            this.label64.Location = new System.Drawing.Point(26, 94);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(100, 16);
             this.label64.TabIndex = 17;
             this.label64.Text = "ID Khách hàng";
             // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(26, 151);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(101, 16);
-            this.label65.TabIndex = 16;
-            this.label65.Text = "Tên sản phẩm:";
-            // 
             // label66
             // 
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(26, 114);
+            this.label66.Location = new System.Drawing.Point(26, 133);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(109, 16);
             this.label66.TabIndex = 13;
@@ -1757,14 +1732,12 @@
             // 
             this.panel14.Controls.Add(this.pictureBox10);
             this.panel14.Controls.Add(this.KhachHangAD);
-            this.panel14.Controls.Add(this.textBox11);
-            this.panel14.Controls.Add(this.textBox12);
-            this.panel14.Controls.Add(this.textBox13);
-            this.panel14.Controls.Add(this.textBox14);
-            this.panel14.Controls.Add(this.textBox15);
+            this.panel14.Controls.Add(this.SDTKHadTB);
+            this.panel14.Controls.Add(this.GTKhadTB);
+            this.panel14.Controls.Add(this.HTKHadTB);
+            this.panel14.Controls.Add(this.MaKHadTB);
             this.panel14.Controls.Add(this.label17);
             this.panel14.Controls.Add(this.label18);
-            this.panel14.Controls.Add(this.label19);
             this.panel14.Controls.Add(this.label20);
             this.panel14.Controls.Add(this.label21);
             this.panel14.Location = new System.Drawing.Point(502, 131);
@@ -1794,50 +1767,41 @@
             this.KhachHangAD.TabIndex = 41;
             this.KhachHangAD.Text = "Khách hàng";
             // 
-            // textBox11
+            // SDTKHadTB
             // 
-            this.textBox11.Location = new System.Drawing.Point(174, 222);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(233, 22);
-            this.textBox11.TabIndex = 39;
+            this.SDTKHadTB.Location = new System.Drawing.Point(174, 181);
+            this.SDTKHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.SDTKHadTB.Name = "SDTKHadTB";
+            this.SDTKHadTB.ReadOnly = true;
+            this.SDTKHadTB.Size = new System.Drawing.Size(233, 22);
+            this.SDTKHadTB.TabIndex = 38;
             // 
-            // textBox12
+            // GTKhadTB
             // 
-            this.textBox12.Location = new System.Drawing.Point(174, 181);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(233, 22);
-            this.textBox12.TabIndex = 38;
+            this.GTKhadTB.Location = new System.Drawing.Point(174, 141);
+            this.GTKhadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.GTKhadTB.Name = "GTKhadTB";
+            this.GTKhadTB.ReadOnly = true;
+            this.GTKhadTB.Size = new System.Drawing.Size(233, 22);
+            this.GTKhadTB.TabIndex = 37;
             // 
-            // textBox13
+            // HTKHadTB
             // 
-            this.textBox13.Location = new System.Drawing.Point(174, 141);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(233, 22);
-            this.textBox13.TabIndex = 37;
+            this.HTKHadTB.Location = new System.Drawing.Point(174, 98);
+            this.HTKHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.HTKHadTB.Name = "HTKHadTB";
+            this.HTKHadTB.ReadOnly = true;
+            this.HTKHadTB.Size = new System.Drawing.Size(233, 22);
+            this.HTKHadTB.TabIndex = 36;
             // 
-            // textBox14
+            // MaKHadTB
             // 
-            this.textBox14.Location = new System.Drawing.Point(174, 98);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(233, 22);
-            this.textBox14.TabIndex = 36;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(174, 57);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(233, 22);
-            this.textBox15.TabIndex = 34;
+            this.MaKHadTB.Location = new System.Drawing.Point(174, 57);
+            this.MaKHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.MaKHadTB.Name = "MaKHadTB";
+            this.MaKHadTB.ReadOnly = true;
+            this.MaKHadTB.Size = new System.Drawing.Size(233, 22);
+            this.MaKHadTB.TabIndex = 34;
             // 
             // label17
             // 
@@ -1858,16 +1822,6 @@
             this.label18.Size = new System.Drawing.Size(66, 16);
             this.label18.TabIndex = 32;
             this.label18.Text = "Giới tính:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(33, 222);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(73, 16);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Ngày sinh:";
             // 
             // label20
             // 
@@ -2912,11 +2866,9 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.PictureBox pictureBox21;
         private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Button button13;
@@ -3029,14 +2981,12 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label KhachHangAD;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox SDTKHadTB;
+        private System.Windows.Forms.TextBox GTKhadTB;
+        private System.Windows.Forms.TextBox HTKHadTB;
+        private System.Windows.Forms.TextBox MaKHadTB;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel13;

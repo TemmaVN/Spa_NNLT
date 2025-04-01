@@ -58,6 +58,22 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
+        void LoadKhachHang()
+        {
+            List<Khachhang> khachhangs = KhachHangDAO.Instance.LoadKhachHang();
+            foreach(Khachhang khachhang in khachhangs)
+            {
+                if (TimTheoTenKHtb.Text == khachhang.tenKH || TimTheoMaKHtb.Text == khachhang.idKH)
+                {
+                    MaKHadTB.Text = khachhang.idKH;
+                    HTKHadTB.Text = khachhang.tenKH;
+                    GTKhadTB.Text = khachhang.gioitinhKH;
+                    SDTKHadTB.Text = khachhang.sDTKH;
+
+                }
+            }
+        }
+
         #endregion
 
         #region Events
@@ -267,7 +283,7 @@ namespace Spa_NNLT.Nguyên
 
         private void TimKHadbt_Click(object sender, EventArgs e)
         {
-
+            LoadKhachHang();
         }
 
         private void TimTheoTenKHtb_Enter(object sender, EventArgs e)
