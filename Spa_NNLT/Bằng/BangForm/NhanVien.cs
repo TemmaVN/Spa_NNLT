@@ -34,7 +34,7 @@ namespace Spa_NNLT.Bằng
 
         void LoadHoaDonList()
         {
-            string query = "SELECT * from dbo.tblHoaDon";
+            string query = "SELECT * from dbo.tblHoaDon,dbo.tblLichHen";
             HoaDonNVdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
@@ -46,15 +46,17 @@ namespace Spa_NNLT.Bằng
 
         void LoadLichHenList()
         {
-            string query = "SELECT * from dbo.tblHoaDon";
+            string query = "SELECT * from dbo.tblLichHen";
             LHNVdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
         void LoadDichVuList()
         {
-            string query = "SELECT * from dbo.tblDichVu";
+            string query = "SELECT * from dbo.tblLichHen";
             DVNVdata.DataSource = DataProvider.Instance.Excuted(query);
         }
+
+       
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
 

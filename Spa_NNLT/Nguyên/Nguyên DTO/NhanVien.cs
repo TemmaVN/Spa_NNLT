@@ -17,16 +17,18 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
         private string GioiTinh;
         private string SDT;
         private DateTime NgaySinh;
-        
+        private string UserName;
+        private string Password;
 
-        public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec)
+        public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec, string userName, string password)
         {
             ID = iD;
             Ten = ten;
             GioiTinh = gioiTinh;
             SDT = sDT;
             NgaySinh = ngaySinh;
-         
+            UserName = userName;
+            Password = password;
         }
 
         public NhanVien(DataRow row) {
@@ -44,7 +46,8 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
             this.GioiTinh += "ahah";
             
             this.SDT = row["sdt"].ToString();
-  
+            this.UserName = row["taikhoan"].ToString();
+            this.Password = row["matkhau"].ToString();
 
         }
 
@@ -62,7 +65,13 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
             { get { return SDT; } set { SDT = value; } }
         public DateTime ngaySinh
             { get { return NgaySinh; } set { NgaySinh = value; } }
-        
+
+        public string username
+        {  get { return username; } set { username = value; } }
+
+        public string password
+            { get { return password; } set { password = value; } }
+
 
     }
 

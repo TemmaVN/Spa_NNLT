@@ -54,7 +54,9 @@ namespace Spa_NNLT.Nguyên
                     HTtb.Text = nhan.ten;
                     GTtb.Text = nhan.gioiTinh;
                     SDTlb.Text = nhan.sDT;
-                    
+                    NStb.Text = nhan.ngaySinh.ToString();
+                    //TDNNVadTB.Text = nhan.username;
+                    //MKNVadTB.Text = nhan.password;
                 }
                 
             }
@@ -76,6 +78,7 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
+
         #endregion
 
         #region Events
@@ -87,7 +90,7 @@ namespace Spa_NNLT.Nguyên
 
         void LoadHoaDonList()
         {
-            string query = "SELECT * from dbo.tblHoaDon";
+            string query = "SELECT * from dbo.tblHoaDon,dbo.tblLichHen";
             HoaDonADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
         void LoadAccountList()
@@ -108,11 +111,7 @@ namespace Spa_NNLT.Nguyên
             DichVuADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
-        void LoadLichHenList()
-        {
-            string query = "SELECT * from dbo.tblHoaDon";
-            LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
-        }
+        
 
         void LoadNhanVienList()
         {
@@ -120,9 +119,10 @@ namespace Spa_NNLT.Nguyên
             NhanVienADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
-        void LoadPhongList()
+        void LoadLichHenList()
         {
-            
+            string query = "select * from dbo.tblLichHen";
+            LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -329,7 +329,7 @@ namespace Spa_NNLT.Nguyên
 
         private void TimTheoMaKHtb_Enter(object sender, EventArgs e)
         {
-            if (TimTheoMaKHtb.Text == "Tìm theo mã ...")
+            if (TimTheoMaKHtb.Text == "Tìm theo số điện thoại ..")
             {
                 TimTheoMaKHtb.Text = "";
                 TimTheoMaKHtb.ForeColor = Color.Black;

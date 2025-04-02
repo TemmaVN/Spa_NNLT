@@ -32,7 +32,7 @@ namespace Spa_NNLT.Nguyên.Lịch_hẹn
         public LichHen(DataRow dr) { 
             this.ID = dr["malichhen"].ToString();
             this.Madichvu = dr["madichvu"].ToString();
-            this.MaNhanVien = dr["makhachhang"].ToString();
+            this.MaNhanVien = dr["manhanvien"].ToString();
             this.MaKhachHang = dr["makhachhang"].ToString();
             this.SoPhong = dr["maphong"].ToString() ;
             this.ThoiGian = (DateTime)dr["thoigian"];

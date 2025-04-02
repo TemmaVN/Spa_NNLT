@@ -718,6 +718,7 @@
             this.KHNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.KHNVdata.Location = new System.Drawing.Point(2, 3);
             this.KHNVdata.Name = "KHNVdata";
+            this.KHNVdata.ReadOnly = true;
             this.KHNVdata.RowHeadersWidth = 82;
             this.KHNVdata.Size = new System.Drawing.Size(455, 336);
             this.KHNVdata.TabIndex = 0;
@@ -802,6 +803,7 @@
             this.DVNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DVNVdata.Location = new System.Drawing.Point(3, 3);
             this.DVNVdata.Name = "DVNVdata";
+            this.DVNVdata.ReadOnly = true;
             this.DVNVdata.RowHeadersWidth = 82;
             this.DVNVdata.Size = new System.Drawing.Size(454, 329);
             this.DVNVdata.TabIndex = 0;
@@ -1251,6 +1253,7 @@
             this.LHNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LHNVdata.Location = new System.Drawing.Point(3, 3);
             this.LHNVdata.Name = "LHNVdata";
+            this.LHNVdata.ReadOnly = true;
             this.LHNVdata.RowHeadersWidth = 82;
             this.LHNVdata.Size = new System.Drawing.Size(451, 341);
             this.LHNVdata.TabIndex = 0;
@@ -1714,6 +1717,7 @@
             this.HoaDonNVdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.HoaDonNVdata.Location = new System.Drawing.Point(3, 3);
             this.HoaDonNVdata.Name = "HoaDonNVdata";
+            this.HoaDonNVdata.ReadOnly = true;
             this.HoaDonNVdata.RowHeadersWidth = 82;
             this.HoaDonNVdata.Size = new System.Drawing.Size(454, 345);
             this.HoaDonNVdata.TabIndex = 0;

@@ -12,21 +12,18 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
     public class HoaDon
     {
         private string ID;
-        private string LichHen;
-        private int ThanhTien;
+        private string Malichhen;
 
         public HoaDon(DataRow data)
         {
             this.ID = data["mahoadon"].ToString();
-            this.LichHen = data["malichhen"].ToString() ;
-            this.ThanhTien = int.Parse(data["thanhtien"].ToString());  
+            this.Malichhen = data["malichhen"].ToString();
         }
 
-        public HoaDon(string iD,  string lichHen, int thanhTien)
+        public HoaDon(string iD,string malichhhen)
         {
             ID = iD;
-            LichHen = lichHen;
-            ThanhTien = thanhTien;
+            this.Malichhen= malichhhen;
         }
 
         public string iD
@@ -34,21 +31,11 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
             get { return ID; }
             set { ID = value; }
         }
-        
-        
-        public string lichHen
+        public string malichhen
         {
-            get { return LichHen; }
-            set { LichHen = value; }
+            get { return Malichhen; }
+            set { Malichhen = value; }
         }
-
-        public int thanhTien
-        {
-            get { return ThanhTien; }
-            set { ThanhTien = value; }
-        }
-
-
     }
 
     public class HoaDonDAO
@@ -72,7 +59,7 @@ namespace Spa_NNLT.Nguyên.Hóa_đơn
         public List<HoaDon> GetHoaDonList() 
         {
             List<HoaDon> list = new List<HoaDon>();
-            DataTable dt = DataProvider.Instance.Excuted("USP_GetHoaDonList");
+            DataTable dt = DataProvider.Instance.Excuted("USP_GetHoaDonListup");
             foreach (DataRow dr in dt.Rows)
             {
                 HoaDon hoaDon = new HoaDon(dr);

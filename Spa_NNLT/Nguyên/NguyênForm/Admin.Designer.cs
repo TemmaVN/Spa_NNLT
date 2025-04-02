@@ -611,12 +611,12 @@
             // 
             // HoaDonADdata
             // 
-            this.HoaDonADdata.BackgroundColor = System.Drawing.Color.White;
             this.HoaDonADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.HoaDonADdata.GridColor = System.Drawing.SystemColors.Control;
             this.HoaDonADdata.Location = new System.Drawing.Point(3, 48);
             this.HoaDonADdata.Margin = new System.Windows.Forms.Padding(2);
             this.HoaDonADdata.Name = "HoaDonADdata";
+            this.HoaDonADdata.ReadOnly = true;
             this.HoaDonADdata.RowHeadersVisible = false;
             this.HoaDonADdata.RowHeadersWidth = 62;
             this.HoaDonADdata.Size = new System.Drawing.Size(490, 437);
@@ -943,12 +943,12 @@
             // 
             // LichHenADdata
             // 
-            this.LichHenADdata.BackgroundColor = System.Drawing.Color.White;
             this.LichHenADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LichHenADdata.GridColor = System.Drawing.SystemColors.Control;
             this.LichHenADdata.Location = new System.Drawing.Point(3, 48);
             this.LichHenADdata.Margin = new System.Windows.Forms.Padding(2);
             this.LichHenADdata.Name = "LichHenADdata";
+            this.LichHenADdata.ReadOnly = true;
             this.LichHenADdata.RowHeadersVisible = false;
             this.LichHenADdata.RowHeadersWidth = 62;
             this.LichHenADdata.Size = new System.Drawing.Size(490, 437);
@@ -1214,12 +1214,12 @@
             // 
             // DichVuADdata
             // 
-            this.DichVuADdata.BackgroundColor = System.Drawing.Color.White;
             this.DichVuADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DichVuADdata.GridColor = System.Drawing.SystemColors.Control;
             this.DichVuADdata.Location = new System.Drawing.Point(3, 48);
             this.DichVuADdata.Margin = new System.Windows.Forms.Padding(2);
             this.DichVuADdata.Name = "DichVuADdata";
+            this.DichVuADdata.ReadOnly = true;
             this.DichVuADdata.RowHeadersVisible = false;
             this.DichVuADdata.RowHeadersWidth = 62;
             this.DichVuADdata.Size = new System.Drawing.Size(490, 437);
@@ -1671,12 +1671,12 @@
             // 
             // dataGridView3
             // 
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView3.Location = new System.Drawing.Point(3, 48);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.RowHeadersWidth = 62;
             this.dataGridView3.Size = new System.Drawing.Size(490, 437);
@@ -1932,11 +1932,11 @@
             // 
             // KhachHangADdata
             // 
-            this.KhachHangADdata.BackgroundColor = System.Drawing.Color.White;
             this.KhachHangADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.KhachHangADdata.Location = new System.Drawing.Point(2, 2);
             this.KhachHangADdata.Margin = new System.Windows.Forms.Padding(2);
             this.KhachHangADdata.Name = "KhachHangADdata";
+            this.KhachHangADdata.ReadOnly = true;
             this.KhachHangADdata.RowHeadersVisible = false;
             this.KhachHangADdata.RowHeadersWidth = 62;
             this.KhachHangADdata.RowTemplate.Height = 28;
@@ -2283,12 +2283,12 @@
             // 
             // NhanVienADdata
             // 
-            this.NhanVienADdata.BackgroundColor = System.Drawing.Color.White;
             this.NhanVienADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NhanVienADdata.GridColor = System.Drawing.SystemColors.Control;
             this.NhanVienADdata.Location = new System.Drawing.Point(4, 49);
             this.NhanVienADdata.Margin = new System.Windows.Forms.Padding(2);
             this.NhanVienADdata.Name = "NhanVienADdata";
+            this.NhanVienADdata.ReadOnly = true;
             this.NhanVienADdata.RowHeadersVisible = false;
             this.NhanVienADdata.RowHeadersWidth = 62;
             this.NhanVienADdata.Size = new System.Drawing.Size(490, 437);
