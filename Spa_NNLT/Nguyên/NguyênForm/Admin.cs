@@ -340,7 +340,7 @@ namespace Spa_NNLT.Nguyên
         {
             if (string.IsNullOrEmpty(TimTheoMaKHtb.Text))
             {
-                TimTheoMaKHtb.Text = "Tìm theo số điện thoại ...";
+                TimTheoMaKHtb.Text = "Theo điện thoại ...";
                 TimTheoMaKHtb.ForeColor = Color.Gray;
             }
         }
@@ -519,6 +519,11 @@ namespace Spa_NNLT.Nguyên
                 TTTenKHLHadTB.Text = "Tên khách hàng...";
                 TTTenKHLHadTB.ForeColor = Color.Gray;
             }
+        }
+
+        private void TimTheoMaKHtb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

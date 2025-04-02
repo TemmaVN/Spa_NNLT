@@ -1906,6 +1906,7 @@
             this.TimTheoMaKHtb.Name = "TimTheoMaKHtb";
             this.TimTheoMaKHtb.Size = new System.Drawing.Size(188, 26);
             this.TimTheoMaKHtb.TabIndex = 2;
+            this.TimTheoMaKHtb.TextChanged += new System.EventHandler(this.TimTheoMaKHtb_TextChanged);
             this.TimTheoMaKHtb.Enter += new System.EventHandler(this.TimTheoMaKHtb_Enter);
             this.TimTheoMaKHtb.Leave += new System.EventHandler(this.TimTheoMaKHtb_Leave);
             // 
