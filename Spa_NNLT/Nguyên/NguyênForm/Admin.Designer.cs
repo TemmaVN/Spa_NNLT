@@ -63,19 +63,19 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel30 = new System.Windows.Forms.Panel();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.TTLHadTB = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.TGLHadTB = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.MaLHadTB = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.MaPhongLHadTB = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.MaDVLHadTB = new System.Windows.Forms.TextBox();
+            this.MaNVLHadTB = new System.Windows.Forms.TextBox();
+            this.MaKHLHadTB = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             this.XoaDVadBT = new System.Windows.Forms.Button();
             this.ThemDVadTB = new System.Windows.Forms.Button();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.ThoiGianDVasTB = new System.Windows.Forms.TextBox();
+            this.ThoiGianDVadTB = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.label43 = new System.Windows.Forms.Label();
@@ -185,6 +185,7 @@
             this.XoaNVbt = new System.Windows.Forms.Button();
             this.ThemNVbt = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.MaNVtb = new System.Windows.Forms.TextBox();
             this.MKNVadTB = new System.Windows.Forms.TextBox();
             this.TDNNVadTB = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -193,7 +194,6 @@
             this.SDTTb = new System.Windows.Forms.TextBox();
             this.GTtb = new System.Windows.Forms.TextBox();
             this.HTtb = new System.Windows.Forms.TextBox();
-            this.MaNVtb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -690,19 +690,19 @@
             // 
             // panel30
             // 
-            this.panel30.Controls.Add(this.textBox32);
+            this.panel30.Controls.Add(this.TTLHadTB);
             this.panel30.Controls.Add(this.label63);
-            this.panel30.Controls.Add(this.textBox31);
+            this.panel30.Controls.Add(this.TGLHadTB);
             this.panel30.Controls.Add(this.label62);
-            this.panel30.Controls.Add(this.textBox30);
+            this.panel30.Controls.Add(this.MaLHadTB);
             this.panel30.Controls.Add(this.label61);
-            this.panel30.Controls.Add(this.textBox16);
+            this.panel30.Controls.Add(this.MaPhongLHadTB);
             this.panel30.Controls.Add(this.label25);
             this.panel30.Controls.Add(this.pictureBox19);
             this.panel30.Controls.Add(this.label26);
-            this.panel30.Controls.Add(this.textBox17);
-            this.panel30.Controls.Add(this.textBox18);
-            this.panel30.Controls.Add(this.textBox21);
+            this.panel30.Controls.Add(this.MaDVLHadTB);
+            this.panel30.Controls.Add(this.MaNVLHadTB);
+            this.panel30.Controls.Add(this.MaKHLHadTB);
             this.panel30.Controls.Add(this.label49);
             this.panel30.Controls.Add(this.label50);
             this.panel30.Controls.Add(this.label51);
@@ -713,14 +713,14 @@
             this.panel30.TabIndex = 25;
             this.panel30.Paint += new System.Windows.Forms.PaintEventHandler(this.panel30_Paint);
             // 
-            // textBox32
+            // TTLHadTB
             // 
-            this.textBox32.Location = new System.Drawing.Point(167, 264);
-            this.textBox32.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(233, 22);
-            this.textBox32.TabIndex = 52;
+            this.TTLHadTB.Location = new System.Drawing.Point(167, 264);
+            this.TTLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.TTLHadTB.Name = "TTLHadTB";
+            this.TTLHadTB.ReadOnly = true;
+            this.TTLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.TTLHadTB.TabIndex = 52;
             // 
             // label63
             // 
@@ -728,18 +728,18 @@
             this.label63.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label63.Location = new System.Drawing.Point(26, 264);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(76, 16);
+            this.label63.Size = new System.Drawing.Size(47, 11);
             this.label63.TabIndex = 51;
-            this.label63.Text = "Tình trạng:";
+            this.label63.Text = "Trạng thái";
             // 
-            // textBox31
+            // TGLHadTB
             // 
-            this.textBox31.Location = new System.Drawing.Point(167, 229);
-            this.textBox31.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.ReadOnly = true;
-            this.textBox31.Size = new System.Drawing.Size(233, 22);
-            this.textBox31.TabIndex = 50;
+            this.TGLHadTB.Location = new System.Drawing.Point(167, 229);
+            this.TGLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.TGLHadTB.Name = "TGLHadTB";
+            this.TGLHadTB.ReadOnly = true;
+            this.TGLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.TGLHadTB.TabIndex = 50;
             // 
             // label62
             // 
@@ -747,18 +747,18 @@
             this.label62.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.Location = new System.Drawing.Point(26, 229);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(68, 16);
+            this.label62.Size = new System.Drawing.Size(52, 11);
             this.label62.TabIndex = 49;
-            this.label62.Text = "Thời gian";
+            this.label62.Text = "Thời lượng";
             // 
-            // textBox30
+            // MaLHadTB
             // 
-            this.textBox30.Location = new System.Drawing.Point(167, 39);
-            this.textBox30.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.ReadOnly = true;
-            this.textBox30.Size = new System.Drawing.Size(233, 22);
-            this.textBox30.TabIndex = 48;
+            this.MaLHadTB.Location = new System.Drawing.Point(167, 39);
+            this.MaLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.MaLHadTB.Name = "MaLHadTB";
+            this.MaLHadTB.ReadOnly = true;
+            this.MaLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.MaLHadTB.TabIndex = 48;
             // 
             // label61
             // 
@@ -766,18 +766,18 @@
             this.label61.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.Location = new System.Drawing.Point(26, 39);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(75, 16);
+            this.label61.Size = new System.Drawing.Size(54, 11);
             this.label61.TabIndex = 47;
-            this.label61.Text = "ID lịch hẹn";
+            this.label61.Text = "Mã lịch hẹn";
             // 
-            // textBox16
+            // MaPhongLHadTB
             // 
-            this.textBox16.Location = new System.Drawing.Point(167, 192);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(233, 22);
-            this.textBox16.TabIndex = 46;
+            this.MaPhongLHadTB.Location = new System.Drawing.Point(167, 192);
+            this.MaPhongLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.MaPhongLHadTB.Name = "MaPhongLHadTB";
+            this.MaPhongLHadTB.ReadOnly = true;
+            this.MaPhongLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.MaPhongLHadTB.TabIndex = 46;
             // 
             // label25
             // 
@@ -785,9 +785,9 @@
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(26, 192);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(52, 16);
+            this.label25.Size = new System.Drawing.Size(47, 11);
             this.label25.TabIndex = 45;
-            this.label25.Text = "Phòng:";
+            this.label25.Text = "Mã phòng";
             // 
             // pictureBox19
             // 
@@ -809,32 +809,32 @@
             this.label26.TabIndex = 43;
             this.label26.Text = "Thông tin lịch hẹn";
             // 
-            // textBox17
+            // MaDVLHadTB
             // 
-            this.textBox17.Location = new System.Drawing.Point(167, 151);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(233, 22);
-            this.textBox17.TabIndex = 25;
+            this.MaDVLHadTB.Location = new System.Drawing.Point(167, 151);
+            this.MaDVLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.MaDVLHadTB.Name = "MaDVLHadTB";
+            this.MaDVLHadTB.ReadOnly = true;
+            this.MaDVLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.MaDVLHadTB.TabIndex = 25;
             // 
-            // textBox18
+            // MaNVLHadTB
             // 
-            this.textBox18.Location = new System.Drawing.Point(167, 114);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
-            this.textBox18.Size = new System.Drawing.Size(233, 22);
-            this.textBox18.TabIndex = 24;
+            this.MaNVLHadTB.Location = new System.Drawing.Point(167, 114);
+            this.MaNVLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.MaNVLHadTB.Name = "MaNVLHadTB";
+            this.MaNVLHadTB.ReadOnly = true;
+            this.MaNVLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.MaNVLHadTB.TabIndex = 24;
             // 
-            // textBox21
+            // MaKHLHadTB
             // 
-            this.textBox21.Location = new System.Drawing.Point(167, 75);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(233, 22);
-            this.textBox21.TabIndex = 22;
+            this.MaKHLHadTB.Location = new System.Drawing.Point(167, 75);
+            this.MaKHLHadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.MaKHLHadTB.Name = "MaKHLHadTB";
+            this.MaKHLHadTB.ReadOnly = true;
+            this.MaKHLHadTB.Size = new System.Drawing.Size(233, 22);
+            this.MaKHLHadTB.TabIndex = 22;
             // 
             // label49
             // 
@@ -842,9 +842,9 @@
             this.label49.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.Location = new System.Drawing.Point(26, 75);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(83, 16);
+            this.label49.Size = new System.Drawing.Size(69, 11);
             this.label49.TabIndex = 17;
-            this.label49.Text = "Khách hàng";
+            this.label49.Text = "Mã khách hàng";
             // 
             // label50
             // 
@@ -852,9 +852,9 @@
             this.label50.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.Location = new System.Drawing.Point(26, 151);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(58, 16);
+            this.label50.Size = new System.Drawing.Size(51, 11);
             this.label50.TabIndex = 16;
-            this.label50.Text = "Dịch vụ:";
+            this.label50.Text = "Mã dịch vụ";
             // 
             // label51
             // 
@@ -862,9 +862,9 @@
             this.label51.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(26, 114);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(75, 16);
+            this.label51.Size = new System.Drawing.Size(62, 11);
             this.label51.TabIndex = 13;
-            this.label51.Text = "Nhân viên:";
+            this.label51.Text = "Mã nhân viên";
             // 
             // pictureBox20
             // 
@@ -955,6 +955,7 @@
             this.LichHenADdata.RowHeadersWidth = 62;
             this.LichHenADdata.Size = new System.Drawing.Size(490, 437);
             this.LichHenADdata.TabIndex = 23;
+            this.LichHenADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LichHenADdata_CellClick);
             // 
             // DichVuADcl
             // 
@@ -1024,7 +1025,7 @@
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.ThoiGianDVasTB);
+            this.panel26.Controls.Add(this.ThoiGianDVadTB);
             this.panel26.Controls.Add(this.label42);
             this.panel26.Controls.Add(this.pictureBox16);
             this.panel26.Controls.Add(this.label43);
@@ -1040,14 +1041,14 @@
             this.panel26.Size = new System.Drawing.Size(423, 288);
             this.panel26.TabIndex = 19;
             // 
-            // ThoiGianDVasTB
+            // ThoiGianDVadTB
             // 
-            this.ThoiGianDVasTB.Location = new System.Drawing.Point(167, 215);
-            this.ThoiGianDVasTB.Margin = new System.Windows.Forms.Padding(2);
-            this.ThoiGianDVasTB.Name = "ThoiGianDVasTB";
-            this.ThoiGianDVasTB.ReadOnly = true;
-            this.ThoiGianDVasTB.Size = new System.Drawing.Size(233, 22);
-            this.ThoiGianDVasTB.TabIndex = 46;
+            this.ThoiGianDVadTB.Location = new System.Drawing.Point(167, 215);
+            this.ThoiGianDVadTB.Margin = new System.Windows.Forms.Padding(2);
+            this.ThoiGianDVadTB.Name = "ThoiGianDVadTB";
+            this.ThoiGianDVadTB.ReadOnly = true;
+            this.ThoiGianDVadTB.Size = new System.Drawing.Size(233, 22);
+            this.ThoiGianDVadTB.TabIndex = 46;
             // 
             // label42
             // 
@@ -1169,6 +1170,7 @@
             this.button19.Size = new System.Drawing.Size(39, 34);
             this.button19.TabIndex = 3;
             this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // TimTheoMaDVtb
             // 
@@ -1226,6 +1228,7 @@
             this.DichVuADdata.RowHeadersWidth = 62;
             this.DichVuADdata.Size = new System.Drawing.Size(490, 437);
             this.DichVuADdata.TabIndex = 17;
+            this.DichVuADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DichVuADdata_CellClick);
             // 
             // PhongADtp
             // 
@@ -1944,6 +1947,7 @@
             this.KhachHangADdata.RowTemplate.Height = 28;
             this.KhachHangADdata.Size = new System.Drawing.Size(494, 417);
             this.KhachHangADdata.TabIndex = 0;
+            this.KhachHangADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KhachHangADdata_CellClick);
             // 
             // panel8
             // 
@@ -2050,6 +2054,7 @@
             // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.MaNVtb);
             this.panel11.Controls.Add(this.MKNVadTB);
             this.panel11.Controls.Add(this.TDNNVadTB);
             this.panel11.Controls.Add(this.label13);
@@ -2058,7 +2063,6 @@
             this.panel11.Controls.Add(this.SDTTb);
             this.panel11.Controls.Add(this.GTtb);
             this.panel11.Controls.Add(this.HTtb);
-            this.panel11.Controls.Add(this.MaNVtb);
             this.panel11.Controls.Add(this.label1);
             this.panel11.Controls.Add(this.label2);
             this.panel11.Controls.Add(this.label3);
@@ -2070,6 +2074,15 @@
             this.panel11.Size = new System.Drawing.Size(423, 288);
             this.panel11.TabIndex = 2;
             this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+            // 
+            // MaNVtb
+            // 
+            this.MaNVtb.Location = new System.Drawing.Point(161, 15);
+            this.MaNVtb.Margin = new System.Windows.Forms.Padding(2);
+            this.MaNVtb.Name = "MaNVtb";
+            this.MaNVtb.ReadOnly = true;
+            this.MaNVtb.Size = new System.Drawing.Size(233, 26);
+            this.MaNVtb.TabIndex = 22;
             // 
             // MKNVadTB
             // 
@@ -2144,15 +2157,6 @@
             this.HTtb.ReadOnly = true;
             this.HTtb.Size = new System.Drawing.Size(233, 26);
             this.HTtb.TabIndex = 24;
-            // 
-            // MaNVtb
-            // 
-            this.MaNVtb.Location = new System.Drawing.Point(161, 15);
-            this.MaNVtb.Margin = new System.Windows.Forms.Padding(2);
-            this.MaNVtb.Name = "MaNVtb";
-            this.MaNVtb.ReadOnly = true;
-            this.MaNVtb.Size = new System.Drawing.Size(233, 26);
-            this.MaNVtb.TabIndex = 22;
             // 
             // label1
             // 
@@ -2295,6 +2299,7 @@
             this.NhanVienADdata.RowHeadersWidth = 62;
             this.NhanVienADdata.Size = new System.Drawing.Size(490, 437);
             this.NhanVienADdata.TabIndex = 0;
+            this.NhanVienADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NhanVienADdata_CellClick);
             // 
             // TaiKhoantb
             // 
@@ -2931,19 +2936,19 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox TTLHadTB;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.TextBox TGLHadTB;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox MaLHadTB;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox MaPhongLHadTB;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox MaDVLHadTB;
+        private System.Windows.Forms.TextBox MaNVLHadTB;
+        private System.Windows.Forms.TextBox MaKHLHadTB;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label51;
@@ -2959,7 +2964,7 @@
         private System.Windows.Forms.Button XoaDVadBT;
         private System.Windows.Forms.Button ThemDVadTB;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.TextBox ThoiGianDVasTB;
+        private System.Windows.Forms.TextBox ThoiGianDVadTB;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label43;

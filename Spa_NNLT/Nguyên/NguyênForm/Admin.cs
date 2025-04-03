@@ -78,7 +78,11 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
-
+        void LoadDichVu()
+        {
+            List<DIchVu> dIchVus = DichVuDAO.Instance.LoadTableList();
+            
+        }
 
         #endregion
 
@@ -210,23 +214,23 @@ namespace Spa_NNLT.Nguyên
         {
             TimTheotenTb.Text = "Tìm theo tên ...";
             TimTheotenTb.ForeColor = Color.Gray;
-            TimtheoMatb.Text = "Tìm theo mã...";
+            TimtheoMatb.Text = "Tìm theo mã ...";
             TimtheoMatb.ForeColor = Color.Gray;
             TimTheoTenKHtb.Text = "Tìm theo tên ...";
             TimTheoTenKHtb.ForeColor = Color.Gray;
-            TimTheoMaKHtb.Text = "Tìm theo số điện thoại ..";
+            TimTheoMaKHtb.Text = "Tìm theo số điện thoại ...";
             TimTheoMaKHtb.ForeColor = Color.Gray;
-            TimTheoTenDVtb.Text = "Tìm theo tên...";
+            TimTheoTenDVtb.Text = "Tìm theo tên ...";
             TimTheoTenDVtb.ForeColor = Color.Gray;
-            TimTheoMaDVtb.Text = "Tìm theo mã...";
+            TimTheoMaDVtb.Text = "Tìm theo mã ...";
             TimTheoMaDVtb.ForeColor = Color.Gray;   
-            TimTheoMaLHadTB.Text = "Tìm theo mã...";
+            TimTheoMaLHadTB.Text = "Tìm theo mã ...";
             TimTheoMaLHadTB.ForeColor = Color.Gray;
-            TTMaHDadTB.Text = "Tìm theo mã...";
+            TTMaHDadTB.Text = "Tìm theo mã ...";
             TTMaHDadTB.ForeColor= Color.Gray;
-            TTTenKHLHadTB.Text = "Tên khách hàng...";
+            TTTenKHLHadTB.Text = "Tên khách hàng ...";
             TTTenKHLHadTB.ForeColor = Color.Gray;
-            TTMaKHHDadTB.Text = "Tên khách hàng...";
+            TTMaKHHDadTB.Text = "Tên khách hàng ...";
             TTMaKHHDadTB.ForeColor = Color.Gray;
         }
 
@@ -250,7 +254,7 @@ namespace Spa_NNLT.Nguyên
 
         private void TimtheoMatb_Enter(object sender, EventArgs e)
         {
-            if(TimtheoMatb.Text == "Tìm theo mã...")
+            if(TimtheoMatb.Text == "Tìm theo mã ...")
             {
                 TimtheoMatb.Text = "";
                 TimtheoMatb.ForeColor= Color.Black;
@@ -261,7 +265,7 @@ namespace Spa_NNLT.Nguyên
         {
             if(string.IsNullOrEmpty (TimtheoMatb.Text))
             {
-                TimtheoMatb.Text = "Tìm theo mã...";
+                TimtheoMatb.Text = "Tìm theo mã ...";
                 TimtheoMatb.ForeColor = Color.Gray;
             }
         }
@@ -308,7 +312,26 @@ namespace Spa_NNLT.Nguyên
 
         private void TimKHadbt_Click(object sender, EventArgs e)
         {
-            LoadKhachHang();
+            string filter1 = TimTheoTenKHtb.Text.Trim();
+            string filter2 = TimTheoMaKHtb.Text.Trim();
+
+            KhachHangADdata.CurrentCell = null;
+
+            foreach(DataGridViewRow row in KhachHangADdata.Rows)
+            {
+                if (row.IsNewRow) continue;
+                string Cell1 = row.Cells["tenkhachhang"].Value.ToString().Trim();
+                string Cell2 = row.Cells["sdt"].Value.ToString().Trim();
+
+                if (filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo số điện thoại ...")
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = (filter1 == "" || Cell1.Contains(filter1)) || (filter2 == "" || Cell2.Contains(filter2));
+                }
+            }
         }
 
         private void TimTheoTenKHtb_Enter(object sender, EventArgs e)
@@ -331,7 +354,7 @@ namespace Spa_NNLT.Nguyên
 
         private void TimTheoMaKHtb_Enter(object sender, EventArgs e)
         {
-            if (TimTheoMaKHtb.Text == "Tìm theo số điện thoại ..")
+            if (TimTheoMaKHtb.Text == "Tìm theo số điện thoại ...")
             {
                 TimTheoMaKHtb.Text = "";
                 TimTheoMaKHtb.ForeColor = Color.Black;
@@ -342,7 +365,7 @@ namespace Spa_NNLT.Nguyên
         {
             if (string.IsNullOrEmpty(TimTheoMaKHtb.Text))
             {
-                TimTheoMaKHtb.Text = "Theo điện thoại ...";
+                TimTheoMaKHtb.Text = "Tìm theo số điện thoại ...";
                 TimTheoMaKHtb.ForeColor = Color.Gray;
             }
         }
@@ -443,7 +466,32 @@ namespace Spa_NNLT.Nguyên
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadThongTin();
+            string filter1 = TimTheotenTb.Text.Trim();
+            string filter2 = TimtheoMatb.Text.Trim();
+
+            NhanVienADdata.CurrentCell = null;
+
+            foreach (DataGridViewRow row in NhanVienADdata.Rows)
+            {
+                if (row.Cells["tennhanvien"].Value != null && row.Cells["manhanvien"].Value != null)
+                {
+                    string cellvalue = row.Cells["tennhanvien"].Value.ToString();
+                    string cellvalue1 = row.Cells["manhanvien"].Value.ToString();
+                    HTtb.Text = filter2;
+                    if(filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo mã ...")
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = (filter1 == "" || cellvalue.Contains(filter1)) ||
+              (filter2 == "" || cellvalue1.Contains(filter2));
+                    }
+
+
+                }
+            }    
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -453,7 +501,7 @@ namespace Spa_NNLT.Nguyên
 
         private void TimTheoTenDVtb_Enter(object sender, EventArgs e)
         {
-            if (TimTheoTenDVtb.Text == "Tìm theo tên...")
+            if (TimTheoTenDVtb.Text == "Tìm theo tên ...")
             {
                 TimTheoTenDVtb.Text = "";
                 TimTheoTenDVtb.ForeColor = Color.Black;
@@ -464,14 +512,14 @@ namespace Spa_NNLT.Nguyên
         {
             if(string.IsNullOrEmpty(TimTheoTenDVtb.Text))
             {
-                TimTheoTenDVtb.Text = "Tìm theo tên...";
+                TimTheoTenDVtb.Text = "Tìm theo tên ...";
                 TimTheoTenDVtb.ForeColor = Color.Gray;
             }
         }
 
         private void TimTheoMaLHadTB_Enter(object sender, EventArgs e)
         {
-            if (TimTheoMaLHadTB.Text == "Tìm theo mã...")
+            if (TimTheoMaLHadTB.Text == "Tìm theo mã ...")
             {
                 TimTheoMaLHadTB.Text = "";
                 TimTheoMaLHadTB.ForeColor = Color.Black;
@@ -482,14 +530,14 @@ namespace Spa_NNLT.Nguyên
         {
             if (string.IsNullOrEmpty(TimTheoMaLHadTB.Text))
             {
-                TimTheoMaLHadTB.Text = "Tìm theo mã...";
+                TimTheoMaLHadTB.Text = "Tìm theo mã ...";
                 TimTheoMaLHadTB.ForeColor = Color.Gray;
             }
         }
 
         private void TimTheoMaDVtb_Enter(object sender, EventArgs e)
         {
-            if (TimTheoMaDVtb.Text == "Tìm theo mã...")
+            if (TimTheoMaDVtb.Text == "Tìm theo mã ...")
             {
                 TimTheoMaDVtb.Text = "";
                 TimTheoMaDVtb.ForeColor= Color.Black;
@@ -498,16 +546,16 @@ namespace Spa_NNLT.Nguyên
 
         private void TimTheoMaDVtb_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty (TimTheoMaDVtb.Text))
+            if (string.IsNullOrEmpty(TimTheoMaDVtb.Text))
             {
-                TimTheoMaDVtb.Text = "Tìm theo mã...";
+                TimTheoMaDVtb.Text = "Tìm theo mã ...";
                 TimTheoMaDVtb.ForeColor = Color.Gray;
             }
         }
 
         private void TTTenKHLHadTB_Enter(object sender, EventArgs e)
         {
-            if (TTTenKHLHadTB.Text == "Tên khách hàng...")
+            if (TTTenKHLHadTB.Text == "Tên khách hàng ...")
             {
                 TTTenKHLHadTB.Text = "";
                 TTTenKHLHadTB.ForeColor = Color.Black;
@@ -518,7 +566,7 @@ namespace Spa_NNLT.Nguyên
         {
             if (string.IsNullOrEmpty(TTTenKHLHadTB.Text))
             {
-                TTTenKHLHadTB.Text = "Tên khách hàng...";
+                TTTenKHLHadTB.Text = "Tên khách hàng ...";
                 TTTenKHLHadTB.ForeColor = Color.Gray;
             }
         }
@@ -530,7 +578,7 @@ namespace Spa_NNLT.Nguyên
 
         private void TTMaKHHDadTB_Enter(object sender, EventArgs e)
         {
-            if (TTMaKHHDadTB.Text == "Tên khách hàng...")
+            if (TTMaKHHDadTB.Text == "Tên khách hàng ...")
             {
                 TTMaKHHDadTB.Text = "";
                 TTMaKHHDadTB.ForeColor = Color.Black;
@@ -541,10 +589,98 @@ namespace Spa_NNLT.Nguyên
         {
             if (string.IsNullOrEmpty(TTMaKHHDadTB.Text))
             {
-                TTMaKHHDadTB.Text = "Tên khách hàng...";
+                TTMaKHHDadTB.Text = "Tên khách hàng ...";
                 TTMaKHHDadTB.ForeColor = Color.Gray;
             }
         }
         #endregion
+
+        private void NhanVienADdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >=0)
+            {
+                DataGridViewRow row = NhanVienADdata.Rows[e.RowIndex];
+                MaNVtb.Text = row.Cells[0].Value?.ToString();
+                HTtb.Text = row.Cells[1].Value?.ToString();
+                string tg = row.Cells[3].Value?.ToString();
+                if (tg == "0")
+                {
+                    GTtb.Text = "Nữ";
+                }
+                else
+                {
+                    GTtb.Text = "Nam";
+                }
+                SDTTb.Text = row.Cells[4].Value?.ToString();
+                NStb.Text = row.Cells[2].Value?.ToString();
+                TDNNVadTB.Text = row.Cells[5].Value?.ToString();
+                MKNVadTB.Text = row.Cells[6].Value?.ToString();
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            string filter1 = TimTheoTenDVtb.Text.Trim();
+            string filter2 = TimTheoMaDVtb.Text.Trim();
+
+            DichVuADdata.CurrentCell = null;
+
+            foreach (DataGridViewRow row in DichVuADdata.Rows)
+            {
+
+                if (row.IsNewRow) continue;
+                string Ceil1 = row.Cells["ten"].Value?.ToString();
+                string Ceil2 = row.Cells["madichvu"].Value?.ToString();
+
+                if (filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo mã ...")
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = filter1 == "" || filter2 == "" || Ceil1.Contains(filter1) || Ceil2.Contains(filter2);
+                }
+            }
+        }
+
+        private void KhachHangADdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) { 
+                DataGridViewRow row = KhachHangADdata.Rows[e.RowIndex];
+                MaKHadTB.Text = row.Cells[0].Value?.ToString();
+                HTKHadTB.Text = row.Cells[1].Value?.ToString();
+                string tg = row.Cells[2].Value?.ToString();
+                if (tg == "0")
+                {
+                    GTKhadTB.Text = "Nữ";
+                }
+                else
+                {
+                    GTKhadTB.Text = "Nam";
+                } 
+                SDTKHadTB.Text = row.Cells[3].Value?.ToString();
+                    
+            }
+        }
+
+        private void DichVuADdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >=0)
+            {
+                DataGridViewRow row = DichVuADdata.Rows[e.RowIndex];
+                MaDVADtb.Text = row.Cells["madichvu"].Value?.ToString();
+                TenDVadTB.Text = row.Cells["ten"].Value?.ToString();
+                GiaDVadTB.Text = row.Cells["giadichvu"].Value?.ToString();
+                ThoiGianDVadTB.Text = row.Cells["thoiluong"].Value?.ToString();    
+            }
+        }
+
+        private void LichHenADdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) {
+                DataGridViewRow row = LichHenADdata.Rows[e.RowIndex];
+                
+            }
+        }
     }
 }
