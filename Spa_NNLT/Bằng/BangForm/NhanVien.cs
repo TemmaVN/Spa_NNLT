@@ -26,7 +26,7 @@ namespace Spa_NNLT.Bằng
 
         #region method
 
-
+        
 
         #endregion
 
@@ -249,5 +249,15 @@ namespace Spa_NNLT.Bằng
 
         }
         #endregion
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTmaLHnvTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -79,6 +79,7 @@ namespace Spa_NNLT.Nguyên
         }
 
 
+
         #endregion
 
         #region Events
@@ -225,7 +226,8 @@ namespace Spa_NNLT.Nguyên
             TTMaHDadTB.ForeColor= Color.Gray;
             TTTenKHLHadTB.Text = "Tên khách hàng...";
             TTTenKHLHadTB.ForeColor = Color.Gray;
-
+            TTMaKHHDadTB.Text = "Tên khách hàng...";
+            TTMaKHHDadTB.ForeColor = Color.Gray;
         }
 
         private void TimTheotenTb_Enter(object sender, EventArgs e)
@@ -427,7 +429,7 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
-        #endregion
+        
 
         private void Khachhangtb_Click(object sender, EventArgs e)
         {
@@ -525,5 +527,24 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void TTMaKHHDadTB_Enter(object sender, EventArgs e)
+        {
+            if (TTMaKHHDadTB.Text == "Tên khách hàng...")
+            {
+                TTMaKHHDadTB.Text = "";
+                TTMaKHHDadTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTMaKHHDadTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTMaKHHDadTB.Text))
+            {
+                TTMaKHHDadTB.Text = "Tên khách hàng...";
+                TTMaKHHDadTB.ForeColor = Color.Gray;
+            }
+        }
+        #endregion
     }
 }

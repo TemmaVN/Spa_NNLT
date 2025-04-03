@@ -577,6 +577,8 @@
             this.TTMaKHHDadTB.Name = "TTMaKHHDadTB";
             this.TTMaKHHDadTB.Size = new System.Drawing.Size(188, 26);
             this.TTMaKHHDadTB.TabIndex = 2;
+            this.TTMaKHHDadTB.Enter += new System.EventHandler(this.TTMaKHHDadTB_Enter);
+            this.TTMaKHHDadTB.Leave += new System.EventHandler(this.TTMaKHHDadTB_Leave);
             // 
             // TTMaHDadTB
             // 
