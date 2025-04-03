@@ -15,6 +15,7 @@ using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.PhongAD;
 
 
+
 namespace Spa_NNLT.Nguyên
 {
     public partial class Admin : Form
@@ -32,6 +33,7 @@ namespace Spa_NNLT.Nguyên
             
             LoadThongTin();
             LoadThemPhong();
+            LoadPhong();
             
             // Load thông tin từ sql
             // Tìm thông tin qua text box
@@ -230,8 +232,8 @@ namespace Spa_NNLT.Nguyên
             TTMaHDadTB.ForeColor= Color.Gray;
             TTTenKHLHadTB.Text = "Tên khách hàng ...";
             TTTenKHLHadTB.ForeColor = Color.Gray;
-            TTMaKHHDadTB.Text = "Tên khách hàng ...";
-            TTMaKHHDadTB.ForeColor = Color.Gray;
+            TTMaLHHDadTB.Text = "Tên khách hàng ...";
+            TTMaLHHDadTB.ForeColor = Color.Gray;
         }
 
         private void TimTheotenTb_Enter(object sender, EventArgs e)
@@ -578,19 +580,19 @@ namespace Spa_NNLT.Nguyên
 
         private void TTMaKHHDadTB_Enter(object sender, EventArgs e)
         {
-            if (TTMaKHHDadTB.Text == "Tên khách hàng ...")
+            if (TTMaLHHDadTB.Text == "Tên khách hàng ...")
             {
-                TTMaKHHDadTB.Text = "";
-                TTMaKHHDadTB.ForeColor = Color.Black;
+                TTMaLHHDadTB.Text = "";
+                TTMaLHHDadTB.ForeColor = Color.Black;
             }
         }
 
         private void TTMaKHHDadTB_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TTMaKHHDadTB.Text))
+            if (string.IsNullOrEmpty(TTMaLHHDadTB.Text))
             {
-                TTMaKHHDadTB.Text = "Tên khách hàng ...";
-                TTMaKHHDadTB.ForeColor = Color.Gray;
+                TTMaLHHDadTB.Text = "Tên khách hàng ...";
+                TTMaLHHDadTB.ForeColor = Color.Gray;
             }
         }
         #endregion
@@ -679,8 +681,98 @@ namespace Spa_NNLT.Nguyên
         {
             if (e.RowIndex >= 0) {
                 DataGridViewRow row = LichHenADdata.Rows[e.RowIndex];
-                
+                MaLHadTB.Text = row.Cells["malichhen"].Value?.ToString();
+                MaKHLHadTB.Text = row.Cells["makhachhang"].Value?.ToString();
+                MaNVLHadTB.Text = row.Cells["manhanvien"].Value?.ToString();
+                MaDVLHadTB.Text = row.Cells["madichvu"].Value?.ToString();
+                MaPhongLHadTB.Text = row.Cells["maphong"].Value?.ToString();
+                TGLHadTB.Text = row.Cells["thoigian"].Value?.ToString();
+                TTLHadTB.Text = row.Cells["trangthai"].Value?.ToString();
             }
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            string filter1 = TimTheoMaLHadTB.Text.Trim();
+            LichHenADdata.CurrentCell = null;
+
+            foreach(DataGridViewRow row in LichHenADdata.Rows)
+            {
+                if (row.IsNewRow) continue;
+                string cell = row.Cells["malichhen"].Value?.ToString().Trim();
+                if (filter1 == "Tìm theo mã ...")
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = filter1 == "" || cell.Contains(filter1);
+                }
+            }
+        }
+
+        private void HoaDonADdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = HoaDonADdata.Rows[e.RowIndex];
+                MaHDadTB.Text = row.Cells["mahoadon"].Value?.ToString();
+                MaLHHDadTB.Text = row.Cells["malichhen"].Value?.ToString();
+
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void LoadPhong()
+        {
+            List<Phong> phongs = PhongDAO.Instance.LoadDanhSachPhong();
+            int x = 20;
+            int y = 20;
+            int maxwidth = PhongADpn.Width - PhongDAO.PhongWidth;
+            foreach (Phong phong in phongs)
+            {
+                Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight  };
+                btn.Location = new Point(x, y);
+                btn.Text = phong.maPhong.ToString();
+                if(phong.tinhTrang.ToString().Trim() == "0")
+                {
+                    btn.BackColor = Color.White;
+                }
+                else
+                {
+                    btn.BackColor = Color.Aqua;
+                }
+                btn.Tag = phong;
+                btn.Click += btn_click;
+                PhongADpn.Controls.Add(btn);
+                x += PhongDAO.PhongWidth;
+                if (x > maxwidth)
+                {
+                    x = 20;
+                    y += PhongDAO.PhongHeight;
+                }
+                
+            }
+
+
+        }
+
+        private void btn_click(object sender, EventArgs e) { 
+            Button btn = sender as Button;
+            Phong phong = btn.Tag as Phong;
+            if (phong != null)
+            {
+                SoPhongADtb.Text = phong.maPhong.ToString();
+                LoaiPhonfADtb.Text = phong.loaiPhong.ToString();
+                TinhTrangADtb.Text = phong.tinhTrang.ToString();
+            }
+        }
+
+        
     }
 }
