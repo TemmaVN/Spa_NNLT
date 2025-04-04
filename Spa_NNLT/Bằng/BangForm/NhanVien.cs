@@ -18,10 +18,10 @@ namespace Spa_NNLT.Bằng
         public FormNhanVien()
         {
             InitializeComponent();
-            LoadDichVuList();
-            LoadHoaDonList();
-            LoadKhachHangList();
-            LoadLichHenList();
+            //LoadDichVuList();
+            //LoadHoaDonList();
+            //LoadKhachHangList();
+            //LoadLichHenList();
         }
 
         #region method
@@ -59,7 +59,24 @@ namespace Spa_NNLT.Bằng
        
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
-
+            TTTKHnvTB.Text = "Tìm theo tên";
+            TTTKHnvTB.ForeColor = Color.Gray;
+            TTTsdtKHnvTB.Text = "Tìm theo sdt";
+            TTTsdtKHnvTB.ForeColor = Color.Gray;
+            TTTDVnvTB.Text = "Tìm theo tên";
+            TTTDVnvTB.ForeColor = Color.Gray;
+            TTmaDVnvTB.Text = "Tìm theo mã";
+            TTmaDVnvTB.ForeColor = Color.Gray;
+            TTmaLHnvTB.Text = "Tìm theo mã";
+            TTmaLHnvTB.ForeColor = Color.Gray;
+            TTKHLHnvTB.Text = "Tìm theo tên khách hàng";
+            TTKHLHnvTB.ForeColor= Color.Gray;   
+            TTmaPhongnvTB.Text = "Tìm theo mã";
+            TTmaPhongnvTB.ForeColor = Color.Gray;
+            TTmaHDnvTB.Text = "Tìm theo mã hóa đơn";
+            TTmaHDnvTB.ForeColor = Color.Gray;
+            TTmaLHHDnvTb.Text = "Tìm theo mã lịch hẹn";
+            TTmaLHHDnvTb.ForeColor = Color.Gray;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -258,6 +275,192 @@ namespace Spa_NNLT.Bằng
         private void TTmaLHnvTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TTTKHnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTTKHnvTB.Text == "Tìm theo tên")
+            {
+                TTTKHnvTB.Text = "";
+                TTTKHnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTTKHnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTTKHnvTB.Text)) {
+                TTTKHnvTB.Text = "Tìm theo tên";
+                TTTKHnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTTmaKHnvTB_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TTTsdtKHnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTTsdtKHnvTB.Text == "Tìm theo sdt")
+            {
+                TTTsdtKHnvTB.Text = "";
+                TTTsdtKHnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTTsdtKHnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTTsdtKHnvTB.Text))
+            {
+                TTTsdtKHnvTB.Text = "Tìm theo sdt";
+                TTTsdtKHnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTTDVnvTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTmaDVnvTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTKHLHnvTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTTKHnvTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TTTDVnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTTDVnvTB.Text == "Tìm theo tên")
+            {
+                TTTDVnvTB.Text = "";
+                TTTDVnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaDVnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTmaDVnvTB.Text))
+            {
+                TTmaDVnvTB.Text = "Tìm theo mã";
+                TTmaDVnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTTDVnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTTDVnvTB.Text))
+            {
+                TTTDVnvTB.Text = "Tìm theo tên";
+                TTTDVnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTmaDVnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTmaDVnvTB.Text == "Tìm theo mã")
+            {
+                TTmaDVnvTB.Text = "";
+                TTmaDVnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaLHnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTmaLHnvTB.Text == "Tìm theo mã")
+            {
+                TTmaLHnvTB.Text = "";
+                TTmaLHnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaLHnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTmaLHnvTB.Text))
+            {
+                TTmaLHnvTB.Text = "Tìm theo mã";
+                TTmaLHnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTmaPhongnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTmaPhongnvTB.Text == "Tìm theo mã")
+            {
+                TTmaPhongnvTB.Text = "";
+                TTmaPhongnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaPhongnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTmaPhongnvTB.Text))
+            {
+                TTmaPhongnvTB.Text = "Tìm theo mã";
+                TTmaPhongnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTmaHDnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTmaHDnvTB.Text == "Tìm theo mã hóa đơn")
+            {
+                TTmaHDnvTB.Text = "";
+                TTmaHDnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaHDnvTB_Leave(object sender, EventArgs e)
+        {
+            if (TTmaLHHDnvTb.Text == "Tìm theo mã lịch hẹn")
+            {
+                TTmaLHHDnvTb.Text = "";
+                TTmaLHHDnvTb.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaLHHDnvTb_Enter(object sender, EventArgs e)
+        {
+            if (TTmaLHHDnvTb.Text == "Tìm theo mã lịch hẹn")
+            {
+                TTmaLHHDnvTb.Text = "";
+                TTmaLHHDnvTb.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTmaLHHDnvTb_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTmaLHHDnvTb.Text))
+            {
+                TTmaLHHDnvTb.Text = "Tìm theo mã lịch hẹn";
+                TTmaLHHDnvTb.ForeColor = Color.Gray;
+            }
+        }
+
+        private void TTKHLHnvTB_Enter(object sender, EventArgs e)
+        {
+            if (TTKHLHnvTB.Text == "Tìm theo tên khách hàng")
+            {
+                TTKHLHnvTB.Text = "";
+                TTKHLHnvTB.ForeColor = Color.Black;
+            }
+        }
+
+        private void TTKHLHnvTB_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(TTKHLHnvTB.Text))
+            {
+                TTKHLHnvTB.Text = "Tìm theo tên khách hàng";
+                TTKHLHnvTB.ForeColor = Color.Gray;
+            }
         }
     }
 }
