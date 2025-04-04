@@ -13,6 +13,7 @@ using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.NhanVienAD;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.PhongAD;
+using System.Security.Principal;
 
 
 
@@ -771,7 +772,14 @@ namespace Spa_NNLT.Nguyên
             {
                 SoPhongADtb.Text = phong.maPhong.ToString();
                 LoaiPhonfADtb.Text = phong.loaiPhong.ToString();
-                TinhTrangADtb.Text = phong.tinhTrang.ToString();
+                string tg = phong.tinhTrang.ToString();
+                if (tg.Trim() == "0")
+                {
+                    TinhTrangADtb.Text = "Trống";
+                }
+                else {
+                    TinhTrangADtb.Text = "Đang làm";
+                }
             }
         }
 
