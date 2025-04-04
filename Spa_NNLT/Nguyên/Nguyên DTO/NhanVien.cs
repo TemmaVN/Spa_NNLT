@@ -90,6 +90,14 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
 
         private NhanVienDAO() { }
 
+        public bool login(string username, string password)
+        {
+            string query = "SELECT * from dbo.tblNhanVien where taikhoan = N'" + username +"' AND matkhau = N'" + password + "' ";
+            DataTable result = DataProvider.Instance.Excuted(query);
+                
+            return result.Rows.Count >0;
+        }
+
         public List<NhanVien> LoadNhanVienAD()
         {
             List<NhanVien> nhanViens = new List<NhanVien>();

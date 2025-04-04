@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spa_NNLT.Bằng;
 using Spa_NNLT.Nguyên;
+using Spa_NNLT.Nguyên.Nguyên_DTO;
+using Spa_NNLT.Nguyên.NhanVienAD;
 
 namespace Spa_NNLT
 {
@@ -56,13 +58,13 @@ namespace Spa_NNLT
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-            if(textBoxUsename.Text == "1")
+            if(loginNV(textBoxUsename.Text,textBoxMatKhau.Text))
             {
                 FormNhanVien f = new FormNhanVien();
                 this.Hide();
                 f.ShowDialog();
             }
-            else if (textBoxUsename.Text == "2")
+            else if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
             {
                 Admin admin = new Admin();
                 this.Hide();
@@ -70,13 +72,20 @@ namespace Spa_NNLT
             }
             else
             {
-                MessageBox.Show("Sai kia fen");
+                MessageBox.Show("Sai tên đăng nhập hoặc mật kh");
             }
             this.Show();
             
         }
 
-        
+        bool loginNV(string username, string password)
+        {
+            return NhanVienDAO.Instance.login(username, password);
+        }
+
+        bool loginQL(string username, string password) { 
+            return QuanLiDAO.Instance.login(username, password);
+        }
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -236,6 +236,8 @@ namespace Spa_NNLT.Nguyên
             TTMaLHHDadTB.ForeColor = Color.Gray;
         }
 
+        
+
         private void TimTheotenTb_Enter(object sender, EventArgs e)
         {
            if (TimTheotenTb.Text == "Tìm theo tên ...")
