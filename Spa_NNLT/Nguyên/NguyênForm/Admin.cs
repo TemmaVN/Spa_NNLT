@@ -382,8 +382,7 @@ namespace Spa_NNLT.Nguyên
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ThemKHad themKHad = new ThemKHad();
-            themKHad.ShowDialog();
+            
         }
 
         private void PhongADtp_Click(object sender, EventArgs e)
@@ -398,8 +397,7 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemNVbt_Click(object sender, EventArgs e)
         {
-            ThemNVad themNVad = new ThemNVad();
-            themNVad.ShowDialog();
+            
         }
 
         private void XoaNVbt_Click(object sender, EventArgs e)
@@ -409,28 +407,24 @@ namespace Spa_NNLT.Nguyên
 
         private void CapNhatADbt_Click(object sender, EventArgs e)
         {
-            SuaNVad suaNVad = new SuaNVad();
-            suaNVad.ShowDialog();
+            
         }
 
         private void ThemDVadTB_Click(object sender, EventArgs e)
         {
-            ThemDVad themDVad = new ThemDVad();
-            themDVad.ShowDialog();
+            
         }
 
         private void CapNhatDVadBT_Click(object sender, EventArgs e)
         {
-            SuaDVad suaDVad = new SuaDVad();
-            suaDVad.ShowDialog();
+           
         }
 
         
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ThemKHad themKHad = new ThemKHad();
-            themKHad.ShowDialog();
+            
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

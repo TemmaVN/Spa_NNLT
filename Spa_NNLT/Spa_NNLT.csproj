@@ -108,84 +108,12 @@
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Nguyên\Nguyên DTO\DIchVu.cs" />
-    <Compile Include="Nguyên\NguyênForm\SuaDVad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\SuaDVad.Designer.cs">
-      <DependentUpon>SuaDVad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemDVad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemDVad.Designer.cs">
-      <DependentUpon>ThemDVad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nguyên\Nguyên DTO\HoaDon.cs" />
-    <Compile Include="Nguyên\NguyênForm\SuaHDad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\SuaHDad.Designer.cs">
-      <DependentUpon>SuaHDad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemHDad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemHDad.Designer.cs">
-      <DependentUpon>ThemHDad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nguyên\Nguyên DTO\Khachhang.cs" />
-    <Compile Include="Nguyên\NguyênForm\SuaKHad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\SuaKHad.Designer.cs">
-      <DependentUpon>SuaKHad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemKHad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemKHad.Designer.cs">
-      <DependentUpon>ThemKHad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nguyên\Nguyên DTO\LichHen.cs" />
-    <Compile Include="Nguyên\NguyênForm\SuaLDad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\SuaLDad.Designer.cs">
-      <DependentUpon>SuaLDad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemLHad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemLHad.Designer.cs">
-      <DependentUpon>ThemLHad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nguyên\Nguyên DTO\DataProvider.cs" />
     <Compile Include="Nguyên\Nguyên DTO\NhanVien.cs" />
-    <Compile Include="Nguyên\NguyênForm\SuaNVad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\SuaNVad.Designer.cs">
-      <DependentUpon>SuaNVad.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemNVad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemNVad.Designer.cs">
-      <DependentUpon>ThemNVad.cs</DependentUpon>
-    </Compile>
     <Compile Include="Nguyên\Nguyên DTO\Phong.cs" />
-    <Compile Include="Nguyên\NguyênForm\SuaPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\SuaPhong.Designer.cs">
-      <DependentUpon>SuaPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Nguyên\NguyênForm\ThemPhong.Designer.cs">
-      <DependentUpon>ThemPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bằng\BangForm\CapNhatPhong.resx">
@@ -217,42 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nguyên\NguyênForm\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\SuaDVad.resx">
-      <DependentUpon>SuaDVad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\ThemDVad.resx">
-      <DependentUpon>ThemDVad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\SuaHDad.resx">
-      <DependentUpon>SuaHDad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\ThemHDad.resx">
-      <DependentUpon>ThemHDad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\SuaKHad.resx">
-      <DependentUpon>SuaKHad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\ThemKHad.resx">
-      <DependentUpon>ThemKHad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\SuaLDad.resx">
-      <DependentUpon>SuaLDad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\ThemLHad.resx">
-      <DependentUpon>ThemLHad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\SuaNVad.resx">
-      <DependentUpon>SuaNVad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\ThemNVad.resx">
-      <DependentUpon>ThemNVad.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\SuaPhong.resx">
-      <DependentUpon>SuaPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\ThemPhong.resx">
-      <DependentUpon>ThemPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
