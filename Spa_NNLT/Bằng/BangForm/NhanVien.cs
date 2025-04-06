@@ -166,8 +166,7 @@ namespace Spa_NNLT.Bằng
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            ThemKhachHang i = new ThemKhachHang();
-            i.ShowDialog();
+            
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -207,8 +206,7 @@ namespace Spa_NNLT.Bằng
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SuaKhachHang s = new SuaKhachHang();
-            s.ShowDialog();
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -218,14 +216,12 @@ namespace Spa_NNLT.Bằng
 
         private void button7_Click(object sender, EventArgs e)
         {
-            ThemLichHen t = new ThemLichHen();
-            t.ShowDialog();
+            
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            SuaLichHen s = new SuaLichHen();
-            s.ShowDialog();
+            
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -245,20 +241,17 @@ namespace Spa_NNLT.Bằng
 
         private void button13_Click(object sender, EventArgs e)
         {
-            CapNhatPhong c = new CapNhatPhong();
-            c.ShowDialog();
+            
         }
 
         private void button19_Click(object sender, EventArgs e)
         {
-            TaoHoaDon a = new TaoHoaDon();
-            a.ShowDialog();
+            
         }
 
         private void button18_Click(object sender, EventArgs e)
         {
-            SuaHoaDon s = new SuaHoaDon();
-            s.ShowDialog();
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
