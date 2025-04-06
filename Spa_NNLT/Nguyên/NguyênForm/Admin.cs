@@ -736,6 +736,7 @@ namespace Spa_NNLT.Nguyên
                 Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight  };
                 btn.Location = new Point(x, y);
                 btn.Text = phong.maPhong.ToString();
+                
                 if(phong.tinhTrang.ToString().Trim() == "0")
                 {
                     btn.BackColor = Color.White;
