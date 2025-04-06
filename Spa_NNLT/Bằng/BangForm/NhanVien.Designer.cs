@@ -88,16 +88,16 @@
             this.DVNVdata = new System.Windows.Forms.DataGridView();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.ThoiLuongText = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.TenDichVuText = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.MenhGiaText = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.IDDichVuText = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -112,25 +112,25 @@
             this.label37 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel44 = new System.Windows.Forms.Panel();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.PhongText = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.TinhTrangText = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.ThoiGianText = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DichVuText = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.KhachHangText = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.NhanVienText = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.IDLichHenText = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
             this.LHNVdata = new System.Windows.Forms.DataGridView();
@@ -465,7 +465,7 @@
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(854, 437);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân viên";
@@ -480,7 +480,7 @@
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(854, 437);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khách hàng ";
@@ -735,7 +735,7 @@
             this.tabPage3.Controls.Add(this.panel13);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(854, 437);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Dịch vụ ";
@@ -832,19 +832,19 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.textBox6);
+            this.panel14.Controls.Add(this.ThoiLuongText);
             this.panel14.Controls.Add(this.label11);
             this.panel14.Location = new System.Drawing.Point(3, 172);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(333, 33);
             this.panel14.TabIndex = 3;
             // 
-            // textBox6
+            // ThoiLuongText
             // 
-            this.textBox6.Location = new System.Drawing.Point(126, 9);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(204, 22);
-            this.textBox6.TabIndex = 1;
+            this.ThoiLuongText.Location = new System.Drawing.Point(126, 9);
+            this.ThoiLuongText.Name = "ThoiLuongText";
+            this.ThoiLuongText.Size = new System.Drawing.Size(204, 22);
+            this.ThoiLuongText.TabIndex = 1;
             // 
             // label11
             // 
@@ -858,19 +858,19 @@
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.textBox7);
+            this.panel15.Controls.Add(this.TenDichVuText);
             this.panel15.Controls.Add(this.label12);
             this.panel15.Location = new System.Drawing.Point(3, 60);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(333, 33);
             this.panel15.TabIndex = 2;
             // 
-            // textBox7
+            // TenDichVuText
             // 
-            this.textBox7.Location = new System.Drawing.Point(126, 9);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(204, 22);
-            this.textBox7.TabIndex = 1;
+            this.TenDichVuText.Location = new System.Drawing.Point(126, 9);
+            this.TenDichVuText.Name = "TenDichVuText";
+            this.TenDichVuText.Size = new System.Drawing.Size(204, 22);
+            this.TenDichVuText.TabIndex = 1;
             // 
             // label12
             // 
@@ -884,19 +884,19 @@
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.textBox8);
+            this.panel16.Controls.Add(this.MenhGiaText);
             this.panel16.Controls.Add(this.label13);
             this.panel16.Location = new System.Drawing.Point(3, 112);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(333, 33);
             this.panel16.TabIndex = 2;
             // 
-            // textBox8
+            // MenhGiaText
             // 
-            this.textBox8.Location = new System.Drawing.Point(126, 9);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(204, 22);
-            this.textBox8.TabIndex = 1;
+            this.MenhGiaText.Location = new System.Drawing.Point(126, 9);
+            this.MenhGiaText.Name = "MenhGiaText";
+            this.MenhGiaText.Size = new System.Drawing.Size(204, 22);
+            this.MenhGiaText.TabIndex = 1;
             // 
             // label13
             // 
@@ -910,19 +910,19 @@
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.textBox9);
+            this.panel17.Controls.Add(this.IDDichVuText);
             this.panel17.Controls.Add(this.label14);
             this.panel17.Location = new System.Drawing.Point(3, 12);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(333, 33);
             this.panel17.TabIndex = 1;
             // 
-            // textBox9
+            // IDDichVuText
             // 
-            this.textBox9.Location = new System.Drawing.Point(126, 9);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(204, 22);
-            this.textBox9.TabIndex = 1;
+            this.IDDichVuText.Location = new System.Drawing.Point(126, 9);
+            this.IDDichVuText.Name = "IDDichVuText";
+            this.IDDichVuText.Size = new System.Drawing.Size(204, 22);
+            this.IDDichVuText.TabIndex = 1;
             // 
             // label14
             // 
@@ -943,7 +943,7 @@
             this.tabPage4.Controls.Add(this.panel20);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(854, 437);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Lịch hẹn ";
@@ -1066,19 +1066,19 @@
             // 
             // panel44
             // 
-            this.panel44.Controls.Add(this.textBox33);
+            this.panel44.Controls.Add(this.PhongText);
             this.panel44.Controls.Add(this.label29);
             this.panel44.Location = new System.Drawing.Point(3, 159);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(333, 33);
             this.panel44.TabIndex = 6;
             // 
-            // textBox33
+            // PhongText
             // 
-            this.textBox33.Location = new System.Drawing.Point(126, 9);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(204, 22);
-            this.textBox33.TabIndex = 1;
+            this.PhongText.Location = new System.Drawing.Point(126, 9);
+            this.PhongText.Name = "PhongText";
+            this.PhongText.Size = new System.Drawing.Size(204, 22);
+            this.PhongText.TabIndex = 1;
             // 
             // label29
             // 
@@ -1092,19 +1092,19 @@
             // 
             // panel28
             // 
-            this.panel28.Controls.Add(this.textBox16);
+            this.panel28.Controls.Add(this.TinhTrangText);
             this.panel28.Controls.Add(this.label20);
             this.panel28.Location = new System.Drawing.Point(3, 235);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(333, 33);
             this.panel28.TabIndex = 5;
             // 
-            // textBox16
+            // TinhTrangText
             // 
-            this.textBox16.Location = new System.Drawing.Point(126, 9);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(204, 22);
-            this.textBox16.TabIndex = 1;
+            this.TinhTrangText.Location = new System.Drawing.Point(126, 9);
+            this.TinhTrangText.Name = "TinhTrangText";
+            this.TinhTrangText.Size = new System.Drawing.Size(204, 22);
+            this.TinhTrangText.TabIndex = 1;
             // 
             // label20
             // 
@@ -1118,19 +1118,19 @@
             // 
             // panel27
             // 
-            this.panel27.Controls.Add(this.textBox15);
+            this.panel27.Controls.Add(this.ThoiGianText);
             this.panel27.Controls.Add(this.label19);
             this.panel27.Location = new System.Drawing.Point(3, 196);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(333, 33);
             this.panel27.TabIndex = 4;
             // 
-            // textBox15
+            // ThoiGianText
             // 
-            this.textBox15.Location = new System.Drawing.Point(126, 9);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(204, 22);
-            this.textBox15.TabIndex = 1;
+            this.ThoiGianText.Location = new System.Drawing.Point(126, 9);
+            this.ThoiGianText.Name = "ThoiGianText";
+            this.ThoiGianText.Size = new System.Drawing.Size(204, 22);
+            this.ThoiGianText.TabIndex = 1;
             // 
             // label19
             // 
@@ -1144,19 +1144,19 @@
             // 
             // panel23
             // 
-            this.panel23.Controls.Add(this.textBox1);
+            this.panel23.Controls.Add(this.DichVuText);
             this.panel23.Controls.Add(this.label15);
             this.panel23.Location = new System.Drawing.Point(3, 120);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(333, 33);
             this.panel23.TabIndex = 3;
             // 
-            // textBox1
+            // DichVuText
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 22);
-            this.textBox1.TabIndex = 2;
+            this.DichVuText.Location = new System.Drawing.Point(126, 6);
+            this.DichVuText.Name = "DichVuText";
+            this.DichVuText.Size = new System.Drawing.Size(204, 22);
+            this.DichVuText.TabIndex = 2;
             // 
             // label15
             // 
@@ -1170,19 +1170,19 @@
             // 
             // panel24
             // 
-            this.panel24.Controls.Add(this.textBox12);
+            this.panel24.Controls.Add(this.KhachHangText);
             this.panel24.Controls.Add(this.label16);
             this.panel24.Location = new System.Drawing.Point(3, 42);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(333, 33);
             this.panel24.TabIndex = 2;
             // 
-            // textBox12
+            // KhachHangText
             // 
-            this.textBox12.Location = new System.Drawing.Point(126, 9);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(204, 22);
-            this.textBox12.TabIndex = 1;
+            this.KhachHangText.Location = new System.Drawing.Point(126, 9);
+            this.KhachHangText.Name = "KhachHangText";
+            this.KhachHangText.Size = new System.Drawing.Size(204, 22);
+            this.KhachHangText.TabIndex = 1;
             // 
             // label16
             // 
@@ -1196,19 +1196,19 @@
             // 
             // panel25
             // 
-            this.panel25.Controls.Add(this.textBox13);
+            this.panel25.Controls.Add(this.NhanVienText);
             this.panel25.Controls.Add(this.label17);
             this.panel25.Location = new System.Drawing.Point(3, 81);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(333, 33);
             this.panel25.TabIndex = 2;
             // 
-            // textBox13
+            // NhanVienText
             // 
-            this.textBox13.Location = new System.Drawing.Point(126, 9);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(204, 22);
-            this.textBox13.TabIndex = 1;
+            this.NhanVienText.Location = new System.Drawing.Point(126, 9);
+            this.NhanVienText.Name = "NhanVienText";
+            this.NhanVienText.Size = new System.Drawing.Size(204, 22);
+            this.NhanVienText.TabIndex = 1;
             // 
             // label17
             // 
@@ -1222,19 +1222,19 @@
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.textBox14);
+            this.panel26.Controls.Add(this.IDLichHenText);
             this.panel26.Controls.Add(this.label18);
             this.panel26.Location = new System.Drawing.Point(3, 3);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(333, 33);
             this.panel26.TabIndex = 1;
             // 
-            // textBox14
+            // IDLichHenText
             // 
-            this.textBox14.Location = new System.Drawing.Point(126, 9);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(204, 22);
-            this.textBox14.TabIndex = 1;
+            this.IDLichHenText.Location = new System.Drawing.Point(126, 9);
+            this.IDLichHenText.Name = "IDLichHenText";
+            this.IDLichHenText.Size = new System.Drawing.Size(204, 22);
+            this.IDLichHenText.TabIndex = 1;
             // 
             // label18
             // 
@@ -1263,6 +1263,7 @@
             this.LHNVdata.RowHeadersWidth = 82;
             this.LHNVdata.Size = new System.Drawing.Size(451, 341);
             this.LHNVdata.TabIndex = 0;
+            this.LHNVdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LHNVdata_CellClick);
             // 
             // tabPage6
             // 
@@ -1273,7 +1274,7 @@
             this.tabPage6.Controls.Add(this.panel38);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(854, 437);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Phòng ";
@@ -1448,7 +1449,7 @@
             this.tabPage7.Controls.Add(this.panel46);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage7.Size = new System.Drawing.Size(854, 437);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Hóa đơn ";
@@ -1735,7 +1736,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân viên ";
@@ -1890,16 +1891,16 @@
         private System.Windows.Forms.DataGridView DVNVdata;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox ThoiLuongText;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox TenDichVuText;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox MenhGiaText;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox IDDichVuText;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel20;
@@ -1908,13 +1909,13 @@
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox KhachHangText;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox NhanVienText;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox IDLichHenText;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox21;
@@ -1923,13 +1924,13 @@
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox TinhTrangText;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox ThoiGianText;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel44;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox PhongText;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel45;
         private System.Windows.Forms.Panel panel39;
@@ -1996,6 +1997,6 @@
         private System.Windows.Forms.TextBox TTmaHDnvTB;
         private System.Windows.Forms.TextBox TTmaLHHDnvTb;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DichVuText;
     }
 }

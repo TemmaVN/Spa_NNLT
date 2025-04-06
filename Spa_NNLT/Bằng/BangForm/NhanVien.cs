@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
+using Spa_NNLT.Nguyên.NhanVienAD;
 
 namespace Spa_NNLT.Bằng
 {
@@ -463,7 +464,14 @@ namespace Spa_NNLT.Bằng
 
         private void DVNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = DVNVdata.Rows[e.RowIndex];
+                IDDichVuText.Text = row.Cells["madichvu"].Value?.ToString();
+                TenDichVuText.Text = row.Cells["ten"].Value?.ToString();
+                MenhGiaText.Text = row.Cells["giadichvu"].Value?.ToString();
+                ThoiLuongText.Text = row.Cells["thoiluong"].Value?.ToString();
+            }
         }
 
         private void KHNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -484,6 +492,21 @@ namespace Spa_NNLT.Bằng
                 }
                 sdtKhachHangText.Text = row.Cells[3].Value?.ToString();
 
+            }
+        }
+
+        private void LHNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = LHNVdata.Rows[e.RowIndex];
+                IDLichHenText.Text = row.Cells["malichhen"].Value?.ToString();
+                KhachHangText.Text = row.Cells["makhachhang"].Value?.ToString();
+                NhanVienText.Text = row.Cells["manhanvien"].Value?.ToString();
+                DichVuText.Text = row.Cells["madichvu"].Value?.ToString();
+                PhongText.Text = row.Cells["maphong"].Value?.ToString();
+                ThoiGianText.Text = row.Cells["thoigian"].Value?.ToString();
+                TinhTrangText.Text = row.Cells["trangthai"].Value?.ToString();
             }
         }
     }
