@@ -18,10 +18,10 @@ namespace Spa_NNLT.Bằng
         public FormNhanVien()
         {
             InitializeComponent();
-            //LoadDichVuList();
-            //LoadHoaDonList();
-            //LoadKhachHangList();
-            //LoadLichHenList();
+            LoadDichVuList();
+            LoadHoaDonList();
+            LoadKhachHangList();
+            LoadLichHenList();
         }
 
         #region method
@@ -52,7 +52,7 @@ namespace Spa_NNLT.Bằng
 
         void LoadDichVuList()
         {
-            string query = "SELECT * from dbo.tblLichHen";
+            string query = "SELECT * from dbo.tblDichVu";
             DVNVdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
@@ -454,6 +454,16 @@ namespace Spa_NNLT.Bằng
                 TTKHLHnvTB.Text = "Tìm theo tên khách hàng";
                 TTKHLHnvTB.ForeColor = Color.Gray;
             }
+        }
+
+        private void DVNVdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DVNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
