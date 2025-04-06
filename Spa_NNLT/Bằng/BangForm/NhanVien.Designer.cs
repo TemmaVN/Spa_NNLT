@@ -56,16 +56,16 @@
             this.label35 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.sdtKhachHangText = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TenKhachHangText = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.GioiTinhText = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBoxUsename = new System.Windows.Forms.TextBox();
+            this.IDKhanhhangText = new System.Windows.Forms.TextBox();
             this.labelTenDangNhap = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.TTTKHnvTB = new System.Windows.Forms.TextBox();
@@ -520,19 +520,19 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.textBox4);
+            this.panel10.Controls.Add(this.sdtKhachHangText);
             this.panel10.Controls.Add(this.label10);
             this.panel10.Location = new System.Drawing.Point(3, 160);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(333, 33);
             this.panel10.TabIndex = 3;
             // 
-            // textBox4
+            // sdtKhachHangText
             // 
-            this.textBox4.Location = new System.Drawing.Point(126, 9);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(204, 22);
-            this.textBox4.TabIndex = 1;
+            this.sdtKhachHangText.Location = new System.Drawing.Point(126, 9);
+            this.sdtKhachHangText.Name = "sdtKhachHangText";
+            this.sdtKhachHangText.Size = new System.Drawing.Size(204, 22);
+            this.sdtKhachHangText.TabIndex = 1;
             // 
             // label10
             // 
@@ -546,19 +546,19 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBox3);
+            this.panel9.Controls.Add(this.TenKhachHangText);
             this.panel9.Controls.Add(this.label9);
             this.panel9.Location = new System.Drawing.Point(3, 60);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(333, 33);
             this.panel9.TabIndex = 2;
             // 
-            // textBox3
+            // TenKhachHangText
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 9);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 22);
-            this.textBox3.TabIndex = 1;
+            this.TenKhachHangText.Location = new System.Drawing.Point(126, 9);
+            this.TenKhachHangText.Name = "TenKhachHangText";
+            this.TenKhachHangText.Size = new System.Drawing.Size(204, 22);
+            this.TenKhachHangText.TabIndex = 1;
             // 
             // label9
             // 
@@ -572,19 +572,19 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox2);
+            this.panel8.Controls.Add(this.GioiTinhText);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Location = new System.Drawing.Point(3, 112);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(333, 33);
             this.panel8.TabIndex = 2;
             // 
-            // textBox2
+            // GioiTinhText
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 9);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 22);
-            this.textBox2.TabIndex = 1;
+            this.GioiTinhText.Location = new System.Drawing.Point(126, 9);
+            this.GioiTinhText.Name = "GioiTinhText";
+            this.GioiTinhText.Size = new System.Drawing.Size(204, 22);
+            this.GioiTinhText.TabIndex = 1;
             // 
             // label8
             // 
@@ -598,19 +598,19 @@
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBoxUsename);
+            this.panel7.Controls.Add(this.IDKhanhhangText);
             this.panel7.Controls.Add(this.labelTenDangNhap);
             this.panel7.Location = new System.Drawing.Point(3, 12);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(333, 33);
             this.panel7.TabIndex = 1;
             // 
-            // textBoxUsename
+            // IDKhanhhangText
             // 
-            this.textBoxUsename.Location = new System.Drawing.Point(126, 9);
-            this.textBoxUsename.Name = "textBoxUsename";
-            this.textBoxUsename.Size = new System.Drawing.Size(204, 22);
-            this.textBoxUsename.TabIndex = 1;
+            this.IDKhanhhangText.Location = new System.Drawing.Point(126, 9);
+            this.IDKhanhhangText.Name = "IDKhanhhangText";
+            this.IDKhanhhangText.Size = new System.Drawing.Size(204, 22);
+            this.IDKhanhhangText.TabIndex = 1;
             // 
             // labelTenDangNhap
             // 
@@ -724,6 +724,7 @@
             this.KHNVdata.RowHeadersWidth = 82;
             this.KHNVdata.Size = new System.Drawing.Size(455, 336);
             this.KHNVdata.TabIndex = 0;
+            this.KHNVdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KHNVdata_CellClick);
             this.KHNVdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage3
@@ -1874,16 +1875,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView KHNVdata;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBoxUsename;
+        private System.Windows.Forms.TextBox IDKhanhhangText;
         private System.Windows.Forms.Label labelTenDangNhap;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox sdtKhachHangText;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TenKhachHangText;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox GioiTinhText;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.DataGridView DVNVdata;

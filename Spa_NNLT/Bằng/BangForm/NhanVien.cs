@@ -465,5 +465,26 @@ namespace Spa_NNLT.Bằng
         {
 
         }
+
+        private void KHNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = KHNVdata.Rows[e.RowIndex];
+                IDKhanhhangText.Text = row.Cells[0].Value?.ToString();
+                TenKhachHangText.Text = row.Cells[1].Value?.ToString();
+                string tg = row.Cells[2].Value?.ToString();
+                if (tg == "0")
+                {
+                    GioiTinhText.Text = "Nữ";
+                }
+                else
+                {
+                    GioiTinhText.Text = "Nam";
+                }
+                sdtKhachHangText.Text = row.Cells[3].Value?.ToString();
+
+            }
+        }
     }
 }
