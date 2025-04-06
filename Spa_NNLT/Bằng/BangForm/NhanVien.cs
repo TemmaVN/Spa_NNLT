@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Spa_NNLT.Nguyên.KhachHangAD;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
+using Spa_NNLT.Nguyên.NhanVienAD;
 
 namespace Spa_NNLT.Bằng
 {
@@ -18,10 +19,10 @@ namespace Spa_NNLT.Bằng
         public FormNhanVien()
         {
             InitializeComponent();
-            //LoadDichVuList();
-            //LoadHoaDonList();
-            //LoadKhachHangList();
-            //LoadLichHenList();
+            LoadDichVuList();
+            LoadHoaDonList();
+            LoadKhachHangList();
+            LoadLichHenList();
         }
 
         #region method
@@ -52,7 +53,7 @@ namespace Spa_NNLT.Bằng
 
         void LoadDichVuList()
         {
-            string query = "SELECT * from dbo.tblLichHen";
+            string query = "SELECT * from dbo.tblDichVu";
             DVNVdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
@@ -453,6 +454,59 @@ namespace Spa_NNLT.Bằng
             {
                 TTKHLHnvTB.Text = "Tìm theo tên khách hàng";
                 TTKHLHnvTB.ForeColor = Color.Gray;
+            }
+        }
+
+        private void DVNVdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DVNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = DVNVdata.Rows[e.RowIndex];
+                IDDichVuText.Text = row.Cells["madichvu"].Value?.ToString();
+                TenDichVuText.Text = row.Cells["ten"].Value?.ToString();
+                MenhGiaText.Text = row.Cells["giadichvu"].Value?.ToString();
+                ThoiLuongText.Text = row.Cells["thoiluong"].Value?.ToString();
+            }
+        }
+
+        private void KHNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = KHNVdata.Rows[e.RowIndex];
+                IDKhanhhangText.Text = row.Cells[0].Value?.ToString();
+                TenKhachHangText.Text = row.Cells[1].Value?.ToString();
+                string tg = row.Cells[2].Value?.ToString();
+                if (tg == "0")
+                {
+                    GioiTinhText.Text = "Nữ";
+                }
+                else
+                {
+                    GioiTinhText.Text = "Nam";
+                }
+                sdtKhachHangText.Text = row.Cells[3].Value?.ToString();
+
+            }
+        }
+
+        private void LHNVdata_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = LHNVdata.Rows[e.RowIndex];
+                IDLichHenText.Text = row.Cells["malichhen"].Value?.ToString();
+                KhachHangText.Text = row.Cells["makhachhang"].Value?.ToString();
+                NhanVienText.Text = row.Cells["manhanvien"].Value?.ToString();
+                DichVuText.Text = row.Cells["madichvu"].Value?.ToString();
+                PhongText.Text = row.Cells["maphong"].Value?.ToString();
+                ThoiGianText.Text = row.Cells["thoigian"].Value?.ToString();
+                TinhTrangText.Text = row.Cells["trangthai"].Value?.ToString();
             }
         }
     }

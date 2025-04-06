@@ -89,10 +89,10 @@ namespace Spa_NNLT
 
         private void DangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
+            //if (MessageBox.Show("Bạn có thật sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
