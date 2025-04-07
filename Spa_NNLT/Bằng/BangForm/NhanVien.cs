@@ -414,10 +414,10 @@ namespace Spa_NNLT.Bằng
 
         private void TTmaHDnvTB_Leave(object sender, EventArgs e)
         {
-            if (TTmaLHHDnvTb.Text == "Tìm theo mã lịch hẹn")
+            if (string.IsNullOrEmpty(TTmaHDnvTB.Text))
             {
-                TTmaLHHDnvTb.Text = "";
-                TTmaLHHDnvTb.ForeColor = Color.Black;
+                TTmaHDnvTB.Text = "Tìm theo mã";
+                TTmaHDnvTB.ForeColor = Color.Gray;
             }
         }
 
@@ -508,6 +508,60 @@ namespace Spa_NNLT.Bằng
                 ThoiGianText.Text = row.Cells["thoigian"].Value?.ToString();
                 TinhTrangText.Text = row.Cells["trangthai"].Value?.ToString();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string filter1 = TTTKHnvTB.Text.Trim();
+            string filter2 = TTTsdtKHnvTB.Text.Trim();
+
+            KHNVdata.CurrentCell = null;
+
+            foreach (DataGridViewRow row in KHNVdata.Rows)
+            {
+                if (row.IsNewRow) continue;
+                string Cell1 = row.Cells["tenkhachhang"].Value.ToString().Trim();
+                string Cell2 = row.Cells["sdt"].Value.ToString().Trim();
+
+                if (filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo số điện thoại ...")
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = (filter1 == "" || Cell1.Contains(filter1)) || (filter2 == "" || Cell2.Contains(filter2));
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string filter1 = TTTDVnvTB.Text.Trim();
+            string filter2 = TTmaDVnvTB.Text.Trim();
+
+            DVNVdata.CurrentCell = null;
+
+            foreach (DataGridViewRow row in DVNVdata.Rows)
+            {
+
+                if (row.IsNewRow) continue;
+                string Ceil1 = row.Cells["ten"].Value?.ToString();
+                string Ceil2 = row.Cells["madichvu"].Value?.ToString();
+
+                if (filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo mã ...")
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = filter1 == "" || filter2 == "" || Ceil1.Contains(filter1) || Ceil2.Contains(filter2);
+                }
+            }
+        }
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

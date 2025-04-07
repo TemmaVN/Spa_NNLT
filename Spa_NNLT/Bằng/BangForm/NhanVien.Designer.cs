@@ -662,6 +662,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Tìm kiếm";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel4
             // 
@@ -780,6 +781,7 @@
             this.button8.TabIndex = 4;
             this.button8.Text = "Tìm kiếm";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // panel11
             // 
@@ -988,6 +990,7 @@
             this.button9.TabIndex = 4;
             this.button9.Text = "Tìm kiếm";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // panel56
             // 
