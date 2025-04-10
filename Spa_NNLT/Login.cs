@@ -58,13 +58,14 @@ namespace Spa_NNLT
 
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-            if(loginNV(textBoxUsename.Text,textBoxMatKhau.Text))
-            {
-                FormNhanVien f = new FormNhanVien();
-                this.Hide();
-                f.ShowDialog();
-            }
-            else if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
+            //if(loginNV(textBoxUsename.Text,textBoxMatKhau.Text))
+            //{
+            //    FormNhanVien f = new FormNhanVien();
+            //    this.Hide();
+            //    f.ShowDialog();
+            //}
+            //else
+            if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
             {
                 Admin admin = new Admin();
                 this.Hide();

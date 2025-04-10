@@ -104,6 +104,7 @@
             this.label48 = new System.Windows.Forms.Label();
             this.DichVuADdata = new System.Windows.Forms.DataGridView();
             this.PhongADtp = new System.Windows.Forms.TabPage();
+            this.PhongADpn = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.CapNhatPhogADbt = new System.Windows.Forms.Button();
             this.XoaPhongADbt = new System.Windows.Forms.Button();
@@ -242,7 +243,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.PhongADpn = new System.Windows.Forms.Panel();
             this.HoadonADtp.SuspendLayout();
             this.panel33.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -628,7 +628,6 @@
             this.TTLHadTB.Location = new System.Drawing.Point(167, 264);
             this.TTLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.TTLHadTB.Name = "TTLHadTB";
-            this.TTLHadTB.ReadOnly = true;
             this.TTLHadTB.Size = new System.Drawing.Size(233, 22);
             this.TTLHadTB.TabIndex = 52;
             // 
@@ -647,7 +646,6 @@
             this.TGLHadTB.Location = new System.Drawing.Point(167, 229);
             this.TGLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.TGLHadTB.Name = "TGLHadTB";
-            this.TGLHadTB.ReadOnly = true;
             this.TGLHadTB.Size = new System.Drawing.Size(233, 22);
             this.TGLHadTB.TabIndex = 50;
             // 
@@ -666,7 +664,6 @@
             this.MaLHadTB.Location = new System.Drawing.Point(167, 39);
             this.MaLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MaLHadTB.Name = "MaLHadTB";
-            this.MaLHadTB.ReadOnly = true;
             this.MaLHadTB.Size = new System.Drawing.Size(233, 22);
             this.MaLHadTB.TabIndex = 48;
             // 
@@ -685,7 +682,6 @@
             this.MaPhongLHadTB.Location = new System.Drawing.Point(167, 192);
             this.MaPhongLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MaPhongLHadTB.Name = "MaPhongLHadTB";
-            this.MaPhongLHadTB.ReadOnly = true;
             this.MaPhongLHadTB.Size = new System.Drawing.Size(233, 22);
             this.MaPhongLHadTB.TabIndex = 46;
             // 
@@ -724,7 +720,6 @@
             this.MaDVLHadTB.Location = new System.Drawing.Point(167, 151);
             this.MaDVLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MaDVLHadTB.Name = "MaDVLHadTB";
-            this.MaDVLHadTB.ReadOnly = true;
             this.MaDVLHadTB.Size = new System.Drawing.Size(233, 22);
             this.MaDVLHadTB.TabIndex = 25;
             // 
@@ -733,7 +728,6 @@
             this.MaNVLHadTB.Location = new System.Drawing.Point(167, 114);
             this.MaNVLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MaNVLHadTB.Name = "MaNVLHadTB";
-            this.MaNVLHadTB.ReadOnly = true;
             this.MaNVLHadTB.Size = new System.Drawing.Size(233, 22);
             this.MaNVLHadTB.TabIndex = 24;
             // 
@@ -742,7 +736,6 @@
             this.MaKHLHadTB.Location = new System.Drawing.Point(167, 75);
             this.MaKHLHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MaKHLHadTB.Name = "MaKHLHadTB";
-            this.MaKHLHadTB.ReadOnly = true;
             this.MaKHLHadTB.Size = new System.Drawing.Size(233, 22);
             this.MaKHLHadTB.TabIndex = 22;
             // 
@@ -957,7 +950,6 @@
             this.ThoiGianDVadTB.Location = new System.Drawing.Point(167, 215);
             this.ThoiGianDVadTB.Margin = new System.Windows.Forms.Padding(2);
             this.ThoiGianDVadTB.Name = "ThoiGianDVadTB";
-            this.ThoiGianDVadTB.ReadOnly = true;
             this.ThoiGianDVadTB.Size = new System.Drawing.Size(233, 22);
             this.ThoiGianDVadTB.TabIndex = 46;
             // 
@@ -997,7 +989,6 @@
             this.GiaDVadTB.Location = new System.Drawing.Point(167, 171);
             this.GiaDVadTB.Margin = new System.Windows.Forms.Padding(2);
             this.GiaDVadTB.Name = "GiaDVadTB";
-            this.GiaDVadTB.ReadOnly = true;
             this.GiaDVadTB.Size = new System.Drawing.Size(233, 22);
             this.GiaDVadTB.TabIndex = 25;
             // 
@@ -1006,7 +997,6 @@
             this.TenDVadTB.Location = new System.Drawing.Point(167, 128);
             this.TenDVadTB.Margin = new System.Windows.Forms.Padding(2);
             this.TenDVadTB.Name = "TenDVadTB";
-            this.TenDVadTB.ReadOnly = true;
             this.TenDVadTB.Size = new System.Drawing.Size(233, 22);
             this.TenDVadTB.TabIndex = 24;
             // 
@@ -1015,7 +1005,6 @@
             this.MaDVADtb.Location = new System.Drawing.Point(167, 87);
             this.MaDVADtb.Margin = new System.Windows.Forms.Padding(2);
             this.MaDVADtb.Name = "MaDVADtb";
-            this.MaDVADtb.ReadOnly = true;
             this.MaDVADtb.Size = new System.Drawing.Size(233, 22);
             this.MaDVADtb.TabIndex = 22;
             // 
@@ -1158,6 +1147,13 @@
             this.PhongADtp.UseVisualStyleBackColor = true;
             this.PhongADtp.Click += new System.EventHandler(this.PhongADtp_Click);
             // 
+            // PhongADpn
+            // 
+            this.PhongADpn.Location = new System.Drawing.Point(3, 48);
+            this.PhongADpn.Name = "PhongADpn";
+            this.PhongADpn.Size = new System.Drawing.Size(499, 437);
+            this.PhongADpn.TabIndex = 10;
+            // 
             // panel19
             // 
             this.panel19.Controls.Add(this.CapNhatPhogADbt);
@@ -1246,7 +1242,6 @@
             this.TinhTrangADtb.Location = new System.Drawing.Point(167, 171);
             this.TinhTrangADtb.Margin = new System.Windows.Forms.Padding(2);
             this.TinhTrangADtb.Name = "TinhTrangADtb";
-            this.TinhTrangADtb.ReadOnly = true;
             this.TinhTrangADtb.Size = new System.Drawing.Size(233, 22);
             this.TinhTrangADtb.TabIndex = 25;
             // 
@@ -1255,7 +1250,6 @@
             this.LoaiPhonfADtb.Location = new System.Drawing.Point(167, 128);
             this.LoaiPhonfADtb.Margin = new System.Windows.Forms.Padding(2);
             this.LoaiPhonfADtb.Name = "LoaiPhonfADtb";
-            this.LoaiPhonfADtb.ReadOnly = true;
             this.LoaiPhonfADtb.Size = new System.Drawing.Size(233, 22);
             this.LoaiPhonfADtb.TabIndex = 24;
             // 
@@ -1264,7 +1258,6 @@
             this.SoPhongADtb.Location = new System.Drawing.Point(167, 87);
             this.SoPhongADtb.Margin = new System.Windows.Forms.Padding(2);
             this.SoPhongADtb.Name = "SoPhongADtb";
-            this.SoPhongADtb.ReadOnly = true;
             this.SoPhongADtb.Size = new System.Drawing.Size(233, 22);
             this.SoPhongADtb.TabIndex = 22;
             // 
@@ -1700,7 +1693,6 @@
             this.SDTKHadTB.Location = new System.Drawing.Point(174, 181);
             this.SDTKHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.SDTKHadTB.Name = "SDTKHadTB";
-            this.SDTKHadTB.ReadOnly = true;
             this.SDTKHadTB.Size = new System.Drawing.Size(233, 22);
             this.SDTKHadTB.TabIndex = 38;
             // 
@@ -1709,7 +1701,6 @@
             this.GTKhadTB.Location = new System.Drawing.Point(174, 141);
             this.GTKhadTB.Margin = new System.Windows.Forms.Padding(2);
             this.GTKhadTB.Name = "GTKhadTB";
-            this.GTKhadTB.ReadOnly = true;
             this.GTKhadTB.Size = new System.Drawing.Size(233, 22);
             this.GTKhadTB.TabIndex = 37;
             // 
@@ -1718,7 +1709,6 @@
             this.HTKHadTB.Location = new System.Drawing.Point(174, 98);
             this.HTKHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.HTKHadTB.Name = "HTKHadTB";
-            this.HTKHadTB.ReadOnly = true;
             this.HTKHadTB.Size = new System.Drawing.Size(233, 22);
             this.HTKHadTB.TabIndex = 36;
             // 
@@ -1727,7 +1717,6 @@
             this.MaKHadTB.Location = new System.Drawing.Point(174, 57);
             this.MaKHadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MaKHadTB.Name = "MaKHadTB";
-            this.MaKHadTB.ReadOnly = true;
             this.MaKHadTB.Size = new System.Drawing.Size(233, 22);
             this.MaKHadTB.TabIndex = 34;
             // 
@@ -1984,7 +1973,6 @@
             this.MaNVtb.Location = new System.Drawing.Point(161, 15);
             this.MaNVtb.Margin = new System.Windows.Forms.Padding(2);
             this.MaNVtb.Name = "MaNVtb";
-            this.MaNVtb.ReadOnly = true;
             this.MaNVtb.Size = new System.Drawing.Size(233, 26);
             this.MaNVtb.TabIndex = 22;
             // 
@@ -1993,7 +1981,6 @@
             this.MKNVadTB.Location = new System.Drawing.Point(161, 261);
             this.MKNVadTB.Margin = new System.Windows.Forms.Padding(2);
             this.MKNVadTB.Name = "MKNVadTB";
-            this.MKNVadTB.ReadOnly = true;
             this.MKNVadTB.Size = new System.Drawing.Size(233, 26);
             this.MKNVadTB.TabIndex = 31;
             // 
@@ -2002,7 +1989,6 @@
             this.TDNNVadTB.Location = new System.Drawing.Point(161, 220);
             this.TDNNVadTB.Margin = new System.Windows.Forms.Padding(2);
             this.TDNNVadTB.Name = "TDNNVadTB";
-            this.TDNNVadTB.ReadOnly = true;
             this.TDNNVadTB.Size = new System.Drawing.Size(233, 26);
             this.TDNNVadTB.TabIndex = 30;
             // 
@@ -2031,7 +2017,6 @@
             this.NStb.Location = new System.Drawing.Point(161, 180);
             this.NStb.Margin = new System.Windows.Forms.Padding(2);
             this.NStb.Name = "NStb";
-            this.NStb.ReadOnly = true;
             this.NStb.Size = new System.Drawing.Size(233, 26);
             this.NStb.TabIndex = 27;
             // 
@@ -2040,7 +2025,6 @@
             this.SDTTb.Location = new System.Drawing.Point(161, 139);
             this.SDTTb.Margin = new System.Windows.Forms.Padding(2);
             this.SDTTb.Name = "SDTTb";
-            this.SDTTb.ReadOnly = true;
             this.SDTTb.Size = new System.Drawing.Size(233, 26);
             this.SDTTb.TabIndex = 26;
             // 
@@ -2049,7 +2033,6 @@
             this.GTtb.Location = new System.Drawing.Point(161, 99);
             this.GTtb.Margin = new System.Windows.Forms.Padding(2);
             this.GTtb.Name = "GTtb";
-            this.GTtb.ReadOnly = true;
             this.GTtb.Size = new System.Drawing.Size(233, 26);
             this.GTtb.TabIndex = 25;
             // 
@@ -2058,7 +2041,6 @@
             this.HTtb.Location = new System.Drawing.Point(161, 56);
             this.HTtb.Margin = new System.Windows.Forms.Padding(2);
             this.HTtb.Name = "HTtb";
-            this.HTtb.ReadOnly = true;
             this.HTtb.Size = new System.Drawing.Size(233, 26);
             this.HTtb.TabIndex = 24;
             // 
@@ -2204,6 +2186,7 @@
             this.NhanVienADdata.Size = new System.Drawing.Size(490, 437);
             this.NhanVienADdata.TabIndex = 0;
             this.NhanVienADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NhanVienADdata_CellClick);
+            this.NhanVienADdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.NhanVienADdata_CellContentClick);
             // 
             // TaiKhoantb
             // 
@@ -2694,13 +2677,6 @@
             this.tabControl1.Size = new System.Drawing.Size(944, 519);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // PhongADpn
-            // 
-            this.PhongADpn.Location = new System.Drawing.Point(3, 48);
-            this.PhongADpn.Name = "PhongADpn";
-            this.PhongADpn.Size = new System.Drawing.Size(499, 437);
-            this.PhongADpn.TabIndex = 10;
             // 
             // Admin
             // 

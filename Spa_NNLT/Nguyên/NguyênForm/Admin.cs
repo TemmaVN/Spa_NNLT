@@ -778,6 +778,9 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
-        
+        private void NhanVienADdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
