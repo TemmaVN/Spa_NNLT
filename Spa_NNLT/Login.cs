@@ -65,16 +65,16 @@ namespace Spa_NNLT
             //    f.ShowDialog();
             //}
             //else
-            if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
-            {
+            //if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
+           // {
                 Admin admin = new Admin();
                 this.Hide();
                 admin.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật kh");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Sai tên đăng nhập hoặc mật kh");
+           // }
             this.Show();
             
         }

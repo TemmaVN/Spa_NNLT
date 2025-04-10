@@ -26,7 +26,6 @@ namespace Spa_NNLT.Nguyên
             InitializeComponent();
 
             LoadAccountList();
-            LoadHoaDonList();
             LoadDichVuList();
             LoadHoaDonList();
             LoadLichHenList();
@@ -43,7 +42,7 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-        #region method
+      
 
         void LoadThongTin()
         {
@@ -65,32 +64,7 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
-        void LoadKhachHang()
-        {
-            List<Khachhang> khachhangs = KhachHangDAO.Instance.LoadKhachHang();
-            foreach(Khachhang khachhang in khachhangs)
-            {
-                if (TimTheoTenKHtb.Text == khachhang.tenKH || TimTheoMaKHtb.Text == khachhang.idKH)
-                {
-                    MaKHadTB.Text = khachhang.idKH;
-                    HTKHadTB.Text = khachhang.tenKH;
-                    GTKhadTB.Text = khachhang.gioitinhKH;
-                    SDTKHadTB.Text = khachhang.sDTKH;
-
-                }
-            }
-        }
-
-        void LoadDichVu()
-        {
-            List<DIchVu> dIchVus = DichVuDAO.Instance.LoadTableList();
-            
-        }
-
-        #endregion
-
-        #region Events
-
+       
         void LoadThemPhong()
         {
             
@@ -117,14 +91,6 @@ namespace Spa_NNLT.Nguyên
         {
             string query = "SELECT * from dbo.tblDichVu";
             DichVuADdata.DataSource = DataProvider.Instance.Excuted(query);
-        }
-
-        
-
-        void LoadNhanVienList()
-        {
-            string query = "SELECT * from dbo.tblNhanVien";
-            NhanVienADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
         void LoadLichHenList()
@@ -382,7 +348,39 @@ namespace Spa_NNLT.Nguyên
 
         private void button4_Click(object sender, EventArgs e)
         {
+            string ma = MaKHadTB.Text.Trim();
+            string ten = HTKHadTB.Text.Trim();
+            string sdt = SDTKHadTB.Text.Trim();
+            string gioitinh = GTKhadTB.Text.Trim();
+            int tggt = 0;
+            if (gioitinh == "Nam")//" phhhh "
+            {
+                tggt = 1;
+            }
             
+
+            if (ten == "" || sdt == "")
+            {
+                MessageBox.Show("Vui lòng nhập tên và số điện thoại.");
+                return;
+            }
+
+            string query = "INSERT INTO tblKhachHang (makhachhang, tenkhachhang, gioitinh, sdt) " +
+                           "VALUES (@ma, @ten, @gioitinh, @sdt)";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@ten", ten);
+                cmd.Parameters.AddWithValue("@sdt", sdt);
+                cmd.Parameters.AddWithValue("@ma", ma);
+                cmd.Parameters.AddWithValue("@gioitinh", tggt);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Đã thêm khách hàng mới!");
+                LoadAccountList(); // Cập nhật lại comboBox khách hàng
+            }
         }
 
         private void PhongADtp_Click(object sender, EventArgs e)
@@ -592,7 +590,7 @@ namespace Spa_NNLT.Nguyên
                 TTMaLHHDadTB.ForeColor = Color.Gray;
             }
         }
-        #endregion
+        
 
         private void NhanVienADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
