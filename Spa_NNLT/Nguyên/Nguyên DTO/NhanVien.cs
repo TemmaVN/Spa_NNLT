@@ -17,37 +17,28 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
         private string GioiTinh;
         private string SDT;
         private DateTime NgaySinh;
-        private string UserName;
-        private string Password;
+        private string chucvu;
+        private string calam;
 
-        public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec, string userName, string password)
+        public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec, string chucVu, string caLam)
         {
             ID = iD;
             Ten = ten;
             GioiTinh = gioiTinh;
             SDT = sDT;
             NgaySinh = ngaySinh;
-            UserName = userName;
-            Password = password;
+            chucvu = chucVu;
+            calam = caLam;
         }
 
         public NhanVien(DataRow row) {
             ID = row["manhanvien"].ToString();
             Ten = row["tennhanvien"].ToString();
-            int tst = Convert.ToInt32(row["gioitinh"]);
-            if (tst == 1)
-            {
-                this.GioiTinh = "Nam";
-            }
-            else
-            {
-                this.GioiTinh = "Nữ";
-            }
-            this.GioiTinh += "ahah";
+            this.GioiTinh = row["gioitinh"].ToString();
             
             this.SDT = row["sdt"].ToString();
-            this.UserName = row["taikhoan"].ToString();
-            this.Password = row["matkhau"].ToString();
+            this.chucvu = row["chucvu"].ToString();
+            this.calam = row["chucvu"].ToString();
 
         }
 

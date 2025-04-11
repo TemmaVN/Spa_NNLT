@@ -30,7 +30,8 @@ namespace Spa_NNLT.Nguyên
             LoadHoaDonList();
             LoadLichHenList();
             LoadNhanVienlist();
-            
+            LoadCaLam();
+            LoadChucVu();
             LoadThongTin();
             LoadThemPhong();
             LoadPhong();
@@ -54,17 +55,62 @@ namespace Spa_NNLT.Nguyên
                 {
                     MaNVtb.Text = nhan.id;
                     HTtb.Text = nhan.ten;
-                    GTtb.Text = nhan.gioiTinh;
+                    
                     SDTlb.Text = nhan.sDT;
                     NStb.Text = nhan.ngaySinh.ToString();
-                    //TDNNVadTB.Text = nhan.username;
+                    
                     //MKNVadTB.Text = nhan.password;
                 }
                 
             }
         }
+        // Load chức vụ
+        void LoadChucVu()
+        {
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+                string query = "SELECT * FROM ChucVu";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
-       
+                DataRow row = dt.NewRow();
+                row["TenChucVu"] = 0;
+                row["TenChucVu"] = "-- Chọn chức vụ --";
+                dt.Rows.InsertAt(row, 0);
+
+                cboChucVu.DataSource = dt;
+                cboChucVu.DisplayMember = "TenChucVu";
+               
+            }
+        }
+
+        // Load ca làm
+        void LoadCaLam()
+        {
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+                string query = "SELECT * FROM CaLam";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                DataRow row = dt.NewRow();
+                row["TenCa"] = 0;
+                row["TenCa"] = "-- Chọn ca làm --";
+                dt.Rows.InsertAt(row, 0);
+
+                cboCaLam.DataSource = dt;
+                cboCaLam.DisplayMember = "TenCa";
+             
+            }
+        }
+
+
         void LoadThemPhong()
         {
             
@@ -83,8 +129,10 @@ namespace Spa_NNLT.Nguyên
 
         void LoadNhanVienlist()
         {
-            string query = "SELECT * from dbo.tblNhanVien";
+            string query = @"select * from dbo.tblNhanVien";
+
             NhanVienADdata.DataSource = DataProvider.Instance.Excuted(query);
+
         }
 
         void LoadDichVuList()
@@ -395,18 +443,84 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemNVbt_Click(object sender, EventArgs e)
         {
-            
-        }
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+                {
+                    conn.Open();
+
+                    string query = "INSERT INTO tblNhanVien (manhanvien, tennhanvien, gioitinh, sdt, ngaysinh, chucvu, calam) " +
+                                   "VALUES (@ma, @HoTen, @GioiTinh, @SDT, @NgaySinh, @ChucVu, @CaLam)";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ma", MaNVtb.Text);
+                    cmd.Parameters.AddWithValue("@HoTen", HTtb.Text);
+                    cmd.Parameters.AddWithValue("@GioiTinh", rNam.Checked ? "Nam" : "Nữ");
+                    cmd.Parameters.AddWithValue("@SDT", SDTTb.Text);
+                    cmd.Parameters.AddWithValue("@NgaySinh", NStb.Value);
+                    cmd.Parameters.AddWithValue("@ChucVu", cboChucVu.SelectedValue);
+                    cmd.Parameters.AddWithValue("@CaLam", cboCaLam.SelectedValue);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm nhân viên thành công!");
+                LoadNhanVienlist();
+                }
+            }
+
+        
 
         private void XoaNVbt_Click(object sender, EventArgs e)
         {
-            
-        }
+          
+                if (string.IsNullOrEmpty(MaNVtb.Text)) return;
+
+                var confirm = MessageBox.Show("Bạn có chắc muốn xoá nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (confirm != DialogResult.Yes) return;
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+                {
+                    conn.Open();
+
+                    string query = "DELETE FROM tblNhanVien WHERE manhanvien = @MaNV";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@MaNV", MaNVtb.Text);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Xóa nhân viên thành công!");
+                LoadNhanVienlist();
+                }
+            }
+
+        
 
         private void CapNhatADbt_Click(object sender, EventArgs e)
         {
             
-        }
+            if (string.IsNullOrEmpty(MaNVtb.Text)) return;
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+                {
+                    conn.Open();
+
+                    string query = "UPDATE tblNhanVien SET tennhanvien = @HoTen, gioitinh = @GioiTinh, sdt=@SDT, " +
+                                   "ngaysinh=@NgaySinh, chucvu=@ChucVu, calam=@CaLam WHERE manhanvien=@MaNV";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@MaNV", MaNVtb.Text);
+                    cmd.Parameters.AddWithValue("@HoTen", HTtb.Text);
+                    cmd.Parameters.AddWithValue("@GioiTinh", rNam.Checked ? "Nam" : "Nữ");
+                    cmd.Parameters.AddWithValue("@SDT", SDTTb.Text);
+                    cmd.Parameters.AddWithValue("@NgaySinh", NStb.Value);
+                    string Cv = cboChucVu.Text;
+                    cmd.Parameters.AddWithValue("@ChucVu", Cv);
+                    string cl = cboCaLam.Text;
+                    cmd.Parameters.AddWithValue("@CaLam", cl);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Cập nhật nhân viên thành công!");
+                LoadNhanVienlist();
+                }
+            }
+
+        
 
         private void ThemDVadTB_Click(object sender, EventArgs e)
         {
@@ -422,7 +536,35 @@ namespace Spa_NNLT.Nguyên
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+           
+            if (KhachHangADdata.CurrentRow != null)
+            {
+                //int id = Convert.ToInt32(KhachHangADdata.CurrentRow.Cells["makhachhang"].Value);
+                string hoten = HTKHadTB.Text.Trim();
+                string sdt = SDTKHadTB.Text.Trim();
+                string id = MaKHadTB.Text.Trim();
+                string gioitinh = GTKhadTB.Text.Trim();
+                int tggt = 0;
+                if (gioitinh == "Nam")//" phhhh "
+                {
+                    tggt = 1;
+                }
+
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                using (SqlConnection conn = new SqlConnection(connectionSTR))
+                {
+                    conn.Open();
+                    string query = "UPDATE tblKhachHang SET tenkhachhang = @ten, sdt = @sdt, gioitinh = @gioitinh WHERE makhachhang = @id";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ten", hoten);
+                    cmd.Parameters.AddWithValue("@sdt", sdt);
+                    cmd.Parameters.AddWithValue("@gioitinh", tggt);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Đã sửa thông tin khách hàng!");
+                    LoadAccountList();
+                }
+            }
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -599,19 +741,26 @@ namespace Spa_NNLT.Nguyên
                 DataGridViewRow row = NhanVienADdata.Rows[e.RowIndex];
                 MaNVtb.Text = row.Cells[0].Value?.ToString();
                 HTtb.Text = row.Cells[1].Value?.ToString();
-                string tg = row.Cells[3].Value?.ToString();
-                if (tg == "0")
+                
+                string gioiTinh = row.Cells["gioitinh"].Value.ToString();
+                if (gioiTinh == "Nam")
+                    rNam.Checked = true;
+                else
+                    rNu.Checked = true;
+                SDTTb.Text = row.Cells[4].Value?.ToString();
+                //NStb.Text = row.Cells[2].Value?.ToString();
+                if (DateTime.TryParse(row.Cells[4].Value?.ToString(), out DateTime ngaySinh))
                 {
-                    GTtb.Text = "Nữ";
+                    NStb.Value = ngaySinh;
                 }
                 else
                 {
-                    GTtb.Text = "Nam";
+                    // Nếu dữ liệu không hợp lệ thì cho ngày mặc định hoặc thông báo lỗi
+                    NStb.Value = DateTime.Today;
                 }
-                SDTTb.Text = row.Cells[4].Value?.ToString();
-                NStb.Text = row.Cells[2].Value?.ToString();
-                TDNNVadTB.Text = row.Cells[5].Value?.ToString();
-                MKNVadTB.Text = row.Cells[6].Value?.ToString();
+
+                cboChucVu.Text = row.Cells[5].Value?.ToString();    
+                cboCaLam.Text = row.Cells[6].Value?.ToString();
             }
         }
 
@@ -670,6 +819,29 @@ namespace Spa_NNLT.Nguyên
                 GiaDVadTB.Text = row.Cells["giadichvu"].Value?.ToString();
                 ThoiGianDVadTB.Text = row.Cells["thoiluong"].Value?.ToString();    
             }
+        }
+
+        void LoadChucVutst()
+        {
+            // Xóa dữ liệu cũ trong ComboBox
+            cboChucVu.DataSource = null;
+            cboChucVu.Items.Clear();
+
+            // Duyệt tất cả các dòng trong DataGridView
+            foreach (DataGridViewRow row in NhanVienADdata.Rows)
+            {
+                if (row.Cells["ChucVu"].Value != null)
+                {
+                    string chucVu = row.Cells["ChucVu"].Value.ToString();
+
+                    // Tránh thêm trùng lặp
+                    if (!cboChucVu.Items.Contains(chucVu))
+                    {
+                        cboChucVu.Items.Add(chucVu);
+                    }
+                }
+            }
+
         }
 
         private void LichHenADdata_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -780,5 +952,54 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (KhachHangADdata.CurrentRow != null)
+            {
+                string id = MaKHadTB.Text.Trim();
+                var confirm = MessageBox.Show("Bạn có chắc muốn xoá khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo);
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                if (confirm == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionSTR))
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM tblKhachHang WHERE makhachhang = @id";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Đã xoá khách hàng!");
+                        LoadAccountList();
+                    }
+                }
+            }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void TimtheoMatb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel22_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void NhanVienADdata_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
