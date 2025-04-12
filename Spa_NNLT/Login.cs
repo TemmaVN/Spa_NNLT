@@ -68,6 +68,8 @@ namespace Spa_NNLT
             //if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
            // {
                 Admin admin = new Admin();
+                Session.Username = textBoxUsename.Text.Trim();
+                Session.Password = textBoxMatKhau.Text.Trim();
                 this.Hide();
                 admin.ShowDialog();
             //}

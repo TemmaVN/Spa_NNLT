@@ -101,4 +101,10 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
             return quanLis;
         }
     }
+
+    public static class Session
+    {
+        public static string Username { get; set; }
+        public static string Password { get; set; }
+    }
 }

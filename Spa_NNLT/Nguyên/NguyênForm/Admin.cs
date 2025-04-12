@@ -67,7 +67,8 @@ namespace Spa_NNLT.Nguyên
         // Load chức vụ
         void LoadChucVu()
         {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 conn.Open();
@@ -90,7 +91,8 @@ namespace Spa_NNLT.Nguyên
         // Load ca làm
         void LoadCaLam()
         {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 conn.Open();
@@ -225,6 +227,7 @@ namespace Spa_NNLT.Nguyên
         private void Admin_Load(object sender, EventArgs e)
         {
             HienThi();
+           
         }
 
         private void HienThi()
@@ -415,7 +418,8 @@ namespace Spa_NNLT.Nguyên
 
             string query = "INSERT INTO tblKhachHang (makhachhang, tenkhachhang, gioitinh, sdt) " +
                            "VALUES (@ma, @ten, @gioitinh, @sdt)";
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
@@ -443,7 +447,8 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemNVbt_Click(object sender, EventArgs e)
         {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -475,7 +480,8 @@ namespace Spa_NNLT.Nguyên
 
                 var confirm = MessageBox.Show("Bạn có chắc muốn xoá nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (confirm != DialogResult.Yes) return;
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -496,7 +502,8 @@ namespace Spa_NNLT.Nguyên
         {
             
             if (string.IsNullOrEmpty(MaNVtb.Text)) return;
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -550,7 +557,8 @@ namespace Spa_NNLT.Nguyên
                     tggt = 1;
                 }
 
-                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -959,7 +967,8 @@ namespace Spa_NNLT.Nguyên
             {
                 string id = MaKHadTB.Text.Trim();
                 var confirm = MessageBox.Show("Bạn có chắc muốn xoá khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo);
-                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
                 if (confirm == DialogResult.Yes)
                 {
                     using (SqlConnection conn = new SqlConnection(connectionSTR))
