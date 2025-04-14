@@ -27,15 +27,23 @@ namespace Spa_NNLT.Nguyên
             InitializeComponent();
 
             LoadAccountList();
+
             LoadDichVuList();
+            LoadComboBoxDichVuCha();
+
             LoadHoaDonList();
+
             LoadLichHenList();
+
             LoadNhanVienlist();
             LoadCaLam();
             LoadChucVu();
+
             LoadThongTin();
+
             LoadThemPhong();
             LoadPhong();
+
             HienThiAdmin();
             
             // Load thông tin từ sql
@@ -69,8 +77,8 @@ namespace Spa_NNLT.Nguyên
         // Load chức vụ
         void LoadChucVu()
         {
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 conn.Open();
@@ -93,8 +101,8 @@ namespace Spa_NNLT.Nguyên
         // Load ca làm
         void LoadCaLam()
         {
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 conn.Open();
@@ -112,6 +120,14 @@ namespace Spa_NNLT.Nguyên
                 cboCaLam.DisplayMember = "TenCa";
              
             }
+        }
+        void LoadComboBoxDichVuCha()
+        {
+            string query = "SELECT * FROM DichVuCha";
+            DataTable dt = DataProvider.Instance.Excuted(query);
+            comboBoxDichVuCha.DataSource = dt;
+            comboBoxDichVuCha.DisplayMember = "TenDichVu";
+            comboBoxDichVuCha.ValueMember = "ID";
         }
 
 
@@ -138,10 +154,11 @@ namespace Spa_NNLT.Nguyên
             NhanVienADdata.DataSource = DataProvider.Instance.Excuted(query);
 
         }
+         
 
         void LoadDichVuList()
         {
-            string query = "SELECT * from dbo.tblDichVu";
+            string query = "SELECT * from dbo.DichVuCon";
             DichVuADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
@@ -405,12 +422,7 @@ namespace Spa_NNLT.Nguyên
             string ma = MaKHadTB.Text.Trim();
             string ten = HTKHadTB.Text.Trim();
             string sdt = SDTKHadTB.Text.Trim();
-            string gioitinh = GTKhadTB.Text.Trim();
-            int tggt = 0;
-            if (gioitinh == "Nam")//" phhhh "
-            {
-                tggt = 1;
-            }
+            
             
 
             if (ten == "" || sdt == "")
@@ -421,8 +433,8 @@ namespace Spa_NNLT.Nguyên
 
             string query = "INSERT INTO tblKhachHang (makhachhang, tenkhachhang, gioitinh, sdt) " +
                            "VALUES (@ma, @ten, @gioitinh, @sdt)";
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
@@ -430,7 +442,7 @@ namespace Spa_NNLT.Nguyên
                 cmd.Parameters.AddWithValue("@ten", ten);
                 cmd.Parameters.AddWithValue("@sdt", sdt);
                 cmd.Parameters.AddWithValue("@ma", ma);
-                cmd.Parameters.AddWithValue("@gioitinh", tggt);
+                cmd.Parameters.AddWithValue("@gioiTinh", raNam.Checked ? "Nam" : "Nữ");
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Đã thêm khách hàng mới!");
@@ -450,8 +462,8 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemNVbt_Click(object sender, EventArgs e)
         {
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -483,8 +495,8 @@ namespace Spa_NNLT.Nguyên
 
                 var confirm = MessageBox.Show("Bạn có chắc muốn xoá nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
                 if (confirm != DialogResult.Yes) return;
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -505,8 +517,8 @@ namespace Spa_NNLT.Nguyên
         {
             
             if (string.IsNullOrEmpty(MaNVtb.Text)) return;
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -534,12 +546,50 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemDVadTB_Click(object sender, EventArgs e)
         {
-            
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+
+                string query = "INSERT INTO DichVuCon (ID, TenDichVu, Gia, ThoiGian, ID_DichVuCha) " +
+                   "VALUES (@ma, @ten, @gia, @tg, @macha)";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ma", MaDVADtb.Text);
+                cmd.Parameters.AddWithValue("ten", TenDVadTB.Text);
+                cmd.Parameters.AddWithValue("@gia", GiaDVadTB.Text);
+                cmd.Parameters.AddWithValue("@tg", ThoiGianDVadTB.Text);
+                string Cv = comboBoxDichVuCha.Text;
+                cmd.Parameters.AddWithValue("@macha", Cv);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Thêm dịch vụ thành công!");
+                LoadDichVuList();
+            }
         }
 
         private void CapNhatDVadBT_Click(object sender, EventArgs e)
         {
-           
+
+            if (string.IsNullOrEmpty(MaDVADtb.Text)) return;
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+
+                string query = "UPDATE DichVuCon SET TenDichVu = @ten, Gia = @Gia, ID_DichVuCha = @IDcha WHERE ID = @ID " ;
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ID", MaDVADtb.Text);
+                cmd.Parameters.AddWithValue("@ten", TenDVadTB.Text);
+                cmd.Parameters.AddWithValue("@Gia", GiaDVadTB.Text);
+                string Cv = comboBoxDichVuCha.Text;
+                cmd.Parameters.AddWithValue("@IDcha", Cv);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Cập nhật nhân viên thành công!");
+                LoadDichVuList();
+            }
         }
 
         
@@ -553,15 +603,10 @@ namespace Spa_NNLT.Nguyên
                 string hoten = HTKHadTB.Text.Trim();
                 string sdt = SDTKHadTB.Text.Trim();
                 string id = MaKHadTB.Text.Trim();
-                string gioitinh = GTKhadTB.Text.Trim();
-                int tggt = 0;
-                if (gioitinh == "Nam")//" phhhh "
-                {
-                    tggt = 1;
-                }
+                
 
-                //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+                //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -569,7 +614,7 @@ namespace Spa_NNLT.Nguyên
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@ten", hoten);
                     cmd.Parameters.AddWithValue("@sdt", sdt);
-                    cmd.Parameters.AddWithValue("@gioitinh", tggt);
+                    cmd.Parameters.AddWithValue("@gioiTinh", raNam.Checked ? "Nam" : "Nữ");
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Đã sửa thông tin khách hàng!");
@@ -786,8 +831,8 @@ namespace Spa_NNLT.Nguyên
             {
 
                 if (row.IsNewRow) continue;
-                string Ceil1 = row.Cells["ten"].Value?.ToString();
-                string Ceil2 = row.Cells["madichvu"].Value?.ToString();
+                string Ceil1 = row.Cells["TenDichVu"].Value?.ToString();
+                string Ceil2 = row.Cells["ID"].Value?.ToString();
 
                 if (filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo mã ...")
                 {
@@ -806,15 +851,11 @@ namespace Spa_NNLT.Nguyên
                 DataGridViewRow row = KhachHangADdata.Rows[e.RowIndex];
                 MaKHadTB.Text = row.Cells[0].Value?.ToString();
                 HTKHadTB.Text = row.Cells[1].Value?.ToString();
-                string tg = row.Cells[2].Value?.ToString();
-                if (tg == "0")
-                {
-                    GTKhadTB.Text = "Nữ";
-                }
+                string gioiTinh = row.Cells["gioitinh"].Value.ToString();
+                if (gioiTinh == "Nam")
+                    raNam.Checked = true;
                 else
-                {
-                    GTKhadTB.Text = "Nam";
-                } 
+                    raNu.Checked = true;
                 SDTKHadTB.Text = row.Cells[3].Value?.ToString();
                     
             }
@@ -825,10 +866,11 @@ namespace Spa_NNLT.Nguyên
             if (e.RowIndex >=0)
             {
                 DataGridViewRow row = DichVuADdata.Rows[e.RowIndex];
-                MaDVADtb.Text = row.Cells["madichvu"].Value?.ToString();
-                TenDVadTB.Text = row.Cells["ten"].Value?.ToString();
-                GiaDVadTB.Text = row.Cells["giadichvu"].Value?.ToString();
-                ThoiGianDVadTB.Text = row.Cells["thoiluong"].Value?.ToString();    
+                MaDVADtb.Text = row.Cells["ID"].Value?.ToString();
+                TenDVadTB.Text = row.Cells["TenDichVu"].Value?.ToString();
+                GiaDVadTB.Text = row.Cells["Gia"].Value?.ToString();
+                ThoiGianDVadTB.Text = row.Cells["ThoiGian"].Value?.ToString();
+                comboBoxDichVuCha.Text = row.Cells["ID_DichVuCha"].Value?.ToString();
             }
         }
 
@@ -1046,8 +1088,8 @@ namespace Spa_NNLT.Nguyên
             int tt = (tinhTrang == "Trống") ? 0 : 1;
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR)) {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -1057,6 +1099,39 @@ namespace Spa_NNLT.Nguyên
                 command.ExecuteNonQuery();
                 MessageBox.Show("Đã thêm phòng thành công!");
                 LoadPhong();
+            }
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TenDVadTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void XoaDVadBT_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(MaDVADtb.Text)) return;
+
+            var confirm = MessageBox.Show("Bạn có chắc muốn xoá dịch vụ này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (confirm != DialogResult.Yes) return;
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+
+                string query = "DELETE FROM DichVuCon WHERE ID = @ID";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@ID", MaDVADtb.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa dịch vụ thành công!");
+                LoadDichVuList();
             }
         }
 
