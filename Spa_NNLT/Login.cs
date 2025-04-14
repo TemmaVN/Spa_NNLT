@@ -11,6 +11,8 @@ using Spa_NNLT.Bằng;
 using Spa_NNLT.Nguyên;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.NhanVienAD;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Spa_NNLT
 {
@@ -25,6 +27,8 @@ namespace Spa_NNLT
         {
 
         }
+
+
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -65,18 +69,16 @@ namespace Spa_NNLT
             //    f.ShowDialog();
             //}
             //else
-            //if (loginQL(textBoxUsename.Text,textBoxMatKhau.Text))
-           // {
+            if (loginQL(textBoxUsename.Text, textBoxMatKhau.Text))
+            {
                 Admin admin = new Admin();
-                Session.Username = textBoxUsename.Text.Trim();
-                Session.Password = textBoxMatKhau.Text.Trim();
                 this.Hide();
                 admin.ShowDialog();
-            //}
+            }
             //else
             //{
             //    MessageBox.Show("Sai tên đăng nhập hoặc mật kh");
-           // }
+            // }
             this.Show();
             
         }

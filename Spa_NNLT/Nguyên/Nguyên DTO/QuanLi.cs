@@ -6,6 +6,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace Spa_NNLT.Nguyên.Nguyên_DTO
 {
@@ -86,6 +90,14 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
         {
             string query = "SELECT * from dbo.tblQuannLy where account = N'" + username + "' and password = N'" + password + "'";
             DataTable result = DataProvider.Instance.Excuted(query);
+            userLogin user = new userLogin()
+            {
+                Username = username,
+                Password = password
+            };
+
+            string json = JsonConvert.SerializeObject(user,Formatting.Indented);
+            File.WriteAllText("loginInfo.json", json);
             return result.Rows.Count > 0;
         }
 
@@ -100,11 +112,20 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
             }
             return quanLis;
         }
+
+        public userLogin Readlogininfo()
+        {
+            string json = File.ReadAllText("loginInfo.json");
+
+            // Chuyển chuỗi JSON thành đối tượng UserLogin
+            userLogin user = JsonConvert.DeserializeObject<userLogin>(json);
+
+            return user;
+        }
     }
 
-    public static class Session
-    {
-        public static string Username { get; set; }
-        public static string Password { get; set; }
+    public class userLogin    {
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

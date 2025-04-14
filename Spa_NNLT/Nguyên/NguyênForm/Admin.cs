@@ -14,6 +14,7 @@ using Spa_NNLT.Nguyên.NhanVienAD;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.PhongAD;
 using System.Security.Principal;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 
@@ -35,6 +36,7 @@ namespace Spa_NNLT.Nguyên
             LoadThongTin();
             LoadThemPhong();
             LoadPhong();
+            HienThiAdmin();
             
             // Load thông tin từ sql
             // Tìm thông tin qua text box
@@ -227,6 +229,7 @@ namespace Spa_NNLT.Nguyên
         private void Admin_Load(object sender, EventArgs e)
         {
             HienThi();
+            
            
         }
 
@@ -906,6 +909,7 @@ namespace Spa_NNLT.Nguyên
         void LoadPhong()
         {
             List<Phong> phongs = PhongDAO.Instance.LoadDanhSachPhong();
+
             int x = 20;
             int y = 20;
             int maxwidth = PhongADpn.Width - PhongDAO.PhongWidth;
@@ -914,7 +918,7 @@ namespace Spa_NNLT.Nguyên
                 Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight  };
                 btn.Location = new Point(x, y);
                 btn.Text = phong.maPhong.ToString();
-                
+                phong.TimMLH();
                 if(phong.tinhTrang.ToString().Trim() == "0")
                 {
                     btn.BackColor = Color.White;
@@ -953,6 +957,7 @@ namespace Spa_NNLT.Nguyên
                 else {
                     TinhTrangADtb.Text = "Đang làm";
                 }
+                MLHPhongADtb.Text = phong.maLichHen.ToString();
             }
         }
 
@@ -1007,8 +1012,122 @@ namespace Spa_NNLT.Nguyên
 
         private void NhanVienADdata_Click(object sender, EventArgs e)
         {
-
         }
+
+        void HienThiAdmin()
+        {
+            userLogin logininfo = QuanLiDAO.Instance.Readlogininfo();
+            string query = "SELECT * from dbo.tblQuannLy where account = N'" + logininfo.Username + "' and password = N'" + logininfo.Password + "'";
+            DataTable result = DataProvider.Instance.Excuted(query);
+            if (result.Rows.Count > 0)
+            {
+                DataRow dr = result.Rows[0];
+                MQLtb.Text = dr["maquanly"].ToString();
+                HTQLtb.Text = dr["tenquanly"].ToString();
+                string tg = dr["gioitinh"].ToString().Trim();
+                if (tg == "1")
+                {
+                    GTQLtb.Text = "Nam";
+                }
+                else
+                {
+                    GTQLtb.Text = "Nữ";
+                }
+                NSQLtb.Text = dr["ngaysinh"].ToString();
+                SLNVtb.Text = (NhanVienADdata.Rows.Count - 1).ToString();
+            }
+        }
+
+        private void ThemPhongADbt_Click(object sender, EventArgs e)
+        {
+            string soPhong = SoPhongADtb.Text.Trim();
+            string loaiPhong = LoaiPhonfADtb.Text.Trim();
+            string tinhTrang = TinhTrangADtb.Text.Trim();
+            int tt = (tinhTrang == "Trống") ? 0 : 1;
+            string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
+                           "VALUES (@sophong, @loaiphong, @tinhtrang)";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionSTR)) {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@sophong", soPhong);
+                command.Parameters.AddWithValue("@loaiphong", loaiPhong);
+                command.Parameters.AddWithValue("@tinhtrang", tt);
+                command.ExecuteNonQuery();
+                MessageBox.Show("Đã thêm phòng thành công!");
+                LoadPhong();
+            }
+        }
+
+
+
+        //private void CapNhatADbt_Click(object sender, EventArgs e)
+        //{
+
+        //    if (string.IsNullOrEmpty(MaNVtb.Text)) return;
+        //    //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        //    string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        //    using (SqlConnection conn = new SqlConnection(connectionSTR))
+        //    {
+        //        conn.Open();
+
+        //        string query = "UPDATE tblNhanVien SET tennhanvien = @HoTen, gioitinh = @GioiTinh, sdt=@SDT, " +
+        //                       "ngaysinh=@NgaySinh, chucvu=@ChucVu, calam=@CaLam WHERE manhanvien=@MaNV";
+
+        //        SqlCommand cmd = new SqlCommand(query, conn);
+        //        cmd.Parameters.AddWithValue("@MaNV", MaNVtb.Text);
+        //        cmd.Parameters.AddWithValue("@HoTen", HTtb.Text);
+        //        cmd.Parameters.AddWithValue("@GioiTinh", rNam.Checked ? "Nam" : "Nữ");
+        //        cmd.Parameters.AddWithValue("@SDT", SDTTb.Text);
+        //        cmd.Parameters.AddWithValue("@NgaySinh", NStb.Value);
+        //        string Cv = cboChucVu.Text;
+        //        cmd.Parameters.AddWithValue("@ChucVu", Cv);
+        //        string cl = cboCaLam.Text;
+        //        cmd.Parameters.AddWithValue("@CaLam", cl);
+        //        cmd.ExecuteNonQuery();
+        //        MessageBox.Show("Cập nhật nhân viên thành công!");
+        //        LoadNhanVienlist();
+        //    }
+        //}
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    string ma = MaKHadTB.Text.Trim();
+        //    string ten = HTKHadTB.Text.Trim();
+        //    string sdt = SDTKHadTB.Text.Trim();
+        //    string gioitinh = GTKhadTB.Text.Trim();
+        //    int tggt = 0;
+        //    if (gioitinh == "Nam")//" phhhh "
+        //    {
+        //        tggt = 1;
+        //    }
+
+
+        //    if (ten == "" || sdt == "")
+        //    {
+        //        MessageBox.Show("Vui lòng nhập tên và số điện thoại.");
+        //        return;
+        //    }
+
+        //    string query = "INSERT INTO tblKhachHang (makhachhang, tenkhachhang, gioitinh, sdt) " +
+        //                   "VALUES (@ma, @ten, @gioitinh, @sdt)";
+        //    //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        //    string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        //    using (SqlConnection connection = new SqlConnection(connectionSTR))
+        //    {
+        //        connection.Open();
+        //        SqlCommand cmd = new SqlCommand(query, connection);
+        //        cmd.Parameters.AddWithValue("@ten", ten);
+        //        cmd.Parameters.AddWithValue("@sdt", sdt);
+        //        cmd.Parameters.AddWithValue("@ma", ma);
+        //        cmd.Parameters.AddWithValue("@gioitinh", tggt);
+        //        cmd.ExecuteNonQuery();
+
+        //        MessageBox.Show("Đã thêm khách hàng mới!");
+        //        LoadAccountList(); // Cập nhật lại comboBox khách hàng
+        //    }
+        //}
+
     }
 }
 

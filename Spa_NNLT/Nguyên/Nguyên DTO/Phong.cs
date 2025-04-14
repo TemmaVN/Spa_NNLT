@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,13 +66,23 @@ namespace Spa_NNLT.Nguyên.PhongAD
         }
         public string maLichHen
         {
-            get { return maLichHen; }
+            get { return MaLichHen; }
             set
             {
                 MaLichHen = value;
             }
         }
-
+        public void TimMLH()
+        {
+            DataTable dataLH = DataProvider.Instance.Excuted("USP_GetLichHenList");
+            foreach (DataRow row in dataLH.Rows) { 
+                if (row != null)
+                if (this.maPhong == row["maphong"].ToString())
+                {
+                    this.maLichHen = row["malichhen"].ToString();
+                }
+            }
+        }
         
     }
     public class PhongDAO
