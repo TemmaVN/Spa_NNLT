@@ -51,10 +51,17 @@
             this.HoaDonADdata = new System.Windows.Forms.DataGridView();
             this.LichHenADtp = new System.Windows.Forms.TabPage();
             this.panel29 = new System.Windows.Forms.Panel();
+            this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel30 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cboPhong = new System.Windows.Forms.ComboBox();
+            this.cboNhanVien = new System.Windows.Forms.ComboBox();
+            this.cboKhachHang = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TTLHadTB = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
@@ -238,13 +245,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.cboKhachHang = new System.Windows.Forms.ComboBox();
-            this.cboNhanVien = new System.Windows.Forms.ComboBox();
-            this.cboPhong = new System.Windows.Forms.ComboBox();
-            this.button11 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.HoadonADtp.SuspendLayout();
             this.panel33.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -357,7 +357,7 @@
             this.label56.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label56.Location = new System.Drawing.Point(20, 117);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(83, 16);
+            this.label56.Size = new System.Drawing.Size(81, 16);
             this.label56.TabIndex = 47;
             this.label56.Text = "Mã hóa đơn";
             // 
@@ -396,7 +396,7 @@
             this.label64.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label64.Location = new System.Drawing.Point(20, 153);
             this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(81, 16);
+            this.label64.Size = new System.Drawing.Size(80, 16);
             this.label64.TabIndex = 17;
             this.label64.Text = "Mã lịch hẹn";
             // 
@@ -567,6 +567,18 @@
             this.panel29.Size = new System.Drawing.Size(423, 55);
             this.panel29.TabIndex = 22;
             // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(315, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(106, 32);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "Thanh toán";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -630,6 +642,56 @@
             this.panel30.TabIndex = 25;
             this.panel30.Paint += new System.Windows.Forms.PaintEventHandler(this.panel30_Paint);
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(167, 241);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(233, 22);
+            this.dateTimePicker2.TabIndex = 58;
+            // 
+            // cboPhong
+            // 
+            this.cboPhong.FormattingEnabled = true;
+            this.cboPhong.Location = new System.Drawing.Point(167, 208);
+            this.cboPhong.Name = "cboPhong";
+            this.cboPhong.Size = new System.Drawing.Size(233, 24);
+            this.cboPhong.TabIndex = 57;
+            this.cboPhong.DropDown += new System.EventHandler(this.cboPhong_DropDown);
+            // 
+            // cboNhanVien
+            // 
+            this.cboNhanVien.FormattingEnabled = true;
+            this.cboNhanVien.Location = new System.Drawing.Point(167, 108);
+            this.cboNhanVien.Name = "cboNhanVien";
+            this.cboNhanVien.Size = new System.Drawing.Size(233, 24);
+            this.cboNhanVien.TabIndex = 56;
+            this.cboNhanVien.DropDown += new System.EventHandler(this.cboNhanVien_DropDown);
+            // 
+            // cboKhachHang
+            // 
+            this.cboKhachHang.FormattingEnabled = true;
+            this.cboKhachHang.Location = new System.Drawing.Point(167, 69);
+            this.cboKhachHang.Name = "cboKhachHang";
+            this.cboKhachHang.Size = new System.Drawing.Size(233, 24);
+            this.cboKhachHang.TabIndex = 55;
+            this.cboKhachHang.DropDown += new System.EventHandler(this.cboKhachHang_DropDown);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(167, 172);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(233, 24);
+            this.comboBox2.TabIndex = 54;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(167, 142);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 24);
+            this.comboBox1.TabIndex = 53;
+            // 
             // TTLHadTB
             // 
             this.TTLHadTB.Location = new System.Drawing.Point(167, 279);
@@ -644,7 +706,7 @@
             this.label63.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label63.Location = new System.Drawing.Point(28, 282);
             this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(71, 16);
+            this.label63.Size = new System.Drawing.Size(70, 16);
             this.label63.TabIndex = 51;
             this.label63.Text = "Trạng thái";
             this.label63.Click += new System.EventHandler(this.label63_Click);
@@ -655,7 +717,7 @@
             this.label62.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.Location = new System.Drawing.Point(28, 246);
             this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(68, 16);
+            this.label62.Size = new System.Drawing.Size(67, 16);
             this.label62.TabIndex = 49;
             this.label62.Text = "Thời gian";
             this.label62.Click += new System.EventHandler(this.label62_Click);
@@ -674,7 +736,7 @@
             this.label61.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.Location = new System.Drawing.Point(26, 39);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(81, 16);
+            this.label61.Size = new System.Drawing.Size(80, 16);
             this.label61.TabIndex = 47;
             this.label61.Text = "Mã lịch hẹn";
             // 
@@ -684,7 +746,7 @@
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(28, 211);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(70, 16);
+            this.label25.Size = new System.Drawing.Size(69, 16);
             this.label25.TabIndex = 45;
             this.label25.Text = "Mã phòng";
             this.label25.Click += new System.EventHandler(this.label25_Click);
@@ -715,7 +777,7 @@
             this.label49.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.Location = new System.Drawing.Point(28, 72);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(83, 16);
+            this.label49.Size = new System.Drawing.Size(82, 16);
             this.label49.TabIndex = 17;
             this.label49.Text = "Khách hàng";
             this.label49.Click += new System.EventHandler(this.label49_Click);
@@ -726,7 +788,7 @@
             this.label50.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.Location = new System.Drawing.Point(28, 148);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(54, 16);
+            this.label50.Size = new System.Drawing.Size(55, 16);
             this.label50.TabIndex = 16;
             this.label50.Text = "Dịch vụ";
             // 
@@ -736,7 +798,7 @@
             this.label51.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(28, 111);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(71, 16);
+            this.label51.Size = new System.Drawing.Size(70, 16);
             this.label51.TabIndex = 13;
             this.label51.Text = "Nhân viên";
             // 
@@ -914,6 +976,7 @@
             this.comboBoxDichVuCha.Name = "comboBoxDichVuCha";
             this.comboBoxDichVuCha.Size = new System.Drawing.Size(233, 24);
             this.comboBoxDichVuCha.TabIndex = 47;
+            this.comboBoxDichVuCha.DropDown += new System.EventHandler(this.comboBoxDichVuCha_DropDown);
             // 
             // ThoiGianDVadTB
             // 
@@ -929,7 +992,7 @@
             this.label42.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(26, 237);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(72, 16);
+            this.label42.Size = new System.Drawing.Size(71, 16);
             this.label42.TabIndex = 45;
             this.label42.Text = "Thời gian:";
             this.label42.Click += new System.EventHandler(this.label42_Click);
@@ -986,7 +1049,7 @@
             this.label44.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(26, 87);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(80, 16);
+            this.label44.Size = new System.Drawing.Size(79, 16);
             this.label44.TabIndex = 17;
             this.label44.Text = "Mã dịch vụ:";
             // 
@@ -996,7 +1059,7 @@
             this.label45.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(24, 198);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(83, 16);
+            this.label45.Size = new System.Drawing.Size(82, 16);
             this.label45.TabIndex = 16;
             this.label45.Text = "Giá dịch vụ:";
             // 
@@ -1006,7 +1069,7 @@
             this.label46.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.Location = new System.Drawing.Point(26, 128);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(85, 16);
+            this.label46.Size = new System.Drawing.Size(84, 16);
             this.label46.TabIndex = 13;
             this.label46.Text = "Tên dịch vụ:";
             // 
@@ -1205,7 +1268,7 @@
             this.label32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.Location = new System.Drawing.Point(29, 247);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(85, 16);
+            this.label32.Size = new System.Drawing.Size(84, 16);
             this.label32.TabIndex = 45;
             this.label32.Text = "Mã lịch hẹn:";
             // 
@@ -1417,7 +1480,7 @@
             this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(24, 90);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(97, 16);
+            this.label22.Size = new System.Drawing.Size(94, 16);
             this.label22.TabIndex = 47;
             this.label22.Text = "Mã nhân viên:";
             // 
@@ -1703,7 +1766,7 @@
             this.label17.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(33, 57);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 16);
+            this.label17.Size = new System.Drawing.Size(105, 16);
             this.label17.TabIndex = 33;
             this.label17.Text = "Mã khách hàng:";
             // 
@@ -1991,6 +2054,7 @@
             this.cboCaLam.Name = "cboCaLam";
             this.cboCaLam.Size = new System.Drawing.Size(233, 27);
             this.cboCaLam.TabIndex = 31;
+            this.cboCaLam.DropDown += new System.EventHandler(this.cboCaLam_DropDown);
             // 
             // cboChucVu
             // 
@@ -1999,6 +2063,7 @@
             this.cboChucVu.Name = "cboChucVu";
             this.cboChucVu.Size = new System.Drawing.Size(233, 27);
             this.cboChucVu.TabIndex = 30;
+            this.cboChucVu.DropDown += new System.EventHandler(this.cboChucVu_DropDown);
             this.cboChucVu.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label19
@@ -2007,7 +2072,7 @@
             this.label19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(23, 219);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 16);
+            this.label19.Size = new System.Drawing.Size(64, 16);
             this.label19.TabIndex = 29;
             this.label19.Text = "Chức vụ:";
             // 
@@ -2017,7 +2082,7 @@
             this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(20, 253);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 16);
+            this.label13.Size = new System.Drawing.Size(55, 16);
             this.label13.TabIndex = 28;
             this.label13.Text = "Ca làm:";
             this.label13.Click += new System.EventHandler(this.label13_Click);
@@ -2052,7 +2117,7 @@
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(20, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.Size = new System.Drawing.Size(94, 16);
             this.label1.TabIndex = 17;
             this.label1.Text = "Mã nhân viên:";
             // 
@@ -2072,7 +2137,7 @@
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(20, 180);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.Size = new System.Drawing.Size(74, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "Ngày sinh:";
             // 
@@ -2660,65 +2725,6 @@
             this.tabControl1.Size = new System.Drawing.Size(944, 519);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 142);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(233, 24);
-            this.comboBox1.TabIndex = 53;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(167, 172);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(233, 24);
-            this.comboBox2.TabIndex = 54;
-            // 
-            // cboKhachHang
-            // 
-            this.cboKhachHang.FormattingEnabled = true;
-            this.cboKhachHang.Location = new System.Drawing.Point(167, 69);
-            this.cboKhachHang.Name = "cboKhachHang";
-            this.cboKhachHang.Size = new System.Drawing.Size(233, 24);
-            this.cboKhachHang.TabIndex = 55;
-            // 
-            // cboNhanVien
-            // 
-            this.cboNhanVien.FormattingEnabled = true;
-            this.cboNhanVien.Location = new System.Drawing.Point(167, 108);
-            this.cboNhanVien.Name = "cboNhanVien";
-            this.cboNhanVien.Size = new System.Drawing.Size(233, 24);
-            this.cboNhanVien.TabIndex = 56;
-            // 
-            // cboPhong
-            // 
-            this.cboPhong.FormattingEnabled = true;
-            this.cboPhong.Location = new System.Drawing.Point(167, 208);
-            this.cboPhong.Name = "cboPhong";
-            this.cboPhong.Size = new System.Drawing.Size(233, 24);
-            this.cboPhong.TabIndex = 57;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(315, 2);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(106, 32);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Thanh toán";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(167, 241);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(233, 22);
-            this.dateTimePicker2.TabIndex = 58;
             // 
             // Admin
             // 

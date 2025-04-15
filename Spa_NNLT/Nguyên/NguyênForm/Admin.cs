@@ -29,16 +29,13 @@ namespace Spa_NNLT.Nguyên
             LoadAccountList();
 
             LoadDichVuList();
-            LoadComboBoxDichVuCha();
 
             LoadHoaDonList();
 
             LoadLichHenList();
 
             LoadNhanVienlist();
-            LoadCaLam();
-            LoadChucVu();
-
+            
             LoadThongTin();
 
             LoadThemPhong();
@@ -46,7 +43,7 @@ namespace Spa_NNLT.Nguyên
 
             HienThiAdmin();
 
-            LoadComboBoxes();
+            
 
             // Load thông tin từ sql
             // Tìm thông tin qua text box
@@ -77,61 +74,31 @@ namespace Spa_NNLT.Nguyên
             }
         }
         // Load chức vụ
-        void LoadChucVu()
-        {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-            {
-                conn.Open();
-                string query = "SELECT * FROM ChucVu";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+        //void LoadChucVu()
+        //{
+        //    string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        //    //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        //    using (SqlConnection conn = new SqlConnection(connectionSTR))
+        //    {
+        //        conn.Open();
+        //        string query = "SELECT * FROM ChucVu";
+        //        SqlDataAdapter da = new SqlDataAdapter(query, conn);
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
 
-                DataRow row = dt.NewRow();
-                row["TenChucVu"] = 0;
-                row["TenChucVu"] = "-- Chọn chức vụ --";
-                dt.Rows.InsertAt(row, 0);
+        //        DataRow row = dt.NewRow();
+        //        row["TenChucVu"] = 0;
+        //        row["TenChucVu"] = "-- Chọn chức vụ --";
+        //        dt.Rows.InsertAt(row, 0);
 
-                cboChucVu.DataSource = dt;
-                cboChucVu.DisplayMember = "TenChucVu";
+        //        cboChucVu.DataSource = dt;
+        //        cboChucVu.DisplayMember = "TenChucVu";
                
-            }
-        }
+        //    }
+        //}
 
         // Load ca làm
-        void LoadCaLam()
-        {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-            {
-                conn.Open();
-                string query = "SELECT * FROM CaLam";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-
-                DataRow row = dt.NewRow();
-                row["TenCa"] = 0;
-                row["TenCa"] = "-- Chọn ca làm --";
-                dt.Rows.InsertAt(row, 0);
-
-                cboCaLam.DataSource = dt;
-                cboCaLam.DisplayMember = "TenCa";
-             
-            }
-        }
-        void LoadComboBoxDichVuCha()
-        {
-            string query = "SELECT * FROM DichVuCha";
-            DataTable dt = DataProvider.Instance.Excuted(query);
-            comboBoxDichVuCha.DataSource = dt;
-            comboBoxDichVuCha.DisplayMember = "TenDichVu";
-            comboBoxDichVuCha.ValueMember = "ID";
-        }
-
+        
 
         void LoadThemPhong()
         {
@@ -170,30 +137,7 @@ namespace Spa_NNLT.Nguyên
             LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
-        private void LoadComboBoxes()
-        {
-            // Khách hàng
-            string queryKH = "SELECT makhachhang, tenkhachhang, sdt FROM tblKhachHang";
-            cboKhachHang.DataSource = DataProvider.Instance.Excuted(queryKH);
-            cboKhachHang.DisplayMember = "tenkhachhang";
-            cboKhachHang.ValueMember = "makhachhang";
-
-            // Nhân viên
-            string queryNV = "SELECT manhanvien, tennhanvien FROM tblNhanVien";
-            cboNhanVien.DataSource = DataProvider.Instance.Excuted(queryNV);
-            cboNhanVien.DisplayMember = "tennhanvien";
-            cboNhanVien.ValueMember = "manhanvien";
-
-            // Phòng
-            string queryPhong = "SELECT maphong FROM tblPhong";
-            cboPhong.DataSource = DataProvider.Instance.Excuted(queryPhong);
-            cboPhong.DisplayMember = "maphong";
-            cboPhong.ValueMember = "maphong";
-        }
-
-
-
-
+        
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -1221,6 +1165,75 @@ namespace Spa_NNLT.Nguyên
         private void button14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboKhachHang_DropDown(object sender, EventArgs e)
+        {
+            string queryKH = "SELECT makhachhang, tenkhachhang + ' / ' + sdt AS thongtin FROM tblKhachHang";
+            cboKhachHang.DataSource = DataProvider.Instance.Excuted(queryKH);
+            cboKhachHang.DisplayMember = "thongtin";
+            cboKhachHang.ValueMember = "makhachhang";
+        }
+
+        private void cboNhanVien_DropDown(object sender, EventArgs e)
+        {
+            // Nhân viên
+            string queryNV = "SELECT manhanvien, tennhanvien FROM tblNhanVien";
+            cboNhanVien.DataSource = DataProvider.Instance.Excuted(queryNV);
+            cboNhanVien.DisplayMember = "tennhanvien";
+            cboNhanVien.ValueMember = "manhanvien";
+        }
+
+        private void cboPhong_DropDown(object sender, EventArgs e)
+        {
+            // Phòng
+            string queryPhong = "SELECT maphong FROM tblPhong";
+            cboPhong.DataSource = DataProvider.Instance.Excuted(queryPhong);
+            cboPhong.DisplayMember = "maphong";
+            cboPhong.ValueMember = "maphong";
+        }
+
+        private void cboChucVu_DropDown(object sender, EventArgs e)
+        {
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+                string query = "SELECT * FROM ChucVu";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cboChucVu.DataSource = dt;
+                cboChucVu.DisplayMember = "TenChucVu";
+
+            }
+        }
+
+        private void cboCaLam_DropDown(object sender, EventArgs e)
+        {
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+                string query = "SELECT * FROM CaLam";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cboCaLam.DataSource = dt;
+                cboCaLam.DisplayMember = "TenCa";
+
+            }
+        }
+
+        private void comboBoxDichVuCha_DropDown(object sender, EventArgs e)
+        {
+            string query = "SELECT * FROM DichVuCha";
+            DataTable dt = DataProvider.Instance.Excuted(query);
+            comboBoxDichVuCha.DataSource = dt;
+            comboBoxDichVuCha.DisplayMember = "TenDichVu";
+            comboBoxDichVuCha.ValueMember = "ID";
         }
 
 
