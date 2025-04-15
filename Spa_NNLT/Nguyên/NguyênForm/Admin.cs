@@ -45,7 +45,9 @@ namespace Spa_NNLT.Nguyên
             LoadPhong();
 
             HienThiAdmin();
-            
+
+            LoadComboBoxes();
+
             // Load thông tin từ sql
             // Tìm thông tin qua text box
             // Thêm, xóa, sửa các thông tin 
@@ -167,6 +169,30 @@ namespace Spa_NNLT.Nguyên
             string query = "select * from dbo.tblLichHen";
             LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
+
+        private void LoadComboBoxes()
+        {
+            // Khách hàng
+            string queryKH = "SELECT makhachhang, tenkhachhang, sdt FROM tblKhachHang";
+            cboKhachHang.DataSource = DataProvider.Instance.Excuted(queryKH);
+            cboKhachHang.DisplayMember = "tenkhachhang";
+            cboKhachHang.ValueMember = "makhachhang";
+
+            // Nhân viên
+            string queryNV = "SELECT manhanvien, tennhanvien FROM tblNhanVien";
+            cboNhanVien.DataSource = DataProvider.Instance.Excuted(queryNV);
+            cboNhanVien.DisplayMember = "tennhanvien";
+            cboNhanVien.ValueMember = "manhanvien";
+
+            // Phòng
+            string queryPhong = "SELECT maphong FROM tblPhong";
+            cboPhong.DataSource = DataProvider.Instance.Excuted(queryPhong);
+            cboPhong.DisplayMember = "maphong";
+            cboPhong.ValueMember = "maphong";
+        }
+
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -899,16 +925,16 @@ namespace Spa_NNLT.Nguyên
 
         private void LichHenADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) {
-                DataGridViewRow row = LichHenADdata.Rows[e.RowIndex];
-                MaLHadTB.Text = row.Cells["malichhen"].Value?.ToString();
-                MaKHLHadTB.Text = row.Cells["makhachhang"].Value?.ToString();
-                MaNVLHadTB.Text = row.Cells["manhanvien"].Value?.ToString();
-                MaDVLHadTB.Text = row.Cells["madichvu"].Value?.ToString();
-                MaPhongLHadTB.Text = row.Cells["maphong"].Value?.ToString();
-                TGLHadTB.Text = row.Cells["thoigian"].Value?.ToString();
-                TTLHadTB.Text = row.Cells["trangthai"].Value?.ToString();
-            }
+            //if (e.RowIndex >= 0) {
+            //    DataGridViewRow row = LichHenADdata.Rows[e.RowIndex];
+            //    MaLHadTB.Text = row.Cells["malichhen"].Value?.ToString();
+            //    MaKHLHadTB.Text = row.Cells["makhachhang"].Value?.ToString();
+            //    MaNVLHadTB.Text = row.Cells["manhanvien"].Value?.ToString();
+            //    //MaDVLHadTB.Text = row.Cells["madichvu"].Value?.ToString();
+            //    MaPhongLHadTB.Text = row.Cells["maphong"].Value?.ToString();
+            //    TGLHadTB.Text = row.Cells["thoigian"].Value?.ToString();
+            //    TTLHadTB.Text = row.Cells["trangthai"].Value?.ToString();
+            //}
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -1133,6 +1159,68 @@ namespace Spa_NNLT.Nguyên
                 MessageBox.Show("Xóa dịch vụ thành công!");
                 LoadDichVuList();
             }
+        }
+
+        private void label63_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label62_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label49_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+           
+            if (string.IsNullOrWhiteSpace(MaLHadTB.Text))
+            {
+                MessageBox.Show("Vui lòng chọn hoặc nhập Mã lịch hẹn cần xóa.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                using (SqlConnection conn = new SqlConnection(connectionSTR))
+                {
+                    conn.Open();
+                    string query = "DELETE FROM tblLichHen WHERE malichhen = @malichhen";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@malichhen", MaLHadTB.Text);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Xóa lịch hẹn thành công!");
+                        LoadLichHenList(); // gọi lại hàm load để làm mới danh sách
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy lịch hẹn để xóa.");
+                    }
+                }
+            }
+        
+
+    }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
         }
 
 
