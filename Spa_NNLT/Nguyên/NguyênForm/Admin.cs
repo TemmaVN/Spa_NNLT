@@ -15,6 +15,7 @@ using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.PhongAD;
 using System.Security.Principal;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 
@@ -920,57 +921,57 @@ namespace Spa_NNLT.Nguyên
 
         void LoadPhong()
         {
-            List<Phong> phongs = PhongDAO.Instance.LoadDanhSachPhong();
+            //List<Phong> phongs = PhongDAO.Instance.LoadDanhSachPhong();
 
-            int x = 20;
-            int y = 20;
-            int maxwidth = PhongADpn.Width - PhongDAO.PhongWidth;
-            foreach (Phong phong in phongs)
-            {
-                Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight  };
-                btn.Location = new Point(x, y);
-                btn.Text = phong.maPhong.ToString();
-                phong.TimMLH();
-                if(phong.tinhTrang.ToString().Trim() == "0")
-                {
-                    btn.BackColor = Color.White;
-                }
-                else
-                {
-                    btn.BackColor = Color.Aqua;
-                }
-                btn.Tag = phong;
-                btn.Click += btn_click;
-                PhongADpn.Controls.Add(btn);
-                x += PhongDAO.PhongWidth;
-                if (x > maxwidth)
-                {
-                    x = 20;
-                    y += PhongDAO.PhongHeight;
-                }
+            //int x = 20;
+            //int y = 20;
+            //int maxwidth = PhongADpn.Width - PhongDAO.PhongWidth;
+            //foreach (Phong phong in phongs)
+            //{
+            //    Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight  };
+            //    btn.Location = new Point(x, y);
+            //    btn.Text = phong.maPhong.ToString();
+            //    phong.TimMLH();
+            //    if(phong.tinhTrang.ToString().Trim() == "0")
+            //    {
+            //        btn.BackColor = Color.White;
+            //    }
+            //    else
+            //    {
+            //        btn.BackColor = Color.Aqua;
+            //    }
+            //    btn.Tag = phong;
+            //    btn.Click += btn_click;
+            //    PhongADpn.Controls.Add(btn);
+            //    x += PhongDAO.PhongWidth;
+            //    if (x > maxwidth)
+            //    {
+            //        x = 20;
+            //        y += PhongDAO.PhongHeight;
+            //    }
                 
-            }
+            //}
 
 
         }
 
         private void btn_click(object sender, EventArgs e) { 
-            Button btn = sender as Button;
-            Phong phong = btn.Tag as Phong;
-            if (phong != null)
-            {
-                SoPhongADtb.Text = phong.maPhong.ToString();
-                LoaiPhonfADtb.Text = phong.loaiPhong.ToString();
-                string tg = phong.tinhTrang.ToString();
-                if (tg.Trim() == "0")
-                {
-                    TinhTrangADtb.Text = "Trống";
-                }
-                else {
-                    TinhTrangADtb.Text = "Đang làm";
-                }
-                MLHPhongADtb.Text = phong.maLichHen.ToString();
-            }
+           // //Button btn = sender as Button;
+           //// Phong phong = btn.Tag as Phong;
+           // if (phong != null)
+           // {
+           //     SoPhongADtb.Text = phong.maPhong.ToString();
+           //     LoaiPhonfADtb.Text = phong.loaiPhong.ToString();
+           //     string tg = phong.tinhTrang.ToString();
+           //     if (tg.Trim() == "0")
+           //     {
+           //         TinhTrangADtb.Text = "Trống";
+           //     }
+           //     else {
+           //         TinhTrangADtb.Text = "Đang làm";
+           //     }
+           //     MLHPhongADtb.Text = phong.maLichHen.ToString();
+           // }
         }
 
         private void NhanVienADdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1055,7 +1056,7 @@ namespace Spa_NNLT.Nguyên
             string soPhong = SoPhongADtb.Text.Trim();
             string loaiPhong = LoaiPhonfADtb.Text.Trim();
             string tinhTrang = TinhTrangADtb.Text.Trim();
-            int tt = (tinhTrang == "Trống") ? 0 : 1;
+            //int tt = (tinhTrang == "Trống") ? 0 : 1;
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
             string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
@@ -1065,7 +1066,7 @@ namespace Spa_NNLT.Nguyên
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@sophong", soPhong);
                 command.Parameters.AddWithValue("@loaiphong", loaiPhong);
-                command.Parameters.AddWithValue("@tinhtrang", tt);
+                command.Parameters.AddWithValue("@tinhtrang", tinhTrang );
                 command.ExecuteNonQuery();
                 MessageBox.Show("Đã thêm phòng thành công!");
                 LoadPhong();
@@ -1178,18 +1179,18 @@ namespace Spa_NNLT.Nguyên
         private void cboNhanVien_DropDown(object sender, EventArgs e)
         {
             // Nhân viên
-            string queryNV = "SELECT manhanvien, tennhanvien FROM tblNhanVien";
+            string queryNV = "SELECT manhanvien, tennhanvien +  '/' + chucvu + '/' + calam AS thongtin FROM tblNhanVien";
             cboNhanVien.DataSource = DataProvider.Instance.Excuted(queryNV);
-            cboNhanVien.DisplayMember = "tennhanvien";
+            cboNhanVien.DisplayMember = "thongtin";
             cboNhanVien.ValueMember = "manhanvien";
         }
 
         private void cboPhong_DropDown(object sender, EventArgs e)
         {
             // Phòng
-            string queryPhong = "SELECT maphong FROM tblPhong";
+            string queryPhong = "SELECT maphong, maphong + '/' + loaiphong + '/' + tinhtrang AS thongtin FROM tblPhong";
             cboPhong.DataSource = DataProvider.Instance.Excuted(queryPhong);
-            cboPhong.DisplayMember = "maphong";
+            cboPhong.DisplayMember = "thongtin";
             cboPhong.ValueMember = "maphong";
         }
 
@@ -1235,6 +1236,135 @@ namespace Spa_NNLT.Nguyên
             comboBoxDichVuCha.DisplayMember = "TenDichVu";
             comboBoxDichVuCha.ValueMember = "ID";
         }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            string query = "SELECT TenDichVu,TenDichVu from DichVuCha";
+            comboBoxDVCha.DataSource = DataProvider.Instance.Excuted(query);
+            comboBoxDVCha.DisplayMember = "TenDichVu";
+            comboBoxDVCha.ValueMember = "TenDichVu";
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBoxDVCha.SelectedValue != null && comboBoxDVCha.SelectedValue.ToString() != "System.Data.DataRowView")
+            {
+                string madvcha = comboBoxDVCha.SelectedValue.ToString();
+                string query = "SELECT ID, TenDichVu FROM DichVuCon WHERE ID_DichVuCha = @madvcha";
+                DataTable data = DataProvider.Instance.Excuted(query, new object[] { madvcha });
+                comboBoxDVCon.DataSource = data;
+                comboBoxDVCon.DisplayMember = "TenDichVu";
+                comboBoxDVCon.ValueMember = "ID";
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string malichhen = MaLHadTB.Text.ToString();
+            string makhach = cboKhachHang.SelectedValue.ToString();
+            string manv = cboNhanVien.SelectedValue.ToString();
+            string maphong = cboPhong.SelectedValue.ToString();
+            string madichvu = comboBoxDVCon.SelectedValue.ToString();
+            DateTime thoigianBatDau = dateTimePicker2.Value;
+
+            int thoigian = LayThoiGianDichVu(madichvu);
+            DateTime thoigianKetThuc = thoigianBatDau.AddMinutes(thoigian);
+
+            string trangthai = raDangCho.Checked ? "Đang chờ" : "Đã xong";
+
+            if (KiemTraTrungLich(manv, maphong, thoigianBatDau, thoigian))
+            {
+                MessageBox.Show("Nhân viên hoặc phòng đang bận trong khoảng thời gian này!", "Thông báo");
+                return;
+            }
+
+            string query = @"INSERT INTO tblLichHen(malichhen, makhachhang, manhanvien, maphong, madichvu, thoigian, trangthai)
+                     VALUES (@malichhen, @makhach, @manv, @phong, @dichvu, @thoigian, @trangthai)";
+
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@malichhen", malichhen);
+                cmd.Parameters.AddWithValue("@makhach", makhach);
+                cmd.Parameters.AddWithValue("@manv", manv);
+                cmd.Parameters.AddWithValue("@phong", maphong);
+                cmd.Parameters.AddWithValue("@dichvu", madichvu);
+                cmd.Parameters.AddWithValue("@thoigian", thoigianBatDau);
+                cmd.Parameters.AddWithValue("@trangthai", trangthai);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Thêm lịch hẹn thành công!");
+                    LoadLichHenList();
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thêm lịch hẹn.");
+                }
+            }
+        }
+        int LayThoiGianDichVu(string madichvu)
+        {
+            int thoigian = 0;
+            string query = "SELECT ThoiGian FROM DichVuCon WHERE ThoiGian = @madichvu";
+
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@madichvu", madichvu);
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                    thoigian = Convert.ToInt32(result);
+            }
+            return thoigian;
+        }
+        bool KiemTraTrungLich(string manv, string maphong, DateTime batDau, int thoiluong)
+        {
+            DateTime ketThuc = batDau.AddMinutes(thoiluong);
+            string query = @"
+        SELECT COUNT(*) FROM tblLichHen
+        WHERE (manhanvien = @manv OR maphong = @phong)
+        AND (
+            (@batDau BETWEEN thoigian AND DATEADD(MINUTE, @thoiluong, thoigian))
+            OR (@ketThuc BETWEEN thoigian AND DATEADD(MINUTE, @thoiluong, thoigian))
+            OR (thoigian BETWEEN @batDau AND @ketThuc)
+            )";
+
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
+                connection.Open();
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@manv", manv);
+                cmd.Parameters.AddWithValue("@phong", maphong);
+                cmd.Parameters.AddWithValue("@batDau", batDau);
+                cmd.Parameters.AddWithValue("@ketThuc", ketThuc);
+                cmd.Parameters.AddWithValue("@thoiluong", thoiluong);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
 
 
 
