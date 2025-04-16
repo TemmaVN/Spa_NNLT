@@ -15,7 +15,7 @@ using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.PhongAD;
 using System.Security.Principal;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 
@@ -74,31 +74,7 @@ namespace Spa_NNLT.Nguyên
                 
             }
         }
-        // Load chức vụ
-        //void LoadChucVu()
-        //{
-        //    string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-        //    //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-        //    using (SqlConnection conn = new SqlConnection(connectionSTR))
-        //    {
-        //        conn.Open();
-        //        string query = "SELECT * FROM ChucVu";
-        //        SqlDataAdapter da = new SqlDataAdapter(query, conn);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-
-        //        DataRow row = dt.NewRow();
-        //        row["TenChucVu"] = 0;
-        //        row["TenChucVu"] = "-- Chọn chức vụ --";
-        //        dt.Rows.InsertAt(row, 0);
-
-        //        cboChucVu.DataSource = dt;
-        //        cboChucVu.DisplayMember = "TenChucVu";
-               
-        //    }
-        //}
-
-        // Load ca làm
+        
         
 
         void LoadThemPhong()
@@ -845,32 +821,12 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
-        void LoadChucVutst()
-        {
-            // Xóa dữ liệu cũ trong ComboBox
-            cboChucVu.DataSource = null;
-            cboChucVu.Items.Clear();
-
-            // Duyệt tất cả các dòng trong DataGridView
-            foreach (DataGridViewRow row in NhanVienADdata.Rows)
-            {
-                if (row.Cells["ChucVu"].Value != null)
-                {
-                    string chucVu = row.Cells["ChucVu"].Value.ToString();
-
-                    // Tránh thêm trùng lặp
-                    if (!cboChucVu.Items.Contains(chucVu))
-                    {
-                        cboChucVu.Items.Add(chucVu);
-                    }
-                }
-            }
-
-        }
+        
 
         private void LichHenADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0) {
+            //if (e.RowIndex >= 0)
+            //{
             //    DataGridViewRow row = LichHenADdata.Rows[e.RowIndex];
             //    MaLHadTB.Text = row.Cells["malichhen"].Value?.ToString();
             //    MaKHLHadTB.Text = row.Cells["makhachhang"].Value?.ToString();
@@ -921,57 +877,58 @@ namespace Spa_NNLT.Nguyên
 
         void LoadPhong()
         {
-            //List<Phong> phongs = PhongDAO.Instance.LoadDanhSachPhong();
+            List<Phong> phongs = PhongDAO.Instance.LoadDanhSachPhong();
 
-            //int x = 20;
-            //int y = 20;
-            //int maxwidth = PhongADpn.Width - PhongDAO.PhongWidth;
-            //foreach (Phong phong in phongs)
-            //{
-            //    Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight  };
-            //    btn.Location = new Point(x, y);
-            //    btn.Text = phong.maPhong.ToString();
-            //    phong.TimMLH();
-            //    if(phong.tinhTrang.ToString().Trim() == "0")
-            //    {
-            //        btn.BackColor = Color.White;
-            //    }
-            //    else
-            //    {
-            //        btn.BackColor = Color.Aqua;
-            //    }
-            //    btn.Tag = phong;
-            //    btn.Click += btn_click;
-            //    PhongADpn.Controls.Add(btn);
-            //    x += PhongDAO.PhongWidth;
-            //    if (x > maxwidth)
-            //    {
-            //        x = 20;
-            //        y += PhongDAO.PhongHeight;
-            //    }
-                
-            //}
+            int x = 20;
+            int y = 20;
+            int maxwidth = PhongADpn.Width - PhongDAO.PhongWidth;
+            foreach (Phong phong in phongs)
+            {
+                Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight };
+                btn.Location = new Point(x, y);
+                btn.Text = phong.maPhong.ToString();
+                phong.TimMLH();
+                if (phong.tinhTrang.ToString().Trim() == "0")
+                {
+                    btn.BackColor = Color.White;
+                }
+                else
+                {
+                    btn.BackColor = Color.Aqua;
+                }
+                btn.Tag = phong;
+                btn.Click += btn_click;
+                PhongADpn.Controls.Add(btn);
+                x += PhongDAO.PhongWidth;
+                if (x > maxwidth)
+                {
+                    x = 20;
+                    y += PhongDAO.PhongHeight;
+                }
+
+            }
 
 
         }
 
-        private void btn_click(object sender, EventArgs e) { 
-           // //Button btn = sender as Button;
-           //// Phong phong = btn.Tag as Phong;
-           // if (phong != null)
-           // {
-           //     SoPhongADtb.Text = phong.maPhong.ToString();
-           //     LoaiPhonfADtb.Text = phong.loaiPhong.ToString();
-           //     string tg = phong.tinhTrang.ToString();
-           //     if (tg.Trim() == "0")
-           //     {
-           //         TinhTrangADtb.Text = "Trống";
-           //     }
-           //     else {
-           //         TinhTrangADtb.Text = "Đang làm";
-           //     }
-           //     MLHPhongADtb.Text = phong.maLichHen.ToString();
-           // }
+        private void btn_click(object sender, EventArgs e) {
+            Button btn = sender as Button;
+            Phong phong = btn.Tag as Phong;
+            if (phong != null)
+            {
+                SoPhongADtb.Text = phong.maPhong.ToString();
+                cboLoaiphong.Text = phong.loaiPhong.ToString();
+                string tg = phong.tinhTrang.ToString();
+                if (tg.Trim() == "0")
+                {
+                    TinhTrangADtb.Text = "Trống";
+                }
+                else
+                {
+                    TinhTrangADtb.Text = "Đang làm";
+                }
+                MLHPhongADtb.Text = phong.maLichHen.ToString();
+            }
         }
 
         private void NhanVienADdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1054,7 +1011,7 @@ namespace Spa_NNLT.Nguyên
         private void ThemPhongADbt_Click(object sender, EventArgs e)
         {
             string soPhong = SoPhongADtb.Text.Trim();
-            string loaiPhong = LoaiPhonfADtb.Text.Trim();
+            string loaiPhong = cboLoaiphong.Text.Trim();
             string tinhTrang = TinhTrangADtb.Text.Trim();
             //int tt = (tinhTrang == "Trống") ? 0 : 1;
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
@@ -1178,12 +1135,59 @@ namespace Spa_NNLT.Nguyên
 
         private void cboNhanVien_DropDown(object sender, EventArgs e)
         {
-            // Nhân viên
-            string queryNV = "SELECT manhanvien, tennhanvien +  '/' + chucvu + '/' + calam AS thongtin FROM tblNhanVien";
-            cboNhanVien.DataSource = DataProvider.Instance.Excuted(queryNV);
-            cboNhanVien.DisplayMember = "thongtin";
+            // Lấy dữ liệu dịch vụ đang chọn
+            string tenDichVu = comboBoxDVCha.SelectedValue.ToString();
+            int thoiGianDichVu = LayThoiGianDichVu(tenDichVu); // VD: 60 phút
+
+            DateTime thoiGianBatDau = dateTimePicker2.Value;
+            DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(thoiGianDichVu);
+
+            // Lấy danh sách nhân viên không bị trùng
+            DataTable dtNhanVienRanh = LayDanhSachNhanVienRanh(thoiGianBatDau, thoiGianKetThuc, tenDichVu);
+
+            cboNhanVien.DataSource = dtNhanVienRanh;
+            cboNhanVien.DisplayMember = "tennhanvien";
             cboNhanVien.ValueMember = "manhanvien";
         }
+
+        public DataTable LayDanhSachNhanVienRanh(DateTime thoiGianBatDau, DateTime thoiGianKetThuc, string tenDichVuCha)
+        {
+            string query = @"
+        SELECT nv.*
+        FROM tblNhanVien nv
+        
+        JOIN CaLam ca ON nv.calam = ca.TenCa
+        WHERE 
+            -- 1. Ca làm phù hợp với khoảng thời gian hẹn
+            @thoiGianBatDau >= ca.GioBatDau AND @thoiGianKetThuc <= ca.GioKetThuc
+
+            -- 2. Nhân viên có chức vụ phù hợp với dịch vụ cha
+            AND nv.chucvu IN (
+                SELECT chucvu FROM tblNhanVien WHERE chucVu = @tenDichVuCha
+            )
+
+            -- 3. Không bị trùng lịch hẹn khác (có giao nhau thời gian)
+            AND NOT EXISTS (
+                SELECT 1 FROM tblLichHen lh
+                WHERE lh.manhanvien = nv.manhanvien
+                  AND lh.trangthai != N'Đã xong'
+                  AND (
+                        @thoiGianBatDau < DATEADD(MINUTE, dv.ThoiGian, lh.thoigian)
+                        AND @thoiGianKetThuc > lh.thoigian
+                  )
+            )
+    ";
+
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+        new SqlParameter("@thoiGianBatDau", thoiGianBatDau),
+        new SqlParameter("@thoiGianKetThuc", thoiGianKetThuc),
+        new SqlParameter("@tenDichVuCha", tenDichVuCha)
+            };
+
+            return DataProvider.Instance.Excuted(query, parameters);
+        }
+
 
         private void cboPhong_DropDown(object sender, EventArgs e)
         {
@@ -1201,12 +1205,12 @@ namespace Spa_NNLT.Nguyên
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 conn.Open();
-                string query = "SELECT * FROM ChucVu";
+                string query = "SELECT * FROM DichVuCha";
                 SqlDataAdapter da = new SqlDataAdapter(query, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 cboChucVu.DataSource = dt;
-                cboChucVu.DisplayMember = "TenChucVu";
+                cboChucVu.DisplayMember = "TenDichVu";
 
             }
         }
@@ -1254,7 +1258,7 @@ namespace Spa_NNLT.Nguyên
                 DataTable data = DataProvider.Instance.Excuted(query, new object[] { madvcha });
                 comboBoxDVCon.DataSource = data;
                 comboBoxDVCon.DisplayMember = "TenDichVu";
-                comboBoxDVCon.ValueMember = "ID";
+                comboBoxDVCon.ValueMember = "TenDichVu";
             }
         }
 
@@ -1321,7 +1325,7 @@ namespace Spa_NNLT.Nguyên
         int LayThoiGianDichVu(string madichvu)
         {
             int thoigian = 0;
-            string query = "SELECT ThoiGian FROM DichVuCon WHERE ThoiGian = @madichvu";
+            string query = "SELECT ThoiGian FROM DichVuCon WHERE TenDichVu = @madichvu";
 
             string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
 
@@ -1363,6 +1367,33 @@ namespace Spa_NNLT.Nguyên
                 int count = (int)cmd.ExecuteScalar();
                 return count > 0;
             }
+        }
+
+        private void PhongADpn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cboLoaiphong_DropDown(object sender, EventArgs e)
+        {
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                conn.Open();
+                string query = "SELECT * FROM DichVuCha";
+                SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cboLoaiphong.DataSource = dt;
+                cboLoaiphong.DisplayMember = "TenDichVu";
+
+            }
+        }
+
+        private void cboNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
 
