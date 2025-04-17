@@ -1009,7 +1009,7 @@ namespace Spa_NNLT.Nguyên
         private void ThemPhongADbt_Click(object sender, EventArgs e)
         {
             string soPhong = SoPhongADtb.Text.Trim();
-            string loaiPhong = cboLoaiphong.Text.Trim();
+            string loaiPhong = cboLoaiphong.SelectedValue.ToString();
             string tinhTrang = TinhTrangADtb.Text.Trim();
             //int tt = (tinhTrang == "Trống") ? 0 : 1;
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
@@ -1114,8 +1114,6 @@ namespace Spa_NNLT.Nguyên
                     }
                 }
             }
-        
-
     }
 
         private void button14_Click(object sender, EventArgs e)
@@ -1133,26 +1131,12 @@ namespace Spa_NNLT.Nguyên
 
         private void cboNhanVien_DropDown(object sender, EventArgs e)
         {
-            // Lấy dữ liệu dịch vụ đang chọn
-            string maDichVu = comboBoxDVCha.SelectedValue.ToString().Trim();
-            int thoiGianDichVu = LayThoiGianDichVu(maDichVu); // VD: 60 phút
-
-            DateTime thoiGianBatDau = dateTimePicker2.Value;
-            DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(thoiGianDichVu);
-
             
         }
 
-        
-
-
         private void cboPhong_DropDown(object sender, EventArgs e)
         {
-            // Phòng
-            string queryPhong = "SELECT maphong, maphong + '/' + loaiphong + '/' + tinhtrang AS thongtin FROM tblPhong";
-            cboPhong.DataSource = DataProvider.Instance.Excuted(queryPhong);
-            cboPhong.DisplayMember = "thongtin";
-            cboPhong.ValueMember = "maphong";
+        
         }
 
         private void cboChucVu_DropDown(object sender, EventArgs e)
@@ -1168,7 +1152,7 @@ namespace Spa_NNLT.Nguyên
                 da.Fill(dt);
                 cboChucVu.DataSource = dt;
                 cboChucVu.DisplayMember = "tendichvucha";
-                cboChucVu.ValueMember = "idcha";
+                cboChucVu.ValueMember = "tendichvucha";
             }
         }
 
@@ -1185,7 +1169,7 @@ namespace Spa_NNLT.Nguyên
                 da.Fill(dt);
                 cboCaLam.DataSource = dt;
                 cboCaLam.DisplayMember = "tenca";
-                cboCaLam.ValueMember = "idca";
+                cboCaLam.ValueMember = "tenca";
             }
         }
 
@@ -1195,7 +1179,7 @@ namespace Spa_NNLT.Nguyên
             DataTable dt = DataProvider.Instance.Excuted(query);
             comboBoxDichVuCha.DataSource = dt;
             comboBoxDichVuCha.DisplayMember = "tendichvucha";
-            comboBoxDichVuCha.ValueMember = "idcha";
+            comboBoxDichVuCha.ValueMember = "tendichvucha";
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
@@ -1203,7 +1187,7 @@ namespace Spa_NNLT.Nguyên
             string query = "SELECT idcha,tendichvucha from DichVuCha";
             comboBoxDVCha.DataSource = DataProvider.Instance.Excuted(query);
             comboBoxDVCha.DisplayMember = "tendichvucha";
-            comboBoxDVCha.ValueMember = "idcha";
+            comboBoxDVCha.ValueMember = "tendichvucha";
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1211,11 +1195,22 @@ namespace Spa_NNLT.Nguyên
             if (comboBoxDVCha.SelectedValue != null && comboBoxDVCha.SelectedValue.ToString() != "System.Data.DataRowView")
             {
                 string madvcha = comboBoxDVCha.SelectedValue.ToString();
-                string query = "SELECT idcon, tendichvucon FROM DichVuCon WHERE iddichvucha = @madvcha";
+                string query = "SELECT tendichvucon FROM DichVuCon WHERE iddichvucha = @madvcha";
                 DataTable data = DataProvider.Instance.Excuted(query, new object[] { madvcha });
                 comboBoxDVCon.DataSource = data;
                 comboBoxDVCon.DisplayMember = "tendichvucon";
-                comboBoxDVCon.ValueMember = "idcon";
+                comboBoxDVCon.ValueMember = "tendichvucon";
+
+                string query2 = "SELECT tennhanvien, tennhanvien + '/' + chucvu + '/' + calam as thongtin FROM tblNhanVien where chucvu = @madvcha";
+                DataTable data2 = DataProvider.Instance.Excuted(query2, new object[] { madvcha });
+                cboNhanVien.DataSource = data2;
+                cboNhanVien.DisplayMember = "thongtin";
+                cboNhanVien.ValueMember = "tennhanvien";
+
+                string queryPhong = "SELECT maphong, maphong + '/' + loaiphong + '/' + tinhtrang AS thongtin FROM tblPhong where loaiphong = @madvcha";
+                cboPhong.DataSource = DataProvider.Instance.Excuted(queryPhong, new object[] { madvcha });
+                cboPhong.DisplayMember = "thongtin";
+                cboPhong.ValueMember = "maphong";
             }
         }
 
@@ -1231,12 +1226,80 @@ namespace Spa_NNLT.Nguyên
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
+            string malichhen = MaLHadTB.Text.ToString();
+            string makhachhang = cboKhachHang.SelectedValue.ToString();  
+            string manhanvien = cboNhanVien.SelectedValue.ToString();
+            string maphong = cboPhong.SelectedValue.ToString();
+            string madichvu = comboBoxDVCon.SelectedValue.ToString();
+            DateTime thoigianbatdau = dateTimePicker2.Value;
+            ThemLichHen (malichhen, makhachhang, manhanvien, maphong, madichvu, thoigianbatdau);
         }
+
+        bool ThemLichHen(string malichhen, string makhachhang, string manhanvien, string maphong, string madichvu, DateTime thoigianbatdau)
+        {
+            // Lấy thời lượng dịch vụ từ CSDL
+            int thoiLuong = LayThoiGianDichVu(madichvu); // ví dụ trả về 90 phút
+            DateTime thoiGianKetThuc = thoigianbatdau.AddMinutes(thoiLuong);
+
+            // Kiểm tra trùng lịch
+            if (TrungLichNhanVien(manhanvien, thoigianbatdau, thoiGianKetThuc))
+            {
+                MessageBox.Show("Nhân viên đã có lịch hẹn trong thời gian này!");
+                return false;
+            }
+
+            if (TrungLichPhong(manhanvien, thoigianbatdau, thoiGianKetThuc))
+            {
+                MessageBox.Show("Phòng đã có lịch hẹn trong thời gian này!");
+                return false;
+            }
+
+            if (TrungLichKhachHang(manhanvien, thoigianbatdau, thoiGianKetThuc))
+            {
+                MessageBox.Show("Khách hàng đã có lịch hẹn trong thời gian này!");
+                return false;
+            }
+
+            // Nếu không trùng, thêm lịch hẹn vào CSDL
+            string query = @"INSERT INTO tblLichHen (malichhen, makhachhang, manhanvien, maphong, madichvu, thoigian, tinhtrang)
+                     VALUES (@malichhen, @makhachhang, @manhanvien, @maphong, @madichvu, @thoigianbatdau, N'Đang chờ')";
+
+            int result = DataProvider.Instance.ExcutedNoneQuery(query,
+                new object[] { malichhen, makhachhang, manhanvien, maphong, madichvu, thoigianbatdau });
+
+            return result > 0;
+        }
+        bool TrungLichNhanVien(string manhanvien, DateTime thoigianbatdau, DateTime ketThuc)
+        {
+            string query = @"SELECT COUNT(*) FROM tblLichHen
+                     WHERE manhanvien = @manhanvien
+                     AND thoigianbatdau < @KetThuc";
+            int count = (int)DataProvider.Instance.ExcutedSaclar(query, new object[] { manhanvien, ketThuc, thoigianbatdau });
+            return count > 0;
+        }
+
+        bool TrungLichPhong(string maphong, DateTime thoigianbatdau, DateTime ketThuc)
+        {
+            string query = @"SELECT COUNT(*) FROM tblLichHen
+                     WHERE maphong = @maphong
+                     AND thoigianbatdau < @KetThuc";
+            int count = (int)DataProvider.Instance.ExcutedSaclar(query, new object[] { maphong, ketThuc, thoigianbatdau });
+            return count > 0;
+        }
+
+        bool TrungLichKhachHang(string makhachhang, DateTime thoigianbatdau, DateTime ketThuc)
+        {
+            string query = @"SELECT COUNT(*) FROM tblLichHen
+                     WHERE makhachhang = @makhachhang
+                     AND ThoiGianBatDau < @KetThuc";
+            int count = (int)DataProvider.Instance.ExcutedSaclar(query, new object[] { makhachhang, ketThuc, thoigianbatdau });
+            return count > 0;
+        }
+
         int LayThoiGianDichVu(string madichvu)
         {
             int thoigian = 0;
-            string query = "SELECT thoigian FROM DichVuCon WHERE idcon = @madichvu";
+            string query = "SELECT thoigian FROM DichVuCon WHERE tendichvucon = @madichvu";
 
             string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
 
@@ -1271,7 +1334,7 @@ namespace Spa_NNLT.Nguyên
                 da.Fill(dt);
                 cboLoaiphong.DataSource = dt;
                 cboLoaiphong.DisplayMember = "tendichvucha";
-
+                cboLoaiphong.SelectedValue = "tendichvucha";
             }
         }
 
@@ -1281,6 +1344,11 @@ namespace Spa_NNLT.Nguyên
         }
 
         private void comboBoxDichVuCha_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CapNhatPhogADbt_Click(object sender, EventArgs e)
         {
 
         }

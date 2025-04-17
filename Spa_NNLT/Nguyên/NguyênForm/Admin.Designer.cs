@@ -1246,6 +1246,7 @@
             this.CapNhatPhogADbt.TabIndex = 2;
             this.CapNhatPhogADbt.Text = "Cập nhật";
             this.CapNhatPhogADbt.UseVisualStyleBackColor = false;
+            this.CapNhatPhogADbt.Click += new System.EventHandler(this.CapNhatPhogADbt_Click);
             // 
             // XoaPhongADbt
             // 
