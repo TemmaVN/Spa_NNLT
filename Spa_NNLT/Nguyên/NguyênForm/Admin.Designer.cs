@@ -114,6 +114,7 @@
             this.XoaPhongADbt = new System.Windows.Forms.Button();
             this.ThemPhongADbt = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.cboLoaiphong = new System.Windows.Forms.ComboBox();
             this.MLHPhongADtb = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -246,7 +247,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.cboLoaiphong = new System.Windows.Forms.ComboBox();
             this.HoadonADtp.SuspendLayout();
             this.panel33.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -1011,6 +1011,7 @@
             this.comboBoxDichVuCha.Size = new System.Drawing.Size(233, 24);
             this.comboBoxDichVuCha.TabIndex = 47;
             this.comboBoxDichVuCha.DropDown += new System.EventHandler(this.comboBoxDichVuCha_DropDown);
+            this.comboBoxDichVuCha.SelectedIndexChanged += new System.EventHandler(this.comboBoxDichVuCha_SelectedIndexChanged);
             // 
             // ThoiGianDVadTB
             // 
@@ -1288,6 +1289,15 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(423, 368);
             this.panel20.TabIndex = 7;
+            // 
+            // cboLoaiphong
+            // 
+            this.cboLoaiphong.FormattingEnabled = true;
+            this.cboLoaiphong.Location = new System.Drawing.Point(170, 162);
+            this.cboLoaiphong.Name = "cboLoaiphong";
+            this.cboLoaiphong.Size = new System.Drawing.Size(233, 24);
+            this.cboLoaiphong.TabIndex = 47;
+            this.cboLoaiphong.DropDown += new System.EventHandler(this.cboLoaiphong_DropDown);
             // 
             // MLHPhongADtb
             // 
@@ -2754,15 +2764,6 @@
             this.tabControl1.Size = new System.Drawing.Size(947, 519);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            // 
-            // cboLoaiphong
-            // 
-            this.cboLoaiphong.FormattingEnabled = true;
-            this.cboLoaiphong.Location = new System.Drawing.Point(170, 162);
-            this.cboLoaiphong.Name = "cboLoaiphong";
-            this.cboLoaiphong.Size = new System.Drawing.Size(233, 24);
-            this.cboLoaiphong.TabIndex = 47;
-            this.cboLoaiphong.DropDown += new System.EventHandler(this.cboLoaiphong_DropDown);
             // 
             // Admin
             // 
