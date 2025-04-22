@@ -16,30 +16,25 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
         private string Ten;
         private string GioiTinh;
         private string SDT;
-        private DateTime NgaySinh;
-        private string chucvu;
+        private DateTime NgaySinh;        
         private string calam;
 
-        public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec, string chucVu, string caLam)
+        public NhanVien(string iD, string ten, string gioiTinh, string sDT, DateTime ngaySinh, string congViec, string caLam)
         {
             ID = iD;
             Ten = ten;
             GioiTinh = gioiTinh;
             SDT = sDT;
             NgaySinh = ngaySinh;
-            chucvu = chucVu;
+            
             calam = caLam;
         }
 
         public NhanVien(DataRow row) {
             ID = row["manhanvien"].ToString();
             Ten = row["tennhanvien"].ToString();
-            this.GioiTinh = row["gioitinh"].ToString();
-            
+            this.GioiTinh = row["gioitinh"].ToString();           
             this.SDT = row["sdt"].ToString();
-            this.chucvu = row["chucvu"].ToString();
-            this.calam = row["chucvu"].ToString();
-
         }
 
         public string id
@@ -57,11 +52,7 @@ namespace Spa_NNLT.Nguyên.NhanVienAD
         public DateTime ngaySinh
             { get { return NgaySinh; } set { NgaySinh = value; } }
 
-        public string username
-        {  get { return username; } set { username = value; } }
-
-        public string password
-            { get { return password; } set { password = value; } }
+       
 
 
     }

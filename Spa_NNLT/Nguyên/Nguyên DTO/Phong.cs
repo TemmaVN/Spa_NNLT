@@ -12,15 +12,14 @@ namespace Spa_NNLT.Nguyên.PhongAD
 {
     public class Phong
     {
-        private string MaPhong;
-        private string LoaiPhong;
+        private string MaPhong;        
         private string Tinhtrang;
         private string MaLichHen;
 
-        public Phong(string maPhong, string loaiPhong, string tinhtrang, string maLichHen)
+        public Phong(string maPhong, string tinhtrang, string maLichHen)
         {
             MaPhong = maPhong;
-            LoaiPhong = loaiPhong;
+           
             this.Tinhtrang = tinhtrang;
             MaLichHen = maLichHen;
         }
@@ -28,7 +27,7 @@ namespace Spa_NNLT.Nguyên.PhongAD
         public Phong(DataRow row)
         {
             this.MaPhong = row["maphong"].ToString();
-            this.LoaiPhong = row["loaiphong"].ToString();
+            
             this.Tinhtrang = row["tinhtrang"].ToString();
             this.MaLichHen = row["malichhen"].ToString();
 
@@ -47,14 +46,7 @@ namespace Spa_NNLT.Nguyên.PhongAD
             }
         }
 
-        public string loaiPhong
-            {
-                get { return LoaiPhong; }
-            set
-            {
-                LoaiPhong = value;
-            }
-        }
+       
 
         public string tinhTrang
         {

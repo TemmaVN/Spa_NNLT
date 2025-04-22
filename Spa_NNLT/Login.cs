@@ -83,10 +83,7 @@ namespace Spa_NNLT
             
         }
 
-        bool loginNV(string username, string password)
-        {
-            return NhanVienDAO.Instance.login(username, password);
-        }
+        
 
         bool loginQL(string username, string password) { 
             return QuanLiDAO.Instance.login(username, password);
