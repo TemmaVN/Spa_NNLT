@@ -1144,6 +1144,11 @@ namespace Spa_NNLT.Nguyên
 
         }
 
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
