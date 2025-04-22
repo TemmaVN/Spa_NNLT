@@ -15,6 +15,7 @@ using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.PhongAD;
 using System.Security.Principal;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.CodeDom.Compiler;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
@@ -381,31 +382,27 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemNVbt_Click(object sender, EventArgs e)
         {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-                {
-                    conn.Open();
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                    new SqlParameter("@ma", MaNVtb.Text),
+                    new SqlParameter("@HoTen", HTtb.Text),
+                    new SqlParameter("@GioiTinh", rNam.Checked ? "Nam" : "Nữ"),
+                    new SqlParameter("@SDT", SDTTb.Text),
+                    new SqlParameter("@NgaySinh", NStb.Value),
+                    new SqlParameter("@ChucVu", cboChucVu.SelectedValue),
+                    new SqlParameter("@CaLam", cboCaLam.SelectedValue)
+            };
+            string query = "INSERT INTO tblNhanVien (manhanvien, tennhanvien, gioitinh, sdt, ngaysinh, chucvu, calam) " +
+                                     "VALUES (@ma, @HoTen, @GioiTinh, @SDT, @NgaySinh, @ChucVu, @CaLam)";
+            int results =  DataProvider.Instance.ExcutedNoneQuery(query, parameters);
+            if (results > 0) MessageBox.Show("Thêm nhân viên thành công");
+            else MessageBox.Show("Thêm nhân viên thất bại");
+            LoadNhanVienlist();
+        }
 
-                    string query = "INSERT INTO tblNhanVien (manhanvien, tennhanvien, gioitinh, sdt, ngaysinh, chucvu, calam) " +
-                                   "VALUES (@ma, @HoTen, @GioiTinh, @SDT, @NgaySinh, @ChucVu, @CaLam)";
 
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@ma", MaNVtb.Text);
-                    cmd.Parameters.AddWithValue("@HoTen", HTtb.Text);
-                    cmd.Parameters.AddWithValue("@GioiTinh", rNam.Checked ? "Nam" : "Nữ");
-                    cmd.Parameters.AddWithValue("@SDT", SDTTb.Text);
-                    cmd.Parameters.AddWithValue("@NgaySinh", NStb.Value);
-                    cmd.Parameters.AddWithValue("@ChucVu", cboChucVu.SelectedValue);
-                    cmd.Parameters.AddWithValue("@CaLam", cboCaLam.SelectedValue);
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Thêm nhân viên thành công!");
-                LoadNhanVienlist();
-                }
-            }
 
-        
 
         private void XoaNVbt_Click(object sender, EventArgs e)
         {
@@ -413,52 +410,39 @@ namespace Spa_NNLT.Nguyên
                 if (string.IsNullOrEmpty(MaNVtb.Text)) return;
 
                 var confirm = MessageBox.Show("Bạn có chắc muốn xoá nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
-                if (confirm != DialogResult.Yes) return;
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-                {
-                    conn.Open();
-
-                    string query = "DELETE FROM tblNhanVien WHERE manhanvien = @MaNV";
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaNV", MaNVtb.Text);
-
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Xóa nhân viên thành công!");
-                LoadNhanVienlist();
-                }
+                if (confirm != DialogResult.Yes) return;           
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("MaNV", MaNVtb.Text)
+            };
+            string query = "DELETE FROM tblNhanVien WHERE manhanvien = @MaNV";
+            int results = DataProvider.Instance.ExcutedNoneQuery(query, parameters);
+            if (results > 0) MessageBox.Show("Xóa thành công");
+            else MessageBox.Show("Xóa thất bại");
+            LoadNhanVienlist();    
             }
 
         
 
         private void CapNhatADbt_Click(object sender, EventArgs e)
-        {
-            
-            if (string.IsNullOrEmpty(MaNVtb.Text)) return;
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-                {
-                    conn.Open();
-
-                    string query = "UPDATE tblNhanVien SET tennhanvien = @HoTen, gioitinh = @GioiTinh, sdt=@SDT, " +
-                                   "ngaysinh=@NgaySinh, chucvu=@ChucVu, calam=@CaLam WHERE manhanvien=@MaNV";
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@MaNV", MaNVtb.Text);
-                    cmd.Parameters.AddWithValue("@HoTen", HTtb.Text);
-                    cmd.Parameters.AddWithValue("@GioiTinh", rNam.Checked ? "Nam" : "Nữ");
-                    cmd.Parameters.AddWithValue("@SDT", SDTTb.Text);
-                    cmd.Parameters.AddWithValue("@NgaySinh", NStb.Value);
-                    //string Cv = cboChucVu.Text;
-                    cmd.Parameters.AddWithValue("@ChucVu", cboChucVu.SelectedValue);
-                    //string cl = cboCaLam.Text;
-                    cmd.Parameters.AddWithValue("@CaLam", cboCaLam.SelectedValue);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Cập nhật nhân viên thành công!");
-                LoadNhanVienlist();
-                }
+        {           
+            if (string.IsNullOrEmpty(MaNVtb.Text)) return;            
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@MaNV", MaNVtb.Text),
+                new SqlParameter("@HoTen", HTtb.Text),
+                new SqlParameter("@GioiTinh", rNam.Checked ? "Nam" : "Nữ"),
+                new SqlParameter("@SDT", SDTTb.Text),
+                new SqlParameter("@NgaySinh", NStb.Value),
+                new SqlParameter("@ChucVu", cboChucVu.SelectedValue),
+                new SqlParameter("@CaLam", cboCaLam.SelectedValue)
+            };
+            string query = "UPDATE tblNhanVien SET tennhanvien = @HoTen, gioitinh = @GioiTinh, sdt=@SDT, " +
+                           "ngaysinh=@NgaySinh, chucvu=@ChucVu, calam=@CaLam WHERE manhanvien=@MaNV";
+            int results = DataProvider.Instance.ExcutedNoneQuery(query, parameters);
+            if (results > 0) MessageBox.Show("Cập nhật thành công");
+            else MessageBox.Show("Cập nhật thất bại");
+            LoadNhanVienlist();                
             }
 
         
@@ -1111,44 +1095,28 @@ namespace Spa_NNLT.Nguyên
         }
 
         private void cboChucVu_DropDown(object sender, EventArgs e)
-        {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-            {
-                conn.Open();
-                string query = "SELECT * FROM DichVuCha";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                cboChucVu.DataSource = dt;
+        {            
+                string query = "SELECT * FROM DichVuCha";         
+            cboChucVu.DataSource = DataProvider.Instance.Excuted(query);
                 cboChucVu.DisplayMember = "tendichvucha";
                 cboChucVu.ValueMember = "tendichvucha";
-            }
+
         }
 
         private void cboCaLam_DropDown(object sender, EventArgs e)
         {
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-            {
-                conn.Open();
+            
                 string query = "SELECT * FROM CaLam";
-                SqlDataAdapter da = new SqlDataAdapter(query, conn);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                cboCaLam.DataSource = dt;
+                cboCaLam.DataSource = DataProvider.Instance.Excuted(query);
                 cboCaLam.DisplayMember = "tenca";
                 cboCaLam.ValueMember = "tenca";
-            }
+            
         }
 
         private void comboBoxDichVuCha_DropDown(object sender, EventArgs e)
         {
             string query = "SELECT * FROM DichVuCha";
-            DataTable dt = DataProvider.Instance.Excuted(query);
-            comboBoxDichVuCha.DataSource = dt;
+            comboBoxDichVuCha.DataSource = DataProvider.Instance.Excuted(query);
             comboBoxDichVuCha.DisplayMember = "tendichvucha";
             comboBoxDichVuCha.ValueMember = "tendichvucha";
         }
@@ -1167,14 +1135,12 @@ namespace Spa_NNLT.Nguyên
             {
                 string madvcha = comboBoxDVCha.SelectedValue.ToString();
                 string query = "SELECT tendichvucon FROM DichVuCon WHERE iddichvucha = @madvcha";
-                DataTable data = DataProvider.Instance.Excuted(query, new object[] { madvcha });
-                comboBoxDVCon.DataSource = data;
+                comboBoxDVCon.DataSource = DataProvider.Instance.Excuted(query, new object[] { madvcha });
                 comboBoxDVCon.DisplayMember = "tendichvucon";
                 comboBoxDVCon.ValueMember = "tendichvucon";
 
                 string query2 = "SELECT tennhanvien, tennhanvien + '/' + chucvu + '/' + calam as thongtin FROM tblNhanVien where chucvu = @madvcha";
-                DataTable data2 = DataProvider.Instance.Excuted(query2, new object[] { madvcha });
-                cboNhanVien.DataSource = data2;
+                cboNhanVien.DataSource = DataProvider.Instance.Excuted(query2, new object[] { madvcha });                
                 cboNhanVien.DisplayMember = "thongtin";
                 cboNhanVien.ValueMember = "tennhanvien";
 

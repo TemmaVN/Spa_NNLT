@@ -59,7 +59,7 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
 
         }
 
-        public int ExcutedNoneQuery(string query, object[] parameter = null)
+        public int ExcutedNoneQuery(string query, SqlParameter[] parameters = null) 
         {
             int data = 0;
             using (SqlConnection connection = new SqlConnection(connectionSTR))
@@ -67,18 +67,9 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
 
-                if (parameter != null)
+                if (parameters != null)
                 {
-                    string[] listPara = query.Split(' ');
-                    int i = 0;
-                    foreach (string para in listPara)
-                    {
-                        if (para.Contains("@"))
-                        {
-                            command.Parameters.AddWithValue(para, parameter[i]);
-                            i++;
-                        }
-                    }
+                    command.Parameters.AddRange(parameters);
                 }
 
                 data = command.ExecuteNonQuery();
