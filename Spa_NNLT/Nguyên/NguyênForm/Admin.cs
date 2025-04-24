@@ -43,6 +43,8 @@ namespace Spa_NNLT.Nguyên
             LoadThemPhong();
             LoadPhong();
 
+            LoadlvCombo();
+
             HienThiAdmin();
 
             
@@ -74,6 +76,15 @@ namespace Spa_NNLT.Nguyên
                 }
                 
             }
+        }
+
+        void LoadlvCombo()
+        {
+            lvCombo.View = View.Details;
+            lvCombo.Columns.Add("Tên dịch vụ", 250);
+            lvCombo.Columns.Add("Giá cả", 150);
+            lvCombo.Columns.Add("Thời lượng", 150);
+           
         }
         void LoadThemPhong()
         {
@@ -178,11 +189,7 @@ namespace Spa_NNLT.Nguyên
             TimTheoTenKHtb.ForeColor = Color.Gray;
             TimTheoMaKHtb.Text = "Tìm theo số điện thoại ...";
             TimTheoMaKHtb.ForeColor = Color.Gray;          
-            TimTheoMaLHadTB.Text = "Tìm theo mã ...";
-            TimTheoMaLHadTB.ForeColor = Color.Gray;
             
-            TTTenKHLHadTB.Text = "Tên khách hàng ...";
-            TTTenKHLHadTB.ForeColor = Color.Gray;
            
         }
         
@@ -580,49 +587,7 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-        
-
-        
-
-        private void TimTheoMaLHadTB_Enter(object sender, EventArgs e)
-        {
-            if (TimTheoMaLHadTB.Text == "Tìm theo mã ...")
-            {
-                TimTheoMaLHadTB.Text = "";
-                TimTheoMaLHadTB.ForeColor = Color.Black;
-            }
-        }
-
-        private void TimTheoMaLHadTB_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TimTheoMaLHadTB.Text))
-            {
-                TimTheoMaLHadTB.Text = "Tìm theo mã ...";
-                TimTheoMaLHadTB.ForeColor = Color.Gray;
-            }
-        }
-
-       
-
-        
-
-        private void TTTenKHLHadTB_Enter(object sender, EventArgs e)
-        {
-            if (TTTenKHLHadTB.Text == "Tên khách hàng ...")
-            {
-                TTTenKHLHadTB.Text = "";
-                TTTenKHLHadTB.ForeColor = Color.Black;
-            }
-        }
-
-        private void TTTenKHLHadTB_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(TTTenKHLHadTB.Text))
-            {
-                TTTenKHLHadTB.Text = "Tên khách hàng ...";
-                TTTenKHLHadTB.ForeColor = Color.Gray;
-            }
-        }
+    
 
         private void TimTheoMaKHtb_TextChanged(object sender, EventArgs e)
         {
@@ -707,26 +672,6 @@ namespace Spa_NNLT.Nguyên
             //    TGLHadTB.Text = row.Cells["thoigian"].Value?.ToString();
             //    TTLHadTB.Text = row.Cells["trangthai"].Value?.ToString();
             //}
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            string filter1 = TimTheoMaLHadTB.Text.Trim();
-            LichHenADdata.CurrentCell = null;
-
-            foreach(DataGridViewRow row in LichHenADdata.Rows)
-            {
-                if (row.IsNewRow) continue;
-                string cell = row.Cells["malichhen"].Value?.ToString().Trim();
-                if (filter1 == "Tìm theo mã ...")
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = filter1 == "" || cell.Contains(filter1);
-                }
-            }
         }
 
         
@@ -999,14 +944,7 @@ namespace Spa_NNLT.Nguyên
         
         }
 
-        private void cboChucVu_DropDown(object sender, EventArgs e)
-        {            
-            //    string query = "SELECT * FROM DichVuCha";         
-            //cboChucVu.DataSource = DataProvider.Instance.Excuted(query);
-            //    cboChucVu.DisplayMember = "tendichvucha";
-            //    cboChucVu.ValueMember = "tendichvucha";
-
-        }
+        
 
         private void comboBoxDichVuCha_DropDown(object sender, EventArgs e)
         {
@@ -1092,9 +1030,7 @@ namespace Spa_NNLT.Nguyên
                 cmd.Parameters.AddWithValue("@madv", maDV);
                 cmd.Parameters.AddWithValue("@maphong", maPhong);
                 cmd.Parameters.AddWithValue("@batdau", thoiGianBatDau);
-                cmd.Parameters.AddWithValue("@ketthuc", thoiGianKetThuc);
-                cmd.Parameters.AddWithValue("@tinhtrang", raDangCho.Checked ? "Đang chờ" : "Đã xong"); 
-
+                cmd.Parameters.AddWithValue("@ketthuc", thoiGianKetThuc);                
                  cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm lịch hẹn thành công!");
             }
@@ -1149,75 +1085,35 @@ namespace Spa_NNLT.Nguyên
 
         }
 
+        private void button20_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void cbDVcha_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDVcha.SelectedValue != null && cbDVcha.SelectedValue.ToString() != "System.Data.DataRowView")
+            {
+                string madvcha = cbDVcha.SelectedValue.ToString();
+                string query = "SELECT tendichvucon FROM DichVuCon WHERE iddichvucha = @madvcha";
+                cbDVcon.DataSource = DataProvider.Instance.Excuted(query, new object[] { madvcha });
+                cbDVcon.DisplayMember = "tendichvucon";
+                cbDVcon.ValueMember = "tendichvucon";
+            }
+        }
 
-        //private void CapNhatADbt_Click(object sender, EventArgs e)
-        //{
+        private void cbDVcha_DropDown(object sender, EventArgs e)
+        {
+            string query = "SELECT idcha,tendichvucha from DichVuCha";
+            cbDVcha.DataSource = DataProvider.Instance.Excuted(query);
+            cbDVcha.DisplayMember = "tendichvucha";
+            cbDVcha.ValueMember = "tendichvucha";
+        }
 
-        //    if (string.IsNullOrEmpty(MaNVtb.Text)) return;
-        //    //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-        //    string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-        //    using (SqlConnection conn = new SqlConnection(connectionSTR))
-        //    {
-        //        conn.Open();
+        private void cbDVcon_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        //        string query = "UPDATE tblNhanVien SET tennhanvien = @HoTen, gioitinh = @GioiTinh, sdt=@SDT, " +
-        //                       "ngaysinh=@NgaySinh, chucvu=@ChucVu, calam=@CaLam WHERE manhanvien=@MaNV";
-
-        //        SqlCommand cmd = new SqlCommand(query, conn);
-        //        cmd.Parameters.AddWithValue("@MaNV", MaNVtb.Text);
-        //        cmd.Parameters.AddWithValue("@HoTen", HTtb.Text);
-        //        cmd.Parameters.AddWithValue("@GioiTinh", rNam.Checked ? "Nam" : "Nữ");
-        //        cmd.Parameters.AddWithValue("@SDT", SDTTb.Text);
-        //        cmd.Parameters.AddWithValue("@NgaySinh", NStb.Value);
-        //        string Cv = cboChucVu.Text;
-        //        cmd.Parameters.AddWithValue("@ChucVu", Cv);
-        //        string cl = cboCaLam.Text;
-        //        cmd.Parameters.AddWithValue("@CaLam", cl);
-        //        cmd.ExecuteNonQuery();
-        //        MessageBox.Show("Cập nhật nhân viên thành công!");
-        //        LoadNhanVienlist();
-        //    }
-        //}
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    string ma = MaKHadTB.Text.Trim();
-        //    string ten = HTKHadTB.Text.Trim();
-        //    string sdt = SDTKHadTB.Text.Trim();
-        //    string gioitinh = GTKhadTB.Text.Trim();
-        //    int tggt = 0;
-        //    if (gioitinh == "Nam")//" phhhh "
-        //    {
-        //        tggt = 1;
-        //    }
-
-
-        //    if (ten == "" || sdt == "")
-        //    {
-        //        MessageBox.Show("Vui lòng nhập tên và số điện thoại.");
-        //        return;
-        //    }
-
-        //    string query = "INSERT INTO tblKhachHang (makhachhang, tenkhachhang, gioitinh, sdt) " +
-        //                   "VALUES (@ma, @ten, @gioitinh, @sdt)";
-        //    //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-        //    string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-        //    using (SqlConnection connection = new SqlConnection(connectionSTR))
-        //    {
-        //        connection.Open();
-        //        SqlCommand cmd = new SqlCommand(query, connection);
-        //        cmd.Parameters.AddWithValue("@ten", ten);
-        //        cmd.Parameters.AddWithValue("@sdt", sdt);
-        //        cmd.Parameters.AddWithValue("@ma", ma);
-        //        cmd.Parameters.AddWithValue("@gioitinh", tggt);
-        //        cmd.ExecuteNonQuery();
-
-        //        MessageBox.Show("Đã thêm khách hàng mới!");
-        //        LoadAccountList(); // Cập nhật lại comboBox khách hàng
-        //    }
-        //}
-
+        }
     }
 }
 
