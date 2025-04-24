@@ -70,8 +70,7 @@ namespace Spa_NNLT.Nguyên
                     HTtb.Text = nhan.ten;
                     
                     SDTlb.Text = nhan.sDT;
-                    NStb.Text = nhan.ngaySinh.ToString();
-                    
+                    NStb.Text = nhan.ngaySinh.ToString();                    
                     //MKNVadTB.Text = nhan.password;
                 }
                 
@@ -81,10 +80,11 @@ namespace Spa_NNLT.Nguyên
         void LoadlvCombo()
         {
             lvCombo.View = View.Details;
+            lvCombo.Columns.Clear();
+            lvCombo.Columns.Add("", 1);
             lvCombo.Columns.Add("Tên dịch vụ", 250);
             lvCombo.Columns.Add("Giá cả", 150);
-            lvCombo.Columns.Add("Thời lượng", 150);
-           
+            lvCombo.Columns.Add("Thời lượng", 150);          
         }
         void LoadThemPhong()
         {
@@ -1108,11 +1108,31 @@ namespace Spa_NNLT.Nguyên
             cbDVcha.DataSource = DataProvider.Instance.Excuted(query);
             cbDVcha.DisplayMember = "tendichvucha";
             cbDVcha.ValueMember = "tendichvucha";
+           
         }
 
         private void cbDVcon_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            string tenDV = cbDVcon.Text.Trim();
+            string query = "select gia, thoigian from DichVuCon where tendichvucon = @tenDV";
+            DataTable data = DataProvider.Instance.Excuted(query, new object[] {tenDV});
+            int gia = Convert.ToInt32(data.Rows[0]["gia"]);
+            int thoigian = Convert.ToInt32(data.Rows[0]["thoigian"]);
+            ListViewItem lv = new ListViewItem();
+            lv.SubItems.Add(tenDV);
+            lv.SubItems.Add(gia + " đ");
+            lv.SubItems.Add(thoigian + "p" ); 
+            lvCombo.Items.Add(lv);
         }
     }
 }

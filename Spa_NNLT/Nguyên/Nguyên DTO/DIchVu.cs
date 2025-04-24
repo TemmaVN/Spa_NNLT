@@ -20,7 +20,7 @@ namespace Spa_NNLT.Nguyên.DichVuAD
         public DIchVu(DataRow row) {
             this.MaDV = row["madichvu"].ToString();
             this.TenDV = row["ten"].ToString();
-            this.GiaDV = (int)row["giadichvu"];
+            this.GiaDV = (int)row["gia"];
             this.ThoiGianDV = (int)row["thoiluong"];
         }
 
