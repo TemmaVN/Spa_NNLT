@@ -16,6 +16,7 @@ using Spa_NNLT.Nguyên.PhongAD;
 using System.Security.Principal;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.CodeDom.Compiler;
+using System.Drawing.Text;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
@@ -47,8 +48,8 @@ namespace Spa_NNLT.Nguyên
 
             HienThiAdmin();
 
-            
-
+           
+           
             // Load thông tin từ sql
             // Tìm thông tin qua text box
             // Thêm, xóa, sửa các thông tin 
@@ -1096,13 +1097,14 @@ namespace Spa_NNLT.Nguyên
             string tenDV = cbDVcon.Text.Trim();
             string query = "select gia, thoigian from DichVuCon where tendichvucon = @tenDV";
             DataTable data = DataProvider.Instance.Excuted(query, new object[] {tenDV});
-            int gia = Convert.ToInt32(data.Rows[0]["gia"]);
+            decimal gia = Convert.ToDecimal(data.Rows[0]["gia"]);
             int thoigian = Convert.ToInt32(data.Rows[0]["thoigian"]);
             ListViewItem lv = new ListViewItem();
             lv.SubItems.Add(tenDV);
             lv.SubItems.Add(gia + " đ");
-            lv.SubItems.Add(thoigian + "p" ); 
+            lv.SubItems.Add(thoigian + "p" );
             lvCombo.Items.Add(lv);
+            CapNhatTongGia();
         }
 
         private void GiaDVadTB_TextChanged(object sender, EventArgs e)
@@ -1141,6 +1143,36 @@ namespace Spa_NNLT.Nguyên
             int results = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
             if (results > 0) MessageBox.Show("Xóa thành công");
             else MessageBox.Show("Xóa thất bại");
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem item in lvCombo.SelectedItems)
+            {
+                lvCombo.Items.Remove(item);
+            }
+        }
+
+        private void CapNhatTongGia()
+        {
+            decimal tongGia = 0;
+            foreach (ListViewItem item in lvCombo.Items)
+            {
+                if (item.SubItems.Count > 1)
+                {
+                    if (decimal.TryParse(item.SubItems[0].Text.Replace(",", ""), out decimal gia))
+                    {
+                        tongGia += gia;
+                    }
+                }
+            }
+            tonggia.Text = tongGia.ToString("N0"); // Hiển thị 1,000,000 thay vì 1000000
+        }
+
+
+        private void tonggia_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
