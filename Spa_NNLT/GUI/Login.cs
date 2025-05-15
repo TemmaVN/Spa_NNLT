@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Spa_NNLT.Bằng;
 using Spa_NNLT.Nguyên;
 using Spa_NNLT.Nguyên.Nguyên_DTO;
 using Spa_NNLT.Nguyên.NhanVienAD;

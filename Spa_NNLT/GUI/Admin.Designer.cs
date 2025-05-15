@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.LichHenADtp = new System.Windows.Forms.TabPage();
+            this.NgayKT = new System.Windows.Forms.DateTimePicker();
+            this.NgayBD = new System.Windows.Forms.DateTimePicker();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
             this.trangthai = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -245,10 +249,6 @@
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.NgayBD = new System.Windows.Forms.DateTimePicker();
-            this.NgayKT = new System.Windows.Forms.DateTimePicker();
             this.LichHenADtp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel29.SuspendLayout();
@@ -344,6 +344,42 @@
             this.LichHenADtp.Text = "Lịch hẹn";
             this.LichHenADtp.UseVisualStyleBackColor = true;
             this.LichHenADtp.Click += new System.EventHandler(this.LichHenADtp_Click);
+            // 
+            // NgayKT
+            // 
+            this.NgayKT.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.NgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayKT.Location = new System.Drawing.Point(280, 36);
+            this.NgayKT.Name = "NgayKT";
+            this.NgayKT.Size = new System.Drawing.Size(189, 22);
+            this.NgayKT.TabIndex = 72;
+            // 
+            // NgayBD
+            // 
+            this.NgayBD.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.NgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayBD.Location = new System.Drawing.Point(33, 36);
+            this.NgayBD.Name = "NgayBD";
+            this.NgayBD.Size = new System.Drawing.Size(185, 22);
+            this.NgayBD.TabIndex = 71;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(245, 39);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(38, 16);
+            this.label54.TabIndex = 70;
+            this.label54.Text = "Đến: ";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(6, 39);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(31, 16);
+            this.label52.TabIndex = 69;
+            this.label52.Text = "Từ: ";
             // 
             // trangthai
             // 
@@ -591,6 +627,7 @@
             this.LichHenADdata.Size = new System.Drawing.Size(486, 264);
             this.LichHenADdata.TabIndex = 23;
             this.LichHenADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LichHenADdata_CellClick);
+            this.LichHenADdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LichHenADdata_CellContentClick);
             // 
             // label25
             // 
@@ -2755,42 +2792,6 @@
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.Size = new System.Drawing.Size(489, 413);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(6, 39);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(31, 16);
-            this.label52.TabIndex = 69;
-            this.label52.Text = "Từ: ";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(245, 39);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(38, 16);
-            this.label54.TabIndex = 70;
-            this.label54.Text = "Đến: ";
-            // 
-            // NgayBD
-            // 
-            this.NgayBD.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.NgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.NgayBD.Location = new System.Drawing.Point(33, 36);
-            this.NgayBD.Name = "NgayBD";
-            this.NgayBD.Size = new System.Drawing.Size(185, 22);
-            this.NgayBD.TabIndex = 71;
-            // 
-            // NgayKT
-            // 
-            this.NgayKT.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.NgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.NgayKT.Location = new System.Drawing.Point(280, 36);
-            this.NgayKT.Name = "NgayKT";
-            this.NgayKT.Size = new System.Drawing.Size(189, 22);
-            this.NgayKT.TabIndex = 72;
             // 
             // Admin
             // 

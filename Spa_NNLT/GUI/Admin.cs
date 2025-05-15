@@ -1217,6 +1217,13 @@ namespace Spa_NNLT.Nguyên
 
         bool SoSanhNgay()
         {
+            DateTime bd = NgayBD.Value;
+            DateTime kt = NgayKT.Value;
+            return false;
+        }
+
+        private void LichHenADdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
