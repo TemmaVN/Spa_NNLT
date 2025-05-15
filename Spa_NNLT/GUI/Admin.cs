@@ -33,9 +33,9 @@ namespace Spa_NNLT.Nguyên
 
             LoadDichVuList();
 
-          
 
-            LoadLichHenList();
+
+            HienThiLHmoi();
 
             LoadNhanVienlist();
             
@@ -114,6 +114,9 @@ namespace Spa_NNLT.Nguyên
         {
             string query = "select * from dbo.tblLichHen";
             LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
+            
+            LHChTTdata.DataSource = DataProvider.Instance.Excuted(query);
+
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -883,7 +886,7 @@ namespace Spa_NNLT.Nguyên
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Xóa lịch hẹn thành công!");
-                        LoadLichHenList(); // gọi lại hàm load để làm mới danh sách
+                        HienThiLHmoi(); // gọi lại hàm load để làm mới danh sách
                     }
                     else
                     {
@@ -1007,7 +1010,7 @@ namespace Spa_NNLT.Nguyên
                 MessageBox.Show("Thêm lịch hẹn thành công!");
             }
 
-            LoadLichHenList(); // Làm mới datagridview
+            HienThiLHmoi();   // Làm mới datagridview
         }
 
         private bool KiemTraTrungLich(SqlConnection conn, string maKH, string maNV, string maPhong, DateTime batDau, DateTime ketThuc)
@@ -1215,16 +1218,69 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-        bool SoSanhNgay()
-        {
-            DateTime bd = NgayBD.Value;
-            DateTime kt = NgayKT.Value;
-            return false;
-        }
-
         private void LichHenADdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label54_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimBt_Click(object sender, EventArgs e)
+        {
+            DateTime BD = NgayBD.Value;
+            DateTime Kt = NgayKT.Value;
+            LichHenADdata.CurrentCell = null;
+            if (BD >= Kt)
+            {
+                MessageBox.Show("Ngày bắt đầu sau ngày kết thúc");
+                return;
+            }
+            else
+            {
+                foreach(DataGridViewRow row in LichHenADdata.Rows)
+                {
+                    if (row.Cells["thoigianbatdau"].Value != null)
+                    {
+                        DateTime tg = Convert.ToDateTime(row.Cells["thoigianbatdau"].Value);
+                        if (tg >= BD && tg <= Kt)
+                        {
+                            row.Visible = true;
+                        }
+                        else { row.Visible = false; }
+                    }
+                }
+            }    
+        }
+
+        void HienThiLHmoi()
+        {
+            LoadLichHenList();
+            DateTime ht = DateTime.Now;
+            LichHenADdata.CurrentCell = null;
+            LHChTTdata.CurrentCell = null;
+
+            foreach (DataGridViewRow row in LichHenADdata.Rows)
+            {
+                if (row.Cells["thoigianbatdau"].Value != null)
+                {
+                    DateTime tg1 = Convert.ToDateTime(row.Cells["thoigianbatdau"].Value);
+                    if (tg1 > ht) { row.Visible = true; }
+                    else { row.Visible = false; }
+                }
+            }
+
+            foreach(DataGridViewRow row1 in LHChTTdata.Rows)
+            {
+                if (row1.Cells["thoigianbatdau"].Value != null)
+                {
+                    DateTime tg2 = Convert.ToDateTime(row1.Cells["thoigianbatdau"].Value);
+                    if (tg2 >= ht) { row1.Visible = false; }
+                    else { row1.Visible = true; }
+                }
+            }
         }
     }
 }
