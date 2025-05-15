@@ -196,7 +196,9 @@
             this.DSNVlb = new System.Windows.Forms.Label();
             this.NhanVienADdata = new System.Windows.Forms.DataGridView();
             this.TaiKhoantb = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -243,6 +245,10 @@
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.NgayBD = new System.Windows.Forms.DateTimePicker();
+            this.NgayKT = new System.Windows.Forms.DateTimePicker();
             this.LichHenADtp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel29.SuspendLayout();
@@ -284,7 +290,9 @@
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NhanVienADdata)).BeginInit();
             this.TaiKhoantb.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -303,6 +311,10 @@
             // 
             // LichHenADtp
             // 
+            this.LichHenADtp.Controls.Add(this.NgayKT);
+            this.LichHenADtp.Controls.Add(this.NgayBD);
+            this.LichHenADtp.Controls.Add(this.label54);
+            this.LichHenADtp.Controls.Add(this.label52);
             this.LichHenADtp.Controls.Add(this.trangthai);
             this.LichHenADtp.Controls.Add(this.listView1);
             this.LichHenADtp.Controls.Add(this.dataGridView4);
@@ -570,13 +582,13 @@
             // 
             this.LichHenADdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.LichHenADdata.GridColor = System.Drawing.SystemColors.Control;
-            this.LichHenADdata.Location = new System.Drawing.Point(2, 27);
+            this.LichHenADdata.Location = new System.Drawing.Point(2, 68);
             this.LichHenADdata.Margin = new System.Windows.Forms.Padding(2);
             this.LichHenADdata.Name = "LichHenADdata";
             this.LichHenADdata.ReadOnly = true;
             this.LichHenADdata.RowHeadersVisible = false;
             this.LichHenADdata.RowHeadersWidth = 62;
-            this.LichHenADdata.Size = new System.Drawing.Size(486, 305);
+            this.LichHenADdata.Size = new System.Drawing.Size(486, 264);
             this.LichHenADdata.TabIndex = 23;
             this.LichHenADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LichHenADdata_CellClick);
             // 
@@ -2179,6 +2191,7 @@
             // 
             // TaiKhoantb
             // 
+            this.TaiKhoantb.Controls.Add(this.pictureBox3);
             this.TaiKhoantb.Controls.Add(this.panel1);
             this.TaiKhoantb.Controls.Add(this.panel3);
             this.TaiKhoantb.Controls.Add(this.linkLabel1);
@@ -2193,8 +2206,19 @@
             this.TaiKhoantb.UseVisualStyleBackColor = true;
             this.TaiKhoantb.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(640, 27);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(104, 83);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 17;
+            this.pictureBox3.TabStop = false;
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
@@ -2207,6 +2231,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(479, 535);
             this.panel1.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(198, 52);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -2333,6 +2368,7 @@
             this.Gioitinhtb.Name = "Gioitinhtb";
             this.Gioitinhtb.Size = new System.Drawing.Size(395, 26);
             this.Gioitinhtb.TabIndex = 1;
+            this.Gioitinhtb.TextChanged += new System.EventHandler(this.Gioitinhtb_TextChanged);
             // 
             // label8
             // 
@@ -2410,6 +2446,7 @@
             this.CapNhatBT.TabIndex = 10;
             this.CapNhatBT.Text = "Cập nhật";
             this.CapNhatBT.UseVisualStyleBackColor = false;
+            this.CapNhatBT.Click += new System.EventHandler(this.CapNhatBT_Click);
             // 
             // panel3
             // 
@@ -2430,7 +2467,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(427, 316);
             this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
             // SLNVtb
             // 
@@ -2458,6 +2494,7 @@
             this.SDTQLtb.ReadOnly = true;
             this.SDTQLtb.Size = new System.Drawing.Size(233, 29);
             this.SDTQLtb.TabIndex = 11;
+            this.SDTQLtb.TextChanged += new System.EventHandler(this.SDTQLtb_TextChanged);
             // 
             // GTQLtb
             // 
@@ -2476,6 +2513,7 @@
             this.HTQLtb.ReadOnly = true;
             this.HTQLtb.Size = new System.Drawing.Size(233, 29);
             this.HTQLtb.TabIndex = 9;
+            this.HTQLtb.TextChanged += new System.EventHandler(this.HTQLtb_TextChanged);
             // 
             // Gioitinhlb
             // 
@@ -2567,7 +2605,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(947, 519);
             this.tabControl1.TabIndex = 2;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -2719,6 +2756,42 @@
             this.dataGridView1.Size = new System.Drawing.Size(489, 413);
             this.dataGridView1.TabIndex = 0;
             // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(6, 39);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(31, 16);
+            this.label52.TabIndex = 69;
+            this.label52.Text = "Từ: ";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(245, 39);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(38, 16);
+            this.label54.TabIndex = 70;
+            this.label54.Text = "Đến: ";
+            // 
+            // NgayBD
+            // 
+            this.NgayBD.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.NgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayBD.Location = new System.Drawing.Point(33, 36);
+            this.NgayBD.Name = "NgayBD";
+            this.NgayBD.Size = new System.Drawing.Size(185, 22);
+            this.NgayBD.TabIndex = 71;
+            // 
+            // NgayKT
+            // 
+            this.NgayKT.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.NgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.NgayKT.Location = new System.Drawing.Point(280, 36);
+            this.NgayKT.Name = "NgayKT";
+            this.NgayKT.Size = new System.Drawing.Size(189, 22);
+            this.NgayKT.TabIndex = 72;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2790,8 +2863,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.NhanVienADdata)).EndInit();
             this.TaiKhoantb.ResumeLayout(false);
             this.TaiKhoantb.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -3031,5 +3106,11 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker NgayKT;
+        private System.Windows.Forms.DateTimePicker NgayBD;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label52;
     }
 }

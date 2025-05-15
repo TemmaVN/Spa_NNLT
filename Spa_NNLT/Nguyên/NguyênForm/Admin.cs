@@ -789,6 +789,7 @@ namespace Spa_NNLT.Nguyên
                 }
                 NSQLtb.Text = dr["ngaysinh"].ToString();
                 SLNVtb.Text = (NhanVienADdata.Rows.Count - 1).ToString();
+                SDTQLtb.Text = dr["sdtquanly"].ToString();
             }
         }
 
@@ -1173,6 +1174,50 @@ namespace Spa_NNLT.Nguyên
         private void tonggia_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void CapNhatBT_Click(object sender, EventArgs e)
+        {
+            bool yeucau = false;
+            int result = 0;
+            yeucau = string.IsNullOrEmpty(HoTenmoitb.Text) || string.IsNullOrEmpty(Gioitinhtb.Text) || string.IsNullOrEmpty(SDTmoitb.Text);
+            if (!yeucau)
+            {
+                SqlParameter[] parameter = new SqlParameter[]
+                {
+                    new SqlParameter("@tencu",HTQLtb.Text),
+                    new SqlParameter("@tenquanly",HoTenmoitb.Text),
+                    new SqlParameter("@gioitinh",(Gioitinhtb.Text == "Nam")),
+                    new SqlParameter("@ngaysinh",NgaysinhADmoi.Value),
+                    new SqlParameter("@sdtquanly",SDTmoitb.Text)
+                };
+                string query = "UPDATE tblQuannLy SET tenquanly = @tenquanly, gioitinh = @gioitinh, ngaysinh = @ngaysinh, sdtquanly = @sdtquanly WHERE @tencu = tenquanly";
+                result = DataProvider.Instance.ExcutedNoneQuery(query, parameter);
+
+            }
+            if (result > 0) MessageBox.Show("Cập nhật admin thành công ");
+            else MessageBox.Show("Cập nhật thất bại !!");
+            HienThiAdmin();
+        }
+
+        private void Gioitinhtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HTQLtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SDTQLtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        bool SoSanhNgay()
+        {
+
         }
     }
 }
