@@ -33,9 +33,9 @@ namespace Spa_NNLT.Nguyên
 
             LoadDichVuList();
 
+            LoadLichHenList();
 
-
-            HienThiLHmoi();
+            LoadDichVuList();
 
             LoadNhanVienlist();
             
@@ -113,9 +113,16 @@ namespace Spa_NNLT.Nguyên
         void LoadLichHenList()
         {
             string query = "select * from dbo.tblLichHen";
-            LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
-            
-            LHChTTdata.DataSource = DataProvider.Instance.Excuted(query);
+            DateTime ht = DateTime.Now;
+            DataTable Lichhen = DataProvider.Instance.Excuted(query);
+
+            DataView DT1 = new DataView(Lichhen);
+            DT1.RowFilter = $"thoigianbatdau >= #{ht:MM/dd/yyyy HH:mm:ss}#";
+            LichHenADdata.DataSource = DT1;
+
+            DataView DT2 = new DataView(Lichhen);
+            DT1.RowFilter = $"thoigianbatdau < #{ht:MM/dd/yyyy HH:mm:ss}#";
+            LHChTTdata.DataSource = DT2;
 
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -886,7 +893,7 @@ namespace Spa_NNLT.Nguyên
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Xóa lịch hẹn thành công!");
-                        HienThiLHmoi(); // gọi lại hàm load để làm mới danh sách
+                        LoadLichHenList(); // gọi lại hàm load để làm mới danh sách
                     }
                     else
                     {
@@ -1010,7 +1017,7 @@ namespace Spa_NNLT.Nguyên
                 MessageBox.Show("Thêm lịch hẹn thành công!");
             }
 
-            HienThiLHmoi();   // Làm mới datagridview
+            LoadLichHenList();   // Làm mới datagridview
         }
 
         private bool KiemTraTrungLich(SqlConnection conn, string maKH, string maNV, string maPhong, DateTime batDau, DateTime ketThuc)
@@ -1255,33 +1262,7 @@ namespace Spa_NNLT.Nguyên
             }    
         }
 
-        void HienThiLHmoi()
-        {
-            LoadLichHenList();
-            DateTime ht = DateTime.Now;
-            LichHenADdata.CurrentCell = null;
-            LHChTTdata.CurrentCell = null;
-
-            foreach (DataGridViewRow row in LichHenADdata.Rows)
-            {
-                if (row.Cells["thoigianbatdau"].Value != null)
-                {
-                    DateTime tg1 = Convert.ToDateTime(row.Cells["thoigianbatdau"].Value);
-                    if (tg1 > ht) { row.Visible = true; }
-                    else { row.Visible = false; }
-                }
-            }
-
-            foreach(DataGridViewRow row1 in LHChTTdata.Rows)
-            {
-                if (row1.Cells["thoigianbatdau"].Value != null)
-                {
-                    DateTime tg2 = Convert.ToDateTime(row1.Cells["thoigianbatdau"].Value);
-                    if (tg2 >= ht) { row1.Visible = false; }
-                    else { row1.Visible = true; }
-                }
-            }
-        }
+        
     }
 }
 
