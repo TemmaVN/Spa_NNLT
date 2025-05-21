@@ -33,9 +33,9 @@ namespace Spa_NNLT.Nguyên
 
             LoadDichVuList();
 
-          
-
             LoadLichHenList();
+
+            LoadDichVuList();
 
             LoadNhanVienlist();
             
@@ -113,7 +113,17 @@ namespace Spa_NNLT.Nguyên
         void LoadLichHenList()
         {
             string query = "select * from dbo.tblLichHen";
-            LichHenADdata.DataSource = DataProvider.Instance.Excuted(query);
+            DateTime ht = DateTime.Now;
+            DataTable Lichhen = DataProvider.Instance.Excuted(query);
+
+            DataView DT1 = new DataView(Lichhen);
+            DT1.RowFilter = $"thoigianbatdau >= #{ht:MM/dd/yyyy HH:mm:ss}#";
+            LichHenADdata.DataSource = DT1;
+
+            DataView DT2 = new DataView(Lichhen);
+            DT1.RowFilter = $"thoigianbatdau < #{ht:MM/dd/yyyy HH:mm:ss}#";
+            LHChTTdata.DataSource = DT2;
+
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -1007,7 +1017,7 @@ namespace Spa_NNLT.Nguyên
                 MessageBox.Show("Thêm lịch hẹn thành công!");
             }
 
-            LoadLichHenList(); // Làm mới datagridview
+            LoadLichHenList();   // Làm mới datagridview
         }
 
         private bool KiemTraTrungLich(SqlConnection conn, string maKH, string maNV, string maPhong, DateTime batDau, DateTime ketThuc)
@@ -1215,10 +1225,44 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-        bool SoSanhNgay()
+        private void LichHenADdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void label54_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimBt_Click(object sender, EventArgs e)
+        {
+            DateTime BD = NgayBD.Value;
+            DateTime Kt = NgayKT.Value;
+            LichHenADdata.CurrentCell = null;
+            if (BD >= Kt)
+            {
+                MessageBox.Show("Ngày bắt đầu sau ngày kết thúc");
+                return;
+            }
+            else
+            {
+                foreach(DataGridViewRow row in LichHenADdata.Rows)
+                {
+                    if (row.Cells["thoigianbatdau"].Value != null)
+                    {
+                        DateTime tg = Convert.ToDateTime(row.Cells["thoigianbatdau"].Value);
+                        if (tg >= BD && tg <= Kt)
+                        {
+                            row.Visible = true;
+                        }
+                        else { row.Visible = false; }
+                    }
+                }
+            }    
+        }
+
+        
     }
 }
 

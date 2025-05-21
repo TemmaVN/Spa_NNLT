@@ -49,41 +49,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bằng\BangForm\NhanVien.cs">
+    <Compile Include="GUI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bằng\BangForm\NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="GUI\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Nguyên DTO\QuanLi.cs" />
-    <Compile Include="Nguyên\NguyênForm\Admin.cs">
+    <Compile Include="DTO and DAO\QuanLi.cs" />
+    <Compile Include="GUI\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Nguyên\NguyênForm\Admin.Designer.cs">
+    <Compile Include="GUI\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nguyên\Nguyên DTO\DIchVu.cs" />
-    <Compile Include="Nguyên\Nguyên DTO\HoaDon.cs" />
-    <Compile Include="Nguyên\Nguyên DTO\Khachhang.cs" />
-    <Compile Include="Nguyên\Nguyên DTO\LichHen.cs" />
-    <Compile Include="Nguyên\Nguyên DTO\DataProvider.cs" />
-    <Compile Include="Nguyên\Nguyên DTO\NhanVien.cs" />
-    <Compile Include="Nguyên\Nguyên DTO\Phong.cs" />
+    <Compile Include="DTO and DAO\DIchVu.cs" />
+    <Compile Include="DTO and DAO\HoaDon.cs" />
+    <Compile Include="DTO and DAO\Khachhang.cs" />
+    <Compile Include="DTO and DAO\LichHen.cs" />
+    <Compile Include="DTO and DAO\DataProvider.cs" />
+    <Compile Include="DTO and DAO\NhanVien.cs" />
+    <Compile Include="DTO and DAO\Phong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bằng\BangForm\NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nguyên\NguyênForm\Admin.resx">
+    <EmbeddedResource Include="GUI\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
