@@ -30,19 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.LichHenADtp = new System.Windows.Forms.TabPage();
+            this.TimBt = new System.Windows.Forms.Button();
             this.NgayKT = new System.Windows.Forms.DateTimePicker();
             this.NgayBD = new System.Windows.Forms.DateTimePicker();
             this.label54 = new System.Windows.Forms.Label();
             this.label52 = new System.Windows.Forms.Label();
             this.trangthai = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.button13 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label26 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
-            this.button11 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -118,7 +117,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.TinhTrangADtb = new System.Windows.Forms.TextBox();
             this.SoPhongADtb = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -249,7 +247,7 @@
             this.LHChTTdata = new System.Windows.Forms.DataGridView();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TimBt = new System.Windows.Forms.Button();
+            this.TTphongcb = new System.Windows.Forms.ComboBox();
             this.LichHenADtp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel29.SuspendLayout();
@@ -318,7 +316,6 @@
             this.LichHenADtp.Controls.Add(this.label54);
             this.LichHenADtp.Controls.Add(this.label52);
             this.LichHenADtp.Controls.Add(this.trangthai);
-            this.LichHenADtp.Controls.Add(this.listView1);
             this.LichHenADtp.Controls.Add(this.dataGridView4);
             this.LichHenADtp.Controls.Add(this.button13);
             this.LichHenADtp.Controls.Add(this.button12);
@@ -347,6 +344,18 @@
             this.LichHenADtp.Text = "Lịch hẹn";
             this.LichHenADtp.UseVisualStyleBackColor = true;
             this.LichHenADtp.Click += new System.EventHandler(this.LichHenADtp_Click);
+            // 
+            // TimBt
+            // 
+            this.TimBt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.TimBt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimBt.Location = new System.Drawing.Point(582, 43);
+            this.TimBt.Name = "TimBt";
+            this.TimBt.Size = new System.Drawing.Size(148, 49);
+            this.TimBt.TabIndex = 73;
+            this.TimBt.Text = "Tìm";
+            this.TimBt.UseVisualStyleBackColor = false;
+            this.TimBt.Click += new System.EventHandler(this.TimBt_Click);
             // 
             // NgayKT
             // 
@@ -396,16 +405,6 @@
             this.trangthai.ReadOnly = true;
             this.trangthai.Size = new System.Drawing.Size(384, 30);
             this.trangthai.TabIndex = 68;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(4, 548);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(726, 190);
-            this.listView1.TabIndex = 67;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // dataGridView4
             // 
@@ -462,7 +461,6 @@
             // 
             // panel29
             // 
-            this.panel29.Controls.Add(this.button11);
             this.panel29.Controls.Add(this.button8);
             this.panel29.Controls.Add(this.button9);
             this.panel29.Controls.Add(this.button10);
@@ -471,33 +469,23 @@
             this.panel29.Size = new System.Drawing.Size(634, 58);
             this.panel29.TabIndex = 22;
             // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(472, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(159, 49);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "Thanh toán";
-            this.button11.UseVisualStyleBackColor = false;
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(330, 3);
+            this.button8.Location = new System.Drawing.Point(497, 6);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(122, 49);
             this.button8.TabIndex = 2;
             this.button8.Text = "Cập nhật";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(177, 3);
+            this.button9.Location = new System.Drawing.Point(257, 6);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(134, 49);
             this.button9.TabIndex = 1;
@@ -526,6 +514,7 @@
             this.cboPhong.Size = new System.Drawing.Size(385, 31);
             this.cboPhong.TabIndex = 57;
             this.cboPhong.DropDown += new System.EventHandler(this.cboPhong_DropDown);
+            this.cboPhong.SelectedIndexChanged += new System.EventHandler(this.cboPhong_SelectedIndexChanged);
             // 
             // label63
             // 
@@ -631,7 +620,7 @@
             this.LichHenADdata.ReadOnly = true;
             this.LichHenADdata.RowHeadersVisible = false;
             this.LichHenADdata.RowHeadersWidth = 62;
-            this.LichHenADdata.Size = new System.Drawing.Size(729, 406);
+            this.LichHenADdata.Size = new System.Drawing.Size(729, 641);
             this.LichHenADdata.TabIndex = 23;
             this.LichHenADdata.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LichHenADdata_CellClick);
             this.LichHenADdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.LichHenADdata_CellContentClick);
@@ -1254,6 +1243,7 @@
             this.XoaPhongADbt.TabIndex = 1;
             this.XoaPhongADbt.Text = "Xóa ";
             this.XoaPhongADbt.UseVisualStyleBackColor = false;
+            this.XoaPhongADbt.Click += new System.EventHandler(this.XoaPhongADbt_Click);
             // 
             // ThemPhongADbt
             // 
@@ -1269,11 +1259,11 @@
             // 
             // panel20
             // 
+            this.panel20.Controls.Add(this.TTphongcb);
             this.panel20.Controls.Add(this.MLHPhongADtb);
             this.panel20.Controls.Add(this.label32);
             this.panel20.Controls.Add(this.pictureBox13);
             this.panel20.Controls.Add(this.label29);
-            this.panel20.Controls.Add(this.TinhTrangADtb);
             this.panel20.Controls.Add(this.SoPhongADtb);
             this.panel20.Controls.Add(this.label30);
             this.panel20.Controls.Add(this.label31);
@@ -1288,6 +1278,7 @@
             this.MLHPhongADtb.Name = "MLHPhongADtb";
             this.MLHPhongADtb.Size = new System.Drawing.Size(348, 30);
             this.MLHPhongADtb.TabIndex = 46;
+            this.MLHPhongADtb.TextChanged += new System.EventHandler(this.MLHPhongADtb_TextChanged);
             // 
             // label32
             // 
@@ -1296,9 +1287,9 @@
             this.label32.Location = new System.Drawing.Point(40, 318);
             this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(125, 24);
+            this.label32.Size = new System.Drawing.Size(123, 24);
             this.label32.TabIndex = 45;
-            this.label32.Text = "Mã lịch hẹn:";
+            this.label32.Text = "Loại phòng:";
             // 
             // pictureBox13
             // 
@@ -1321,13 +1312,6 @@
             this.label29.Size = new System.Drawing.Size(271, 41);
             this.label29.TabIndex = 43;
             this.label29.Text = "Thông tin phòng";
-            // 
-            // TinhTrangADtb
-            // 
-            this.TinhTrangADtb.Location = new System.Drawing.Point(255, 248);
-            this.TinhTrangADtb.Name = "TinhTrangADtb";
-            this.TinhTrangADtb.Size = new System.Drawing.Size(348, 30);
-            this.TinhTrangADtb.TabIndex = 25;
             // 
             // SoPhongADtb
             // 
@@ -1413,6 +1397,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "Cập nhật";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // button5
             // 
@@ -1916,7 +1901,7 @@
             this.NhanVientb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NhanVientb.Location = new System.Drawing.Point(4, 32);
             this.NhanVientb.Name = "NhanVientb";
-            this.NhanVientb.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.NhanVientb.Padding = new System.Windows.Forms.Padding(3);
             this.NhanVientb.Size = new System.Drawing.Size(1412, 762);
             this.NhanVientb.TabIndex = 1;
             this.NhanVientb.Text = "Nhân viên";
@@ -2206,7 +2191,7 @@
             this.TaiKhoantb.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TaiKhoantb.Location = new System.Drawing.Point(4, 32);
             this.TaiKhoantb.Name = "TaiKhoantb";
-            this.TaiKhoantb.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TaiKhoantb.Padding = new System.Windows.Forms.Padding(3);
             this.TaiKhoantb.Size = new System.Drawing.Size(1412, 762);
             this.TaiKhoantb.TabIndex = 0;
             this.TaiKhoantb.Text = "Tài khoản";
@@ -2746,17 +2731,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(734, 635);
             this.dataGridView1.TabIndex = 0;
             // 
-            // TimBt
+            // TTphongcb
             // 
-            this.TimBt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.TimBt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimBt.Location = new System.Drawing.Point(582, 43);
-            this.TimBt.Name = "TimBt";
-            this.TimBt.Size = new System.Drawing.Size(148, 49);
-            this.TimBt.TabIndex = 73;
-            this.TimBt.Text = "Tìm";
-            this.TimBt.UseVisualStyleBackColor = false;
-            this.TimBt.Click += new System.EventHandler(this.TimBt_Click);
+            this.TTphongcb.FormattingEnabled = true;
+            this.TTphongcb.Items.AddRange(new object[] {
+            "Trống",
+            "Đang làm"});
+            this.TTphongcb.Location = new System.Drawing.Point(255, 252);
+            this.TTphongcb.Name = "TTphongcb";
+            this.TTphongcb.Size = new System.Drawing.Size(348, 31);
+            this.TTphongcb.TabIndex = 47;
             // 
             // Admin
             // 
@@ -2893,7 +2877,6 @@
         private System.Windows.Forms.Button XoaPhongADbt;
         private System.Windows.Forms.Button ThemPhongADbt;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.TextBox TinhTrangADtb;
         private System.Windows.Forms.TextBox SoPhongADtb;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
@@ -3017,7 +3000,6 @@
         private System.Windows.Forms.ComboBox comboBoxDVCha;
         private System.Windows.Forms.ComboBox cboPhong;
         private System.Windows.Forms.ComboBox cboKhachHang;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel7;
@@ -3045,7 +3027,6 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView lvCombo;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -3080,5 +3061,6 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Button TimBt;
+        private System.Windows.Forms.ComboBox TTphongcb;
     }
 }

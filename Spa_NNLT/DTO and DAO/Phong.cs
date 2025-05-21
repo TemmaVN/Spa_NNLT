@@ -14,14 +14,14 @@ namespace Spa_NNLT.Nguyên.PhongAD
     {
         private string MaPhong;        
         private string Tinhtrang;
-        private string MaLichHen;
+        private string LoaiPhong;
 
-        public Phong(string maPhong, string tinhtrang, string maLichHen)
+        public Phong(string maPhong, string tinhtrang, string LoaiPhong)
         {
             MaPhong = maPhong;
            
             this.Tinhtrang = tinhtrang;
-            MaLichHen = maLichHen;
+            this.LoaiPhong = LoaiPhong;
         }
 
         public Phong(DataRow row)
@@ -29,8 +29,8 @@ namespace Spa_NNLT.Nguyên.PhongAD
             this.MaPhong = row["maphong"].ToString();
             
             this.Tinhtrang = row["tinhtrang"].ToString();
-            this.MaLichHen = row["malichhen"].ToString();
-
+            string tg = row["loaiphong"].ToString();
+            this.LoaiPhong = tg;
 
         }
 
@@ -56,23 +56,12 @@ namespace Spa_NNLT.Nguyên.PhongAD
                 Tinhtrang = value;
             }
         }
-        public string maLichHen
+        public string loaiPhong
         {
-            get { return MaLichHen; }
+            get { return LoaiPhong; }
             set
             {
-                MaLichHen = value;
-            }
-        }
-        public void TimMLH()
-        {
-            DataTable dataLH = DataProvider.Instance.Excuted("USP_GetLichHenList");
-            foreach (DataRow row in dataLH.Rows) { 
-                if (row != null)
-                if (this.maPhong == row["maphong"].ToString())
-                {
-                    this.maLichHen = row["malichhen"].ToString();
-                }
+                LoaiPhong = value;
             }
         }
         

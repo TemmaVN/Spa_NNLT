@@ -121,7 +121,7 @@ namespace Spa_NNLT.Nguyên
             LichHenADdata.DataSource = DT1;
 
             DataView DT2 = new DataView(Lichhen);
-            DT1.RowFilter = $"thoigianbatdau < #{ht:MM/dd/yyyy HH:mm:ss}#";
+            DT2.RowFilter = $"thoigianbatdau < #{ht:MM/dd/yyyy HH:mm:ss}#";
             LHChTTdata.DataSource = DT2;
 
         }
@@ -463,7 +463,7 @@ namespace Spa_NNLT.Nguyên
         {
 
             //if (string.IsNullOrEmpty(TenDVadTB.Text)) return;
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             ////string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             //using (SqlConnection conn = new SqlConnection(connectionSTR))
             //{
@@ -689,7 +689,6 @@ namespace Spa_NNLT.Nguyên
                 Button btn = new Button() { Width = PhongDAO.PhongWidth, Height = PhongDAO.PhongHeight };
                 btn.Location = new Point(x, y);
                 btn.Text = phong.maPhong.ToString();
-                phong.TimMLH();
                 if (phong.tinhTrang.ToString().Trim() == "0")
                 {
                     btn.BackColor = Color.White;
@@ -723,13 +722,13 @@ namespace Spa_NNLT.Nguyên
                 string tg = phong.tinhTrang.ToString();
                 if (tg.Trim() == "0")
                 {
-                    TinhTrangADtb.Text = "Trống";
+                    TTphongcb.SelectedItem = "Trống";
                 }
                 else
                 {
-                    TinhTrangADtb.Text = "Đang làm";
+                    TTphongcb.SelectedItem = "Đang làm";
                 }
-                MLHPhongADtb.Text = phong.maLichHen.ToString();
+                MLHPhongADtb.Text = phong.loaiPhong.ToString();
             }
         }
 
@@ -805,18 +804,27 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemPhongADbt_Click(object sender, EventArgs e)
         {
-            string soPhong = SoPhongADtb.Text.Trim();           
-            string tinhTrang = TinhTrangADtb.Text.Trim();
-            //int tt = (tinhTrang == "Trống") ? 0 : 1;
+            string soPhong = SoPhongADtb.Text.Trim();
+
+            var selectedItem = TTphongcb.SelectedItem;
+            string tinhTrang = selectedItem != null ? selectedItem.ToString().Trim() : "";
+            string tt = (tinhTrang == "Trống") ? "0" : "1";
+            if (tinhTrang == "")
+            {
+                MessageBox.Show("Chưa để tình trạng!!");
+                return;
+            }
+            string LoaiPhong = MLHPhongADtb.Text.Trim();
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR)) {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@sophong", soPhong);
-                command.Parameters.AddWithValue("@tinhtrang", tinhTrang );
+                command.Parameters.AddWithValue("@tinhtrang", tt );
+                command.Parameters.AddWithValue("@loaiphong", LoaiPhong);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Đã thêm phòng thành công!");
                 LoadPhong();
@@ -880,7 +888,7 @@ namespace Spa_NNLT.Nguyên
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -918,12 +926,18 @@ namespace Spa_NNLT.Nguyên
 
         private void cboNhanVien_DropDown(object sender, EventArgs e)
         {
-            
+            string QueryNV = "SELECT manhanvien, tennhanvien AS thongtin FROM tblNhanVien";
+            cboNhanVien.DataSource = DataProvider.Instance.Excuted(QueryNV);
+            cboNhanVien.DisplayMember = "thongtin";
+            cboNhanVien.ValueMember = "manhanvien";
         }
 
         private void cboPhong_DropDown(object sender, EventArgs e)
         {
-        
+            string QueryPhong = "SELECT tinhtrang,maphong FROM tblPhong";
+            cboPhong.DataSource = DataProvider.Instance.Excuted(QueryPhong);
+            cboPhong.DisplayMember = "maphong";
+            cboPhong.ValueMember = "maphong";
         }
 
         
@@ -970,7 +984,7 @@ namespace Spa_NNLT.Nguyên
         private void button10_Click(object sender, EventArgs e)
         {
            
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
@@ -990,8 +1004,8 @@ namespace Spa_NNLT.Nguyên
                 SqlCommand cmdThoiLuong = new SqlCommand(queryThoiLuong, conn);
                 cmdThoiLuong.Parameters.AddWithValue("@madv", maDV);
                 int thoiLuong = Convert.ToInt32(cmdThoiLuong.ExecuteScalar());
-
-                DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(thoiLuong);
+                int TGcho = 45;
+                DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(thoiLuong+TGcho);
 
                //Kiểm tra trùng lịch
                 if (KiemTraTrungLich(conn, maKH, maNV, maPhong, thoiGianBatDau, thoiGianKetThuc))
@@ -1012,8 +1026,9 @@ namespace Spa_NNLT.Nguyên
                 cmd.Parameters.AddWithValue("@madv", maDV);
                 cmd.Parameters.AddWithValue("@maphong", maPhong);
                 cmd.Parameters.AddWithValue("@batdau", thoiGianBatDau);
-                cmd.Parameters.AddWithValue("@ketthuc", thoiGianKetThuc);                
-                 cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@ketthuc", thoiGianKetThuc);
+                cmd.Parameters.AddWithValue("@tinhtrang", "Đang chờ");
+                cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm lịch hẹn thành công!");
             }
 
@@ -1059,7 +1074,31 @@ namespace Spa_NNLT.Nguyên
 
         private void CapNhatPhogADbt_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(SoPhongADtb.Text)) { return; }
+            var selectedItem = TTphongcb.SelectedItem;
+            string tinhTrang = selectedItem != null ? selectedItem.ToString().Trim() : "";
+            string tt = (tinhTrang == "Trống") ? "0" : "1";
+            if (tinhTrang == "")
+            {
+                MessageBox.Show("Chưa để tình trạng!!");
+                return;
+            }
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter ("@id",SoPhongADtb.Text),
+                new SqlParameter ("@tinhtrang",tt),
+                new SqlParameter ("@loaiphong",MLHPhongADtb.Text.Trim())
+            };
 
+            string query = "UPDATE tblPhong SET tinhtrang = @tinhtrang,loaiphong = @loaiphong WHERE maphong = @id";
+            int result = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
+            if (result > 0) MessageBox.Show("Cập nhật phòng thành công!");
+            else MessageBox.Show("Cập nhật phòng thất bại");
+            foreach (Control control in PhongADpn.Controls.OfType<Button>().ToList())
+            {
+                PhongADpn.Controls.Remove(control);
+            }
+            LoadPhong();
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -1262,7 +1301,49 @@ namespace Spa_NNLT.Nguyên
             }    
         }
 
-        
+            private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
+            {
+                if (cboPhong.SelectedItem is DataRowView row) { 
+                    string tg = row["tinhtrang"].ToString();
+                    if(tg == "0") trangthai.Text = "Trống";
+                    else trangthai.Text = "Đang dùng";
+                }
+            }
+
+        private void XoaPhongADbt_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(SoPhongADtb.Text)) return;
+            var confirm = MessageBox.Show("Bạn có chắc muốn xoá phòng này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (confirm != DialogResult.Yes) return;
+            SqlParameter[] sqlParameter = new SqlParameter[]
+            {
+                new SqlParameter("id",  SoPhongADtb.Text),
+            };
+            string query = "DELETE FROM tblPhong WHERE maphong = @id";
+            int results = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameter);
+            if (results > 0) MessageBox.Show("Xóa phòng thành công");
+            else MessageBox.Show("Xóa phòng thất bại");
+            foreach (Control control in PhongADpn.Controls.OfType<Button>().ToList())
+            {
+                PhongADpn.Controls.Remove(control);
+            }
+            LoadPhong();
+        }
+
+        private void MLHPhongADtb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
