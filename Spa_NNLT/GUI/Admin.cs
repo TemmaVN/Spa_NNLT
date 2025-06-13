@@ -1297,6 +1297,26 @@ namespace Spa_NNLT.Nguyên
                         }
                         else { row.Visible = false; }
                     }
+
+                    if (row.Visible && CbTimNV.SelectedValue != null && row.Cells["manhanvien"].Value!=null)
+                    {
+                        string tg =CbTimNV.SelectedValue.ToString().Trim();
+                        if (tg == row.Cells["manhanvien"].Value.ToString())
+                        {
+                            row.Visible=true;
+                        }
+                        else row.Visible = false;
+                    }
+
+                    if (row.Visible && CbTimKH.SelectedValue != null && row.Cells["makhachhang"].Value != null)
+                    {
+                        string tg = CbTimKH.SelectedValue.ToString().Trim();
+                        if (tg == row.Cells["makhachhang"].Value.ToString())
+                        {
+                            row.Visible= true;
+                        }
+                        else  row.Visible=false; 
+                    }
                 }
             }    
         }
@@ -1341,6 +1361,42 @@ namespace Spa_NNLT.Nguyên
         }
 
         private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label56_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_DropDown_1(object sender, EventArgs e)
+        {
+            string QueryNV = "SELECT manhanvien, tennhanvien AS thongtin FROM tblNhanVien";
+            CbTimNV.DataSource = DataProvider.Instance.Excuted(QueryNV);
+            CbTimNV.DisplayMember = "thongtin";
+            CbTimNV.ValueMember = "manhanvien";
+        }
+
+        private void CbTimKH_DropDown(object sender, EventArgs e)
+        {
+            string queryKH = "SELECT makhachhang, tenkhachhang + ' / ' + sdt AS thongtin FROM tblKhachHang";
+            CbTimKH.DataSource = DataProvider.Instance.Excuted(queryKH);
+            CbTimKH.DisplayMember = "thongtin";
+            CbTimKH.ValueMember = "makhachhang";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_3(object sender, PaintEventArgs e)
         {
 
         }
