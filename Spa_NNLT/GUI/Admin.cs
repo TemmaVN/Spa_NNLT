@@ -1578,6 +1578,14 @@ namespace Spa_NNLT.Nguyên
                 textBox1.Text = row.Cells["giadagiam"].Value.ToString().Trim();
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listView1.SelectedItems)
+            {
+                listView1.Items.Remove(item);
+            }
+        }
     }
 }
 
