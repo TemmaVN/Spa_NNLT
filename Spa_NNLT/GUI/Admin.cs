@@ -1020,7 +1020,7 @@ namespace Spa_NNLT.Nguyên
             DateTime thoiGianBatDau = dateTimePicker2.Value;
             int TGcho = 45;
             DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(tongTG + TGcho);
-
+            MessageBox.Show(tongtien.ToString());
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("@ma",MaLHadTB.Text.Trim()),
@@ -1030,12 +1030,12 @@ namespace Spa_NNLT.Nguyên
                 new SqlParameter("@maphong",cboPhong.Text.Trim()),
                 new SqlParameter("@batdau",thoiGianBatDau),
                 new SqlParameter("@ketthuc",thoiGianKetThuc),
-                new SqlParameter("@tongtien",0),
+                new SqlParameter("@tongtien",tongtien),
                 new SqlParameter("@tinhtrang","Đang chờ"),
         };
             string query = @"INSERT INTO tblLichHen (malichhen, makhachhang, manhanvien, madichvu, maphong, 
                                                   thoigianbatdau, thoigianketthuc, trangthai, tongtien)
-                         VALUES (@ma, @makh, @manv, @madv, @maphong, @batdau, @ketthuc, @tinhtrang, @tongtien";
+                         VALUES (@ma, @makh, @manv, @madv, @maphong, @batdau, @ketthuc, @tinhtrang, @tongtien)";
             int result = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
                 if (result > 0) MessageBox.Show("Thêm lịch hẹn thành công");
                 else MessageBox.Show("Thêm lịch hẹn thất bại");
