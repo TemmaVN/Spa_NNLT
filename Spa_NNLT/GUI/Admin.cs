@@ -1462,6 +1462,7 @@ namespace Spa_NNLT.Nguyên
             if (result > 0) MessageBox.Show("Thêm combo thành công");
             else MessageBox.Show("Thêm dịch vụ thất bại");
             LoadComboList();
+            TLcombo.Text = "0p";
         }
 
         private void giamgia_ValueChanged(object sender, EventArgs e)
