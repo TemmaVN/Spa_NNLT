@@ -17,6 +17,8 @@ using System.Security.Principal;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.CodeDom.Compiler;
 using System.Drawing.Text;
+using System.Collections;
+using Spa_NNLT.Nguyên.Lịch_hẹn;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
@@ -45,6 +47,7 @@ namespace Spa_NNLT.Nguyên
             LoadPhong();
 
             LoadlvCombo();
+            Loadlv1();
 
             HienThiAdmin();
             LoadComboList();
@@ -87,6 +90,17 @@ namespace Spa_NNLT.Nguyên
             lvCombo.Columns.Add("Giá cả", 150);
             lvCombo.Columns.Add("Thời lượng", 150);          
         }
+
+        void Loadlv1()
+        {
+            listView1.View = View.Details;
+            listView1.Columns.Clear();
+            listView1.Columns.Add("", 1);
+            listView1.Columns.Add("Tên dịch vụ/combo", 160);
+            listView1.Columns.Add("Giá cả", 120);
+            listView1.Columns.Add("Thời lượng", 120);
+        }
+
         void LoadThemPhong()
         {
             
@@ -467,23 +481,7 @@ namespace Spa_NNLT.Nguyên
         private void CapNhatDVadBT_Click(object sender, EventArgs e)
         {
 
-            //if (string.IsNullOrEmpty(TenDVadTB.Text)) return;
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            ////string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //using (SqlConnection conn = new SqlConnection(connectionSTR))
-            //{
-            //    conn.Open();
-
-            //    string query = "UPDATE DichVuCon SET tendichvucon = @ten, gia = @Gia, iddichvucha = @IDcha WHERE idcon = @ID " ;
-
-            //    SqlCommand cmd = new SqlCommand(query, conn);                
-            //    cmd.Parameters.AddWithValue("@ten", TenDVadTB.Text);
-            //    cmd.Parameters.AddWithValue("@Gia", GiaDVadTB.Text);
-            //    cmd.Parameters.AddWithValue("@IDcha", comboBoxDichVuCha.SelectedValue);
-            //    cmd.ExecuteNonQuery();
-            //    MessageBox.Show("Cập nhật nhân viên thành công!");
-            //    LoadDichVuList();
-            //}
+            
 
             if (string.IsNullOrEmpty (TenDVadTB.Text)) return;
             SqlParameter[] sqlParameters = new SqlParameter[] {
@@ -822,8 +820,8 @@ namespace Spa_NNLT.Nguyên
             string LoaiPhong = MLHPhongADtb.Text.Trim();
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR)) {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -893,7 +891,7 @@ namespace Spa_NNLT.Nguyên
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -923,18 +921,18 @@ namespace Spa_NNLT.Nguyên
 
         private void cboKhachHang_DropDown(object sender, EventArgs e)
         {
-            string queryKH = "SELECT makhachhang, tenkhachhang + ' / ' + sdt AS thongtin FROM tblKhachHang";
+            string queryKH = "SELECT tenkhachhang, tenkhachhang + ' / ' + sdt AS thongtin FROM tblKhachHang";
             cboKhachHang.DataSource = DataProvider.Instance.Excuted(queryKH);
             cboKhachHang.DisplayMember = "thongtin";
-            cboKhachHang.ValueMember = "makhachhang";
+            cboKhachHang.ValueMember = "tenkhachhang";
         }
 
         private void cboNhanVien_DropDown(object sender, EventArgs e)
         {
-            string QueryNV = "SELECT manhanvien, tennhanvien AS thongtin FROM tblNhanVien";
+            string QueryNV = "SELECT tennhanvien FROM tblNhanVien";
             cboNhanVien.DataSource = DataProvider.Instance.Excuted(QueryNV);
-            cboNhanVien.DisplayMember = "thongtin";
-            cboNhanVien.ValueMember = "manhanvien";
+            cboNhanVien.DisplayMember = "tennhanvien";
+            cboNhanVien.ValueMember = "tennhanvien";
         }
 
         private void cboPhong_DropDown(object sender, EventArgs e)
@@ -988,54 +986,59 @@ namespace Spa_NNLT.Nguyên
         #endregion
         private void button10_Click(object sender, EventArgs e)
         {
-           
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
-
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            string TenDV = "";
+            foreach (ListViewItem item in listView1.Items)
             {
-                conn.Open();
-
-                // Lấy dữ liệu từ UI
-                string maLichHen = MaLHadTB.Text;
-                string maKH = cboKhachHang.SelectedValue.ToString();
-                string maNV = cboNhanVien.SelectedValue.ToString();
-                string maDV = comboBoxDVCon.SelectedValue.ToString();
-                string maPhong = cboPhong.SelectedValue.ToString();
-
-                DateTime thoiGianBatDau = dateTimePicker2.Value;
-
-                // Lấy thời lượng dịch vụ
-                string queryThoiLuong = "SELECT thoigian FROM DichVuCon WHERE tendichvucon = @madv";
-                SqlCommand cmdThoiLuong = new SqlCommand(queryThoiLuong, conn);
-                cmdThoiLuong.Parameters.AddWithValue("@madv", maDV);
-                int thoiLuong = Convert.ToInt32(cmdThoiLuong.ExecuteScalar());
-                int TGcho = 45;
-                DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(thoiLuong+TGcho);
-
-               //Kiểm tra trùng lịch
-                if (KiemTraTrungLich(conn, maKH, maNV, maPhong, thoiGianBatDau, thoiGianKetThuc))
+                if (item.SubItems.Count > 1)
                 {
-                    MessageBox.Show("Nhân viên hoặc phòng hoặc khách hàng đã có lịch trùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    TenDV += item.SubItems[1].Text + ", ";
                 }
-
-                // Câu lệnh thêm lịch hẹn
-                string query = @"INSERT INTO tblLichHen (malichhen, makhachhang, manhanvien, madichvu, maphong, 
-                                                  thoigianbatdau, thoigianketthuc, trangthai)
-                         VALUES (@ma, @makh, @manv, @madv, @maphong, @batdau, @ketthuc, @tinhtrang)";
-
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ma", maLichHen);
-                cmd.Parameters.AddWithValue("@makh", maKH);
-                cmd.Parameters.AddWithValue("@manv", maNV);
-                cmd.Parameters.AddWithValue("@madv", maDV);
-                cmd.Parameters.AddWithValue("@maphong", maPhong);
-                cmd.Parameters.AddWithValue("@batdau", thoiGianBatDau);
-                cmd.Parameters.AddWithValue("@ketthuc", thoiGianKetThuc);
-                cmd.Parameters.AddWithValue("@tinhtrang", "Đang chờ");
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm lịch hẹn thành công!");
             }
+
+            decimal tongtien = 0;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.SubItems.Count > 1)
+                {
+                    string textGia = item.SubItems[2].Text;
+                    decimal gia = ChuyenDoiGia(textGia);
+                    tongtien += gia;
+                }
+            }
+
+           int tongTG = 0;
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.SubItems.Count > 1)
+                {
+                    //string textGia = item.SubItems[3].Text;
+                    //decimal gia = ChuyenDoiGia(textGia);
+                    //tongTG += Convert.ToInt32(item.SubItems[3]);
+                }
+            }
+
+            DateTime thoiGianBatDau = dateTimePicker2.Value;
+            int TGcho = 45;
+            DateTime thoiGianKetThuc = thoiGianBatDau.AddMinutes(tongTG + TGcho);
+
+            SqlParameter[] sqlParameters = new SqlParameter[]
+            {
+                new SqlParameter("@ma",MaLHadTB.Text.Trim()),
+                new SqlParameter("@makh",cboKhachHang.Text.Trim()),
+                new SqlParameter("@manv",cboNhanVien.Text.Trim()),
+                new SqlParameter("@madv",TenDV),
+                new SqlParameter("@maphong",cboPhong.Text.Trim()),
+                new SqlParameter("@batdau",thoiGianBatDau),
+                new SqlParameter("@ketthuc",thoiGianKetThuc),
+                new SqlParameter("@tongtien",0),
+                new SqlParameter("@tinhtrang","Đang chờ"),
+        };
+            string query = @"INSERT INTO tblLichHen (malichhen, makhachhang, manhanvien, madichvu, maphong, 
+                                                  thoigianbatdau, thoigianketthuc, trangthai, tongtien)
+                         VALUES (@ma, @makh, @manv, @madv, @maphong, @batdau, @ketthuc, @tinhtrang, @tongtien";
+            int result = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
+                if (result > 0) MessageBox.Show("Thêm lịch hẹn thành công");
+                else MessageBox.Show("Thêm lịch hẹn thất bại");
 
             LoadLichHenList();   // Làm mới datagridview
         }
@@ -1144,7 +1147,17 @@ namespace Spa_NNLT.Nguyên
 
         private void button13_Click(object sender, EventArgs e)
         {
-
+            string tenDV = comboBoxDVCon.Text.Trim();
+            string query = "select gia, thoigian from DichVuCon where tendichvucon = @tenDV";
+            DataTable data = DataProvider.Instance.Excuted(query, new object[] { tenDV });
+            
+            decimal gia = Convert.ToDecimal(data.Rows[0]["gia"]);
+            int thoigian = Convert.ToInt32(data.Rows[0]["thoigian"]);
+            ListViewItem lv = new ListViewItem();
+            lv.SubItems.Add(tenDV);
+            lv.SubItems.Add(gia + " đ");
+            lv.SubItems.Add(thoigian + "p");
+            listView1.Items.Add(lv);
         }
 
         private void button15_Click(object sender, EventArgs e)
@@ -1170,7 +1183,6 @@ namespace Spa_NNLT.Nguyên
             TGmoi += ChuyenDoiGia(TGtg);
             TGmoi += TGchuanbi.Value;
             TLcombo.Text = TGmoi.ToString()+"p";
-
         }
 
         private void GiaDVadTB_TextChanged(object sender, EventArgs e)
@@ -1486,7 +1498,73 @@ namespace Spa_NNLT.Nguyên
 
         }
 
- 
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (ComboData.CurrentRow != null)
+            {
+                string idcombo = ComboData.CurrentRow.Cells["idcombo"].Value.ToString();
+
+                SqlParameter[] sqlParameters = new SqlParameter[]
+                {
+                    new SqlParameter("@idcombo",  ComboData.CurrentRow.Cells["idcombo"].Value.ToString()),
+                };
+                var confirm = MessageBox.Show("Bạn có chắc muốn xoá combo này?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (confirm != DialogResult.Yes) return;
+                string query = "DELETE FROM Combo WHERE idcombo = @idcombo";
+                int results = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
+                if (results > 0) MessageBox.Show("Xóa thành công");
+                else MessageBox.Show("Xóa thất bại");
+                LoadComboList();
+            }
+        }
+
+        private void ComboData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox2_DropDown(object sender, EventArgs e)
+        {
+            string query = "SELECT tenncombo from Combo";
+            comboBox2.DataSource = DataProvider.Instance.Excuted(query);
+            comboBox2.DisplayMember = "tenncombo";
+            comboBox2.ValueMember = "tenncombo";
+        }
+
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cboKhachHang_DropDownClosed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lvCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trangthai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            string tenncombo = comboBox2.Text.Trim();
+            string query = "select giadagiam, thoiluong from Combo where tenncombo = @tenncombo";
+            DataTable data = DataProvider.Instance.Excuted(query, new object[] { tenncombo });
+
+            decimal gia = Convert.ToDecimal(data.Rows[0]["giadagiam"]);
+            int thoigian = Convert.ToInt32(data.Rows[0]["thoiluong"]);
+            ListViewItem lv = new ListViewItem();
+            lv.SubItems.Add(tenncombo);
+            lv.SubItems.Add(gia + " đ");
+            lv.SubItems.Add(thoigian + "p");
+            listView1.Items.Add(lv);
+        }
     }
 }
 
