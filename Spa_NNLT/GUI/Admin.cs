@@ -1428,7 +1428,7 @@ namespace Spa_NNLT.Nguyên
                     TenDV += item.SubItems[1].Text + ",";
                 }
             }
-            MessageBox.Show(TenDV + MaCombo.Text.Trim() + TenCombotb.Text.Trim() + TLcombo.Text);
+        
             if (string.IsNullOrEmpty(MaCombo.Text) || string.IsNullOrEmpty(TenCombotb.Text))
             {
                 MessageBox.Show("Chưa nhập tên hoặc mã combo" +
