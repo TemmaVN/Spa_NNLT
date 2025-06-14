@@ -820,8 +820,8 @@ namespace Spa_NNLT.Nguyên
             string LoaiPhong = MLHPhongADtb.Text.Trim();
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR)) {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -891,7 +891,7 @@ namespace Spa_NNLT.Nguyên
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -1478,20 +1478,20 @@ namespace Spa_NNLT.Nguyên
          
         }
 
-        public decimal ChuyenDoiGia(string text)
-        {
-            // Loại bỏ mọi ký tự không phải chữ số
-            string cleaned = new string(text.Where(char.IsDigit).ToArray());
+            public decimal ChuyenDoiGia(string text)
+            {
+                // Loại bỏ mọi ký tự không phải chữ số
+                string cleaned = new string(text.Where(c => char.IsDigit(c) || c == '.').ToArray());
 
-            if (decimal.TryParse(cleaned, out decimal result))
-            {
-                return result;
+                if (decimal.TryParse(cleaned, out decimal result))
+                {
+                    return result;
+                }
+                else
+                {
+                    throw new FormatException("Giá không hợp lệ");
+                }
             }
-            else
-            {
-                throw new FormatException("Giá không hợp lệ");
-            }
-        }
 
         private void TGchuanbi_ValueChanged(object sender, EventArgs e)
         {
@@ -1564,6 +1564,17 @@ namespace Spa_NNLT.Nguyên
             lv.SubItems.Add(gia + " đ");
             lv.SubItems.Add(thoigian + "p");
             listView1.Items.Add(lv);
+        }
+
+        private void ComboData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) { 
+                DataGridViewRow row = ComboData.Rows[e.RowIndex];
+                MaCombo.Text = row.Cells["idcombo"].Value.ToString().Trim();
+                TenCombotb.Text = row.Cells["tenncombo"].Value.ToString().Trim();
+                tonggia.Text = row.Cells["giagoc"].Value.ToString().Trim();
+                textBox1.Text = row.Cells["giadagiam"].Value.ToString().Trim();
+            }
         }
     }
 }

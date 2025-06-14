@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.LichHenADtp = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.label56 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.CbTimKH = new System.Windows.Forms.ComboBox();
@@ -253,8 +255,6 @@
             this.LHChTTdata = new System.Windows.Forms.DataGridView();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.button11 = new System.Windows.Forms.Button();
             this.LichHenADtp.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel30.SuspendLayout();
@@ -355,6 +355,27 @@
             this.LichHenADtp.Text = "Lịch hẹn";
             this.LichHenADtp.UseVisualStyleBackColor = true;
             this.LichHenADtp.Click += new System.EventHandler(this.LichHenADtp_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(867, 244);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(61, 26);
+            this.button11.TabIndex = 79;
+            this.button11.Text = "Xóa";
+            this.button11.UseVisualStyleBackColor = false;
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(507, 211);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(355, 108);
+            this.listView1.TabIndex = 78;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // label56
             // 
@@ -824,6 +845,7 @@
             this.ComboData.RowHeadersWidth = 62;
             this.ComboData.Size = new System.Drawing.Size(490, 153);
             this.ComboData.TabIndex = 25;
+            this.ComboData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ComboData_CellClick);
             this.ComboData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ComboData_CellContentClick);
             // 
             // panel7
@@ -2876,27 +2898,6 @@
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.Size = new System.Drawing.Size(489, 413);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(507, 211);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(355, 108);
-            this.listView1.TabIndex = 78;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.button11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(867, 244);
-            this.button11.Margin = new System.Windows.Forms.Padding(2);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(61, 26);
-            this.button11.TabIndex = 79;
-            this.button11.Text = "Xóa";
-            this.button11.UseVisualStyleBackColor = false;
             // 
             // Admin
             // 
