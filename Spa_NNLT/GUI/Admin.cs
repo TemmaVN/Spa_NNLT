@@ -1428,17 +1428,24 @@ namespace Spa_NNLT.Nguyên
                     TenDV += item.SubItems[1].Text + ",";
                 }
             }
+            MessageBox.Show(TenDV + MaCombo.Text.Trim() + TenCombotb.Text.Trim() + TLcombo.Text);
+            if (string.IsNullOrEmpty(MaCombo.Text) || string.IsNullOrEmpty(TenCombotb.Text))
+            {
+                MessageBox.Show("Chưa nhập tên hoặc mã combo" +
+                    "");
+                return;
+            }
             SqlParameter[] sqlParameters = new SqlParameter[]
             {
                 new SqlParameter("@idcombo",MaCombo.Text.Trim()),
                 new SqlParameter("@tencombo",TenCombotb.Text.Trim()),
                 new SqlParameter("@dichvu",TenDV),
-                new SqlParameter("@thoiluong",int.Parse(TLcombo.Text)),
+                new SqlParameter("@thoiluong",int.Parse(TLcombo.Text.Replace("p",""))),
                 new SqlParameter("@giagoc",ChuyenDoiGia(tonggia.Text.Trim())),
                 new SqlParameter("@giadagiam",ChuyenDoiGia(textBox1.Text.Trim())),
             };
-            string query = "INSERT INTO Combo(idcombo,tencombo,dichvu,thoiluong,giagoc,giadagiam) +" +
-                " VALUE (@idcombo,@tencombo,@dichvu,@thoiluong,@giagoc,@giadagiam)";
+            string query = "INSERT INTO Combo(idcombo,tenncombo,dichvu,thoiluong,giagoc,giadagiam) " +
+                " VALUES (@idcombo,@tencombo,@dichvu,@thoiluong,@giagoc,@giadagiam)";
             int result = DataProvider.Instance.ExcutedNoneQuery(query,sqlParameters);
             if (result > 0) MessageBox.Show("Thêm combo thành công");
             else MessageBox.Show("Thêm dịch vụ thất bại");
@@ -1451,32 +1458,27 @@ namespace Spa_NNLT.Nguyên
             {
                 decimal GiamGia = giamgia.Value;
                 decimal GiaDaGiam = GiaGoc * (1 - GiamGia / 100);
+                string tg = GiaDaGiam.ToString();
+                GiaDaGiam = ChuyenDoiGia(tg);
                 textBox1.Text = GiaDaGiam.ToString();
             }
             else textBox1.Text = "";
          
         }
 
-        private decimal ChuyenDoiGia(string chuoiGia)
+        public decimal ChuyenDoiGia(string text)
         {
-            // Loại bỏ ký tự đ, dấu phẩy, khoảng trắng và định dạng thập phân
-            string giaClean = chuoiGia.Replace("đ", "")
-                                      .Replace(",", "")
-                                      .Replace("p","")
-                                      .Trim();
+            // Loại bỏ mọi ký tự không phải chữ số
+            string cleaned = new string(text.Where(char.IsDigit).ToArray());
 
-            // Cắt phần thập phân nếu có (ví dụ: 80000.00 => 80000)
-            if (giaClean.Contains("."))
+            if (decimal.TryParse(cleaned, out decimal result))
             {
-                giaClean = giaClean.Substring(0, giaClean.IndexOf("."));
+                return result;
             }
-
-            // Parse về decimal
-            if (decimal.TryParse(giaClean, out decimal gia))
+            else
             {
-                return gia;
+                throw new FormatException("Giá không hợp lệ");
             }
-            return 0; // hoặc throw exception nếu cần
         }
 
         private void TGchuanbi_ValueChanged(object sender, EventArgs e)
