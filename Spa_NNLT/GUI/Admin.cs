@@ -19,6 +19,7 @@ using System.CodeDom.Compiler;
 using System.Drawing.Text;
 using System.Collections;
 using Spa_NNLT.Nguyên.Lịch_hẹn;
+using static System.Net.Mime.MediaTypeNames;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
@@ -1011,9 +1012,9 @@ namespace Spa_NNLT.Nguyên
             {
                 if (item.SubItems.Count > 1)
                 {
-                    //string textGia = item.SubItems[3].Text;
-                    //decimal gia = ChuyenDoiGia(textGia);
-                    //tongTG += Convert.ToInt32(item.SubItems[3]);
+                    string textTG = item.SubItems[3].Text;
+                    string cleaned = new string(textTG.Where(c => char.IsDigit(c) || c == '.').ToArray());
+                    tongTG += Convert.ToInt32(cleaned);
                 }
             }
 
