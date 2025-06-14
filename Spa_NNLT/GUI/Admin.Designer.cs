@@ -72,11 +72,11 @@
             this.cboDVlon = new System.Windows.Forms.ComboBox();
             this.lvCombo = new System.Windows.Forms.ListView();
             this.label35 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ComboData = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.MaCombo = new System.Windows.Forms.TextBox();
             this.label47 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TLcombo = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -252,13 +252,15 @@
             this.LHChTTdata = new System.Windows.Forms.DataGridView();
             this.label37 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TGchuanbi = new System.Windows.Forms.NumericUpDown();
+            this.label57 = new System.Windows.Forms.Label();
             this.LichHenADtp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel29.SuspendLayout();
             this.panel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LichHenADdata)).BeginInit();
             this.DichVuADcl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboData)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giamgia)).BeginInit();
             this.panel26.SuspendLayout();
@@ -310,6 +312,7 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LHChTTdata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TGchuanbi)).BeginInit();
             this.SuspendLayout();
             // 
             // LichHenADtp
@@ -736,7 +739,7 @@
             this.DichVuADcl.Controls.Add(this.cboDVlon);
             this.DichVuADcl.Controls.Add(this.lvCombo);
             this.DichVuADcl.Controls.Add(this.label35);
-            this.DichVuADcl.Controls.Add(this.dataGridView2);
+            this.DichVuADcl.Controls.Add(this.ComboData);
             this.DichVuADcl.Controls.Add(this.panel7);
             this.DichVuADcl.Controls.Add(this.label11);
             this.DichVuADcl.Controls.Add(this.panel26);
@@ -811,24 +814,26 @@
             this.label35.TabIndex = 26;
             this.label35.Text = "Danh sách combo đã khởi tạo ";
             // 
-            // dataGridView2
+            // ComboData
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 332);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.Size = new System.Drawing.Size(490, 153);
-            this.dataGridView2.TabIndex = 25;
+            this.ComboData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ComboData.GridColor = System.Drawing.SystemColors.Control;
+            this.ComboData.Location = new System.Drawing.Point(6, 332);
+            this.ComboData.Margin = new System.Windows.Forms.Padding(2);
+            this.ComboData.Name = "ComboData";
+            this.ComboData.ReadOnly = true;
+            this.ComboData.RowHeadersVisible = false;
+            this.ComboData.RowHeadersWidth = 62;
+            this.ComboData.Size = new System.Drawing.Size(490, 153);
+            this.ComboData.TabIndex = 25;
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.textBox3);
+            this.panel7.Controls.Add(this.TGchuanbi);
+            this.panel7.Controls.Add(this.label57);
+            this.panel7.Controls.Add(this.MaCombo);
             this.panel7.Controls.Add(this.label47);
-            this.panel7.Controls.Add(this.textBox2);
+            this.panel7.Controls.Add(this.TLcombo);
             this.panel7.Controls.Add(this.label41);
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.label40);
@@ -850,13 +855,13 @@
             this.panel7.Size = new System.Drawing.Size(426, 263);
             this.panel7.TabIndex = 24;
             // 
-            // textBox3
+            // MaCombo
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 9);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 22);
-            this.textBox3.TabIndex = 60;
+            this.MaCombo.Location = new System.Drawing.Point(138, 9);
+            this.MaCombo.Margin = new System.Windows.Forms.Padding(2);
+            this.MaCombo.Name = "MaCombo";
+            this.MaCombo.Size = new System.Drawing.Size(182, 22);
+            this.MaCombo.TabIndex = 60;
             // 
             // label47
             // 
@@ -868,14 +873,15 @@
             this.label47.TabIndex = 59;
             this.label47.Text = "Mã combo:";
             // 
-            // textBox2
+            // TLcombo
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 196);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(116, 22);
-            this.textBox2.TabIndex = 58;
+            this.TLcombo.Location = new System.Drawing.Point(190, 196);
+            this.TLcombo.Margin = new System.Windows.Forms.Padding(2);
+            this.TLcombo.Name = "TLcombo";
+            this.TLcombo.ReadOnly = true;
+            this.TLcombo.Size = new System.Drawing.Size(116, 22);
+            this.TLcombo.TabIndex = 58;
+            this.TLcombo.Text = "0p";
             // 
             // label41
             // 
@@ -953,10 +959,16 @@
             // 
             // giamgia
             // 
-            this.giamgia.Location = new System.Drawing.Point(139, 123);
+            this.giamgia.Location = new System.Drawing.Point(138, 127);
+            this.giamgia.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.giamgia.Name = "giamgia";
-            this.giamgia.Size = new System.Drawing.Size(107, 22);
+            this.giamgia.Size = new System.Drawing.Size(51, 22);
             this.giamgia.TabIndex = 50;
+            this.giamgia.ValueChanged += new System.EventHandler(this.giamgia_ValueChanged);
             // 
             // cbDVcha
             // 
@@ -988,6 +1000,7 @@
             this.button18.TabIndex = 23;
             this.button18.Text = "Tạo combo";
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // label34
             // 
@@ -1003,7 +1016,7 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(20, 125);
+            this.label33.Location = new System.Drawing.Point(19, 129);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(116, 16);
             this.label33.TabIndex = 21;
@@ -2841,6 +2854,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(489, 413);
             this.dataGridView1.TabIndex = 0;
             // 
+            // TGchuanbi
+            // 
+            this.TGchuanbi.Location = new System.Drawing.Point(354, 127);
+            this.TGchuanbi.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.TGchuanbi.Name = "TGchuanbi";
+            this.TGchuanbi.Size = new System.Drawing.Size(51, 22);
+            this.TGchuanbi.TabIndex = 62;
+            this.TGchuanbi.ValueChanged += new System.EventHandler(this.TGchuanbi_ValueChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(217, 129);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(131, 16);
+            this.label57.TabIndex = 61;
+            this.label57.Text = "Thời gian chuẩn bị:";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2861,7 +2897,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LichHenADdata)).EndInit();
             this.DichVuADcl.ResumeLayout(false);
             this.DichVuADcl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComboData)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giamgia)).EndInit();
@@ -2936,6 +2972,7 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LHChTTdata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TGchuanbi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3107,7 +3144,7 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView ComboData;
         private System.Windows.Forms.TextBox tonggia;
         private System.Windows.Forms.NumericUpDown giamgia;
         private System.Windows.Forms.ComboBox cbDVcha;
@@ -3141,7 +3178,7 @@
         private System.Windows.Forms.ComboBox cbDVcon;
         private System.Windows.Forms.TextBox trangthai;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TLcombo;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label40;
@@ -3150,7 +3187,7 @@
         private System.Windows.Forms.ComboBox cboDVlon;
         private System.Windows.Forms.TextBox MaDV;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox MaCombo;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -3164,5 +3201,7 @@
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.ComboBox CbTimKH;
         private System.Windows.Forms.ComboBox CbTimNV;
+        private System.Windows.Forms.NumericUpDown TGchuanbi;
+        private System.Windows.Forms.Label label57;
     }
 }
