@@ -878,6 +878,14 @@ namespace Spa_NNLT.Nguyên
                 SLNVtb.Text = (NhanVienADdata.Rows.Count - 1).ToString();
                 SDTQLtb.Text = dr["sdtquanly"].ToString();
             }
+            if (logininfo.Username == "nhanvien")
+            {
+                tabControl1.TabPages.Remove(TaiKhoantb);
+                tabControl1.TabPages.Remove(NhanVientb);
+                tabControl1.TabPages.Remove(Taichinhtb);
+                tabControl1.TabPages.Remove(DichVuADcl);
+            }
+
         }
 
         private void ThemPhongADbt_Click(object sender, EventArgs e)
@@ -895,7 +903,7 @@ namespace Spa_NNLT.Nguyên
             string LoaiPhong = MLHPhongADtb.Text.Trim();
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
@@ -967,7 +975,7 @@ namespace Spa_NNLT.Nguyên
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -2101,6 +2109,7 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
+
     }
 }
 
