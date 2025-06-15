@@ -27,7 +27,7 @@ namespace Spa_NNLT.Nguyên.Nguyên_DTO
         private DataProvider() { }
 
 
-        string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+        string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
         public DataTable Excuted(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

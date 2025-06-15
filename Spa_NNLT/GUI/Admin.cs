@@ -20,6 +20,7 @@ using System.Drawing.Text;
 using System.Collections;
 using Spa_NNLT.Nguyên.Lịch_hẹn;
 using static System.Net.Mime.MediaTypeNames;
+using System.Net.NetworkInformation;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -42,7 +43,7 @@ namespace Spa_NNLT.Nguyên
             LoadDichVuList();
 
             LoadNhanVienlist();
-            
+
             LoadThongTin();
 
             LoadHoaDon();
@@ -56,8 +57,8 @@ namespace Spa_NNLT.Nguyên
 
             HienThiAdmin();
             LoadComboList();
-           
-           
+
+
             // Load thông tin từ sql
             // Tìm thông tin qua text box
             // Thêm, xóa, sửa các thông tin 
@@ -65,7 +66,7 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-      
+
 
         void LoadThongTin()
         {
@@ -77,12 +78,12 @@ namespace Spa_NNLT.Nguyên
                 {
                     MaNVtb.Text = nhan.id;
                     HTtb.Text = nhan.ten;
-                    
+
                     SDTlb.Text = nhan.sDT;
-                    NStb.Text = nhan.ngaySinh.ToString();                    
+                    NStb.Text = nhan.ngaySinh.ToString();
                     //MKNVadTB.Text = nhan.password;
                 }
-                
+
             }
         }
 
@@ -93,7 +94,7 @@ namespace Spa_NNLT.Nguyên
             lvCombo.Columns.Add("", 1);
             lvCombo.Columns.Add("Tên dịch vụ", 250);
             lvCombo.Columns.Add("Giá cả", 150);
-            lvCombo.Columns.Add("Thời lượng", 150);          
+            lvCombo.Columns.Add("Thời lượng", 150);
         }
 
         void Loadlv1()
@@ -126,7 +127,7 @@ namespace Spa_NNLT.Nguyên
             LvTaiChinh.View = View.Details;
             LvTaiChinh.Columns.Clear();
             LvTaiChinh.Columns.Add("", 1);
-            LvTaiChinh.Columns.Add("Nhân viên",200);
+            LvTaiChinh.Columns.Add("Nhân viên", 200);
             LvTaiChinh.Columns.Add("Tổng doanh thu", 200);
             LvTaiChinh.Columns.Add("Số đơn thực hiện");
         }
@@ -134,14 +135,14 @@ namespace Spa_NNLT.Nguyên
 
         void LoadThemPhong()
         {
-            
+
         }
 
-        
+
         void LoadAccountList()
         {
             string query = "SELECT * FROM dbo.tblKhachHang";
-            KhachHangADdata.DataSource = DataProvider.Instance.Excuted(query); 
+            KhachHangADdata.DataSource = DataProvider.Instance.Excuted(query);
         }
 
         void LoadNhanVienlist()
@@ -178,7 +179,7 @@ namespace Spa_NNLT.Nguyên
 
             DataView DT2 = new DataView(Lichhen);
             DT2.RowFilter = $"thoigianbatdau < #{ht:MM/dd/yyyy HH:mm:ss}# AND trangthai <> 'đã thanh toán'";
-            
+
             LHChTTdata.DataSource = DT2;
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -243,7 +244,7 @@ namespace Spa_NNLT.Nguyên
         }
         private void Admin_Load(object sender, EventArgs e)
         {
-            HienThi(); 
+            HienThi();
         }
 
         private void HienThi()
@@ -255,23 +256,23 @@ namespace Spa_NNLT.Nguyên
             TimTheoTenKHtb.Text = "Tìm theo tên ...";
             TimTheoTenKHtb.ForeColor = Color.Gray;
             TimTheoMaKHtb.Text = "Tìm theo số điện thoại ...";
-            TimTheoMaKHtb.ForeColor = Color.Gray;          
-            
-           
+            TimTheoMaKHtb.ForeColor = Color.Gray;
+
+
         }
-        
+
         private void TimTheotenTb_Enter(object sender, EventArgs e)
         {
-           if (TimTheotenTb.Text == "Tìm theo tên ...")
-           {
+            if (TimTheotenTb.Text == "Tìm theo tên ...")
+            {
                 TimTheotenTb.Text = "";
                 TimTheotenTb.ForeColor = Color.Black;
-           }
+            }
         }
 
         private void TimTheotenTb_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(TimTheotenTb.Text))
+            if (string.IsNullOrEmpty(TimTheotenTb.Text))
             {
                 TimTheotenTb.Text = "Tìm theo tên ...";
                 TimTheotenTb.ForeColor = Color.Gray;
@@ -280,16 +281,16 @@ namespace Spa_NNLT.Nguyên
 
         private void TimtheoMatb_Enter(object sender, EventArgs e)
         {
-            if(TimtheoMatb.Text == "Tìm theo mã ...")
+            if (TimtheoMatb.Text == "Tìm theo mã ...")
             {
                 TimtheoMatb.Text = "";
-                TimtheoMatb.ForeColor= Color.Black;
+                TimtheoMatb.ForeColor = Color.Black;
             }
         }
 
         private void TimtheoMatb_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty (TimtheoMatb.Text))
+            if (string.IsNullOrEmpty(TimtheoMatb.Text))
             {
                 TimtheoMatb.Text = "Tìm theo mã ...";
                 TimtheoMatb.ForeColor = Color.Gray;
@@ -343,7 +344,7 @@ namespace Spa_NNLT.Nguyên
 
             KhachHangADdata.CurrentCell = null;
 
-            foreach(DataGridViewRow row in KhachHangADdata.Rows)
+            foreach (DataGridViewRow row in KhachHangADdata.Rows)
             {
                 if (row.IsNewRow) continue;
                 string Cell1 = row.Cells["tenkhachhang"].Value.ToString().Trim();
@@ -402,7 +403,7 @@ namespace Spa_NNLT.Nguyên
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {            
+        {
             SqlParameter[] parameters = new SqlParameter[]
             {
                     new SqlParameter("@ma", MaKHadTB.Text.Trim()),
@@ -420,8 +421,8 @@ namespace Spa_NNLT.Nguyên
                            "VALUES (@ma, @ten, @gioitinh, @sdt)";
             int results = DataProvider.Instance.ExcutedNoneQuery(query, parameters);
             if (results > 0) MessageBox.Show("Thêm khách hàng thành công");
-            else MessageBox.Show("Thêm khách hàng thất bại");          
-                LoadAccountList(); // Cập nhật lại comboBox khách hàng            
+            else MessageBox.Show("Thêm khách hàng thất bại");
+            LoadAccountList(); // Cập nhật lại comboBox khách hàng            
         }
 
         private void PhongADtp_Click(object sender, EventArgs e)
@@ -442,11 +443,11 @@ namespace Spa_NNLT.Nguyên
                     new SqlParameter("@HoTen", HTtb.Text),
                     new SqlParameter("@GioiTinh", rNam.Checked ? "Nam" : "Nữ"),
                     new SqlParameter("@SDT", SDTTb.Text),
-                    new SqlParameter("@NgaySinh", NStb.Value),                    
+                    new SqlParameter("@NgaySinh", NStb.Value),
             };
             string query = "INSERT INTO tblNhanVien (manhanvien, tennhanvien, gioitinh, sdt, ngaysinh) " +
                                      "VALUES (@ma, @HoTen, @GioiTinh, @SDT, @NgaySinh)";
-            int results =  DataProvider.Instance.ExcutedNoneQuery(query, parameters);
+            int results = DataProvider.Instance.ExcutedNoneQuery(query, parameters);
             if (results > 0) MessageBox.Show("Thêm nhân viên thành công");
             else MessageBox.Show("Thêm nhân viên thất bại");
             LoadNhanVienlist();
@@ -458,11 +459,11 @@ namespace Spa_NNLT.Nguyên
 
         private void XoaNVbt_Click(object sender, EventArgs e)
         {
-          
+
             if (string.IsNullOrEmpty(MaNVtb.Text)) return;
 
             var confirm = MessageBox.Show("Bạn có chắc muốn xoá nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (confirm != DialogResult.Yes) return;           
+            if (confirm != DialogResult.Yes) return;
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("MaNV", MaNVtb.Text)
@@ -471,35 +472,35 @@ namespace Spa_NNLT.Nguyên
             int results = DataProvider.Instance.ExcutedNoneQuery(query, parameters);
             if (results > 0) MessageBox.Show("Xóa thành công");
             else MessageBox.Show("Xóa thất bại");
-            LoadNhanVienlist();    
-            }
+            LoadNhanVienlist();
+        }
 
-        
+
 
         private void CapNhatADbt_Click(object sender, EventArgs e)
-        {           
-            if (string.IsNullOrEmpty(MaNVtb.Text)) return;            
+        {
+            if (string.IsNullOrEmpty(MaNVtb.Text)) return;
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@MaNV", MaNVtb.Text),
                 new SqlParameter("@HoTen", HTtb.Text),
                 new SqlParameter("@GioiTinh", rNam.Checked ? "Nam" : "Nữ"),
                 new SqlParameter("@SDT", SDTTb.Text),
-                new SqlParameter("@NgaySinh", NStb.Value)                
+                new SqlParameter("@NgaySinh", NStb.Value)
             };
             string query = "UPDATE tblNhanVien SET tennhanvien = @HoTen, gioitinh = @GioiTinh, sdt=@SDT, " +
                            "ngaysinh=@NgaySinh WHERE manhanvien=@MaNV";
             int results = DataProvider.Instance.ExcutedNoneQuery(query, parameters);
             if (results > 0) MessageBox.Show("Cập nhật thành công");
             else MessageBox.Show("Cập nhật thất bại");
-            LoadNhanVienlist();                
-            }
+            LoadNhanVienlist();
+        }
 
-        
+
 
         private void ThemDVadTB_Click(object sender, EventArgs e)
         {
-            
+
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 new SqlParameter("@ma", MaDV.Text),
                 new SqlParameter("@ten", TenDVadTB.Text),
@@ -518,9 +519,9 @@ namespace Spa_NNLT.Nguyên
         private void CapNhatDVadBT_Click(object sender, EventArgs e)
         {
 
-            
 
-            if (string.IsNullOrEmpty (TenDVadTB.Text)) return;
+
+            if (string.IsNullOrEmpty(TenDVadTB.Text)) return;
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 new SqlParameter("@ma", MaDV.Text),
                 new SqlParameter("@ten", TenDVadTB.Text),
@@ -532,14 +533,14 @@ namespace Spa_NNLT.Nguyên
             int results = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
             if (results > 0) MessageBox.Show("Cập nhật thành công");
             else MessageBox.Show("Cập nhật thất bại");
-            LoadDichVuList ();
+            LoadDichVuList();
         }
 
-        
+
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(MaKHadTB.Text)) {return;}
+            if (string.IsNullOrEmpty(MaKHadTB.Text)) { return; }
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 new SqlParameter("@ten", HTKHadTB.Text),
                 new SqlParameter("@sdt", SDTKHadTB.Text),
@@ -577,7 +578,7 @@ namespace Spa_NNLT.Nguyên
         {
 
         }
-        
+
         private void Khachhangtb_Click(object sender, EventArgs e)
         {
 
@@ -602,7 +603,7 @@ namespace Spa_NNLT.Nguyên
                     string cellvalue = row.Cells["tennhanvien"].Value.ToString();
                     string cellvalue1 = row.Cells["manhanvien"].Value.ToString();
                     HTtb.Text = filter2;
-                    if(filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo mã ...")
+                    if (filter1 == "Tìm theo tên ..." && filter2 == "Tìm theo mã ...")
                     {
                         row.Visible = true;
                     }
@@ -614,7 +615,7 @@ namespace Spa_NNLT.Nguyên
 
 
                 }
-            }    
+            }
 
         }
 
@@ -623,26 +624,26 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-    
+
 
         private void TimTheoMaKHtb_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-       
 
-       
-        
+
+
+
 
         private void NhanVienADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >=0)
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = NhanVienADdata.Rows[e.RowIndex];
                 MaNVtb.Text = row.Cells[0].Value?.ToString();
                 HTtb.Text = row.Cells[1].Value?.ToString();
-                
+
                 string gioiTinh = row.Cells["gioitinh"].Value.ToString();
                 if (gioiTinh == "Nam")
                     rNam.Checked = true;
@@ -658,15 +659,16 @@ namespace Spa_NNLT.Nguyên
                 {
                     // Nếu dữ liệu không hợp lệ thì cho ngày mặc định hoặc thông báo lỗi
                     NStb.Value = DateTime.Today;
-                }                                 
+                }
             }
         }
 
-       
+
 
         private void KhachHangADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) { 
+            if (e.RowIndex >= 0)
+            {
                 DataGridViewRow row = KhachHangADdata.Rows[e.RowIndex];
                 MaKHadTB.Text = row.Cells[0].Value?.ToString();
                 HTKHadTB.Text = row.Cells[1].Value?.ToString();
@@ -676,15 +678,15 @@ namespace Spa_NNLT.Nguyên
                 else
                     raNu.Checked = true;
                 SDTKHadTB.Text = row.Cells[3].Value?.ToString();
-                    
+
             }
         }
 
         private void DichVuADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >=0)
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = DichVuADdata.Rows[e.RowIndex];  
+                DataGridViewRow row = DichVuADdata.Rows[e.RowIndex];
                 MaDV.Text = row.Cells["idcon"].Value?.ToString();
                 TenDVadTB.Text = row.Cells["tendichvucon"].Value?.ToString();
                 GiaDVadTB.Text = row.Cells["gia"].Value?.ToString();
@@ -693,7 +695,7 @@ namespace Spa_NNLT.Nguyên
             }
         }
 
-        
+
 
         private void LichHenADdata_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -742,10 +744,10 @@ namespace Spa_NNLT.Nguyên
                     }
                 }
             }
-            
+
         }
 
-        
+
 
         private void button17_Click(object sender, EventArgs e)
         {
@@ -787,13 +789,14 @@ namespace Spa_NNLT.Nguyên
 
         }
 
-        private void btn_click(object sender, EventArgs e) {
+        private void btn_click(object sender, EventArgs e)
+        {
             Button btn = sender as Button;
             Phong phong = btn.Tag as Phong;
             if (phong != null)
             {
                 SoPhongADtb.Text = phong.maPhong.ToString();
-                
+
                 string tg = phong.tinhTrang.ToString();
                 if (tg.Trim() == "0")
                 {
@@ -813,7 +816,7 @@ namespace Spa_NNLT.Nguyên
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {            
+        {
             if (string.IsNullOrEmpty(MaKHadTB.Text)) return;
 
             var confirm = MessageBox.Show("Bạn có chắc muốn xoá nhân viên này?", "Xác nhận", MessageBoxButtons.YesNo);
@@ -836,7 +839,7 @@ namespace Spa_NNLT.Nguyên
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void TimtheoMatb_TextChanged(object sender, EventArgs e)
@@ -860,7 +863,7 @@ namespace Spa_NNLT.Nguyên
             DataTable result = DataProvider.Instance.Excuted(query);
             if (result.Rows.Count > 0)
             {
-                DataRow dr = result.Rows[0];               
+                DataRow dr = result.Rows[0];
                 HTQLtb.Text = dr["tenquanly"].ToString();
                 string tg = dr["gioitinh"].ToString().Trim();
                 if (tg == "1")
@@ -892,13 +895,14 @@ namespace Spa_NNLT.Nguyên
             string LoaiPhong = MLHPhongADtb.Text.Trim();
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            //string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
-            using (SqlConnection connection = new SqlConnection(connectionSTR)) {
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@sophong", soPhong);
-                command.Parameters.AddWithValue("@tinhtrang", tt );
+                command.Parameters.AddWithValue("@tinhtrang", tt);
                 command.Parameters.AddWithValue("@loaiphong", LoaiPhong);
                 command.ExecuteNonQuery();
                 MessageBox.Show("Đã thêm phòng thành công!");
@@ -953,7 +957,7 @@ namespace Spa_NNLT.Nguyên
 
         private void button9_Click(object sender, EventArgs e)
         {
-           
+
             if (string.IsNullOrWhiteSpace(MaLHadTB.Text))
             {
                 MessageBox.Show("Vui lòng chọn hoặc nhập Mã lịch hẹn cần xóa.");
@@ -963,7 +967,7 @@ namespace Spa_NNLT.Nguyên
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
@@ -984,7 +988,7 @@ namespace Spa_NNLT.Nguyên
                     }
                 }
             }
-    }
+        }
 
         private void button14_Click(object sender, EventArgs e)
         {
@@ -1016,7 +1020,7 @@ namespace Spa_NNLT.Nguyên
             cboPhong.ValueMember = "maphong";
         }
 
-        
+
 
         private void comboBoxDichVuCha_DropDown(object sender, EventArgs e)
         {
@@ -1042,13 +1046,13 @@ namespace Spa_NNLT.Nguyên
                 string query = "SELECT tendichvucon FROM DichVuCon WHERE iddichvucha = @madvcha";
                 comboBoxDVCon.DataSource = DataProvider.Instance.Excuted(query, new object[] { madvcha });
                 comboBoxDVCon.DisplayMember = "tendichvucon";
-                comboBoxDVCon.ValueMember = "tendichvucon";                
+                comboBoxDVCon.ValueMember = "tendichvucon";
             }
         }
         #region tsts
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -1079,7 +1083,7 @@ namespace Spa_NNLT.Nguyên
                 }
             }
 
-           int tongTG = 0;
+            int tongTG = 0;
             foreach (ListViewItem item in listView1.Items)
             {
                 if (item.SubItems.Count > 1)
@@ -1119,15 +1123,15 @@ namespace Spa_NNLT.Nguyên
                                                   thoigianbatdau, thoigianketthuc, trangthai, tongtien)
                          VALUES (@ma, @makh, @manv, @madv, @maphong, @batdau, @ketthuc, @tinhtrang, @tongtien)";
             int result = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
-                if (result > 0) MessageBox.Show("Thêm lịch hẹn thành công");
-                else MessageBox.Show("Thêm lịch hẹn thất bại");
+            if (result > 0) MessageBox.Show("Thêm lịch hẹn thành công");
+            else MessageBox.Show("Thêm lịch hẹn thất bại");
 
             LoadLichHenList();   // Làm mới datagridview
         }
 
         private bool KiemTraTrungLich(string maKH, string maNV, string maPhong, DateTime batDau, DateTime ketThuc)
         {
-            
+
 
             SqlParameter[] SqlParameters = new SqlParameter[]
             {
@@ -1146,13 +1150,13 @@ namespace Spa_NNLT.Nguyên
             int result = DataProvider.Instance.ExcutedNoneQuery(query, SqlParameters);
             return result > 0;
         }
-        
+
         private void PhongADpn_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-       
+
 
         private void cboNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1221,7 +1225,7 @@ namespace Spa_NNLT.Nguyên
             cbDVcha.DataSource = DataProvider.Instance.Excuted(query);
             cbDVcha.DisplayMember = "tendichvucha";
             cbDVcha.ValueMember = "tendichvucha";
-           
+
         }
 
         private void cbDVcon_SelectedIndexChanged(object sender, EventArgs e)
@@ -1234,7 +1238,7 @@ namespace Spa_NNLT.Nguyên
             string tenDV = comboBoxDVCon.Text.Trim();
             string query = "select gia, thoigian from DichVuCon where tendichvucon = @tenDV";
             DataTable data = DataProvider.Instance.Excuted(query, new object[] { tenDV });
-            
+
             decimal gia = Convert.ToDecimal(data.Rows[0]["gia"]);
             int thoigian = Convert.ToInt32(data.Rows[0]["thoigian"]);
             ListViewItem lv = new ListViewItem();
@@ -1248,8 +1252,8 @@ namespace Spa_NNLT.Nguyên
         {
             string tenDV = cbDVcon.Text.Trim();
             string query = "select gia, thoigian from DichVuCon where tendichvucon = @tenDV";
-            DataTable data = DataProvider.Instance.Excuted(query, new object[] {tenDV});
-            if (TGchuanbi.Value <=0)
+            DataTable data = DataProvider.Instance.Excuted(query, new object[] { tenDV });
+            if (TGchuanbi.Value <= 0)
             {
                 MessageBox.Show("Chưa chọn thời gian chuẩn bị");
                 return;
@@ -1259,14 +1263,14 @@ namespace Spa_NNLT.Nguyên
             ListViewItem lv = new ListViewItem();
             lv.SubItems.Add(tenDV);
             lv.SubItems.Add(gia + " đ");
-            lv.SubItems.Add(thoigian + "p" );
+            lv.SubItems.Add(thoigian + "p");
             lvCombo.Items.Add(lv);
             CapNhatTongGia();
             decimal TGmoi = decimal.Parse(thoigian.ToString());
             string TGtg = TLcombo.Text.Trim();
             TGmoi += ChuyenDoiGia(TGtg);
             TGmoi += TGchuanbi.Value;
-            TLcombo.Text = TGmoi.ToString()+"p";
+            TLcombo.Text = TGmoi.ToString() + "p";
         }
 
         private void GiaDVadTB_TextChanged(object sender, EventArgs e)
@@ -1309,7 +1313,7 @@ namespace Spa_NNLT.Nguyên
 
         private void button22_Click(object sender, EventArgs e)
         {
-            foreach(ListViewItem item in lvCombo.SelectedItems)
+            foreach (ListViewItem item in lvCombo.SelectedItems)
             {
                 lvCombo.Items.Remove(item);
             }
@@ -1329,7 +1333,7 @@ namespace Spa_NNLT.Nguyên
             }
 
             tonggia.Text = tongGia.ToString(); // Hiển thị 1,000,000 thay vì 1000000
-    
+
         }
 
         private void CapNhatBill()
@@ -1351,7 +1355,7 @@ namespace Spa_NNLT.Nguyên
 
         private void tonggia_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void CapNhatBT_Click(object sender, EventArgs e)
@@ -1415,7 +1419,7 @@ namespace Spa_NNLT.Nguyên
             }
             else
             {
-                foreach(DataGridViewRow row in LichHenADdata.Rows)
+                foreach (DataGridViewRow row in LichHenADdata.Rows)
                 {
                     if (row.Cells["thoigianbatdau"].Value != null)
                     {
@@ -1427,12 +1431,12 @@ namespace Spa_NNLT.Nguyên
                         else { row.Visible = false; }
                     }
 
-                    if (row.Visible && CbTimNV.SelectedValue != null && row.Cells["manhanvien"].Value!=null)
+                    if (row.Visible && CbTimNV.SelectedValue != null && row.Cells["manhanvien"].Value != null)
                     {
-                        string tg =CbTimNV.SelectedValue.ToString().Trim();
+                        string tg = CbTimNV.SelectedValue.ToString().Trim();
                         if (tg == row.Cells["manhanvien"].Value.ToString())
                         {
-                            row.Visible=true;
+                            row.Visible = true;
                         }
                         else row.Visible = false;
                     }
@@ -1442,18 +1446,18 @@ namespace Spa_NNLT.Nguyên
                         string tg = CbTimKH.SelectedValue.ToString().Trim();
                         if (tg == row.Cells["makhachhang"].Value.ToString())
                         {
-                            row.Visible= true;
+                            row.Visible = true;
                         }
-                        else  row.Visible=false; 
+                        else row.Visible = false;
                     }
                 }
-            }    
+            }
         }
 
-            private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                trangthai.Text = "Đang chờ";
-            }
+        private void cboPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            trangthai.Text = "Đang chờ";
+        }
 
         private void XoaPhongADbt_Click(object sender, EventArgs e)
         {
@@ -1482,7 +1486,7 @@ namespace Spa_NNLT.Nguyên
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -1582,14 +1586,14 @@ namespace Spa_NNLT.Nguyên
         private void button18_Click(object sender, EventArgs e)
         {
             string TenDV = "";
-            foreach(ListViewItem item in lvCombo.Items)
+            foreach (ListViewItem item in lvCombo.Items)
             {
-                if(item.SubItems.Count > 1)
+                if (item.SubItems.Count > 1)
                 {
                     TenDV += item.SubItems[1].Text + ",";
                 }
             }
-        
+
             if (string.IsNullOrEmpty(MaCombo.Text) || string.IsNullOrEmpty(TenCombotb.Text))
             {
                 MessageBox.Show("Chưa nhập tên hoặc mã combo" +
@@ -1607,7 +1611,7 @@ namespace Spa_NNLT.Nguyên
             };
             string query = "INSERT INTO Combo(idcombo,tenncombo,dichvu,thoiluong,giagoc,giadagiam) " +
                 " VALUES (@idcombo,@tencombo,@dichvu,@thoiluong,@giagoc,@giadagiam)";
-            int result = DataProvider.Instance.ExcutedNoneQuery(query,sqlParameters);
+            int result = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
             if (result > 0) MessageBox.Show("Thêm combo thành công");
             else MessageBox.Show("Thêm dịch vụ thất bại");
             LoadComboList();
@@ -1635,23 +1639,23 @@ namespace Spa_NNLT.Nguyên
                 textBox1.Text = GiaDaGiam.ToString();
             }
             else textBox1.Text = "";
-         
+
         }
 
-            public decimal ChuyenDoiGia(string text)
-            {
-                // Loại bỏ mọi ký tự không phải chữ số
-                string cleaned = new string(text.Where(c => char.IsDigit(c) || c == '.').ToArray());
+        public decimal ChuyenDoiGia(string text)
+        {
+            // Loại bỏ mọi ký tự không phải chữ số
+            string cleaned = new string(text.Where(c => char.IsDigit(c) || c == '.').ToArray());
 
-                if (decimal.TryParse(cleaned, out decimal result))
-                {
-                    return result;
-                }
-                else
-                {
-                    throw new FormatException("Giá không hợp lệ");
-                }
+            if (decimal.TryParse(cleaned, out decimal result))
+            {
+                return result;
             }
+            else
+            {
+                throw new FormatException("Giá không hợp lệ");
+            }
+        }
 
         private void TGchuanbi_ValueChanged(object sender, EventArgs e)
         {
@@ -1703,7 +1707,7 @@ namespace Spa_NNLT.Nguyên
 
         private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cboKhachHang_DropDownClosed(object sender, EventArgs e)
@@ -1738,7 +1742,8 @@ namespace Spa_NNLT.Nguyên
 
         private void ComboData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) { 
+            if (e.RowIndex >= 0)
+            {
                 DataGridViewRow row = ComboData.Rows[e.RowIndex];
                 lvCombo.Items.Clear();
                 MaCombo.Text = row.Cells["idcombo"].Value.ToString().Trim();
@@ -1753,7 +1758,8 @@ namespace Spa_NNLT.Nguyên
                 {
                     string query = "select gia, thoigian from DichVuCon where tendichvucon = @dv";
                     DataTable data = DataProvider.Instance.Excuted(query, new object[] { dv });
-                    if (data.Rows.Count > 0) {
+                    if (data.Rows.Count > 0)
+                    {
                         decimal gia = Convert.ToDecimal(data.Rows[0]["gia"]);
                         int thoigian = Convert.ToInt32(data.Rows[0]["thoigian"]);
                         ListViewItem lv = new ListViewItem();
@@ -1801,9 +1807,9 @@ namespace Spa_NNLT.Nguyên
 
                 // Thêm dòng mới vào ListView
                 ListViewItem lvi = new ListViewItem();
-                lvi.SubItems.Add(maLichHen);                     
-                lvi.SubItems.Add(khachHang);                     
-                lvi.SubItems.Add(maDichVu);                    
+                lvi.SubItems.Add(maLichHen);
+                lvi.SubItems.Add(khachHang);
+                lvi.SubItems.Add(maDichVu);
                 lvi.SubItems.Add(nhanVien);
                 lvi.SubItems.Add(thoiGianBatDau);
                 lvi.SubItems.Add(thoiGianKetThuc);
@@ -1831,6 +1837,11 @@ namespace Spa_NNLT.Nguyên
 
         private void button16_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBox4.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập mã hóa đơn");
+                return;
+            }
             string malichhen = "";
             foreach (ListViewItem item in listView3.Items)
             {
@@ -1843,11 +1854,11 @@ namespace Spa_NNLT.Nguyên
                 {
                     new SqlParameter("@malichhen", item.SubItems[1].Text),
                     new SqlParameter("@trangthai", trangthai),
-                };               
+                };
                 string query1 = "UPDATE tblLichHen SET trangthai = @trangthai where  malichhen = @malichhen";
                 int result1 = DataProvider.Instance.ExcutedNoneQuery(query1, parameters);
             }
-            
+
             DateTime dateTime = dateTimePicker3.Value;
 
             if (string.IsNullOrEmpty(textBox2.Text))
@@ -1864,7 +1875,7 @@ namespace Spa_NNLT.Nguyên
             };
             string query = "INSERT INTO HoaDon(mahoadon,caclichhen,tongbill,thoigianthanhtoan) " +
                 " VALUES (@mahoadon,@caclichhen,@tongbill,@thoigianthanhtoan)";
-            var confirm = MessageBox.Show("Thanh toán hóa đơn với " + textBox2.Text.Trim() +" ?", "Xác nhận", MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show("Thanh toán hóa đơn với " + textBox2.Text.Trim() + " ?", "Xác nhận", MessageBoxButtons.YesNo);
             if (confirm != DialogResult.Yes)
             {
                 textBox2.Text = "";
@@ -1874,17 +1885,36 @@ namespace Spa_NNLT.Nguyên
             if (result > 0) MessageBox.Show("Thanh toán thành công");
             else MessageBox.Show("Thanh toán thất bại");
             LoadHoaDon();
+            LoadLichHenList();
+            listView3.Items.Clear();
+            textBox2.Text = "";
+            textBox4.Text = "";
         }
 
         private void button21_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
-            {               
+            {
                 string mahoadon = dataGridView1.SelectedRows[0].Cells["mahoadon"].Value.ToString();
+
+                string caclichhen = dataGridView1.SelectedRows[0].Cells["caclichhen"].Value?.ToString().Trim();
+                string[] danhSach = caclichhen.Split(',').Select(s => s.Trim()).ToArray();
+                string trangthai = "Đang chờ";
+
+                foreach (string dv in danhSach)
+                    {
+                    SqlParameter[] Parameters = new SqlParameter[]
+                        {
+                                new SqlParameter("@trangthai",trangthai),
+                                new SqlParameter("@dv",dv),
+                        };
+                        string query1 = "UPDATE tblLichHen SET trangthai = @trangthai where malichhen  = @dv";
+                        int result1 = DataProvider.Instance.ExcutedNoneQuery(query1, Parameters);
+                    }
                 SqlParameter[] sqlParameters = new SqlParameter[]
-                {
-                    new SqlParameter("@mahoadon",mahoadon),                   
-                };
+                    {
+                        new SqlParameter("@mahoadon",mahoadon),
+                    };
                 string query = "DELETE FROM HoaDon WHERE mahoadon = @mahoadon";
                 int result = DataProvider.Instance.ExcutedNoneQuery(query, sqlParameters);
 
@@ -1893,6 +1923,7 @@ namespace Spa_NNLT.Nguyên
                     // Xóa khỏi DataGridView
                     dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
                     MessageBox.Show("Xóa thành công.");
+                    LoadLichHenList();
                 }
                 else
                 {
@@ -1914,7 +1945,8 @@ namespace Spa_NNLT.Nguyên
         private void KiemTrabt_Click(object sender, EventArgs e)
         {
             LvTaiChinh.Clear();
-            if (NgayBDTC.Value >= NgayKTTC.Value) {
+            if (NgayBDTC.Value >= NgayKTTC.Value)
+            {
                 MessageBox.Show("Vui lòng lựa chọn đúng thời gian");
                 return;
             }
@@ -1925,7 +1957,7 @@ namespace Spa_NNLT.Nguyên
                 };
 
             string query = @"SELECT * from tblLichHen where thoigianbatdau between @thoigianbatdau and @thoigianketthuc";
-            DataTable dt = DataProvider.Instance.Excuted(query,parameter);
+            DataTable dt = DataProvider.Instance.Excuted(query, parameter);
             string QueryNV = @"SELECT tennhanvien FROM tblNhanVien";
             DataTable dt1 = DataProvider.Instance.Excuted(QueryNV);
             LoadLVTC1();
@@ -1938,7 +1970,7 @@ namespace Spa_NNLT.Nguyên
                 item.SubItems.Add(tg);
                 decimal tonggia = 0;
                 decimal sl = 0;
-                foreach(DataRow row1 in dt.Rows)
+                foreach (DataRow row1 in dt.Rows)
                 {
                     if (row1["manhanvien"].ToString().Trim() == tg)
                     {
@@ -2001,8 +2033,10 @@ namespace Spa_NNLT.Nguyên
             lv.SubItems.Add(NV);
             decimal tonggia = 0;
             decimal sl = 0;
-            foreach (DataRow dr in dt.Rows) {
-                if (dr["manhanvien"].ToString().Trim() == NV) {
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr["manhanvien"].ToString().Trim() == NV)
+                {
                     tonggia += ChuyenDoiGia(dr["tongtien"].ToString());
                     sl++;
                 }
@@ -2061,6 +2095,11 @@ namespace Spa_NNLT.Nguyên
             TLcombo.Clear();
             giamgia.Value = 0;
             TGchuanbi.Value = 0;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
