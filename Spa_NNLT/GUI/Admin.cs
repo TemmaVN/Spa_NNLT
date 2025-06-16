@@ -437,6 +437,18 @@ namespace Spa_NNLT.Nguyên
 
         private void ThemNVbt_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(MaNVtb.Text) || string.IsNullOrEmpty(HTtb.Text) || string.IsNullOrEmpty(SDTTb.Text))
+            {
+                MessageBox.Show("Vui lòng nhập hết nội dung");
+                return;
+            }
+            DateTime Ht = DateTime.Now;
+
+            if (NStb.Value.Year > Ht.Year - 15 || NStb.Value.Year < Ht.Year - 100)
+            {
+                MessageBox.Show("Vui lòng chọn đúng ngày sinh");
+                return;
+            }
             SqlParameter[] parameters = new SqlParameter[]
             {
                     new SqlParameter("@ma", MaNVtb.Text),
@@ -480,6 +492,13 @@ namespace Spa_NNLT.Nguyên
         private void CapNhatADbt_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(MaNVtb.Text)) return;
+            DateTime Ht = DateTime.Now;
+
+            if (NStb.Value.Year > Ht.Year - 15 || NStb.Value.Year < Ht.Year - 100)
+            {
+                MessageBox.Show("Vui lòng chọn đúng ngày sinh");
+                return;
+            }
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@MaNV", MaNVtb.Text),
@@ -1385,6 +1404,12 @@ namespace Spa_NNLT.Nguyên
         {
             bool yeucau = false;
             int result = 0;
+            DateTime Ht = DateTime.Now;
+            if (NgaysinhADmoi.Value.Year > Ht.Year - 15 || NgaysinhADmoi.Value.Year < Ht.Year -100)
+            {
+                MessageBox.Show("Vui lòng chọn đúng ngày sinh");
+                return;
+            }
             yeucau = string.IsNullOrEmpty(HoTenmoitb.Text) || string.IsNullOrEmpty(Gioitinhtb.Text) || string.IsNullOrEmpty(SDTmoitb.Text);
             if (!yeucau)
             {
