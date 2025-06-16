@@ -522,9 +522,6 @@ namespace Spa_NNLT.Nguyên
 
         private void CapNhatDVadBT_Click(object sender, EventArgs e)
         {
-
-
-
             if (string.IsNullOrEmpty(TenDVadTB.Text)) return;
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 new SqlParameter("@ma", MaDV.Text),
@@ -1265,9 +1262,15 @@ namespace Spa_NNLT.Nguyên
             string tenDV = cbDVcon.Text.Trim();
             string query = "select gia, thoigian from DichVuCon where tendichvucon = @tenDV";
             DataTable data = DataProvider.Instance.Excuted(query, new object[] { tenDV });
+            
             if (TGchuanbi.Value <= 0)
             {
                 MessageBox.Show("Chưa chọn thời gian chuẩn bị");
+                return;
+            }
+            if (string.IsNullOrEmpty(tenDV)) {
+                MessageBox.Show("Vui lòng chọn dịch vụ" +
+                    "");
                 return;
             }
             decimal gia = Convert.ToDecimal(data.Rows[0]["gia"]);
@@ -1345,7 +1348,15 @@ namespace Spa_NNLT.Nguyên
             }
 
             tonggia.Text = tongGia.ToString(); // Hiển thị 1,000,000 thay vì 1000000
-
+            if (decimal.TryParse(tonggia.Text.Replace(",", ""), out decimal GiaGoc))
+            {
+                decimal GiamGia = giamgia.Value;
+                decimal GiaDaGiam = GiaGoc * (1 - GiamGia / 100);
+                string tg = GiaDaGiam.ToString();
+                GiaDaGiam = ChuyenDoiGia(tg);
+                textBox1.Text = GiaDaGiam.ToString();
+            }
+            else textBox1.Text = "";
         }
 
         private void CapNhatBill()
