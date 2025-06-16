@@ -501,6 +501,10 @@ namespace Spa_NNLT.Nguyên
         private void ThemDVadTB_Click(object sender, EventArgs e)
         {
 
+            if (string.IsNullOrEmpty(MaDV.Text) || string.IsNullOrEmpty(TenDVadTB.Text) || string.IsNullOrEmpty(GiaDVadTB.Text) || string.IsNullOrEmpty(ThoiGianDVadTB.Text) || string.IsNullOrEmpty(comboBoxDichVuCha.Text)) {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
             SqlParameter[] sqlParameters = new SqlParameter[] {
                 new SqlParameter("@ma", MaDV.Text),
                 new SqlParameter("@ten", TenDVadTB.Text),
@@ -903,7 +907,7 @@ namespace Spa_NNLT.Nguyên
             string LoaiPhong = MLHPhongADtb.Text.Trim();
             string query = "INSERT INTO tblPhong(maphong, loaiphong, tinhtrang) " +
                            "VALUES (@sophong, @loaiphong, @tinhtrang)";
-            string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
+            string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             //string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True;Integrated Security=True";
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
@@ -975,7 +979,7 @@ namespace Spa_NNLT.Nguyên
             DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa lịch hẹn này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
-                string connectionSTR = "Data Source=DESKTOP-IE5BPNN\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
+                string connectionSTR = "Data Source=LAPTOPMEMUA\\SQLEXPRESS;Initial Catalog=QUANLY_SPA;Integrated Security=True";
                 using (SqlConnection conn = new SqlConnection(connectionSTR))
                 {
                     conn.Open();
